@@ -1,0 +1,7 @@
+.lightbox .lb-outerContainer{
+    background-color: red;
+}
+
+.container-gallery .lb-outerContainer{
+    background-color: green!important;
+}
