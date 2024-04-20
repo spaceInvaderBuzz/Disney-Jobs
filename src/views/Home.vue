@@ -11,7 +11,7 @@
             </section>
             <section class="main-bar">
                 <div class="social-bar">
-                    <h3>Follow The Magic!!!</h3>
+                    <h3>Follow The Magic</h3>
                     <ul class="social-menu">
                         <li><a href=""><i class="fab fa-facebook"></i></a></li>
                         <li><a href=""><i class="fab fa-instagram"></i></a></li>
