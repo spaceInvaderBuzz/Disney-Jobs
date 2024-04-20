@@ -7,6 +7,7 @@ import TheRegister from "@/views/TheRegister.vue";
 import ForgotPassword from "@/views/ForgotPassword.vue";
 import JobResultsView from "@/views/JobResultsView.vue";
 import JobView from "@/views/JobView.vue";
+import ProfilePage from "@/views/TheProfile.vue";
 
 
 const router = createRouter({
@@ -54,6 +55,12 @@ const router = createRouter({
       path: "/jobs/results/:id",
       name: "JobListing",
       component: JobView,
+      props: true
+    },
+    {
+      path:"/profile",
+      name:"ProfilePage",
+      component: ProfilePage,
     },
   ],
   scrollBehavior(){

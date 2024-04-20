@@ -63,7 +63,7 @@ methods: {
             this.$router.push({name: "Home"});
             this.error = false;
             this.errorMsg = "";
-            console.log(firebase.auth().currentUser.uid);
+            this.$router.push({name: "JobResults"});
         })
         .catch((err) => {
             this.error = true;

@@ -7,7 +7,7 @@
             <router-link class="button" :to="{ name: 'FeaturedFilm'}">See More</router-link>
         </div>
         <section class="video-section">
-            <video class="video" src="/src/assets/LILOSTITCH.mp4" muted="" loop=""></video>
+            <video class="video" src="/src/assets/LILOSTITCH.mp4" muted="" loop="" autoplay=""></video>
             </section>
             <section class="main-bar">
                 <div class="social-bar">

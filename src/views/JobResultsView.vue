@@ -1,5 +1,9 @@
 <template>
-    <nav class="navtempcool" v-if="localUser">
+    <keep-alive>
+        <changes-saved-modal></changes-saved-modal>
+    </keep-alive>
+
+    <nav class="navtempcool">
         
         
         The Navbar
@@ -7,7 +11,7 @@
         {{ profileLastName}}
         {{ profileUserName }}
         {{ profileInitials }}
-        <button class="buttton" @click="runItAll">CLICK AND SEE</button>
+        <button class="buttton" @click="signOut">Sign Out</button>
     </nav>
     <div class="flex-cool">
         <job-filters-sidebar></job-filters-sidebar>
@@ -17,6 +21,7 @@
 </template>
 
 <script>
+import ChangesSavedModal from '@/components/ChangesSavedModal.vue';
 import JobListings from '@/components/JobListings.vue';
 import JobFiltersSidebar from '../components/JobFiltersSidebar.vue';
 import { mapState, mapActions } from 'pinia';
@@ -32,21 +37,9 @@ export default {
     components: {
         JobFiltersSidebar,
         JobListings,
+        ChangesSavedModal
     },
-    methods: {
-        ...mapActions(useUserStore, [GET_CURRENT_USER,SET_PROFILE_INITIALS,CHANGE_USER]),
-        
-       
-    },
-    created(){
-        
-        this.GET_CURRENT_USER();
-        this.SET_PROFILE_INITIALS();
-        this.CHANGE_USER();
-       
-       
-        
-    },
+   
 
     computed: {
         ...mapState(useUserStore, ["user", "profileFirstName","profileLastName","profileInitials", "profileUserName"]), //u can acces this.profilefirstname isntead of ths.userStore.blablabla

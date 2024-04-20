@@ -56,6 +56,11 @@
 import firebase from 'firebase/compat/app';
 import "firebase/compat/auth";
 import db from "@/firebase/firebaseInit";
+
+import { useUserStore, GET_CURRENT_USER } from '@/piniastores/user';
+import { mapActions, mapState } from 'pinia';
+
+
 export default {
 name: "TheRegister",
 data(){
@@ -70,6 +75,9 @@ data(){
     };
 },
 methods: {
+    ...mapActions(useUserStore,[GET_CURRENT_USER]),
+    ...mapState(useUserStore, ["profileFirstName"]),
+
     async register(){
         if (
             this.email !== "" && 
@@ -91,7 +99,9 @@ methods: {
                 username: this.userName,
                 email: this.email,
             });
+           
             this.$router.push({name: "Home"});
+            
             return;
              
         }
