@@ -18,7 +18,7 @@
     <div class="pimg1">ANIMATION</div>
     <div class="container-for-job-page">
       <div class="info-box">
-        <h1>JOB DESCRIPTION</h1>
+        <h1 class="job-description">JOB DESCRIPTION</h1>
         <ul>
           <li v-for="singleJob in singleJobPage" :key="singleJob.id">
             {{ singleJob.organization }}
@@ -34,17 +34,73 @@
          </ul>
       </div>
       <div class="apply-box">
-        <li v-for="singleJob in singleJobPage" :key="singleJob.id">
+        <li v-for="singleJob in singleJobPage" :key="singleJob.id" class="single-job-title">
           {{ singleJob.title }}
        
           </li>
           <h3>Location: New Jersey</h3>
           <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo consectetur deleniti ea incidunt provident ratione?</div>
-          <router-link class="apply-buttomn" :to="{ name: 'JobApplication'}">Apply Now</router-link>
+          <div class="share-this-job">
+            <h4>Share this job!</h4>
+            <div class="socials">
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-linkedin"></i>
+              <i class="fa-brands fa-twitter"></i>
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+          </div>
+         
+          <router-link class="apply-button" :to="{ name: 'JobApplication'}">Apply Now</router-link>
+      </div>
+      <div class="benefits">
+        <div class=benefit>
+          <div class="text-and-icon">
+            <h1>Retirement Plan</h1>
+          <div class="benefit-img1"></div>
+          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nemo consequatur consectetur neque maxime non?</div>
+          </div>
+          <img src="/src/assets/images/Untitled_Artwork 64.png" alt="">
+        </div>
+        <div class=benefit>
+          <div class="text-and-icon">
+            <h1>Health Insurance</h1>
+          <div class="benefit-img2"></div>
+          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis illum consectetur praesentium placeat quae officiis exercitationem quas, harum voluptas eveniet.</div>
+          </div>
+          <img src="/src/assets/images/Untitled_Artwork 64.png" alt="">
+        </div>
+        <div class=benefit>
+          <div class="text-and-icon">
+            <h1>Paid Time Off</h1>
+          <div class="benefit-img3"></div>
+          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem nihil, nemo nisi sunt quidem quo.</div>
+          </div>
+          <img src="/src/assets/images/Untitled_Artwork 64.png" alt="">
+        </div>
+        <div class=benefit>
+          <div class="text-and-icon">
+            <h1>Health Insurance</h1>
+          <div class="benefit-img4"></div>
+          </div>
+          <img src="/src/assets/images/Untitled_Artwork 64.png" alt="">
+        </div>
+        </div>
+    </div>
+    <div class="not-what-you-lookin-for">
+      <div class="bottom-box">
+        <div>Dont find a good fit?</div>
+        <div>We are always looking for talent to join our team.
+          if you dont find a position you are looking for join our newsletter 
+          and be ntiifed of new openings! 
+        </div>
+        <label for="email">EMAIL</label>
+        <input type="email">
       </div>
       
+      <div class="image"></div>
     </div>
     
+     
   </div>
   </div>
 
@@ -84,14 +140,141 @@ async created(){
   await this.FETCH_JOBS();
 }
 };
-//#ff004f;
+
 </script>
 <style scoped>
 
 
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mouse+Memoirs&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Princess+Sofia&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+.bottom-box {
+  color: white;
+  position: absolute;
+  top: 80px;
+  left: 100px;
+  width: 500px;
+  height: 400px;
+  background: rebeccapurple;
+}
 
+.not-what-you-lookin-for {
+  margin: 0 auto;
+  max-width: 1500px;
+  height: 800px;
+  position: relative;
+
+}
+
+.image {
+  background: url('/src/assets/images/IMG_7933.JPG') no-repeat;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+}
+.benefit-img1{
+  background: url('/src/assets/images/Untitled_Artwork 68.png') no-repeat;
+  background-position: center;
+  background-size: contain ;
+ 
+  width: 100px;
+  height: 100px;
+}
+.benefit-img2{
+  background: url('/src/assets/images/Untitled_Artwork 69.png') no-repeat;
+  background-position: center;
+  background-size: contain ;
+  width: 90px;
+  height: 90px;
+}
+.benefit-img3{
+  background: url('/src/assets/images/Untitled_Artwork 70.png') no-repeat;
+  background-position: center;
+  background-size: contain ;
+  width: 90px;
+  height: 90px;
+}
+
+.benefit {
+  position: relative;
+  width: 350px;
+}
+
+.benefits {
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin-left:70px;
+
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.text-and-icon {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.share-this-job {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.share-this-job h4 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.socials {
+  display: flex;
+  gap: 10px;
+  font-size:20px ;
+}
+
+
+.apply-button {
+  background: #ff004f;
+  padding: 25px;
+  margin-top: 20px;
+
+}
+
+.apply-box h3 {
+  margin: 10px 0;
+}
+
+li {
+  list-style: none;
+
+}
+
+.single-job-title {
+  font-size: 43px;
+  margin: 10px 0;
+}
+.apply-box {
+  position: sticky;
+  top: 0;
+  padding: 40px;
+  background: white;
+  color: black;
+  height: 450px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+
+}
 .skidmark {
   background: black;
 }
@@ -130,7 +313,16 @@ async created(){
 }
 
 .info-box {
-  
+  border: 2px solid #ff004f;
+  padding: 50px 70px;
+  border-radius: 20px;
+}
+
+.job-description {
+  font-size: 60px;
+  border-bottom: 2px solid #ff004f;
+  padding: 30px 0;
+  margin-bottom:30px ;
 }
 
 

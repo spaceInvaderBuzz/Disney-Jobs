@@ -67,20 +67,25 @@ computed: {
 
 .accordion-parent {
     position: relative;
+    transition: 
 }
 .accordion {
+    color: white;
     display: flex;
     align-items: center;
     gap: 150px;
-    background: green;
+    background: rgb(18, 18, 18);
     padding: 15px;
+    transition: .3s;
 }
 
 .accordion:hover {
-    background: aliceblue;
+    background: rgb(27, 27, 27);
 }
 .active {
-    color: orange;
+    border: 1px solid #ff004f;
+    box-shadow: 0 0 15px #ff0051ad;
+    transition: .2s;
 }
 
 

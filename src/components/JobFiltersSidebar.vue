@@ -35,7 +35,7 @@ export default {
     display: grid;
     grid-template-columns: repeat(4,1fr);
     gap: 60px;
-    background: red;
+    background: rgb(0, 0, 0);
     padding: 20px 100px;
     
 }

@@ -1,3 +1,19 @@
+.the-filters input:after {
+    font-family: "FontAwesome";
+    height: 100%;
+    width: 100%;
+    content: "\f00c";
+    color: white;
+    display: none;
+    
+}
+
+
+
+.the-filters input:checked:after{
+    display: block;
+}
+
 <template>
     <collapsible-accordion header="Job Types">
         <ul class="the-filters">
@@ -14,6 +30,8 @@
 </template>
 
 <script>
+
+
 import { mapState, mapStores, mapActions} from "pinia";
 
 import { useJobsStore, UNIQUE_JOB_TYPES } from "@/piniastores/jobs"
@@ -48,14 +66,56 @@ export default {
 
 <style scoped>
 
-.individual-item:hover {
-    background: red;
+
+.individual-item {
+    cursor: pointer;
+    padding: 5px;
+    padding-right: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
 }
+
+.individual-item:hover {
+    background: rgb(51, 51, 51);
+    border-radius: 5px;
+}
+
 .the-filters {
-    background: pink;
+    color: white;
+    background: rgb(18, 18, 18);
     position: absolute;
     top: 10px;
-    padding: 15px;
-    }
+    padding: 20px;
+}
+
+.the-filters li {
+    list-style: none;
+}
+.the-filters li label {
+    margin-left: 10px;
+}
+
+.the-filters input {
+    appearance: none;
+    height: 15px;
+    width: 15px;
+    background: rgb(47, 47, 47);
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+
+
+
+.individual-item:hover input {
+    background: rgb(18, 18, 18);
+} 
+.the-filters input:checked {
+    background: #ff004f;
+    
+}
 
 </style>

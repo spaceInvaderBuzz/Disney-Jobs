@@ -77,7 +77,7 @@ export default {
     font-size: 50px;
 }
 .main-nav {
-    background: rebeccapurple;
+    background: rgb(255, 255, 255);
     padding: 30px ;
 }
 .main-items {

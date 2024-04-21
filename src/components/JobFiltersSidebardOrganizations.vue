@@ -1,7 +1,7 @@
 <template>
     <collapsible-accordion header="Organizations">
         <ul class="the-filters">
-            <li v-for="organization in UNIQUE_ORGANIZATIONS" :key="organization">
+            <li v-for="organization in UNIQUE_ORGANIZATIONS" :key="organization" class="individual-item">
                 <input type="checkbox" :id="organization" :value="organization" v-model="selectedLocalOrganizations" @change="selectOrganization">
                 <label :for="organization">{{ organization }}</label>
                 
@@ -51,9 +51,55 @@ export default {
 </script>
 
 <style scoped>
-.the-filters {
-background: pink;
-position: absolute;
-top: 0;
+.individual-item {
+    cursor: pointer;
+    padding: 5px;
+    padding-right: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
 }
+
+.individual-item:hover {
+    background: rgb(51, 51, 51);
+    border-radius: 5px;
+}
+
+.the-filters {
+    color: white;
+    background: rgb(18, 18, 18);
+    position: absolute;
+    top: 10px;
+    padding: 20px;
+}
+
+.the-filters li {
+    list-style: none;
+}
+.the-filters li label {
+    margin-left: 10px;
+}
+
+.the-filters input {
+    appearance: none;
+    height: 15px;
+    width: 15px;
+    background: rgb(47, 47, 47);
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+
+
+
+.individual-item:hover input {
+    background: rgb(18, 18, 18);
+} 
+.the-filters input:checked {
+    background: #ff004f;
+    
+}
+
 </style>
