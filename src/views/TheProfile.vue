@@ -1,34 +1,91 @@
 <template>
-    <keep-alive>
-        <changes-saved-modal :theModalProp="theSuccesModal" v-if="yourmomstinks"></changes-saved-modal>
-    </keep-alive>
+    <div class="profile-background">
+    <nav class="main-nav">
+        <ul class="main-items">
+            <div class="logo">Disney Careers</div>
+            <div v-if="localUser">
+              <div class="nav-split">
+                <div class="loggedIn">
+                  <div class="profile-email">{{ profileEmail }}</div>
+                 <div class="name-and-last-name">Welcome, {{ profileFirstName }}, {{profileLastName}}!</div>
+               </div>
+               <div class="profile-info">
+                <div class="profile-image-container">
+                  <img :src="profileImg" alt="">
+                 
+                </div>
+                <router-link class="profile-button" :to="{ name: 'ProfilePage'}">Profile</router-link>
+               </div>
+               
+              </div>
+              
+                
+               
+              
+                
+            </div>
+           
+            <div v-else class="login-and-signup">
+                <li><router-link :to="{ name: 'TheLoginPage' }">Log In</router-link></li>
+            <li><router-link :to="{ name: 'TheRegister' }">Sign Up</router-link></li>
+            </div>
+            
+        </ul>
+    </nav>
+
+
     
-    <div class="dick">
-        <div class="scott">
-            
-            <label for="profile-image">Profile image</label>
-            <input @change="handleChange2" type="file" id="profile-image">
-            <div class="error">{{ fileErr2 }}</div>
-            <div>{{ err }}</div>
+        <div class="profile-background-container">
+            <div class="profile-card">
+                <label for="profile-image">Profile image</label>
+                <input @change="handleChange2" type="file" id="profile-image">
+                <div class="error">{{ fileErr2 }}</div>
+                <div>{{ err }}</div>
+    
+                
+                <div class="input-container">
+                    <label :for="profilePageFirstName">FirstName: {{ profilePageFirstName }}</label> 
+                <input type="text" id="profilePageFirstName" v-model="profilePageFirstName" @keydown="changePiniaInfo"/>
+                </div>
+                
+                <div class="input-container">
+                    <label :for="profilePageLastName">LasttName:</label> 
+                <input type="text" id="profilePageLastName" v-model="profilePageLastName"/>
+                </div>
+                
+                <div class="input-container">
+                    <label :for="profilePageUserName">Username:</label> 
+                    <input type="text" id="profilePageUserName" v-model="profilePageUsername"/>
+                </div>
+               
+                <div class="input-container">
+                    <label :for="profilePageEmail">Email</label> 
+                <input type="text" disabled id="profilePageEmail" v-model="profilePageEmail"/>
+                </div>
+                
+                
+                <div class="dropzone">
+                    <span>Drag or Drop File</span>
+                    <span>OR</span>
+                    <label for="dropzoneFile">Upload Resume</label>
+                    <input @change="handleChange" type="file" id="dropZoneFile">
+                    <div class="error">{{fileErr}}</div>
+                    <div>{{ err }}</div>
+                </div>
+    
+               <button @click="updateProfile">BIKINI GIRLS</button>
 
-            <label :for="profilePageFirstName">FirstName: {{ profilePageFirstName }}</label> 
-            <input type="text" id="profilePageFirstName" v-model="profilePageFirstName" @keydown="changePiniaInfo"/>
-            <label :for="profilePageLastName">LasttName:</label> 
-            <input type="text" id="profilePageLastName" v-model="profilePageLastName"/>
-            <label :for="profilePageUserName">Username:</label> 
-            <input type="text" id="profilePageUserName" v-model="profilePageUsername"/>
-            <label :for="profilePageEmail">Email</label> 
-            <input type="text" disabled id="profilePageEmail" v-model="profilePageEmail"/>
-            
-            <label>Upload Resume</label>
-            <input @change="handleChange" type="file">
-            <div class="error">{{fileErr}}</div>
-            <div>{{ err }}</div>
-
-           <button @click="updateProfile">BIKINI GIRLS</button>
+              
+            </div>
+    
+               
         </div>
-       
     </div>
+   
+        
+            
+            
+
  
 </template>
 
@@ -168,9 +225,119 @@ mounted(){
 </script>
 
 <style scoped>
-.scott{
-    margin: 300px 0;
-    background: yellow;
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mouse+Memoirs&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Princess+Sofia&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+.dropzone {
+    background: orange;
+    width: 400px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    border: 2px dashed #ff;
+    
+}
+
+
+
+.input-container {
+  margin: 50px;
+    
+}
+
+
+.profile-background {
+    background: black;
+}
+
+.profile-card {
+    background: white;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    
+}
+
+.profile-card input {
+
+}
+.profile-background-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: purple;
     height: 100vh;
+    margin: 0 auto;
+    max-width: 1100px;
+
+}
+
+
+
+.login-and-signup {
+    display: flex;
+    gap: 40px;
+  }
+  .logo {
+    font-size: 50px;
+  }
+  .main-nav {
+    background: rgb(224, 24, 24);
+    padding: 30px ;
+  }
+  .main-items {
+  
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  
+  }
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-info a {
+  background: grey;
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+  padding: 2px;
+  margin-top: 5px;
+}
+
+.profile-image-container img {
+  border-radius: 90px;
+  width: 100%;
+  height: 100%;
+}
+
+.profile-image-container {
+  
+  width: 50px;
+  height: 50px;
+  border-radius: 90px;
+}
+
+
+
+.nav-split {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.name-and-last-name {
+  font-weight: 700;
+  font-size: 1.3rem;
 }
 </style>

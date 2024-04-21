@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import { GET_USER_PROFILE_IMG } from '@/piniastores/user';
 import MainNav from './components/MainNav.vue';
 import Home from '@/views/Home.vue';
 import TheFooterVue from './components/TheFooter.vue';
@@ -37,19 +36,20 @@ export default {
     await this.CHANGE_USER();
     if(this.user){
       await this.GET_CURRENT_USER();
+      await this.GET_USER_PROFILE_IMG();
     };
-    await this.GET_USER_PROFILE_IMG();
+    
     this.checkRoute();
     
  
   },
  methods: {
-  ...mapActions(useUserStore, [GET_CURRENT_USER,SET_PROFILE_INITIALS,CHANGE_USER]),
+  ...mapActions(useUserStore, [GET_USER_PROFILE_IMG, GET_CURRENT_USER,SET_PROFILE_INITIALS,CHANGE_USER]),
   ...mapState(useUserStore, ["user"]),
 
   
   checkRoute(){
-    if (this.$route.path === "/login" || this.$route.path === "/jobs/results" || this.$route.name === "JobListing") {
+    if (this.$route.path === "/login" || this.$route.path === "/jobs/results" || this.$route.name === "JobListing" || this.$route.name === "ProfilePage") {
       this.navigation = true;
       
       return;

@@ -209,7 +209,7 @@ async created(){  //as soon as i moun this and any compontet tnat use the profil
 }
 
 .profile-image-container {
-  background: rebeccapurple;
+  
   width: 50px;
   height: 50px;
   border-radius: 90px;
