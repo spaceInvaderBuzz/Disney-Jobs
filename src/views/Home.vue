@@ -262,7 +262,7 @@ window.addEventListener('scroll', function() {
     margin: 50px auto;
     width: fit-content;
     padding: 14px 50px;
-    border: 1px solid 
+    border: 1px solid;
     border-radius: 6px;
     text-decoration: none;
     color: #fff;

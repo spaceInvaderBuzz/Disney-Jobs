@@ -15,7 +15,10 @@
             
         </ul>
     </nav>
-    <div class="pimg1">ANIMATION</div>
+    <div v-for="singleJob in singleJobPage" :key="singleJob">
+      <div :class="{ pimg1:singleJob.organization === VueAndMe, pimg2:singleJob.organization === VueTube, pimg3:singleJob.organization === VueCanDoIt }">{{ singleJob.organization }}</div>
+    </div>
+    
     <div class="container-for-job-page">
       <div class="info-box">
         <h1 class="job-description">JOB DESCRIPTION</h1>
@@ -121,6 +124,14 @@ export default {
 name: "JobView",
 props: ["id"],
 
+data(){
+  return {
+    VueAndMe: "Vue and Me",
+    VueTube: "VueTube",
+    VueCanDoIt: "Vue Can Do It"
+  };
+},
+
 computed: {
   ...mapState(useJobsStore, ["jobs"]),
   singleJobPage(){
@@ -134,8 +145,11 @@ computed: {
 
 methods: {
   ...mapActions(useJobsStore, [FETCH_JOBS]),
+  changeHeader(){
+  }
   
 },
+
 async created(){
   await this.FETCH_JOBS();
 }
@@ -287,6 +301,42 @@ li {
   color: white;
   justify-content: center;
   background-image: url('/src/assets/images/Untitled_Artwork 63.png');
+  height: 700px;
+  position: relative;
+  background-position: center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+
+ 
+}
+.pimg2 {
+  font-family: 'Bebas Neue';
+  display: flex;
+  align-items: center;
+  font-size: 200px;
+  letter-spacing: 10px;
+  color: white;
+  justify-content: center;
+  background-image: url('/src/assets/images/Untitled_Artwork 72.png');
+  height: 700px;
+  position: relative;
+  background-position: center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+
+ 
+}
+.pimg3{
+  font-family: 'Bebas Neue';
+  display: flex;
+  align-items: center;
+  font-size: 200px;
+  letter-spacing: 10px;
+  color: white;
+  justify-content: center;
+  background-image: url('/src/assets/images/Untitled_Artwork 73.png');
   height: 700px;
   position: relative;
   background-position: center;
