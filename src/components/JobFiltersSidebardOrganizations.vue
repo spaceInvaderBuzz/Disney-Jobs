@@ -1,6 +1,6 @@
 <template>
     <collapsible-accordion header="Organizations">
-        <ul>
+        <ul class="the-filters">
             <li v-for="organization in UNIQUE_ORGANIZATIONS" :key="organization">
                 <input type="checkbox" :id="organization" :value="organization" v-model="selectedLocalOrganizations" @change="selectOrganization">
                 <label :for="organization">{{ organization }}</label>
@@ -50,6 +50,10 @@ export default {
 };
 </script>
 
-<style>
-
+<style scoped>
+.the-filters {
+background: pink;
+position: absolute;
+top: 0;
+}
 </style>

@@ -1,7 +1,7 @@
 <template>
     <collapsible-accordion header="Job Types">
-        <ul>
-            <li v-for="jobType in UNIQUE_JOB_TYPES" :key="jobType">
+        <ul class="the-filters">
+            <li v-for="jobType in UNIQUE_JOB_TYPES" :key="jobType" class="individual-item">
                 <input type="checkbox" :id="jobType" :value="jobType" v-model="selectedLocalJobTypes" @change="selectJobType">
                 <label :for="jobType">{{ jobType }}</label>
             </li>
@@ -46,6 +46,16 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+
+.individual-item:hover {
+    background: red;
+}
+.the-filters {
+    background: pink;
+    position: absolute;
+    top: 10px;
+    padding: 15px;
+    }
 
 </style>

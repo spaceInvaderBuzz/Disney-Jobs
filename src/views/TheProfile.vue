@@ -16,6 +16,11 @@
             <input type="text" disabled id="profilePageEmail" v-model="profilePageEmail"/>
             <label>Uplaod Resume</label>
             <input @change="handleChange" type="file">
+            <div>
+                Current Resume: 
+                {{ profilePageResume }}
+            </div>
+            
             <div class="error">{{fileErr}}</div>
             <div>{{ err }}</div>
 
@@ -46,6 +51,7 @@ data(){
         profilePageLastName: "",
         profilePageUsername: "",
         profilePageEmail: "",
+        profilePageResume: "",
         theSuccesModal: null,
         file: null,
         fileErr: null,
@@ -74,8 +80,9 @@ methods: {
             };
            
             
-            this.UPDATE_USER_INFO(this.profilePageFirstName, this.profilePageLastName, this.profilePageUsername, this.file);
+           await this.UPDATE_USER_INFO(this.profilePageFirstName, this.profilePageLastName, this.profilePageUsername, this.file);
         this.theSuccesModal = true;
+        await console.log(this.profilePageResume);
         
         
         //this.$router.push({name: "JobResults"});
@@ -88,6 +95,8 @@ methods: {
         this.profilePageLastName = this.profileLastName;
         this.profilePageUsername = this.profileUserName;
         this.profilePageEmail = this.profileEmail;
+        this.profilePageResume = this.profileResume;
+        
       },   
     handleChange(e){
         const types = ["application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
@@ -106,12 +115,14 @@ methods: {
       
 },
 computed: {
-    ...mapState(useUserStore, ["profileEmail","profileUserName", "profileFirstName","profileLastName","profileResume"]),
+    ...mapState(useUserStore, ["profileEmail","profileUserName", "profileFirstName","profileLastName","profileResume","profileResume"]),
 },
 mounted(){
     setTimeout(() => {
         this.changeName();
+        console.log(this.profileResume);
     }, 1000);
+   
     
     
 },

@@ -1,22 +1,29 @@
 <template>
-    <keep-alive>
-        <changes-saved-modal></changes-saved-modal>
-    </keep-alive>
-
-    <nav class="navtempcool">
-        
-        
-        The Navbar
-        {{ profileFirstName }}
-        {{ profileLastName}}
-        {{ profileUserName }}
-        {{ profileInitials }}
-        <button class="buttton" @click="signOut">Sign Out</button>
-    </nav>
-    <div class="flex-cool">
-        <job-filters-sidebar></job-filters-sidebar>
-        <job-listings></job-listings>
+    <div class="black-background">
+        <nav class="main-nav">
+            <ul class="main-items">
+                <div class="logo">Disney Careers</div>
+                <div v-if="localUser">
+                    Welcome, {{ profileFirstName }}, {{profileLastName}}!
+    
+                </div>
+                <div v-else class="login-and-signup">
+                    <li><router-link :to="{ name: 'Login' }">Log In</router-link></li>
+                <li><router-link :to="{ name: 'Register' }">Sign Up</router-link></li>
+                </div>
+                
+            </ul>
+        </nav>
+        <nav class="filter-nav">
+            <job-filters-sidebar></job-filters-sidebar>
+         </nav>
+       
+        <div class="flex-cool">
+           
+            <job-listings></job-listings>
+        </div>
     </div>
+    
 
 </template>
 
@@ -54,16 +61,37 @@ export default {
 </script>
 
 <style scoped>
-.flex-cool {
-    display: flex;
-    gap: 400px;
+.black-background {
+    background: url("/src/assets/images/Untitled_Artwork 62.png");
+    background-position: center center/cover;
 }
 
-.navtempcool {
-    margin-bottom: 100px;
+.filter-nav {
+    background: yellow;
 }
-.buttton {
-    margin-top:100px;
+.login-and-signup {
+    display: flex;
+    gap: 40px;
+}
+.logo {
+    font-size: 50px;
+}
+.main-nav {
+    background: rebeccapurple;
+    padding: 30px ;
+}
+.main-items {
+
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.filter-nav {
+    position: sticky;
+    top: 0;
+    z-index: 3;
 }
 
 </style>

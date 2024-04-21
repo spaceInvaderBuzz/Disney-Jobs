@@ -1,8 +1,8 @@
 <template>
-    <section>
-    <div>Job Filters SideBar</div>
-    <h2>whut u wanna do?</h2>
-    <job-filters-sidebard-organizations :clearing="letsClearThis"></job-filters-sidebard-organizations>
+    <section class="navigations">
+    <job-filters-sidebard-organizations></job-filters-sidebard-organizations>
+   <job-filters-sidebar-job-types></job-filters-sidebar-job-types>
+   <job-filters-sidebard-organizations></job-filters-sidebard-organizations>
    <job-filters-sidebar-job-types></job-filters-sidebar-job-types>
    
     </section>
@@ -30,6 +30,14 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
+.navigations {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 60px;
+    background: red;
+    padding: 20px 100px;
+    
+}
 
 </style>

@@ -1,17 +1,23 @@
 <template>
-    <div>
-        <p>job listings componet</p>
-        <ol>
-            <the-job-listing v-for="job in displayedJobs" :key="job.id" :job="job"></the-job-listing>
-        </ol>
-        <div class="currentpage">Page {{ currentPage }}</div>
-        <div>
-            <router-link v-if="previousPage" :to="{ name: 'JobResults', query: { page:previousPage } }">Previous</router-link>
+    
+        <div class="container">
+            <p>job listings componet</p>
+            <ol>
+                <the-job-listing v-for="job in displayedJobs" :key="job.id" :job="job"></the-job-listing>
+            </ol>
+            <div class="currentpage">Page {{ currentPage }}</div>
+            <div class="previous-and-next">
+                <div>
+                    <router-link v-if="previousPage" :to="{ name: 'JobResults', query: { page:previousPage } }">Previous</router-link>
+                </div>
+                <div>
+                    <router-link v-if="nextPage" :to="{ name: 'JobResults', query: { page:nextPage } }">Next</router-link>
+                </div>
+            </div>
+           
         </div>
-        <div>
-            <router-link v-if="nextPage" :to="{ name: 'JobResults', query: { page:nextPage } }">Next</router-link>
-        </div>
-    </div>
+  
+   
     
 </template>
 
@@ -70,7 +76,16 @@ export default {
 </script>
 
 <style scoped>
+.previous-and-next {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0;
+}
+.black-background {
+    background: black;
+}
 .currentpage {
-    margin: 50px 0;
+    display: flex;
+    justify-content: center;
 }
 </style>

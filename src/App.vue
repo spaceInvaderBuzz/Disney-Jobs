@@ -17,6 +17,7 @@ import TheFooterVue from './components/TheFooter.vue';
 import Films from './views/Films.vue';
 import TheLoginPage from '@/views/TheLoginPage.vue';
 import { mapState, mapActions } from 'pinia';
+import JobApplication from './views/JobApplication.vue';
 import { useUserStore, GET_CURRENT_USER, SET_PROFILE_INITIALS, CHANGE_USER} from '@/piniastores/user';
 
 
@@ -25,7 +26,7 @@ export default {
 
   
   name: 'App',
-  components: { MainNav, Home, TheFooterVue, Films, TheLoginPage },
+  components: { JobApplication, MainNav, Home, TheFooterVue, Films, TheLoginPage },
   data(){
     return {
       navigation: null,
@@ -46,7 +47,7 @@ export default {
 
   
   checkRoute(){
-    if (this.$route.path === "/login" ) {
+    if (this.$route.path === "/login" || this.$route.path === "/jobs/results" || this.$route.name === "JobListing") {
       this.navigation = true;
       
       return;

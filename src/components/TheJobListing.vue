@@ -1,6 +1,7 @@
 <template>
-   <li>
-    <h1>{{ job.title}}</h1>
+   <li class="listing">
+    <div class="seperator">
+        <h1 class="job-title">{{ job.title}}</h1>
     <h2>{{job.organization}}</h2>
     <ul>
        <li v-for="location in job.locations" :key="location">
@@ -12,6 +13,8 @@
             {{ qualification }}
         </li>
     </ul>
+    </div>
+    
     <div class="buttonthing">
         <router-link :to="jobPageLink">sniff me</router-link>
     </div>
@@ -31,6 +34,28 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.listing:hover {
+   background-color: rgba(255, 255, 255, 0.027);
+   backdrop-filter: blur(8px);
+   transform: scale(1.03);
+   
+}
+.job-title {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rebeccapurple;
+}
+.listing {
+    margin:70px;
+    border: 1px solid white;
+    padding: 50px 70px;
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    transition: 0.3s;
+
+}
+
 
 </style>
