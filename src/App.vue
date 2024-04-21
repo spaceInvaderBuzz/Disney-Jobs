@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import { GET_USER_PROFILE_IMG } from '@/piniastores/user';
 import MainNav from './components/MainNav.vue';
 import Home from '@/views/Home.vue';
 import TheFooterVue from './components/TheFooter.vue';
@@ -18,7 +19,7 @@ import Films from './views/Films.vue';
 import TheLoginPage from '@/views/TheLoginPage.vue';
 import { mapState, mapActions } from 'pinia';
 import JobApplication from './views/JobApplication.vue';
-import { useUserStore, GET_CURRENT_USER, SET_PROFILE_INITIALS, CHANGE_USER} from '@/piniastores/user';
+import { useUserStore, GET_USER_PROFILE_IMG, GET_CURRENT_USER, SET_PROFILE_INITIALS, CHANGE_USER} from '@/piniastores/user';
 
 
 
@@ -32,11 +33,12 @@ export default {
       navigation: null,
     };
   },
-  async created(){
+  async created(){  //as soon as the app is loadied, we are reachign ut to firebase, grabbig the data, and importing it onto the pinia store
     await this.CHANGE_USER();
     if(this.user){
       await this.GET_CURRENT_USER();
     };
+    await this.GET_USER_PROFILE_IMG();
     this.checkRoute();
     
  

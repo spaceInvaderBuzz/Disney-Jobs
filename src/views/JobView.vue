@@ -5,9 +5,27 @@
         <ul class="main-items">
             <div class="logo">Disney Careers</div>
             <div v-if="localUser">
-                Welcome, {{ profileFirstName }}, {{profileLastName}}!
-    
+              <div class="nav-split">
+                <div class="loggedIn">
+                  <div class="profile-email">{{ profileEmail }}</div>
+                 <div class="name-and-last-name">Welcome, {{ profileFirstName }}, {{profileLastName}}!</div>
+               </div>
+               <div class="profile-info">
+                <div class="profile-image-container">
+                  <img :src="profileImg" alt="">
+                 
+                </div>
+                <router-link class="profile-button" :to="{ name: 'ProfilePage'}">Profile</router-link>
+               </div>
+               
+              </div>
+              
+                
+               
+              
+                
             </div>
+           
             <div v-else class="login-and-signup">
                 <li><router-link :to="{ name: 'TheLoginPage' }">Log In</router-link></li>
             <li><router-link :to="{ name: 'TheRegister' }">Sign Up</router-link></li>
@@ -119,6 +137,11 @@ import { mapActions, mapState } from 'pinia';
 import { useJobsStore } from '@/piniastores/jobs';
 import { FETCH_JOBS } from '@/piniastores/jobs';
 import { useUserStore } from '@/piniastores/user';
+import firebase from 'firebase/compat/app';
+import "firebase/compat/auth";
+import "firebase/compat/storage";
+import db from "@/firebase/firebaseInit";
+
 
 export default {
 name: "JobView",
@@ -134,10 +157,12 @@ data(){
 
 computed: {
   ...mapState(useJobsStore, ["jobs"]),
+  ...mapState(useUserStore, ["profileImg"]),
+  
   singleJobPage(){
     return this.jobs.filter((job) => job.id === this.id);
   },
-        ...mapState(useUserStore, ["user", "profileFirstName","profileLastName","profileInitials", "profileUserName"]), //u can acces this.profilefirstname isntead of ths.userStore.blablabla
+        ...mapState(useUserStore, ["user", "profileFirstName","profileLastName","profileInitials", "profileUserName","profileEmail"]), //u can acces this.profilefirstname isntead of ths.userStore.blablabla
        localUser(){
         return this.user ? true : false;
        },
@@ -145,12 +170,10 @@ computed: {
 
 methods: {
   ...mapActions(useJobsStore, [FETCH_JOBS]),
-  changeHeader(){
-  }
-  
+
 },
 
-async created(){
+async created(){  //as soon as i moun this and any compontet tnat use the profile img etc, i want to exrtact data from firebase
   await this.FETCH_JOBS();
 }
 };
@@ -161,6 +184,51 @@ async created(){
 
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mouse+Memoirs&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Princess+Sofia&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-info a {
+  background: grey;
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+  padding: 2px;
+  margin-top: 5px;
+}
+
+.profile-image-container img {
+  border-radius: 90px;
+  width: 100%;
+  height: 100%;
+}
+
+.profile-image-container {
+  background: rebeccapurple;
+  width: 50px;
+  height: 50px;
+  border-radius: 90px;
+}
+
+
+
+.nav-split {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.name-and-last-name {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
 .bottom-box {
   color: white;
   position: absolute;

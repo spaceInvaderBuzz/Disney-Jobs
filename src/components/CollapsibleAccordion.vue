@@ -67,9 +67,10 @@ computed: {
 
 .accordion-parent {
     position: relative;
-    transition: 
+    
 }
 .accordion {
+    cursor: pointer;
     color: white;
     display: flex;
     align-items: center;

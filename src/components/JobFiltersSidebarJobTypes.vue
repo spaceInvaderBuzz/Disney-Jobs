@@ -19,7 +19,7 @@
         <ul class="the-filters">
             <li v-for="jobType in UNIQUE_JOB_TYPES" :key="jobType" class="individual-item">
                 <input type="checkbox" :id="jobType" :value="jobType" v-model="selectedLocalJobTypes" @change="selectJobType">
-                <label :for="jobType">{{ jobType }}</label>
+                <label class="pointerevents" :for="jobType">{{ jobType }}</label>
             </li>
         </ul>
     </collapsible-accordion>
@@ -65,6 +65,10 @@ export default {
 </script>
 
 <style scoped>
+
+.pointerevents {
+    cursor: pointer;
+}
 
 
 .individual-item {

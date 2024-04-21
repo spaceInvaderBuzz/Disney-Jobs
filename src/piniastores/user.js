@@ -13,6 +13,7 @@ export const GET_CURRENT_USER = "GET_CURRENT_USER";
 export const CHANGE_USER = "CHANGE_USER";
 export const SET_PROFILE_INITIALS = "SET_PROFILE_INITIALS";
 export const UPDATE_USER_INFO = "UPDATE_USER_INFO";
+export const GET_USER_PROFILE_IMG = "GET_USER_PROFILE_IMG";
 
 export const useUserStore = defineStore("user", {       
     state: () => ({
@@ -24,10 +25,11 @@ export const useUserStore = defineStore("user", {
        profileInitials: "",
        profileUserName: "",
        profileEmail: "",
-       profileResume: "", //hoepflly this will be that object
+       profileResume: "",
+       profileImg: "",
     }),
     actions: {
-      async [UPDATE_USER_INFO](parameter1, parameter2, parameter3,parameter4){
+      async [UPDATE_USER_INFO](parameter1, parameter2, parameter3,parameter4, parameter5){
          const dataBase = await db.collection('users').doc(firebase.auth().currentUser.uid);
          await dataBase.update({
             firstName: parameter1,
@@ -35,7 +37,7 @@ export const useUserStore = defineStore("user", {
             username: parameter3,
          }); //here is where i am goign t oupalote the file to firestorarge 
          //const profileFilePath = `covers/${firebase.auth().currentUser.uid}/${this.file.name}`;
-         this.profileResume = parameter4;
+         
        
       },
       async [GET_CURRENT_USER](){
@@ -46,6 +48,11 @@ export const useUserStore = defineStore("user", {
          this.profileUserName = await dbResults.data().username;
          this.profileEmail = await dbResults.data().email;
 
+      },
+      async [GET_USER_PROFILE_IMG](){
+         const profileImageDataBase = await db.collection("images").doc(firebase.auth().currentUser.uid);
+         const profileImageDataBaseResults = await profileImageDataBase.get();
+         this.profileImg = await profileImageDataBaseResults.data().filePath;
       },
       [SET_PROFILE_INITIALS](){
          this.profileInitials = this.profileFirstName.match(/(\b\S)?/g).join("") +
