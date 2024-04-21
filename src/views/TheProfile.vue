@@ -1,86 +1,104 @@
 <template>
+<div v-if="changesWereSaved" class="changesSaved">
+    <router-link class="closeButton" :to="{ name: 'JobListing', params: { id: '2'} }">changes were saved</router-link>
+</div>
+    
+
     <div class="profile-background">
-    <nav class="main-nav">
-        <ul class="main-items">
-            <div class="logo">Disney Careers</div>
-            <div v-if="localUser">
-              <div class="nav-split">
-                <div class="loggedIn">
-                  <div class="profile-email">{{ profileEmail }}</div>
-                 <div class="name-and-last-name">Welcome, {{ profileFirstName }}, {{profileLastName}}!</div>
-               </div>
-               <div class="profile-info">
-                <div class="profile-image-container">
-                  <img :src="profileImg" alt="">
-                 
+        <nav class="main-nav">
+            <ul class="main-items">
+                <div class="logo">Disney Careers</div>
+                <div v-if="localUser">
+                  <div class="nav-split">
+                    <div class="loggedIn">
+                      <div class="profile-email">{{ profileEmail }}</div>
+                     <div class="name-and-last-name">Welcome, {{ profileFirstName }}, {{profileLastName}}!</div>
+                   </div>
+                   <div class="profile-info">
+                    <div class="profile-image-container">
+                      <img :src="profileImg" alt="">
+                     
+                    </div>
+                    <router-link class="profile-button" :to="{ name: 'ProfilePage'}">Profile</router-link>
+                   </div>
+                   
+                  </div>
+                  
+                    
+                   
+                  
+                    
                 </div>
-                <router-link class="profile-button" :to="{ name: 'ProfilePage'}">Profile</router-link>
-               </div>
                
-              </div>
-              
+                <div v-else class="login-and-signup">
+                    <li><router-link :to="{ name: 'TheLoginPage' }">Log In</router-link></li>
+                <li><router-link :to="{ name: 'TheRegister' }">Sign Up</router-link></li>
+                </div>
                 
-               
-              
-                
-            </div>
-           
-            <div v-else class="login-and-signup">
-                <li><router-link :to="{ name: 'TheLoginPage' }">Log In</router-link></li>
-            <li><router-link :to="{ name: 'TheRegister' }">Sign Up</router-link></li>
-            </div>
-            
-        </ul>
-    </nav>
-
-
+            </ul>
+        </nav>
     
-        <div class="profile-background-container">
-            <div class="profile-card">
-                <label for="profile-image">Profile image</label>
-                <input @change="handleChange2" type="file" id="profile-image">
-                <div class="error">{{ fileErr2 }}</div>
-                <div>{{ err }}</div>
     
-                
-                <div class="input-container">
-                    <label :for="profilePageFirstName">FirstName: {{ profilePageFirstName }}</label> 
-                <input type="text" id="profilePageFirstName" v-model="profilePageFirstName" @keydown="changePiniaInfo"/>
-                </div>
-                
-                <div class="input-container">
-                    <label :for="profilePageLastName">LasttName:</label> 
-                <input type="text" id="profilePageLastName" v-model="profilePageLastName"/>
-                </div>
-                
-                <div class="input-container">
-                    <label :for="profilePageUserName">Username:</label> 
-                    <input type="text" id="profilePageUserName" v-model="profilePageUsername"/>
-                </div>
-               
-                <div class="input-container">
-                    <label :for="profilePageEmail">Email</label> 
-                <input type="text" disabled id="profilePageEmail" v-model="profilePageEmail"/>
-                </div>
-                
-                
-                <div @dragenter.prevent="toggleActive" @dragleave.prevent="toggleActive" @dragover.prevent @drop.prevent="handleDropChange" class="dropzone" :class="{ 'active-dropzone' : active}">
-                    <span>Drag or Drop File</span>
-                    <span>OR</span>
-                    <label for="dropzoneFile">Upload Resume</label>
-                    <input @change="handleChange" type="file" id="dropzoneFile">
-                    <div class="error">{{fileErr}}</div>
+        
+            <div class="profile-background-container">
+                <div class="profile-card">
+                    <div v-if="user" class="profile-image">
+                        <img :src="profileImg" alt="">
+                    </div>
+                    <div v-else class="profile-image">
+                        <img src="/src/assets/images/Untitled_Artwork 76.png" alt="">
+                    </div>
+                    <div class="profile-image-label">
+                        <i class="fa-solid fa-upload"></i>
+                        <label for="profile-image">Upload profile image</label>
+                    <input @change="handleChange2" type="file" id="profile-image">
+                    </div>
+                    
+                    <div class="error">{{ fileErr2 }}</div>
                     <div>{{ err }}</div>
+        
+                    
+                    <div class="input-container">
+                        <label :for="profilePageFirstName">FirstName: {{ profilePageFirstName }}</label> 
+                    <input type="text" id="profilePageFirstName" v-model="profilePageFirstName" @keydown="changePiniaInfo"/>
+                    </div>
+                    
+                    <div class="input-container">
+                        <label :for="profilePageLastName">LasttName:</label> 
+                    <input type="text" id="profilePageLastName" v-model="profilePageLastName"/>
+                    </div>
+                    
+                    <div class="input-container">
+                        <label :for="profilePageUserName">Username:</label> 
+                        <input type="text" id="profilePageUserName" v-model="profilePageUsername"/>
+                    </div>
+                   
+                    <div class="input-container">
+                        <label :for="profilePageEmail">Email</label> 
+                    <input type="text" disabled id="profilePageEmail" v-model="profilePageEmail"/>
+                    </div>
+                    
+                    
+                    <div @dragenter.prevent="toggleActive" @dragleave.prevent="toggleActive" @dragover.prevent @drop.prevent="handleDropChange" class="dropzone" :class="{ 'active-dropzone' : active}">
+                        <span>Drag or Drop File</span>
+                        <span>OR</span>
+                        <label for="dropzoneFile">Upload Resume</label>
+                        <input @change="handleChange" type="file" id="dropzoneFile">
+                        <div class="error">{{fileErr}}</div>
+                        <div>{{ err }}</div>
+                    </div>
+        
+                   <button @click="updateProfile">BIKINI GIRLS</button>
+    
+                  
                 </div>
-    
-               <button @click="updateProfile">BIKINI GIRLS</button>
-
-              
+        
+                   
             </div>
-    
-               
         </div>
-    </div>
+            
+
+    
    
         
             
@@ -105,6 +123,7 @@ name: "ProfilePage",
 components: { ChangesSavedModal },
 data(){
     return {
+        changesWereSaved: false,
         active: "",
         dropzoneFile: "",
         profilePageFirstName: "", 
@@ -125,6 +144,10 @@ data(){
     };
 },
 methods: {
+
+    pushBackToJobPage(){
+        this.$route.push({name: "JobListing"});
+    },
 
     toggleActive(){
         this.active = !this.active;
@@ -181,6 +204,8 @@ methods: {
 
             };
         };
+
+        this.changesWereSaved = true;
            
             
            await this.UPDATE_USER_INFO(this.profilePageFirstName, this.profilePageLastName, this.profilePageUsername, this.file, this.imageUrl);
@@ -226,7 +251,7 @@ methods: {
       
 },
 computed: {
-    ...mapState(useUserStore, ["profileEmail","profileUserName", "profileFirstName","profileLastName","profileResume","profileResume","profileImgURL"]),
+    ...mapState(useUserStore, ["profileImg","profileEmail","profileUserName", "profileFirstName","profileLastName","profileResume","profileResume","profileImgURL", "user"]),
 },
 mounted(){
     setTimeout(() => {
@@ -245,6 +270,57 @@ mounted(){
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mouse+Memoirs&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Princess+Sofia&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+.closeButton {
+    background: orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 100px;
+}
+
+.changesSaved {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100%;
+}
+
+.profile-image-label input {
+    display: none;
+}
+
+.profile-image-label {
+    cursor: pointer;
+    background: green;
+    padding: 15px;
+    font-size: 14px;
+    margin: 20px 0;
+}
+
+.profile-image-label i {
+    margin-right: 10px ;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+}
 
 .dropzone {
     background: orange;

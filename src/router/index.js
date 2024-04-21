@@ -9,6 +9,7 @@ import JobResultsView from "@/views/JobResultsView.vue";
 import JobView from "@/views/JobView.vue";
 import ProfilePage from "@/views/TheProfile.vue";
 import JobApplication from '@/views/JobApplication.vue';
+import CareersHeroPage from '@/views/CareersHeroPage.vue';
 
 
 const router = createRouter({
@@ -67,7 +68,12 @@ const router = createRouter({
       path: "/apply",
       name: "JobApplication",
       component: JobApplication,
-    }
+    },
+    {
+      path: "careers",
+      name: "CareersHeroPage",
+      component: CareersHeroPage,
+    },
   ],
   scrollBehavior(){
     return {
