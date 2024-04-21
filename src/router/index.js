@@ -70,7 +70,7 @@ const router = createRouter({
       component: JobApplication,
     },
     {
-      path: "careers",
+      path: "/careers",
       name: "CareersHeroPage",
       component: CareersHeroPage,
     },
