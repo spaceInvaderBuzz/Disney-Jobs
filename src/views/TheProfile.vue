@@ -64,11 +64,11 @@
                 </div>
                 
                 
-                <div class="dropzone">
+                <div @dragenter.prevent="toggleActive" @dragleave.prevent="toggleActive" @dragover.prevent @drop.prevent="handleDropChange" class="dropzone" :class="{ 'active-dropzone' : active}">
                     <span>Drag or Drop File</span>
                     <span>OR</span>
                     <label for="dropzoneFile">Upload Resume</label>
-                    <input @change="handleChange" type="file" id="dropZoneFile">
+                    <input @change="handleChange" type="file" id="dropzoneFile">
                     <div class="error">{{fileErr}}</div>
                     <div>{{ err }}</div>
                 </div>
@@ -105,6 +105,8 @@ name: "ProfilePage",
 components: { ChangesSavedModal },
 data(){
     return {
+        active: "",
+        dropzoneFile: "",
         profilePageFirstName: "", 
         profilePageLastName: "",
         profilePageUsername: "",
@@ -123,6 +125,23 @@ data(){
     };
 },
 methods: {
+
+    toggleActive(){
+        this.active = !this.active;
+    },
+    handleDropChange(e){
+        this.active = !this.active;
+        const types = ["application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
+        const selected2 = e.dataTransfer.files[0];
+        if (selected2 && types.includes(selected2.type)){
+            this.file = selected2;
+            this.fileErr = null;
+            console.log(this.file);
+        } else {
+            this.file = null,
+            this.fileErr = 'Please drag a JPG or PNG file';
+        };
+    },
    
     ...mapActions(useUserStore, [UPDATE_USER_INFO, GET_CURRENT_USER]),
     async updateProfile(){
@@ -183,13 +202,13 @@ methods: {
     handleChange(e){
         const types = ["application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
         console.log(e.target.files[0]);
-        const selected = e.target.files[0];
-        if(selected && types.includes(selected.type)){
+        const selected = e.target.files[0]; //this is the file we selected
+        if(selected && types.includes(selected.type)){ 
             this.file = selected;
             this.fileErr = null;
         } else {
             this.file = null;
-            this.fileErr = 'Please sleect a document file type'
+            this.fileErr = 'Please select a document file type'
         };
         
     },
@@ -236,8 +255,26 @@ mounted(){
     justify-content: center;
     align-items: center;
     gap: 16px;
-    border: 2px dashed #ff;
+    border: 2px dashed #ff004f;
+    transition: .3s ease all;
+    background: pink;
     
+}
+
+.dropzone label {
+    padding: 8px 12px;
+    color: white;
+    background: #ff004f;
+    transition: 0.3s ease all;
+    cursor: pointer;
+}
+.dropzone input {
+    display: none;
+}
+
+.active-dropzone {
+    background: yellow;
+
 }
 
 
