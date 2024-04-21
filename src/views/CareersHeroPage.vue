@@ -63,7 +63,11 @@
                         </div>
                     </div>
                 </div>
-            <router-link :to="{ name: 'JobResults' }"></router-link>
+
+                <div class="explore-button"> 
+                    <router-link :to="{ name: 'JobResults' }">Explore Opportunities</router-link>
+                </div>
+           
                 
                 
             </section>
@@ -85,7 +89,23 @@ name: 'CareersHeroPage',
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mouse+Memoirs&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Princess+Sofia&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 
+.explore-button {
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
 
+}
+
+.explore-button a {
+    margin: 15px 0;
+    text-decoration: none;
+    background: yellow;
+    border-radius: 15px;
+    padding: 30px;
+    font-size: 1.4rem;
+}
 
 
 .main-section {
@@ -190,7 +210,7 @@ name: 'CareersHeroPage',
     position: absolute;
     width: 200px;
     height: 200px;
-    background: orange;
+    
     transform: rotate(45deg);
     margin: -100px;
     overflow: hidden;
@@ -230,6 +250,18 @@ name: 'CareersHeroPage',
 }
 .diamond-grid ul li.diamond3 .image {
     background: url("/src/assets/images/Untitled_Artwork 84.png");
+    background-size: cover;
+}
+.diamond-grid ul li.diamond2 .image {
+    background: url("/src/assets/images/Untitled_Artwork 87.png");
+    background-size: cover;
+}
+.diamond-grid ul li.diamond5 .image {
+    background: url("/src/assets/images/Untitled_Artwork 88.png");
+    background-size: cover;
+}
+.diamond-grid ul li.diamond4 .image {
+    background: url("/src/assets/images/Untitled_Artwork 91.png");
     background-size: cover;
 }
 

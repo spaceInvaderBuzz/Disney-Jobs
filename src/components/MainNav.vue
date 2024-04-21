@@ -11,7 +11,10 @@
                         <li>
                             <router-link :to="{ name: 'Films'}">Films</router-link>
                         </li>
-                        <li><router-link :to="{ name: 'TheLoginPage' }">Careers</router-link></li>
+                        <li>
+                            <router-link :to="{ name: 'FeaturedFilm'}">Now Playing</router-link>
+                        </li>
+                        <li><router-link :to="{ name: 'CareersHeroPage' }">Careers</router-link></li>
                        
                     </ul>
                 </div>
