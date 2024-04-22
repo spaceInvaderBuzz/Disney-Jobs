@@ -26,7 +26,7 @@ export const useUserStore = defineStore("user", {
        profileUserName: "",
        profileEmail: "",
        profileResume: "",
-       profileImg: "",
+       profileImg: "", //
     }),
     actions: {
       async [UPDATE_USER_INFO](parameter1, parameter2, parameter3,parameter4, parameter5){

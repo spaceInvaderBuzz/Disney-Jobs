@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import MoviePage from './views/MoviePage.vue';
 import CareersHeroPage from './views/CareersHeroPage.vue';
 import MainNav from './components/MainNav.vue';
 import Home from '@/views/Home.vue';
@@ -27,7 +28,7 @@ export default {
 
   
   name: 'App',
-  components: { CareersHeroPage, JobApplication, MainNav, Home, TheFooterVue, Films, TheLoginPage },
+  components: { MoviePage, CareersHeroPage, JobApplication, MainNav, Home, TheFooterVue, Films, TheLoginPage },
   data(){
     return {
       navigation: null,

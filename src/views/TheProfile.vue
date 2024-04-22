@@ -1,4 +1,8 @@
 <template>
+    <div v-if="loading" class="loading">
+        <img src="/src/assets/images/mickey-mouse-steamboat-willie.gif" alt="">
+        Loading
+    </div>
 <div v-if="changesWereSaved" class="changesSaved">
     <router-link class="closeButton" :to="{ name: 'JobListing', params: { id: '2'} }">changes were saved</router-link>
 </div>
@@ -123,7 +127,9 @@ name: "ProfilePage",
 components: { ChangesSavedModal },
 data(){
     return {
+      
         changesWereSaved: false,
+        loading: null,
         active: "",
         dropzoneFile: "",
         profilePageFirstName: "", 
@@ -137,7 +143,7 @@ data(){
         err: null,
         imageUrl: null,
         filePath: null,
-        imageFile: null,
+        imageFile: null, 
         fileErr2: null,
 
 
@@ -174,11 +180,13 @@ methods: {
           
             //const storageRef = firebase.storage(this.filePath).put(this.file);
             //const res = await storageRef.put(this.file);  
+            this.loading = true;
             try{
                 const storage = firebase.storage();
             const storageRef = storage.ref(this.filePath);
             await storageRef.put(this.file);
             } catch(err) {
+                this.loading = false; 
                 this.err = err.message;
 
             };
@@ -188,6 +196,7 @@ methods: {
           
             //const storageRef = firebase.storage(this.filePath).put(this.file);
             //const res = await storageRef.put(this.file);  
+            this.loading = true;
             try {
                 const storage = firebase.storage();
             const storageRef = storage.ref(this.imageFilePath);
@@ -198,8 +207,10 @@ methods: {
             await userImageDatabase.set({
                 filePath: this.imageUrl,
             });
+            this.loading = null;
             console.log(this.imageUrl);
             } catch(err) {
+                this.loading = null;
                 this.err = err.message;
 
             };
@@ -240,6 +251,7 @@ methods: {
     handleChange2(e){
         const imageTypes = ["image/jpeg","image/png"];
         const selectedImage = e.target.files[0];
+        console.log(selectedImage);
         if(selectedImage && imageTypes.includes(selectedImage.type)){
             this.imageFile = selectedImage;
             this.fileErr = null;
@@ -270,6 +282,22 @@ mounted(){
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mouse+Memoirs&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Princess+Sofia&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+.loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100;
+    background: rgba(0, 0, 0, 0.831);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    
+}
 
 .closeButton {
     background: orange;

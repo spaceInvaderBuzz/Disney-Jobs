@@ -10,6 +10,8 @@ import JobView from "@/views/JobView.vue";
 import ProfilePage from "@/views/TheProfile.vue";
 import JobApplication from '@/views/JobApplication.vue';
 import CareersHeroPage from '@/views/CareersHeroPage.vue';
+import MoviePage from '@/views/MoviePage.vue';
+
 
 
 const router = createRouter({
@@ -73,6 +75,12 @@ const router = createRouter({
       path: "/careers",
       name: "CareersHeroPage",
       component: CareersHeroPage,
+    },
+    {
+      path: "/films/results/:id",
+      name: "MoviePage",
+      component: MoviePage,
+      props: true
     },
   ],
   scrollBehavior(){

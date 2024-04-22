@@ -48,7 +48,7 @@
                     <img src="/src/assets/images/Untitled_Artwork 27.png" alt="">
                     <div class="layer"></div>
                     <div class="action">
-                        <a href="#">Launch</a>
+                        <router-link :to="{ path: '/films/results/1' }">Launch</router-link>
                     </div>
                 </div>
                 <div class="item">
