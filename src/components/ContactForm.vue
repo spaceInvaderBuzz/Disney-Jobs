@@ -1,46 +1,50 @@
 
 
 <template>
-    <div class="container">
-        <div class="form-text">
-            <h1> Contact Us</h1>
-            <p>we would love to hear your bullshit And pretend that we care!</p>
-        </div>
-    </div>
-    
-    <section class="contact-form">
-        <div class="container">
-                <form>
-                    <div class="input-container">
-                        <input type="text" class="input">
-                        <label for="">Username</label>
-                        <span>Username</span>
-                    </div>
-                    <div class="input-container">
-                        <input type="email" class="input">
-                        <label for="">Email</label>
-                        <span>Email</span>
-                    </div>
-                    <div class="input-container">
-                        <input type="tel" class="input">
-                        <label for="">Phone</label>
-                        <span>Phone</span>
-                    </div>
-                    <div class="input-container">
-                       <textarea name="message" class="input"></textarea>
-                        <label for="">Message</label>
-                        <span>Message</span>
-                    </div>
-                    <input type="submit" value="send" class="btn">
-                </form>
-                <div class="image">
-                    <img src="/src/assets/images/Untitled_Artwork 20.png" alt="">
-                </div>
+    <div class="background">
 
-                   
-            
+        <div class="container">
+            <div class="form-text">
+                <h1> Contact Us</h1>
+                <p>we would love to hear your bullshit And pretend that we care!</p>
+            </div>
         </div>
-    </section>
+        
+        <section class="contact-form">
+            <div class="container">
+                    <form>
+                        <div class="input-container">
+                            <input type="text" class="input">
+                            <label for="">Username</label>
+                            <span>Username</span>
+                        </div>
+                        <div class="input-container">
+                            <input type="email" class="input">
+                            <label for="">Email</label>
+                            <span>Email</span>
+                        </div>
+                        <div class="input-container">
+                            <input type="tel" class="input">
+                            <label for="">Phone</label>
+                            <span>Phone</span>
+                        </div>
+                        <div class="input-container">
+                           <textarea name="message" class="input"></textarea>
+                            <label for="">Message</label>
+                            <span>Message</span>
+                        </div>
+                        <input type="submit" value="send" class="btn">
+                    </form>
+                    <div class="image">
+                        <img src="/src/assets/images/Untitled_Artwork 20.png" alt="">
+                    </div>
+    
+                       
+                
+            </div>
+        </section>
+    </div>
+   
   
 </template>
 
@@ -75,12 +79,27 @@ inputs.forEach((input) => {
 
 <style scoped>
 
+
+.background {
+    background: url("/src/assets/images/Untitled_Artwork 98.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+
+
+
+}
+
 form {
-    
+    background: linear-gradient(135deg,rgba(255,255,255,0.1), rgba(255,255,255,0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+
     padding: 2.3rem 2.2rem;
     z-index: 10;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.6);
 }
 
 .input-container span {
@@ -90,7 +109,7 @@ form {
     transform: translateY(-50%);
     font-size: 0.8rem;
     padding: 0 0.4rem;
-    
+    display: none;
     pointer-events: none;
     z-index: 500;
   
@@ -109,6 +128,7 @@ form {
 .input-container span:before,
 .input-container span:after {
     content: '';
+    background: rebeccapurple;
     position: absolute;
     width: 10%;
     opacity: 0;
@@ -127,7 +147,7 @@ form {
 }
 
 .input-container span:after {
-    right: 50%;;
+    right: 50%;
 }
 
 .input-container.focus label {
@@ -141,6 +161,7 @@ form {
 .input-container.focus span:after {
     width: 50%;
     opacity: 1;
+
 }
 
 

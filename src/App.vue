@@ -1,8 +1,12 @@
 <template>
-  
+
+  <div v-if="pageLoaded && imgPageLoaded">
+
     <main-nav v-if="!navigation"></main-nav>
    
-      <router-view></router-view>
+    <router-view></router-view>
+  </div>
+    
     
     
 
@@ -20,8 +24,8 @@ import Films from './views/Films.vue';
 import TheLoginPage from '@/views/TheLoginPage.vue';
 import { mapState, mapActions } from 'pinia';
 import JobApplication from './views/JobApplication.vue';
-import { useUserStore, GET_USER_PROFILE_IMG, GET_CURRENT_USER, SET_PROFILE_INITIALS, CHANGE_USER} from '@/piniastores/user';
-
+import { useUserStore, GET_USER_PROFILE_IMG, GET_CURRENT_USER, SET_PROFILE_INITIALS, CHANGE_USER,LOAD_PAGE} from '@/piniastores/user';
+import { useJobsStore, FETCH_JOBS} from './piniastores/jobs';
 
 
 export default {
@@ -39,6 +43,10 @@ export default {
     if(this.user){
       await this.GET_CURRENT_USER();
       await this.GET_USER_PROFILE_IMG();
+      await this.FETCH_JOBS();
+      
+
+
     };
     
     this.checkRoute();
@@ -46,8 +54,8 @@ export default {
  
   },
  methods: {
-  ...mapActions(useUserStore, [GET_USER_PROFILE_IMG, GET_CURRENT_USER,SET_PROFILE_INITIALS,CHANGE_USER]),
-  ...mapState(useUserStore, ["user"]),
+  ...mapActions(useUserStore, [GET_USER_PROFILE_IMG, GET_CURRENT_USER,SET_PROFILE_INITIALS,CHANGE_USER,LOAD_PAGE]),
+  ...mapActions(useJobsStore, [FETCH_JOBS]),
 
   
   checkRoute(){
@@ -57,6 +65,9 @@ export default {
       return;
     } this.navigation = false;
   },
+ },
+ computed: {
+  ...mapState(useUserStore, ["user", "pageLoaded","imgPageLoaded"]),
  },
  watch: {
   $route(){

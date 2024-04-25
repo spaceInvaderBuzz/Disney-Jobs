@@ -1,4 +1,8 @@
 <template>
+    <div v-if="!dataFetchedComplete" class="loading">
+        <img src="/src/assets/images/mickey-mouse-steamboat-willie.gif">
+    </div>
+    <div v-if="dataFetchedComplete"></div>
     <div v-if="loading" class="loading">
         <img src="/src/assets/images/mickey-mouse-steamboat-willie.gif" alt="">
         Loading
@@ -63,7 +67,7 @@
         
                     
                     <div class="input-container">
-                        <label :for="profilePageFirstName">FirstName: {{ profilePageFirstName }}</label> 
+                        <label :for="profilePageFirstName">FirstName:</label> 
                     <input type="text" id="profilePageFirstName" v-model="profilePageFirstName" @keydown="changePiniaInfo"/>
                     </div>
                     
@@ -263,16 +267,16 @@ methods: {
       
 },
 computed: {
-    ...mapState(useUserStore, ["profileImg","profileEmail","profileUserName", "profileFirstName","profileLastName","profileResume","profileResume","profileImgURL", "user"]),
+    ...mapState(useUserStore, ["dataFetchedComplete","profileImg","profileEmail","profileUserName", "profileFirstName","profileLastName","profileResume","profileResume","profileImgURL", "user"]),
 },
 mounted(){
-    setTimeout(() => {
-        this.changeName();
-        console.log(this.profileResume);
-    }, 1000);
    
     
     
+},
+
+created(){
+   this.changeName();
 },
 
 

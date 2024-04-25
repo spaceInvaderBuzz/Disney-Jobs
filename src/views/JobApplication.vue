@@ -1,24 +1,54 @@
 <template>
     <body>
-        <section class="poop">
-            <label :for="resumePageFirstName">FirstName: {{ profilePageFirstName }}</label> 
+        <form class="poop">
+            <label :for="resumePageFirstName">FirstName:</label> 
             <input type="text" id="resumePageFirstName" v-model="resumePageFirstName"/>
+
+
             <label :for="profilePageLastName">LasttName:</label> 
             <input type="text" id="profilePageLastName" v-model="resumePageLastName"/>
+
+
             <label :for="profilePageUserName">Username:</label> 
             <input type="text" id="profilePageUserName" v-model="resumePageUsername"/>
+
+
             <label :for="profilePageEmail">Email</label> 
             <input type="text" disabled id="profilePageEmail" v-model="resumePageEmail"/>
+
+
             <label>Uplaod Resume</label>
             <input type="file" :value="resumePageResume">
-            <label for="experience">Experience</label>
-            <input type="text">
-            <label for="experience">Education</label>
-            <input type="text">
+
+
+
+            <div class="job-experience" v-for="(item,index) in workExperience" :key="index">
+                <label for="job-title">Job Title {{ item.itemId}}</label>
+                <input type="text" required v-model="item.jobTitle">
+
+                <label for="Company"></label>
+                <input type="text" required v-model="item.company">
+
+
+                <label for="role-description"></label>
+                <input type="textarea" v-model="item.roleDescription">
+
+
+                <div @click="deleteItem(item.itemId)" class="delete-experience">D E L E T E</div>
+                
+
+
+
+            </div>
+
+
+            <button @click="addWorkExperience" class="button">Add Experience</button>
+
+
             <div class="error">{{fileErr}}</div>
             <div>{{ err }}</div>
             <button @click="apply">Apply</button>
-        </section>
+        </form>
       
     </body>
     
@@ -41,6 +71,7 @@ export default {
 name: "JobApplication",
 data(){
     return {
+        workExperience: [],
         resumePageFirstName: "", 
         resumePageLastName: "",
         resumePageUsername: "",
@@ -49,26 +80,40 @@ data(){
     };
 },
 methods: {
-    ...mapActions(useUserStore, [GET_CURRENT_USER]),
+    ...mapActions(useUserStore,[GET_CURRENT_USER]),
+
     populateInfo(){
-        this.resumePageFirstName = this.profileFirstName, 
-        this.resumePageLastName = this.profileLasttName, 
-        this.resumePageUsername =  this.profileUserName,
-        this.resumePageEmail = this.profileEmail,
-        this.resumePageResume = this.profileResume
+        this.resumePageFirstName = this.profileFirstName;
+        this.resumePageLastName = this.profileLastName;
+        this.resumePageUsername =  this.profileUserName;
+        this.resumePageEmail = this.profileEmail;
+        this.resumePageResume = this.profileResume;
     },
+    addWorkExperience(){
+        const uid = Math.floor(Math.random() * 10000000 );
+        this.workExperience.push({
+            itemId: uid,
+            jobTitle: "",
+            company: "",
+            roleDescription: "",
+        });
+    },
+    deleteItem(parameter){
+        this.workExperience = this.workExperience.filter((experience) => experience.itemId !== parameter);
+    }
 },
 
 comuputed: {
     ...mapState(useUserStore, ["profileFirstName", "profileLastName", "profileUserName", "profileEmail", "profileResume"]),
 },
+created(){
+    
+    this.GET_CURRENT_USER();
+},
+
 mounted(){
-    setTimeout(() => {
-        this.populateInfo();
-    }, 1000);
-  
-   
-}
+    console.log(this.profileFirstName);
+},
 };
 </script>
 

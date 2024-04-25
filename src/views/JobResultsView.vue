@@ -1,5 +1,5 @@
 <template>
-    <div class="black-background">
+    <div :class="{ blackBackgroundAllResults: displayedJobs.length >= 8, blackBackgroundHalfResults: displayedJobs.length <= 4 }">
         <nav class="main-nav">
             <ul class="main-items">
                 <div class="logo">Disney Careers</div>
@@ -20,50 +20,128 @@
        
         <div class="flex-cool">
            
-            <job-listings></job-listings>
+            <div class="container">
+                <p>job listings componet</p>
+                <div v-if="displayedJobs.length > 0">
+                    <ol>
+                        <the-job-listing v-for="job in displayedJobs" :key="job.id" :job="job"></the-job-listing>
+                    </ol>
+                    <div class="currentpage">Page {{ currentPage }}</div>
+                    <div class="previous-and-next">
+                        <div>
+                            <router-link v-if="previousPage" :to="{ name: 'JobResults', query: { page:previousPage } }">Previous</router-link>
+                        </div>
+                        <div>
+                            <router-link v-if="nextPage" :to="{ name: 'JobResults', query: { page:nextPage } }">Next</router-link>
+                        </div>
+                    </div>
+                </div>
+                <div v-else class="no-results"></div>
+                
+                
+               
+            </div>
         </div>
+        
     </div>
     
 
 </template>
 
 <script>
+import axios from "axios";
 import ChangesSavedModal from '@/components/ChangesSavedModal.vue';
 import JobListings from '@/components/JobListings.vue';
 import JobFiltersSidebar from '../components/JobFiltersSidebar.vue';
 import { mapState, mapActions } from 'pinia';
-import { useUserStore, GET_CURRENT_USER, SET_PROFILE_INITIALS, CHANGE_USER} from '@/piniastores/user';
+import { useUserStore, GET_CURRENT_USER, SET_PROFILE_INITIALS, CHANGE_USER } from '@/piniastores/user';
+import { useJobsStore, FILTERED_JOBS, FETCH_JOBS } from '@/piniastores/jobs';
+import TheJobListing from "@/components/TheJobListing.vue";
+
+
+
 
 export default {
     name: "JobResultsView",
+    props: ["displayedJobs"],
     data(){
         return {
-        
+            allResults: "",
+            halfResults: "",
         };
     },
     components: {
         JobFiltersSidebar,
         JobListings,
-        ChangesSavedModal
+        ChangesSavedModal,
+        TheJobListing
+    },
+
+    methods: {
+        ...mapActions(useJobsStore, [FETCH_JOBS]),
+        
+       
     },
    
 
     computed: {
         ...mapState(useUserStore, ["user", "profileFirstName","profileLastName","profileInitials", "profileUserName"]), //u can acces this.profilefirstname isntead of ths.userStore.blablabla
-       localUser(){
+      
+        localUser(){
         return this.user ? true : false;
        },
+
+       currentPage(){
+            return Number.parseInt(this.$route.query.page || "1");
+        },
+        previousPage() {
+            const previousPage = this.currentPage - 1;
+            const firstPage = 1;
+            return previousPage >= firstPage ? previousPage : undefined;  //3
+        },
+        ...mapState(useJobsStore,["jobs", FILTERED_JOBS]), //when we extract getters, they are called automaitclaly
+
+            nextPage() {
+            const nextPage = this.currentPage + 1;
+            const maxPage = this.FILTERED_JOBS.length / 10;
+            return nextPage <= maxPage ? nextPage : undefined; 
+        },
+        displayedJobs() {
+            
+            
+            const firstJobIndex = (this.currentPage - 1) * 10;
+            const lastJobIndex = this.currentPage * 10;
+            return this.FILTERED_JOBS.slice(firstJobIndex,lastJobIndex);
+        },
+        
     },
-    mounted(){
-       
-    }
+    async mounted(){
+        this.FETCH_JOBS();
+        
+    },
 };
 </script>
 
 <style scoped>
-.black-background {
+
+
+.no-results{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: green;
+}
+.blackBackgroundAllResults {
     background: url("/src/assets/images/Untitled_Artwork 62.png");
     background-position: center center/cover;
+    height: 7000px;
+}
+.blackBackgroundHalfResults  {
+    background: url("/src/assets/images/Untitled_Artwork 62.png");
+    background-position: center center/cover;
+    height: 400px;
 }
 
 .filter-nav {
@@ -92,6 +170,28 @@ export default {
     position: sticky;
     top: 0;
     z-index: 3;
+}
+
+.no-results {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: green;
+}
+
+.previous-and-next {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0;
+}
+.black-background {
+    background: black;
+}
+.currentpage {
+    display: flex;
+    justify-content: center;
 }
 
 </style>

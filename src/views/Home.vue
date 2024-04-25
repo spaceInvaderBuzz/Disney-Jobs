@@ -76,27 +76,33 @@
             </section>
             <section class="faq">
                 <div class="container">
-                    <h3>
+                    <h3 class="header-for-faq">
                         Frequently Asked QWuest
                     </h3>
                     <div class="faq-content">
                         <div class="faq-group">
-                            <div @click="openQuestion1" class="faq-group-header">
-                                <h4>
-                                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis explicabo, nostrum id sapiente porro pariatur.  
-                                </h4>
-                                <i v-if="isOpen1" class="fas fa-minus"></i>
-                                <i v-else class="fas fa-plus"></i>
-                                
-                            </div>
+
+                     
+                                <div @click="openQuestion1" class="faq-group-header">
+
+                                    <h4>
+                                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis explicabo, nostrum id sapiente porro pariatur.  
+                                    </h4>
+                                    <i v-if="isOpen1" class="fas fa-minus"></i>
+                                    <i v-else class="fas fa-plus"></i>
+                                    
+                                </div>
+                        <transition name="faq">
                             <div v-if="isOpen1" class="faq-group-body">
                                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
                             </div>
+                        </transition>
+                            
                         </div>
                     </div>
                     <div class="faq-content">
                         <div class="faq-group">
-                            <div @click="openQuestion2" class="faq-group-header">
+                            <div @click="openQuestion2" class="faq-group-header1">
                                 <h4>
                                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis explicabo, nostrum id sapiente porro pariatur.  
                                 </h4>
@@ -104,9 +110,11 @@
                                 <i v-else class="fas fa-plus"></i>
                                 
                             </div>
+                            <transition name="faq">
                             <div v-if="isOpen2" class="faq-group-body">
                                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
                             </div>
+                            </transition>
                         </div>
                     </div>
                     <div class="faq-content">
@@ -115,13 +123,35 @@
                                 <h4>
                                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis explicabo, nostrum id sapiente porro pariatur.  
                                 </h4>
+                                
                                 <i v-if="isOpen3" class="fas fa-minus"></i>
                                 <i v-else class="fas fa-plus"></i>
                                 
                             </div>
+                            <transition name="faq">
                             <div v-if="isOpen3" class="faq-group-body">
                                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
                             </div>
+                            </transition>
+                        </div>
+                    </div>
+                    <div class="faq-content">
+                        <div class="faq-group">
+                            <div @click="openQuestion4" class="faq-group-header1">
+                                <h4>
+                                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis explicabo, nostrum id sapiente porro pariatur.  
+                                </h4>
+                               
+                                <i v-if="isOpen4" class="fas fa-minus"></i>
+                                <i v-else class="fas fa-plus"></i>
+                               
+                                
+                            </div>
+                            <transition name="faq">
+                            <div v-if="isOpen4" class="faq-group-body">
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
+                            </div>
+                            </transition>
                         </div>
                     </div>
                     <div class="faq-content">
@@ -130,13 +160,17 @@
                                 <h4>
                                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis explicabo, nostrum id sapiente porro pariatur.  
                                 </h4>
+                               
                                 <i v-if="isOpen4" class="fas fa-minus"></i>
                                 <i v-else class="fas fa-plus"></i>
+                               
                                 
                             </div>
+                            <transition name="faq">
                             <div v-if="isOpen4" class="faq-group-body">
                                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
                             </div>
+                            </transition>
                         </div>
                     </div>
                     
@@ -194,23 +228,51 @@ window.addEventListener('scroll', function() {
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mouse+Memoirs&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Princess+Sofia&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 
-.faq {
-    color: white;
-    background: red;
-    margin: 40px 0;
+
+
+
+
+
+.faq-content .faq-group-body {
+    margin-top: 40px;
 }
 
-.faq-group {
+
+.header-for-faq {
+    margin: 50px 0;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.faq-content i {
+    margin-right: 15px ;
+}
+.faq {
+    color: white;
+    margin: 100px 0;
+}
+
+.faq-group-body {
     border-bottom: 1px solid #ccc;
-    padding-bottom: 20px;
-    background: rebeccapurple;
+    padding: 0 20px 20px 20px;
 }
 
 .faq .faq-group-header {
     padding: 20px 0;
-    margin-bottom: 15px;
+    margin-bottom: 13px;
+    position: relative;
+    padding: 20px;
+}
+.faq .faq-group-header1 {
+    padding: 20px 0;
+    margin-bottom: 13px;
     position: relative;
 }
+
+
+
 
 .faq .faq-group .faq-group-header i {
     position: absolute;
@@ -220,16 +282,56 @@ window.addEventListener('scroll', function() {
     cursor: pointer;
 
 }
+.faq .faq-group .faq-group-header1 i {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    font-size: 1.3rem;
+    cursor: pointer;
 
-
-
-.careers {
-    background: yellow;
-    margin: 50px 0;
 }
 
+
+.faq-group-header {
+    background: rgb(53, 53, 53);
+    cursor: pointer;
+    transition: 0.3s ;
+}
+.faq-group-header1 {
+    cursor: pointer;
+    transition: 0.3s ;
+}
+
+
+.faq-group-header:hover {
+    background: #ff004f;
+}
+.faq-group-header1:hover {
+    background: #ff004f;
+}
+
+
+
+
+.careers::before {
+    content: '';
+    position: absolute;
+    height: 100px;
+    background:  #ff004f;
+    top: 1880px;
+    right: 0;
+    left: 0;
+    transform: skewY(-2.5deg);
+
+    
+}
+
+.careers {
+    background:  #ff004f ;
+    margin: 50pxrgb(255, 255, 255)}
+
 .careers .container {
-    background: rebeccapurple;
+    
     color: white;
     display: grid;
     gap: 20px;
@@ -497,7 +599,7 @@ a:hover i {
 body {
     position: absolute;
     z-index: -2;
-    background-color: rgb(13, 2, 2);
+    background-color: rgb(0, 0, 0);
 }
 
 .video-section {

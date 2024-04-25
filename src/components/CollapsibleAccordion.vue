@@ -6,10 +6,17 @@
             <div :class="caretIcon"></div>
         </div>
     </div>
-    
+    <transition name="options">
+
+  
     <div class="accordion-parent" v-if="isOpen">
-        <slot></slot>
+
+        
+            <slot></slot>
+    
+     
     </div>
+</transition>
   </div>
 </template>
 
@@ -39,6 +46,20 @@ computed: {
 </script>
 
 <style scoped>
+
+
+.options-enter-active,
+.options-leave-active {
+    transition: all 0.5s ease;
+}
+
+.options-enter-from,
+.options-leave-to {
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+
 
 .fa-solid.fa-caret-down.rotate {
     
