@@ -8,6 +8,9 @@ import './index.css';
 import App from './App.vue'
 import router from './router'
 
+
+
+
 let app;
 firebase.auth().onAuthStateChanged(() => {
     if(!app){

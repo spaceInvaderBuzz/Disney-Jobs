@@ -1,12 +1,11 @@
 <template>
 
-  <div v-if="pageLoaded && imgPageLoaded">
+
 
     <main-nav v-if="!navigation"></main-nav>
    
     <router-view></router-view>
-  </div>
-    
+      
     
     
 
@@ -43,11 +42,12 @@ export default {
     if(this.user){
       await this.GET_CURRENT_USER();
       await this.GET_USER_PROFILE_IMG();
-      await this.FETCH_JOBS();
+  
       
 
 
     };
+    await this.FETCH_JOBS();
     
     this.checkRoute();
     

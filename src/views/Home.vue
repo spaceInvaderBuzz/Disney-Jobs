@@ -317,8 +317,8 @@ window.addEventListener('scroll', function() {
     content: '';
     position: absolute;
     height: 100px;
-    background:  #ff004f;
-    top: 1880px;
+    background: #ff004f;
+    top: 1840px;
     right: 0;
     left: 0;
     transform: skewY(-2.5deg);

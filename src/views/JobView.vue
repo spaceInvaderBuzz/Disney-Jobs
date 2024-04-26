@@ -1,5 +1,5 @@
 <template>
-  <div v-if="dataFetchedComplete">
+
 
     <div class="skidmark">
       <div class="background">
@@ -13,11 +13,13 @@
                    <div class="name-and-last-name">Welcome, {{ profileFirstName }}, {{profileLastName}}!</div>
                  </div>
                  <div class="profile-info">
+                  
+                  <router-link class="profile-button" :to="{ name: 'ProfilePage'}">Profile</router-link>
+                  <div class="profile-button" @click="signOut">Sign Out</div>
                   <div class="profile-image-container">
                     <img :src="profileImg" alt="">
                    
                   </div>
-                  <router-link class="profile-button" :to="{ name: 'ProfilePage'}">Profile</router-link>
                  </div>
                  
                 </div>
@@ -126,7 +128,7 @@
        
     </div>
     </div>
-  </div>
+
 
 
  
@@ -174,12 +176,19 @@ computed: {
 
 methods: {
   ...mapActions(useJobsStore, [FETCH_JOBS]),
+  async signOut(){
+    await firebase.auth().signOut();
+    this.$router.push({name: 'TheLoginPage'});
+  }
 
 },
 
 async mounted(){  //as soon as i moun this and any compontet tnat use the profile img etc, i want to exrtact data from firebase
   await this.FETCH_JOBS();
-  await this.GET_USER_PROFILE_IMG();
+  if (this.user) {
+    await this.GET_USER_PROFILE_IMG();
+  }
+
 }
 };
 
@@ -191,19 +200,30 @@ async mounted(){  //as soon as i moun this and any compontet tnat use the profil
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mouse+Memoirs&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Princess+Sofia&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 
+
+
+
+
+
+
+.profile-email {
+  font-size: 15px;
+  margin-bottom:10px;
+}
 .profile-info {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.profile-info a {
+.profile-info .profile-button {
+  cursor: pointer;
   background: grey;
+  margin: 0 5px;
   text-decoration: none;
   color: white;
   font-size: 12px;
-  padding: 2px;
+  padding: 10px;
   margin-top: 5px;
 }
 
@@ -211,12 +231,13 @@ async mounted(){  //as soon as i moun this and any compontet tnat use the profil
   border-radius: 90px;
   width: 100%;
   height: 100%;
+  margin: 0 15px;
 }
 
 .profile-image-container {
   
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   border-radius: 90px;
 }
 
@@ -224,7 +245,7 @@ async mounted(){  //as soon as i moun this and any compontet tnat use the profil
 
 .nav-split {
   display: flex;
-  gap: 50px;
+  gap: 20px;
   justify-content: center;
   align-items: center;
 }

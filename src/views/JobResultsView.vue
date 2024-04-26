@@ -4,12 +4,32 @@
             <ul class="main-items">
                 <div class="logo">Disney Careers</div>
                 <div v-if="localUser">
-                    Welcome, {{ profileFirstName }}, {{profileLastName}}!
-    
+                  <div class="nav-split">
+                    <div class="loggedIn">
+                      <div class="profile-email">{{ profileEmail }}</div>
+                     <div class="name-and-last-name">Welcome, {{ profileFirstName }}, {{profileLastName}}!</div>
+                   </div>
+                   <div class="profile-info">
+                    
+                    <router-link class="profile-button" :to="{ name: 'ProfilePage'}">Profile</router-link>
+                    <div class="profile-button" @click="signOut">Sign Out</div>
+                    <div class="profile-image-container">
+                      <img :src="profileImg" alt="">
+                     
+                    </div>
+                   </div>
+                   
+                  </div>
+                  
+                    
+                   
+                  
+                    
                 </div>
+               
                 <div v-else class="login-and-signup">
-                    <li><router-link :to="{ name: 'Login' }">Log In</router-link></li>
-                <li><router-link :to="{ name: 'Register' }">Sign Up</router-link></li>
+                    <li><router-link :to="{ name: 'TheLoginPage' }">Log In</router-link></li>
+                <li><router-link :to="{ name: 'TheRegister' }">Sign Up</router-link></li>
                 </div>
                 
             </ul>
@@ -85,7 +105,7 @@ export default {
    
 
     computed: {
-        ...mapState(useUserStore, ["user", "profileFirstName","profileLastName","profileInitials", "profileUserName"]), //u can acces this.profilefirstname isntead of ths.userStore.blablabla
+        ...mapState(useUserStore, ["user", "profileFirstName","profileLastName","profileInitials", "profileUserName","profileImg"]), //u can acces this.profilefirstname isntead of ths.userStore.blablabla
       
         localUser(){
         return this.user ? true : false;
@@ -123,6 +143,59 @@ export default {
 </script>
 
 <style scoped>
+.profile-email {
+    font-size: 15px;
+    margin-bottom:10px;
+  }
+  .profile-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profile-info .profile-button {
+    cursor: pointer;
+    background: grey;
+    margin: 0 5px;
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    padding: 10px;
+    margin-top: 5px;
+  }
+  
+  .profile-image-container img {
+    border-radius: 90px;
+    width: 100%;
+    height: 100%;
+    margin: 0 15px;
+  }
+  
+  .profile-image-container {
+    
+    width: 70px;
+    height: 70px;
+    border-radius: 90px;
+  }
+  
+  
+  
+  .nav-split {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .name-and-last-name {
+    font-weight: 700;
+    font-size: 1.3rem;
+  }
+
+
+
+
+
 
 
 .no-results{
@@ -136,12 +209,12 @@ export default {
 .blackBackgroundAllResults {
     background: url("/src/assets/images/Untitled_Artwork 62.png");
     background-position: center center/cover;
-    height: 7000px;
+    height: 4900px;
 }
 .blackBackgroundHalfResults  {
     background: url("/src/assets/images/Untitled_Artwork 62.png");
     background-position: center center/cover;
-    height: 400px;
+    height: 2450px;
 }
 
 .filter-nav {

@@ -13,96 +13,126 @@
     
 
     <div class="profile-background">
-        <nav class="main-nav">
-            <ul class="main-items">
-                <div class="logo">Disney Careers</div>
-                <div v-if="localUser">
-                  <div class="nav-split">
-                    <div class="loggedIn">
-                      <div class="profile-email">{{ profileEmail }}</div>
-                     <div class="name-and-last-name">Welcome, {{ profileFirstName }}, {{profileLastName}}!</div>
-                   </div>
-                   <div class="profile-info">
-                    <div class="profile-image-container">
-                      <img :src="profileImg" alt="">
-                     
+        <div class="profile-background-backdrop">
+            <nav class="main-nav">
+                <ul class="main-items">
+                    <div class="logo">Disney Careers</div>
+                    <div v-if="localUser">
+                      <div class="nav-split">
+                        <div class="loggedIn">
+                          <div class="profile-email">{{ profileEmail }}</div>
+                         <div class="name-and-last-name">Welcome, {{ profileFirstName }}, {{profileLastName}}!</div>
+                       </div>
+                       <div class="profile-info">
+                        
+                        <router-link class="profile-button" :to="{ name: 'ProfilePage'}">Profile</router-link>
+                        <div class="profile-button" @click="signOut">Sign Out</div>
+                        <div class="profile-image-container">
+                          <img :src="profileImg" alt="">
+                         
+                        </div>
+                       </div>
+                       
+                      </div>
+                      
+                        
+                       
+                      
+                        
                     </div>
-                    <router-link class="profile-button" :to="{ name: 'ProfilePage'}">Profile</router-link>
-                   </div>
                    
-                  </div>
-                  
+                    <div v-else class="login-and-signup">
+                        <li><router-link :to="{ name: 'TheLoginPage' }">Log In</router-link></li>
+                    <li><router-link :to="{ name: 'TheRegister' }">Sign Up</router-link></li>
+                    </div>
                     
-                   
-                  
+                </ul>
+            </nav>
+        
+        
+                  <div class="profile">
+                    <div class="profile-background-container">
+                        <div class="profile-card-background">
+                            <svg class="svg-thang" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="white" fill-opacity="1" d="M0,0L48,16C96,32,192,64,288,101.3C384,139,480,181,576,208C672,235,768,245,864,213.3C960,181,1056,107,1152,90.7C1248,75,1344,117,1392,138.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+        
+                            <div class="profile-card">
+                                <div class="profile-image-white">
+                                    <div v-if="user" class="profile-image">
+                                        <img :src="profileImg" alt="">
+                                    </div>
+                                    <div v-else class="profile-image">
+                                        <img src="/src/assets/images/Untitled_Artwork 76.png" alt="">
+                                    </div>
+                                    <div class="profile-image-label">
+                                        <i class="fa-solid fa-upload"></i>
+                                        <label for="profile-image">Upload profile image</label>
+                                    <input @change="handleChange2" type="file" id="profile-image">
+                                    </div>
+                                    
+                                    <div class="error">{{ fileErr2 }}</div>
+                                    <div>{{ err }}</div>
+        
+                                </div>
+                                
                     
-                </div>
-               
-                <div v-else class="login-and-signup">
-                    <li><router-link :to="{ name: 'TheLoginPage' }">Log In</router-link></li>
-                <li><router-link :to="{ name: 'TheRegister' }">Sign Up</router-link></li>
-                </div>
+                                <div class="inputs-background">
+            
+                                    <div class="input-container">
+                                        <label :for="profilePageFirstName">FirstName:</label> 
+                                    <input type="text" id="profilePageFirstName" v-model="profilePageFirstName" @keydown="changePiniaInfo"/>
+                                    </div>
+                                    
+                                    <div class="input-container">
+                                        <label :for="profilePageLastName">LasttName:</label> 
+                                    <input type="text" id="profilePageLastName" v-model="profilePageLastName"/>
+                                    </div>
+                                    
+                                    <div class="input-container">
+                                        <label :for="profilePageUserName">Username:</label> 
+                                        <input type="text" id="profilePageUserName" v-model="profilePageUsername"/>
+                                    </div>
+                                   
+                                    <div class="input-container">
+                                        <label :for="profilePageEmail">Email</label> 
+                                    <input type="text" disabled id="profilePageEmail" v-model="profilePageEmail"/>
+                                    </div>
+                                    
+                                    
+                                    <div @dragenter.prevent="toggleActive" @dragleave.prevent="toggleActive" @dragover.prevent @drop.prevent="handleDropChange" class="dropzone" :class="{ 'active-dropzone' : active}">
+                                        <span>Drag or Drop File</span>
+                                        <span>OR</span>
+                                        <label for="dropzoneFile">Upload Resume</label>
+                                        <input @change="handleChange" type="file" id="dropzoneFile">
+                                        <div class="error">{{fileErr}}</div>
+                                        <div>{{ err }}</div>
+                                    </div>
+                        
+                                   <button class="update-button" @click="updateProfile">UPDATE</button>
+            
+                                </div>
+                                
                 
-            </ul>
-        </nav>
+                              
+                            </div>
+        
+        
+        
+                        </div>
+                       
+                
+                           
+                    </div>
     
     
-        
-            <div class="profile-background-container">
-                <div class="profile-card">
-                    <div v-if="user" class="profile-image">
-                        <img :src="profileImg" alt="">
-                    </div>
-                    <div v-else class="profile-image">
-                        <img src="/src/assets/images/Untitled_Artwork 76.png" alt="">
-                    </div>
-                    <div class="profile-image-label">
-                        <i class="fa-solid fa-upload"></i>
-                        <label for="profile-image">Upload profile image</label>
-                    <input @change="handleChange2" type="file" id="profile-image">
-                    </div>
-                    
-                    <div class="error">{{ fileErr2 }}</div>
-                    <div>{{ err }}</div>
-        
-                    
-                    <div class="input-container">
-                        <label :for="profilePageFirstName">FirstName:</label> 
-                    <input type="text" id="profilePageFirstName" v-model="profilePageFirstName" @keydown="changePiniaInfo"/>
-                    </div>
-                    
-                    <div class="input-container">
-                        <label :for="profilePageLastName">LasttName:</label> 
-                    <input type="text" id="profilePageLastName" v-model="profilePageLastName"/>
-                    </div>
-                    
-                    <div class="input-container">
-                        <label :for="profilePageUserName">Username:</label> 
-                        <input type="text" id="profilePageUserName" v-model="profilePageUsername"/>
-                    </div>
-                   
-                    <div class="input-container">
-                        <label :for="profilePageEmail">Email</label> 
-                    <input type="text" disabled id="profilePageEmail" v-model="profilePageEmail"/>
-                    </div>
-                    
-                    
-                    <div @dragenter.prevent="toggleActive" @dragleave.prevent="toggleActive" @dragover.prevent @drop.prevent="handleDropChange" class="dropzone" :class="{ 'active-dropzone' : active}">
-                        <span>Drag or Drop File</span>
-                        <span>OR</span>
-                        <label for="dropzoneFile">Upload Resume</label>
-                        <input @change="handleChange" type="file" id="dropzoneFile">
-                        <div class="error">{{fileErr}}</div>
-                        <div>{{ err }}</div>
-                    </div>
-        
-                   <button @click="updateProfile">BIKINI GIRLS</button>
     
-                  
-                </div>
-        
-                   
-            </div>
+    
+    
+                  </div>
+
+
+        </div>
+      
+  
         </div>
             
 
@@ -268,6 +298,9 @@ methods: {
 },
 computed: {
     ...mapState(useUserStore, ["dataFetchedComplete","profileImg","profileEmail","profileUserName", "profileFirstName","profileLastName","profileResume","profileResume","profileImgURL", "user"]),
+    localUser(){
+        return this.user ? true : false;
+    }
 },
 mounted(){
    
@@ -287,6 +320,140 @@ created(){
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mouse+Memoirs&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Princess+Sofia&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
+.profile-email {
+    font-size: 15px;
+    margin-bottom:10px;
+  }
+  .profile-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profile-info .profile-button {
+    cursor: pointer;
+    background: grey;
+    margin: 0 5px;
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    padding: 10px;
+    margin-top: 5px;
+  }
+  
+  .profile-image-container img {
+    border-radius: 90px;
+    width: 100%;
+    height: 100%;
+    margin: 0 15px;
+  }
+  
+  .profile-image-container {
+    
+    width: 70px;
+    height: 70px;
+    border-radius: 90px;
+  }
+  
+  
+  
+  .nav-split {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .name-and-last-name {
+    font-weight: 700;
+    font-size: 1.3rem;
+  }
+
+  .login-and-signup {
+    display: flex;
+    gap: 40px;
+  }
+  .logo {
+    font-size: 50px;
+  }
+  .main-nav {
+    background: rgb(255, 255, 255);
+    padding: 30px ;
+  }
+  .main-items {
+  
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }  
+
+
+
+
+
+  
+.svg-thang {
+    position: absolute;
+    top: 330px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container input {
+    margin: 10px 0;
+    padding: 10px 10px;
+    border-radius:90px;
+    border: 1px solid rgb(98, 98, 98);
+    
+}
+
+.input-container label {
+    font-weight:600;
+}
+
+.input-container:focus {
+    outline: none;
+}
+
+
+
+.update-button {
+    margin: 20px 0;
+    background-color: #ff004f;
+    border: none;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+    width: 100%;
+    
+}
+
+.profile-background-backdrop {
+    background: url("/src/assets/images/Untitled_Artwork 99.png") no-repeat;
+    background-size: contain;
+}
+
+.profile-card {
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+
+
+.profile-image-white {
+    background: #ff004f;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px 0;
+    
+}
 .loading {
     position: absolute;
     top: 0;
@@ -331,11 +498,17 @@ created(){
 }
 
 .profile-image-label {
+    color: white;
     cursor: pointer;
-    background: green;
+   border: 2px solid white;
     padding: 15px;
     font-size: 14px;
     margin: 20px 0;
+    
+}
+
+.profile-image-label label {
+  
 }
 
 .profile-image-label i {
@@ -352,6 +525,7 @@ created(){
     width: 100%;
     height: 100%;
     border-radius: 100px;
+    border: #ffffff 4px solid;
 }
 
 .dropzone {
@@ -398,8 +572,8 @@ created(){
 }
 
 .profile-card {
-    background: white;
-    padding: 50px;
+    background: #ffffff;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -408,15 +582,11 @@ created(){
     
 }
 
-.profile-card input {
-
-}
 .profile-background-container{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: purple;
-    height: 100vh;
+  
     margin: 0 auto;
     max-width: 1100px;
 
@@ -432,7 +602,7 @@ created(){
     font-size: 50px;
   }
   .main-nav {
-    background: rgb(224, 24, 24);
+    background: rgb(255, 255, 255);
     padding: 30px ;
   }
   .main-items {
@@ -470,6 +640,10 @@ created(){
   width: 50px;
   height: 50px;
   border-radius: 90px;
+}
+
+.profile-card-background {
+    position: relative;
 }
 
 

@@ -60,7 +60,7 @@ data(){
 methods: {
     signIn(){
         firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(() => {
-            this.$router.push({name: "Home"});
+         
             this.error = false;
             this.errorMsg = "";
             this.$router.push({name: "JobResults"});
