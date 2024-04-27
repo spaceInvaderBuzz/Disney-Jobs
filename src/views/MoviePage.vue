@@ -35,13 +35,17 @@
     </div>
     
   </section>
+  <the-footer></the-footer>
   
 </template>
 
 <script>
+import TheFooter from '@/components/TheFooter.vue';
+
 export default {
 name: "MoviePage",
 props: ["id"],
+components: { TheFooter },
 }
 </script>
 

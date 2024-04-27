@@ -94,6 +94,8 @@
        
     </div>
     </div>
+   
+ 
 
 
 
@@ -114,10 +116,11 @@ import "firebase/compat/auth";
 import "firebase/compat/storage";
 import db from "@/firebase/firebaseInit";
 import JobsNavbar from '@/components/JobsNavbar.vue';
+import TheFooter from '@/components/TheFooter.vue';
 
 
 export default {
-  components: { JobsNavbar },
+  components: { JobsNavbar, TheFooter },
 name: "JobView",
 props: ["id"],
 

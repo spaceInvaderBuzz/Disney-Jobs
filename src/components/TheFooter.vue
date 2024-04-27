@@ -1,57 +1,60 @@
 <template>
   
-    <footer>
-   
-        <div>
-            <h1>Loruki</h1>
-            <p>Coyright &copy; 2020</p>
+    <footer class="footer-main">
+        <div class="footer-content">
+            <div class="logo">
+                <img src="/src/assets/images/Untitled_Artwork 100.png" alt="">
+            </div>
+            <div class="content">
+                <router-link :to="{ name: 'Home'}">Home</router-link>
+                <router-link :to="{ name: 'Films'}">Films</router-link>
+                <router-link :to="{ name: 'CareersHeroPage' }">Careers</router-link>
+                <router-link :to="{ name: 'Home'}">Home</router-link>
+            </div>
+            <div class="socials">
+                <div class="circle">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </div>
+                <div class="circle">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div class="circle">
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+                <div class="circle">
+                    <i class="fa-brands fa-tiktok"></i>
+                </div>
+            </div>
+            <div class="legal-text">
+                <router-link>Privacy Policy</router-link>
+                <router-link>Terms of Use</router-link>
+                <router-link>Do Not Sell or Share My Personal Information</router-link>
+            </div>
+            <div class="copyright"> &copy; Disney animatyio studios, a few rights reserved</div>
         </div>
-        <nav>
-            <ul class="not-main-nav">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Films</a></li>
-                <li><a href="#">Careers</a></li>
-            </ul>
-        </nav>
-        <div class="social">
-            <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
-            <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
-            <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
-            <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
-        </div>
+
+       
     
   </footer>
 </template>
 
 <script>
 export default {
-    name: 'TheFooterVue'
+    name: 'TheFooterVue',
 
 };
 </script>
 
 <style scoped>
-
-
-
-.not-main-nav {
-    display: flex;
-    list-style: none;
-}
-.not-main-nav a {
-    text-decoration: none;
+.footer-main {
+    background: rgb(32, 32, 32);
 }
 
-footer {
+
+
+
+
     
-    margin-top: auto;
-    background: rebeccapurple;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 100px;
-    
-    
-}
+
 
 </style>

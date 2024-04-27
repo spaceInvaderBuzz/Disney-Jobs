@@ -180,17 +180,19 @@
             
             
     </body>
+ 
   
 </template>
 
 <script>
 import CreativeTextVue from '@/components/CreativeText.vue';
 import ContactFormVue from '@/components/ContactForm.vue';
+import TheFooter from '@/components/TheFooter.vue';
 
 
 export default {
     name: 'Home',
-    components: {CreativeTextVue, ContactFormVue},
+    components: {CreativeTextVue, ContactFormVue, TheFooter},
     mounted(){
         let video = document.querySelector('.video');
 window.addEventListener('scroll', function() {
