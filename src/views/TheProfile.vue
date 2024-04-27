@@ -184,23 +184,6 @@ methods: {
     pushBackToJobPage(){
         this.$route.push({name: "JobListing"});
     },
-
-    toggleActive(){
-        this.active = !this.active;
-    },
-    handleDropChange(e){
-        this.active = !this.active;
-        const types = ["application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
-        const selected2 = e.dataTransfer.files[0];
-        if (selected2 && types.includes(selected2.type)){
-            this.file = selected2;
-            this.fileErr = null;
-            console.log(this.file);
-        } else {
-            this.file = null,
-            this.fileErr = 'Please drag a JPG or PNG file';
-        };
-    },
    
     ...mapActions(useUserStore, [UPDATE_USER_INFO, GET_CURRENT_USER]),
     async updateProfile(){
@@ -249,19 +232,7 @@ methods: {
         this.profilePageResume = this.profileResume;
         
       },   
-    handleChange(e){
-        const types = ["application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
-        console.log(e.target.files[0]);
-        const selected = e.target.files[0]; //this is the file we selected
-        if(selected && types.includes(selected.type)){ 
-            this.file = selected;
-            this.fileErr = null;
-        } else {
-            this.file = null;
-            this.fileErr = 'Please select a document file type'
-        };
-        
-    },
+   
     handleChange2(e){
         const imageTypes = ["image/jpeg","image/png"];
         const selectedImage = e.target.files[0];

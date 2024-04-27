@@ -3,6 +3,9 @@
     
     <body>
 
+        <div v-if="loading">
+            <img src="/src/assets/images/200w.gif" alt="">
+        </div>
        
         <form class="poop">
           
@@ -51,9 +54,15 @@
                 <label for="role-description">Role Description</label>
                 <input type="textarea" v-model="item.roleDescription">
 
+                <label for="from"></label>
+                <input type="date" id="from" v-model="from">
 
-                <div @click="deleteItem(item.itemId)" class="delete-experience">CANCEL</div>
-                <div @click="addItem(item.itemId)" class="add-experience">ADD</div>
+                <label for="to"></label>
+                <input type="date" id="to" v-model="to">
+
+
+                <h2 @click="deleteItem(item.itemId)" class="delete-experience">CANCEL</h2>
+                <h2 @click="addItem(item.itemId)" class="add-experience">ADD</h2>
 
 
 
@@ -62,9 +71,9 @@
             </div>
 
             <div v-for="finishedItem in finishedWorkExperience" :key="finishedItem.itemId">
-                POOOOOOOP
+                {{ finishedItem.jobTitle }}
                 <div @click="editItem(finishedItem.itemId)">EDIT ITEM</div>
-                <div @click="deleteItem">DELETE</div>
+                <div @click="reallyDeleteItem(finishedItem.itemId)">DELETE</div>
             </div>
 
 
@@ -75,14 +84,16 @@
                 <span>OR</span>
                 <label for="dropzoneFile">Upload Resume</label>
                 <input @change="handleChange" type="file" id="dropzoneFile">
-                <div class="error">{{fileErr}}</div>
-                <div>{{ err }}</div>
+                <div class="error">{{resumeErr}}</div>
+                
             </div>
 
 
-            <div class="error">{{fileErr}}</div>
-            <div>{{ err }}</div>
-            <button @click="apply">Apply</button>
+          
+            
+            <button @click.prevent="apply">Apply</button>
+            {{ pleaseSelectOneExperienceMsg }}
+            {{ pleaseUploadResume }}
         </form>
       
     </body>
@@ -105,6 +116,9 @@ export default {
 name: "JobApplication",
 data(){
     return {
+        loading: false,
+        jobId: this.$route.params.id,
+        active: null,
         resume: "",
         workExperience: [],
         finishedWorkExperience: [],
@@ -113,45 +127,66 @@ data(){
         resumePageUsername: "",
         resumePageEmail: "",
         resumePageResume: "",
+        resumeErr: "",
+        pleaseSelectOneExperienceMsg: "",
+        pleaseUploadResume: "",
+        err: "",
     };
 },
 methods: {
 
+  
+
     async apply(){
-           if (this.resume){
-            this.filePath = `resume/${firebase.auth().currentUser.uid}/${this.file.name}`;
+
+    
+           if (this.resume && this.finishedWorkExperience.length !== 0) {
+            this.filePath = `resume/${firebase.auth().currentUser.uid}/${this.resume.name}`;
           
-            //const storageRef = firebase.storage(this.filePath).put(this.file);
-            //const res = await storageRef.put(this.file);  
-            this.loading = true;
-            try{
-                const storage = firebase.storage();
-            const storageRef = storage.ref(this.filePath);
-            await storageRef.put(this.resume, this.jobId);
-            } catch(err) {
-                this.loading = false; 
-                this.err = err.message;
-
-            }
            
-    };
-    const application = db.collection('application').doc(firebase.auth().currentUser.uid);
-    await application.set({
-        jobId: this.$route.params.id,
-        firstName: this.resumePageFirstName,
-        lastName: this.resumePageLastName,
-        username: this.resumePageUsername,
-        email: this.resumePageEmail,
-        address: this.address,
-        city: this.city,
-        state: this.state,
-        zipcode: this.zipcode,
-        finishedWorkExperience: this.finishedWorkExperience,
-        
+          this.loading = true;
+          try{
+          const storage = firebase.storage();
+          const storageRef = storage.ref(this.filePath);
+          await storageRef.put(this.resume, this.jobId);
+          } catch(err) {
+              this.loading = false; 
+              this.err = err.message;
+
+          }
+         
+  
+  const application = db.collection('application').doc(firebase.auth().currentUser.uid);
+  if (this.finishedWorkExperience.length === 0){
+    this.pleaseSelectOneExperienceMsg = "Please select one expeirence";
+    return;
+  }
+  if (this.finishedWorkExperience.length !== 0){
+      await application.set({
+      jobId: this.$route.params.id,
+      firstName: this.resumePageFirstName,
+      lastName: this.resumePageLastName,
+      username: this.resumePageUsername,
+      email: this.resumePageEmail,
+      address: this.address,
+      city: this.city,
+      state: this.state,
+      zipcode: this.zipcode,
+      finishedWorkExperience: this.finishedWorkExperience,
+      
 
 
-    })
-},
+  }); 
+   } 
+   this.pleaseUploadResume = "";
+   this.pleaseSelectOneExperienceMsg = "";
+   this.loading = false;
+   return;  };
+           this.pleaseUploadResume= "please upload a resume"
+          
+   
+
+    },
 
     populateInfo(){
         this.resumePageFirstName = this.profileFirstName;
@@ -167,11 +202,17 @@ methods: {
             jobTitle: "",
             company: "",
             roleDescription: "",
+            from: "",
+            to: "",
+
         });
     },
 
     deleteItem(parameter){
         this.workExperience = this.workExperience.filter((experience) => experience.itemId !== parameter);
+    },
+    reallyDeleteItem(parameter){
+        this.finishedWorkExperience = this.finishedWorkExperience.filter((experience) => experience.itemId !== parameter)
     },
     addItem(parameter){
         this.workExperience.forEach((experience) => {
@@ -186,9 +227,40 @@ methods: {
         this.finishedWorkExperience.forEach((finishedExperience) => {
             if(finishedExperience.itemId === parameter){
                 this.workExperience.push(finishedExperience);
-            }
-        })
-    }
+            };
+        });
+        this.finishedWorkExperience = this.finishedWorkExperience.filter((item) => item.itemId !== parameter)
+    },
+    toggleActive(){
+        this.active = !this.active;
+    },
+    handleDropChange(e){
+        this.active = !this.active;
+        const types = ["application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
+        const selected2 = e.dataTransfer.files[0];
+        if (selected2 && types.includes(selected2.type)){
+            this.resume = selected2;
+            this.resumeErr = null;
+     
+        } else {
+            this.resume = null,
+            this.resumeErr = 'Please drag a document file';
+        };
+    },
+    handleChange(e){
+        const types = ["application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
+      
+        const selected = e.target.files[0]; //this is the file we selected
+        if(selected && types.includes(selected.type)){ 
+            this.resume = selected;
+            this.resumeErr = null;
+        } else {
+            this.resume = null;
+            this.resumeErr = 'Please select a document file type'
+        };
+        
+    },
+
 },
 
 computed: {
@@ -198,6 +270,7 @@ created(){
     setTimeout(() => {
         this.populateInfo();
     }, 2000);
+    console.log(this.jobId);
    
 },
 
