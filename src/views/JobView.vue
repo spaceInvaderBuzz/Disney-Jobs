@@ -94,7 +94,7 @@
        
     </div>
     </div>
-   
+   <the-footer></the-footer>
  
 
 
