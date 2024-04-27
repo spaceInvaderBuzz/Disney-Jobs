@@ -2,7 +2,7 @@
     <div :class="{ blackBackgroundAllResults: displayedJobs.length >= 8, blackBackgroundHalfResults: displayedJobs.length <= 4 }">
         <nav class="main-nav">
             <ul class="main-items">
-                <div class="logo">Disney Careers</div>
+                <div @click="console" class="logo">Disney Careers</div>
                 <div v-if="localUser">
                   <div class="nav-split">
                     <div class="loggedIn">
@@ -75,7 +75,7 @@ import JobListings from '@/components/JobListings.vue';
 import JobFiltersSidebar from '../components/JobFiltersSidebar.vue';
 import { mapState, mapActions } from 'pinia';
 import { useUserStore, GET_CURRENT_USER, SET_PROFILE_INITIALS, CHANGE_USER } from '@/piniastores/user';
-import { useJobsStore, FILTERED_JOBS, FETCH_JOBS } from '@/piniastores/jobs';
+import { useJobsStore, FILTERED_JOBS, FETCH_JOBS, UNIQUE_JOB_LOCATIONS, UNIQUE_DEGREE_TYPES } from '@/piniastores/jobs';
 import TheJobListing from "@/components/TheJobListing.vue";
 
 
@@ -99,6 +99,9 @@ export default {
 
     methods: {
         ...mapActions(useJobsStore, [FETCH_JOBS]),
+        console(){
+            console.log(this.UNIQUE_DEGREE_TYPES);
+        },
         
        
     },
@@ -106,7 +109,7 @@ export default {
 
     computed: {
         ...mapState(useUserStore, ["user", "profileFirstName","profileLastName","profileInitials", "profileUserName","profileImg"]), //u can acces this.profilefirstname isntead of ths.userStore.blablabla
-      
+        ...mapState(useJobsStore, [UNIQUE_JOB_LOCATIONS, UNIQUE_DEGREE_TYPES]),
         localUser(){
         return this.user ? true : false;
        },
@@ -137,6 +140,7 @@ export default {
     },
     async mounted(){
         this.FETCH_JOBS();
+       
         
     },
 };

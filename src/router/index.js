@@ -70,7 +70,7 @@ const router = createRouter({
       component: ProfilePage,
     },
     {
-      path: "/apply",
+      path: "/apply/:id",
       name: "JobApplication",
       component: JobApplication,
     },

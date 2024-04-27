@@ -2,8 +2,7 @@
     <section class="navigations">
     <job-filters-sidebard-organizations></job-filters-sidebard-organizations>
    <job-filters-sidebar-job-types></job-filters-sidebar-job-types>
-   <job-filters-sidebard-organizations></job-filters-sidebard-organizations>
-   <job-filters-sidebar-job-types></job-filters-sidebar-job-types>
+   <job-filters-sidebar-degrees></job-filters-sidebar-degrees>
    
     </section>
   
@@ -14,9 +13,10 @@ import { mapState, mapActions } from "pinia";
 import { useUserStore, CLEAR_FILTERS, SYNC_CLEAR_FILTERS } from '@/piniastores/user';
 import JobFiltersSidebardOrganizations from './JobFiltersSidebardOrganizations.vue';
 import JobFiltersSidebarJobTypes from './JobFiltersSidebarJobTypes.vue';
+import JobFiltersSidebarDegrees from './JobFiltersSidebarDegrees.vue';
 export default {
     name: "JobFiltersSidebar",
-   components: { JobFiltersSidebardOrganizations, JobFiltersSidebarJobTypes },
+   components: { JobFiltersSidebardOrganizations, JobFiltersSidebarJobTypes, JobFiltersSidebarDegrees },
    data(){
     return {
       

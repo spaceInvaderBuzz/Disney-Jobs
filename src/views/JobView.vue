@@ -1,5 +1,5 @@
 <template>
-
+  <div v-if="dataFetchedComplete">
 
     <div class="skidmark">
       <div class="background">
@@ -75,7 +75,7 @@
               </div>
             </div>
            
-            <router-link class="apply-button" :to="{ name: 'JobApplication'}">Apply Now</router-link>
+            <router-link class="apply-button" :to="{ name: 'JobApplication', params: {id: this.$route.params.id } }">Apply Now</router-link>
         </div>
         <div class="benefits">
           <div class=benefit>
@@ -128,7 +128,7 @@
        
     </div>
     </div>
-
+  </div>
 
 
  
@@ -186,7 +186,7 @@ methods: {
 async mounted(){  //as soon as i moun this and any compontet tnat use the profile img etc, i want to exrtact data from firebase
   await this.FETCH_JOBS();
   if (this.user) {
-    await this.GET_USER_PROFILE_IMG();
+  await this.GET_USER_PROFILE_IMG();
   }
 
 }
@@ -198,9 +198,6 @@ async mounted(){  //as soon as i moun this and any compontet tnat use the profil
 
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mouse+Memoirs&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Princess+Sofia&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-
-
-
 
 
 

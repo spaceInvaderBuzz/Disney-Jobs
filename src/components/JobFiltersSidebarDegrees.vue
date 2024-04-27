@@ -1,56 +1,48 @@
 <template>
-    <collapsible-accordion header="Organizations">
+    <collapsible-accordion header="Degree">
         <ul class="the-filters">
-            <li v-for="organization in UNIQUE_ORGANIZATIONS" :key="organization" class="individual-item">
-                <input type="checkbox" :id="organization" :value="organization" v-model="selectedLocalOrganizations" @change="selectOrganization">
-                <label :for="organization">{{ organization }}</label>
+            <li v-for="degree in UNIQUE_DEGREE_TYPES" :key="degree" class="individual-item">
+                <input type="checkbox" :id="degree" :value="degree" v-model="selectedLocalDegrees" @change="selectDegree">
+                <label :for="degree">{{ degree }}</label>
                 
             </li>
            
         </ul>
     </collapsible-accordion>
     
-   
-        
-       
+    
+
 </template>
 
 <script>
-import { mapState, mapStores, mapActions} from "pinia";
-
-import { useJobsStore, UNIQUE_ORGANIZATIONS } from "@/piniastores/jobs"
-import { useUserStore, ADD_SELECTED_ORGANIZATIONS} from "@/piniastores/user"
-
+import { mapState, mapStores, mapActions } from 'pinia';
+import { useJobsStore, UNIQUE_DEGREE_TYPES} from "@/piniastores/jobs";
+import {useUserStore, ADD_SELECTED_DEGREE_TYPES  } from "@/piniastores/user"
 import CollapsibleAccordion from './CollapsibleAccordion.vue';
 
+
 export default {
-    name: "JobFiltersSidebarOrganizations",
+    name: "JobFiltersSidebarDegrees",
     components: { CollapsibleAccordion },
-    props: ['clearing'],   //clearThis
     data(){
         return {
-            selectedLocalOrganizations: [],
-        };
+            selectedLocalDegrees: [],
+        }
     },
     computed: {
-        ...mapState(useJobsStore, [UNIQUE_ORGANIZATIONS]), //alreasy calls it, this is a set 
-        
+        ...mapState(useJobsStore, [UNIQUE_DEGREE_TYPES]),
     },
     methods: {
-        ...mapActions(useUserStore, [ADD_SELECTED_ORGANIZATIONS]),
-        selectOrganization(){
-            this.ADD_SELECTED_ORGANIZATIONS(this.selectedLocalOrganizations);
-       
+        ...mapActions(useUserStore, [ADD_SELECTED_DEGREE_TYPES]),
+        selectDegree(){
+            this.ADD_SELECTED_DEGREE_TYPES(this.selectedLocalDegrees);
         },
-        
-
     },
-   
-  
 };
 </script>
 
 <style scoped>
+
 .individual-item {
     cursor: pointer;
     padding: 5px;

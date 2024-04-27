@@ -2,138 +2,133 @@
     <div v-if="!dataFetchedComplete" class="loading">
         <img src="/src/assets/images/mickey-mouse-steamboat-willie.gif">
     </div>
-    <div v-if="dataFetchedComplete"></div>
-    <div v-if="loading" class="loading">
-        <img src="/src/assets/images/mickey-mouse-steamboat-willie.gif" alt="">
-        Loading
+    <div v-if="dataFetchedComplete">
+        <div v-if="loading" class="loading">
+            <img src="/src/assets/images/mickey-mouse-steamboat-willie.gif" alt="">
+            Loading
+        </div>
+    <div v-if="changesWereSaved" class="changesSaved">
+        <router-link class="closeButton" :to="{ name: 'JobListing', params: { id: '2'} }">changes were saved</router-link>
     </div>
-<div v-if="changesWereSaved" class="changesSaved">
-    <router-link class="closeButton" :to="{ name: 'JobListing', params: { id: '2'} }">changes were saved</router-link>
-</div>
+        
     
-
-    <div class="profile-background">
-        <div class="profile-background-backdrop">
-            <nav class="main-nav">
-                <ul class="main-items">
-                    <div class="logo">Disney Careers</div>
-                    <div v-if="localUser">
-                      <div class="nav-split">
-                        <div class="loggedIn">
-                          <div class="profile-email">{{ profileEmail }}</div>
-                         <div class="name-and-last-name">Welcome, {{ profileFirstName }}, {{profileLastName}}!</div>
-                       </div>
-                       <div class="profile-info">
-                        
-                        <router-link class="profile-button" :to="{ name: 'ProfilePage'}">Profile</router-link>
-                        <div class="profile-button" @click="signOut">Sign Out</div>
-                        <div class="profile-image-container">
-                          <img :src="profileImg" alt="">
-                         
-                        </div>
-                       </div>
-                       
-                      </div>
-                      
-                        
-                       
-                      
-                        
-                    </div>
-                   
-                    <div v-else class="login-and-signup">
-                        <li><router-link :to="{ name: 'TheLoginPage' }">Log In</router-link></li>
-                    <li><router-link :to="{ name: 'TheRegister' }">Sign Up</router-link></li>
-                    </div>
-                    
-                </ul>
-            </nav>
-        
-        
-                  <div class="profile">
-                    <div class="profile-background-container">
-                        <div class="profile-card-background">
-                            <svg class="svg-thang" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="white" fill-opacity="1" d="M0,0L48,16C96,32,192,64,288,101.3C384,139,480,181,576,208C672,235,768,245,864,213.3C960,181,1056,107,1152,90.7C1248,75,1344,117,1392,138.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
-        
-                            <div class="profile-card">
-                                <div class="profile-image-white">
-                                    <div v-if="user" class="profile-image">
-                                        <img :src="profileImg" alt="">
-                                    </div>
-                                    <div v-else class="profile-image">
-                                        <img src="/src/assets/images/Untitled_Artwork 76.png" alt="">
-                                    </div>
-                                    <div class="profile-image-label">
-                                        <i class="fa-solid fa-upload"></i>
-                                        <label for="profile-image">Upload profile image</label>
-                                    <input @change="handleChange2" type="file" id="profile-image">
-                                    </div>
-                                    
-                                    <div class="error">{{ fileErr2 }}</div>
-                                    <div>{{ err }}</div>
-        
-                                </div>
-                                
-                    
-                                <div class="inputs-background">
-            
-                                    <div class="input-container">
-                                        <label :for="profilePageFirstName">FirstName:</label> 
-                                    <input type="text" id="profilePageFirstName" v-model="profilePageFirstName" @keydown="changePiniaInfo"/>
-                                    </div>
-                                    
-                                    <div class="input-container">
-                                        <label :for="profilePageLastName">LasttName:</label> 
-                                    <input type="text" id="profilePageLastName" v-model="profilePageLastName"/>
-                                    </div>
-                                    
-                                    <div class="input-container">
-                                        <label :for="profilePageUserName">Username:</label> 
-                                        <input type="text" id="profilePageUserName" v-model="profilePageUsername"/>
-                                    </div>
-                                   
-                                    <div class="input-container">
-                                        <label :for="profilePageEmail">Email</label> 
-                                    <input type="text" disabled id="profilePageEmail" v-model="profilePageEmail"/>
-                                    </div>
-                                    
-                                    
-                                    <div @dragenter.prevent="toggleActive" @dragleave.prevent="toggleActive" @dragover.prevent @drop.prevent="handleDropChange" class="dropzone" :class="{ 'active-dropzone' : active}">
-                                        <span>Drag or Drop File</span>
-                                        <span>OR</span>
-                                        <label for="dropzoneFile">Upload Resume</label>
-                                        <input @change="handleChange" type="file" id="dropzoneFile">
-                                        <div class="error">{{fileErr}}</div>
-                                        <div>{{ err }}</div>
-                                    </div>
-                        
-                                   <button class="update-button" @click="updateProfile">UPDATE</button>
-            
-                                </div>
-                                
-                
-                              
+        <div class="profile-background">
+            <div class="profile-background-backdrop">
+                <nav class="main-nav">
+                    <ul class="main-items">
+                        <div class="logo">Disney Careers</div>
+                        <div v-if="localUser">
+                          <div class="nav-split">
+                            <div class="loggedIn">
+                              <div class="profile-email">{{ profileEmail }}</div>
+                             <div class="name-and-last-name">Welcome, {{ profileFirstName }}, {{profileLastName}}!</div>
+                           </div>
+                           <div class="profile-info">
+                            
+                            <router-link class="profile-button" :to="{ name: 'ProfilePage'}">Profile</router-link>
+                            <div class="profile-button" @click="signOut">Sign Out</div>
+                            <div class="profile-image-container">
+                              <img :src="profileImg" alt="">
+                             
                             </div>
-        
-        
-        
+                           </div>
+                           
+                          </div>
+                          
+                            
+                           
+                          
+                            
                         </div>
                        
+                        <div v-else class="login-and-signup">
+                            <li><router-link :to="{ name: 'TheLoginPage' }">Log In</router-link></li>
+                        <li><router-link :to="{ name: 'TheRegister' }">Sign Up</router-link></li>
+                        </div>
+                        
+                    </ul>
+                </nav>
+            
+            
+                      <div class="profile">
+                        <div class="profile-background-container">
+                            <div class="profile-card-background">
+                                <svg class="svg-thang" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="white" fill-opacity="1" d="M0,0L48,16C96,32,192,64,288,101.3C384,139,480,181,576,208C672,235,768,245,864,213.3C960,181,1056,107,1152,90.7C1248,75,1344,117,1392,138.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+            
+                                <div class="profile-card">
+                                    <div class="profile-image-white">
+                                        <div v-if="user" class="profile-image">
+                                            <img :src="profileImg" alt="">
+                                        </div>
+                                        <div v-else class="profile-image">
+                                            <img src="/src/assets/images/Untitled_Artwork 76.png" alt="">
+                                        </div>
+                                        <div class="profile-image-label">
+                                            <i class="fa-solid fa-upload"></i>
+                                            <label for="profile-image">Upload profile image</label>
+                                        <input @change="handleChange2" type="file" id="profile-image">
+                                        </div>
+                                        
+                                        <div class="error">{{ fileErr2 }}</div>
+                                        <div>{{ err }}</div>
+            
+                                    </div>
+                                    
+                        
+                                    <div class="inputs-background">
                 
+                                        <div class="input-container">
+                                            <label :for="profilePageFirstName">FirstName:</label> 
+                                        <input type="text" id="profilePageFirstName" v-model="profilePageFirstName" @keydown="changePiniaInfo"/>
+                                        </div>
+                                        
+                                        <div class="input-container">
+                                            <label :for="profilePageLastName">LasttName:</label> 
+                                        <input type="text" id="profilePageLastName" v-model="profilePageLastName"/>
+                                        </div>
+                                        
+                                        <div class="input-container">
+                                            <label :for="profilePageUserName">Username:</label> 
+                                            <input type="text" id="profilePageUserName" v-model="profilePageUsername"/>
+                                        </div>
+                                       
+                                        <div class="input-container">
+                                            <label :for="profilePageEmail">Email</label> 
+                                        <input type="text" disabled id="profilePageEmail" v-model="profilePageEmail"/>
+                                        </div>
+                                        
+                                        
+                                        
+                            
+                                       <button class="update-button" @click="updateProfile">UPDATE</button>
+                
+                                    </div>
+                                    
+                    
+                                  
+                                </div>
+            
+            
+            
+                            </div>
                            
-                    </div>
+                    
+                               
+                        </div>
+        
+        
+        
+        
+        
+                      </div>
     
     
-    
-    
-    
-                  </div>
-
-
-        </div>
+            </div>
+          
       
-  
-        </div>
+            </div>
+    </div>
+    
             
 
     
@@ -154,6 +149,7 @@ import db from "@/firebase/firebaseInit";
 import { mapActions, mapState } from 'pinia';
 import { useUserStore, UPDATE_USER_INFO, GET_CURRENT_USER} from '@/piniastores/user';
 import ChangesSavedModal from '@/components/ChangesSavedModal.vue';
+
 
 
 export default {
@@ -209,22 +205,6 @@ methods: {
     ...mapActions(useUserStore, [UPDATE_USER_INFO, GET_CURRENT_USER]),
     async updateProfile(){
 
-        if (this.file){
-            this.filePath = `covers/${firebase.auth().currentUser.uid}/${this.file.name}`;
-          
-            //const storageRef = firebase.storage(this.filePath).put(this.file);
-            //const res = await storageRef.put(this.file);  
-            this.loading = true;
-            try{
-                const storage = firebase.storage();
-            const storageRef = storage.ref(this.filePath);
-            await storageRef.put(this.file);
-            } catch(err) {
-                this.loading = false; 
-                this.err = err.message;
-
-            };
-        };
         if (this.imageFile){
             this.imageFilePath = `covers/${firebase.auth().currentUser.uid}/${this.imageFile.name}`;
           
@@ -242,7 +222,7 @@ methods: {
                 filePath: this.imageUrl,
             });
             this.loading = null;
-            console.log(this.imageUrl);
+           
             } catch(err) {
                 this.loading = null;
                 this.err = err.message;
@@ -254,7 +234,7 @@ methods: {
            
             
            await this.UPDATE_USER_INFO(this.profilePageFirstName, this.profilePageLastName, this.profilePageUsername, this.file, this.imageUrl);
-        this.theSuccesModal = true;
+      
         
     },
         //this.$router.push({name: "JobResults"});
@@ -309,7 +289,10 @@ mounted(){
 },
 
 created(){
-   this.changeName();
+    setTimeout(() => {
+        this.changeName();
+    }, 2000);
+  
 },
 
 
@@ -507,10 +490,6 @@ created(){
     
 }
 
-.profile-image-label label {
-  
-}
-
 .profile-image-label i {
     margin-right: 10px ;
 }
@@ -528,36 +507,7 @@ created(){
     border: #ffffff 4px solid;
 }
 
-.dropzone {
-    background: orange;
-    width: 400px;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    border: 2px dashed #ff004f;
-    transition: .3s ease all;
-    background: pink;
-    
-}
 
-.dropzone label {
-    padding: 8px 12px;
-    color: white;
-    background: #ff004f;
-    transition: 0.3s ease all;
-    cursor: pointer;
-}
-.dropzone input {
-    display: none;
-}
-
-.active-dropzone {
-    background: yellow;
-
-}
 
 
 

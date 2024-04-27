@@ -47,7 +47,7 @@ export default {
 
 
     };
-    await this.FETCH_JOBS();
+        await this.FETCH_JOBS();
     
     this.checkRoute();
     

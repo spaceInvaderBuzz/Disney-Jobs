@@ -8,7 +8,10 @@ export const FETCH_JOBS = "FETCH_JOBS";
 export const UNIQUE_ORGANIZATIONS = "UNIQUE_ORGANIZATIONS";
 export const FILTERED_JOBS_BY_ORGANIZATIONS = "FILTERED_JOBS_BY_ORGANIZATIONS";
 export const FILTERED_JOBS_BY_JOBTYPES = "FILTERED_JOBS_BY_JOBTYPES";
+export const FILTERED_JOBS_BY_DEGREE = "FILTERED_JOBS_BY_DEGREE";
 export const UNIQUE_JOB_TYPES = "UNIQUE_JOB_TYPES";
+export const UNIQUE_DEGREE_TYPES = "UNIQUE_DEGREE_TYPES";
+export const UNIQUE_JOB_LOCATIONS = "UNIQUE_JOB_LOCATIONS";
 export const FILTERED_JOBS = "FILTERED_JOBS";
 
 export const useJobsStore = defineStore("jobs", {
@@ -34,6 +37,17 @@ export const useJobsStore = defineStore("jobs", {
             return uniqueJobTypes;
            
         },
+        [UNIQUE_DEGREE_TYPES](state){
+            const uniqueDegreeTypes = new Set();
+            state.jobs.forEach((job) => uniqueDegreeTypes.add(job.degree));
+            return uniqueDegreeTypes;
+        },
+
+        
+            
+            
+        
+       
         [FILTERED_JOBS_BY_ORGANIZATIONS](state){
             const userStore = useUserStore();
             if (userStore.selectedOrganizations.length === 0){
@@ -54,8 +68,9 @@ export const useJobsStore = defineStore("jobs", {
 
             const noSelectedOrganizations = userStore.selectedOrganizations.length === 0;
             const noSelectedJobTypes = userStore.selectedJobTypes.length === 0;
+            const noSelectedDegree = userStore.selectedDegreeTypes.length === 0;
 
-            if (noSelectedJobTypes && noSelectedOrganizations) return state.jobs;
+            if (noSelectedJobTypes && noSelectedOrganizations && noSelectedDegree) return state.jobs;
 
             return state.jobs.filter((job) => {
                 if (noSelectedOrganizations) return true;
@@ -63,6 +78,9 @@ export const useJobsStore = defineStore("jobs", {
             }).filter((job) => {
                 if (noSelectedJobTypes) return true;
                 return userStore.selectedJobTypes.includes(job.jobType);
+            }).filter((job) => {
+                if (noSelectedDegree) return true;
+                return userStore.selectedDegreeTypes.includes(job.degree);
             });
                
 

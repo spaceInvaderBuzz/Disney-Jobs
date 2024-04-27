@@ -8,6 +8,7 @@ import db from "@/firebase/firebaseInit";
 export const CLEAR_FILTERS = "CLEAR_FILTERS";
 export const ADD_SELECTED_ORGANIZATIONS = "ADD_SELECTED_ORGANIZATIONS";
 export const ADD_SELECTED_JOB_TYPES = "ADD_SELECTED_JOB_TYPES";
+export const ADD_SELECTED_DEGREE_TYPES = "ADD_SELECTED_DEGREE_TYPES";
 export const SYNC_CLEAR_FILTERS = "SYNC_CLEAR_FILTERS";
 export const GET_CURRENT_USER = "GET_CURRENT_USER";
 export const CHANGE_USER = "CHANGE_USER";
@@ -23,6 +24,7 @@ export const useUserStore = defineStore("user", {
        imgPageLoaded: false,
        selectedOrganizations: [],
        selectedJobTypes: [],
+       selectedDegreeTypes: [],
        user: "",
        profileFirstName: "",
        profileLastName: "", 
@@ -59,7 +61,7 @@ export const useUserStore = defineStore("user", {
       async [GET_USER_PROFILE_IMG](){
          const profileImageDataBase = await db.collection("images").doc(firebase.auth().currentUser.uid);
          const profileImageDataBaseResults = await profileImageDataBase.get();
-         this.profileImg = await profileImageDataBaseResults.data().filePath;
+         this.profileImg = await profileImageDataBaseResults.data().filepath;
          this.imgPageLoaded = true;
          this.dataFetchedComplete = true;
         
@@ -78,6 +80,9 @@ export const useUserStore = defineStore("user", {
        },
        [ADD_SELECTED_JOB_TYPES](paramter){
          this.selectedJobTypes = paramter;
+       },
+       [ADD_SELECTED_DEGREE_TYPES](parameter){
+         this.selectedDegreeTypes = parameter; 
        },
        [CLEAR_FILTERS](){
          this.selectedJobTypes = [];
