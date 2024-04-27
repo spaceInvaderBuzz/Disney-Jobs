@@ -59,7 +59,7 @@ export default {
 
   
   checkRoute(){
-    if (this.$route.path === "/login" || this.$route.name === "JobResults" || this.$route.name === "JobListing" || this.$route.name === "ProfilePage") {
+    if (this.$route.path === "/login" || this.$route.name === "JobResults" || this.$route.name === "JobListing" || this.$route.name === "ProfilePage" || this.$route.name === "ApplicationSuccessful") {
       this.navigation = true;
       
       return;

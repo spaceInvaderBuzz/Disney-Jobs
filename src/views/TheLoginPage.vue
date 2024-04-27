@@ -63,14 +63,16 @@ methods: {
          
             this.error = false;
             this.errorMsg = "";
+            
             this.$router.push({name: "JobResults"});
+            
         })
         .catch((err) => {
             this.error = true;
             this.errorMsg = err.message;
         })
     }
-}
+},
 };
 
 </script>

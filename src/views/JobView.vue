@@ -1,42 +1,8 @@
 <template>
-  <div v-if="dataFetchedComplete">
 
     <div class="skidmark">
       <div class="background">
-        <nav class="main-nav">
-          <ul class="main-items">
-              <div class="logo">Disney Careers</div>
-              <div v-if="localUser">
-                <div class="nav-split">
-                  <div class="loggedIn">
-                    <div class="profile-email">{{ profileEmail }}</div>
-                   <div class="name-and-last-name">Welcome, {{ profileFirstName }}, {{profileLastName}}!</div>
-                 </div>
-                 <div class="profile-info">
-                  
-                  <router-link class="profile-button" :to="{ name: 'ProfilePage'}">Profile</router-link>
-                  <div class="profile-button" @click="signOut">Sign Out</div>
-                  <div class="profile-image-container">
-                    <img :src="profileImg" alt="">
-                   
-                  </div>
-                 </div>
-                 
-                </div>
-                
-                  
-                 
-                
-                  
-              </div>
-             
-              <div v-else class="login-and-signup">
-                  <li><router-link :to="{ name: 'TheLoginPage' }">Log In</router-link></li>
-              <li><router-link :to="{ name: 'TheRegister' }">Sign Up</router-link></li>
-              </div>
-              
-          </ul>
-      </nav>
+        <jobs-navbar></jobs-navbar>
       <div v-for="singleJob in singleJobPage" :key="singleJob">
         <div :class="{ pimg1:singleJob.organization === VueAndMe, pimg2:singleJob.organization === VueTube, pimg3:singleJob.organization === VueCanDoIt }">{{ singleJob.organization }}</div>
       </div>
@@ -128,7 +94,7 @@
        
     </div>
     </div>
-  </div>
+
 
 
  
@@ -147,9 +113,11 @@ import firebase from 'firebase/compat/app';
 import "firebase/compat/auth";
 import "firebase/compat/storage";
 import db from "@/firebase/firebaseInit";
+import JobsNavbar from '@/components/JobsNavbar.vue';
 
 
 export default {
+  components: { JobsNavbar },
 name: "JobView",
 props: ["id"],
 

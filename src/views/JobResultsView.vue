@@ -1,39 +1,6 @@
 <template>
     <div :class="{ blackBackgroundAllResults: displayedJobs.length >= 8, blackBackgroundHalfResults: displayedJobs.length <= 4 }">
-        <nav class="main-nav">
-            <ul class="main-items">
-                <div @click="console" class="logo">Disney Careers</div>
-                <div v-if="localUser">
-                  <div class="nav-split">
-                    <div class="loggedIn">
-                      <div class="profile-email">{{ profileEmail }}</div>
-                     <div class="name-and-last-name">Welcome, {{ profileFirstName }}, {{profileLastName}}!</div>
-                   </div>
-                   <div class="profile-info">
-                    
-                    <router-link class="profile-button" :to="{ name: 'ProfilePage'}">Profile</router-link>
-                    <div class="profile-button" @click="signOut">Sign Out</div>
-                    <div class="profile-image-container">
-                      <img :src="profileImg" alt="">
-                     
-                    </div>
-                   </div>
-                   
-                  </div>
-                  
-                    
-                   
-                  
-                    
-                </div>
-               
-                <div v-else class="login-and-signup">
-                    <li><router-link :to="{ name: 'TheLoginPage' }">Log In</router-link></li>
-                <li><router-link :to="{ name: 'TheRegister' }">Sign Up</router-link></li>
-                </div>
-                
-            </ul>
-        </nav>
+    <jobs-navbar></jobs-navbar>
         <nav class="filter-nav">
             <job-filters-sidebar></job-filters-sidebar>
          </nav>
@@ -77,6 +44,7 @@ import { mapState, mapActions } from 'pinia';
 import { useUserStore, GET_CURRENT_USER, SET_PROFILE_INITIALS, CHANGE_USER } from '@/piniastores/user';
 import { useJobsStore, FILTERED_JOBS, FETCH_JOBS, UNIQUE_JOB_LOCATIONS, UNIQUE_DEGREE_TYPES } from '@/piniastores/jobs';
 import TheJobListing from "@/components/TheJobListing.vue";
+import JobsNavbar from '@/components/JobsNavbar.vue';
 
 
 
@@ -84,18 +52,19 @@ import TheJobListing from "@/components/TheJobListing.vue";
 export default {
     name: "JobResultsView",
     props: ["displayedJobs"],
+    components: {
+        JobFiltersSidebar,
+        JobListings,
+        ChangesSavedModal,
+        TheJobListing, JobsNavbar
+    },
     data(){
         return {
             allResults: "",
             halfResults: "",
         };
     },
-    components: {
-        JobFiltersSidebar,
-        JobListings,
-        ChangesSavedModal,
-        TheJobListing
-    },
+   
 
     methods: {
         ...mapActions(useJobsStore, [FETCH_JOBS]),

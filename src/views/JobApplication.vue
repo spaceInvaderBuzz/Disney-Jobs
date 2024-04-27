@@ -173,10 +173,9 @@ methods: {
       state: this.state,
       zipcode: this.zipcode,
       finishedWorkExperience: this.finishedWorkExperience,
-      
-
 
   }); 
+
    } 
    this.pleaseUploadResume = "";
    this.pleaseSelectOneExperienceMsg = "";

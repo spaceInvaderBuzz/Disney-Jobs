@@ -61,7 +61,7 @@ export const useUserStore = defineStore("user", {
       async [GET_USER_PROFILE_IMG](){
          const profileImageDataBase = await db.collection("images").doc(firebase.auth().currentUser.uid);
          const profileImageDataBaseResults = await profileImageDataBase.get();
-         this.profileImg = await profileImageDataBaseResults.data().filepath;
+         this.profileImg = await profileImageDataBaseResults.data().filePath;
          this.imgPageLoaded = true;
          this.dataFetchedComplete = true;
         

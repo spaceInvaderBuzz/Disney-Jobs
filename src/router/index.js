@@ -11,14 +11,36 @@ import ProfilePage from "@/views/TheProfile.vue";
 import JobApplication from '@/views/JobApplication.vue';
 import CareersHeroPage from '@/views/CareersHeroPage.vue';
 import MoviePage from '@/views/MoviePage.vue';
+import ApplicationSuccessful from '@/views/ApplicationSuccessful.vue'
+import firebase from 'firebase/compat/app';
+import "firebase/compat/auth";
+import 'firebase/compat/storage';
+import db from "@/firebase/firebaseInit";
 
-
-
+const requireAuth = (to, from, next) => {
+  let user = firebase.auth().currentUser;
+  if(!user){
+    next({name: 'Home'})
+  } else {
+    next()
+  }
+  
+};
+const requireAuthApply = (to, from, next) => {
+  let userApply = firebase.auth().currentUser;
+  if(!userApply){
+    next({path: '/login'})
+  } else {
+    next()
+  }
+  
+};
 
 
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+
 
   
   
@@ -68,11 +90,13 @@ const router = createRouter({
       path:"/profile",
       name:"ProfilePage",
       component: ProfilePage,
+      beforeEnter: requireAuth,
     },
     {
       path: "/apply/:id",
       name: "JobApplication",
       component: JobApplication,
+      beforeEnter: requireAuthApply,
     },
     {
       path: "/careers",
@@ -84,6 +108,11 @@ const router = createRouter({
       name: "MoviePage",
       component: MoviePage,
       props: true
+    },
+    {
+      path: "/success",
+      name: "ApplicationSuccessful",
+      component: ApplicationSuccessful,
     },
   ],
   scrollBehavior(){

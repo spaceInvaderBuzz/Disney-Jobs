@@ -1,53 +1,18 @@
 <template>
-    <div v-if="!dataFetchedComplete" class="loading">
-        <img src="/src/assets/images/mickey-mouse-steamboat-willie.gif">
-    </div>
-    <div v-if="dataFetchedComplete">
+    
+    
         <div v-if="loading" class="loading">
             <img src="/src/assets/images/mickey-mouse-steamboat-willie.gif" alt="">
             Loading
         </div>
     <div v-if="changesWereSaved" class="changesSaved">
-        <router-link class="closeButton" :to="{ name: 'JobListing', params: { id: '2'} }">changes were saved</router-link>
+        <div @click="reloadPage" class="closeButton" >changes were saved</div>
     </div>
         
     
         <div class="profile-background">
             <div class="profile-background-backdrop">
-                <nav class="main-nav">
-                    <ul class="main-items">
-                        <div class="logo">Disney Careers</div>
-                        <div v-if="localUser">
-                          <div class="nav-split">
-                            <div class="loggedIn">
-                              <div class="profile-email">{{ profileEmail }}</div>
-                             <div class="name-and-last-name">Welcome, {{ profileFirstName }}, {{profileLastName}}!</div>
-                           </div>
-                           <div class="profile-info">
-                            
-                            <router-link class="profile-button" :to="{ name: 'ProfilePage'}">Profile</router-link>
-                            <div class="profile-button" @click="signOut">Sign Out</div>
-                            <div class="profile-image-container">
-                              <img :src="profileImg" alt="">
-                             
-                            </div>
-                           </div>
-                           
-                          </div>
-                          
-                            
-                           
-                          
-                            
-                        </div>
-                       
-                        <div v-else class="login-and-signup">
-                            <li><router-link :to="{ name: 'TheLoginPage' }">Log In</router-link></li>
-                        <li><router-link :to="{ name: 'TheRegister' }">Sign Up</router-link></li>
-                        </div>
-                        
-                    </ul>
-                </nav>
+                <jobs-navbar></jobs-navbar>
             
             
                       <div class="profile">
@@ -65,7 +30,7 @@
                                         </div>
                                         <div class="profile-image-label">
                                             <i class="fa-solid fa-upload"></i>
-                                            <label for="profile-image">Upload profile image</label>
+                                            <label class="profile-image-thang" for="profile-image">Upload profile image</label>
                                         <input @change="handleChange2" type="file" id="profile-image">
                                         </div>
                                         
@@ -127,7 +92,7 @@
           
       
             </div>
-    </div>
+    
     
             
 
@@ -149,12 +114,13 @@ import db from "@/firebase/firebaseInit";
 import { mapActions, mapState } from 'pinia';
 import { useUserStore, UPDATE_USER_INFO, GET_CURRENT_USER} from '@/piniastores/user';
 import ChangesSavedModal from '@/components/ChangesSavedModal.vue';
+import JobsNavbar from '@/components/JobsNavbar.vue';
 
 
 
 export default {
 name: "ProfilePage",
-components: { ChangesSavedModal },
+components: { ChangesSavedModal, JobsNavbar },
 data(){
     return {
       
@@ -181,9 +147,11 @@ data(){
 },
 methods: {
 
-    pushBackToJobPage(){
-        this.$route.push({name: "JobListing"});
+    reloadPage(){
+        window.location.reload();
     },
+
+   
    
     ...mapActions(useUserStore, [UPDATE_USER_INFO, GET_CURRENT_USER]),
     async updateProfile(){
@@ -434,6 +402,8 @@ created(){
 }
 
 .changesSaved {
+    position: absolute;
+    z-index: 3;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -458,7 +428,24 @@ created(){
     padding: 15px;
     font-size: 14px;
     margin: 20px 0;
+    width: 200px;
+    height: 50px;
+    background: black;
+    position: relative;
     
+}
+
+.profile-image-thang {
+    top: 0;
+    left:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:absolute; 
+    background: rebeccapurple;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
 }
 
 .profile-image-label i {
