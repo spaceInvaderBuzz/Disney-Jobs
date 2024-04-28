@@ -1,5 +1,5 @@
 <template>
-    <div :class="{ blackBackgroundAllResults: displayedJobs.length >= 8, blackBackgroundHalfResults: displayedJobs.length <= 4 }">
+    <div class="blackBackgroundAllResults">
     <jobs-navbar></jobs-navbar>
         <nav class="filter-nav">
             <job-filters-sidebar></job-filters-sidebar>
@@ -23,15 +23,24 @@
                         </div>
                     </div>
                 </div>
-                <div v-else class="no-results"></div>
+                <div v-else class="no-results">
+                    <div class="no-results-img"></div>
+                    <div class="no-results-text">
+                        <h1>No results found</h1>
+                        <p>Looks likew there are no results here. Try searching with less filters</p>
+                    </div>
+                   
+
+                </div>
+                
                 
                 
                
             </div>
         </div>
-        
+     
     </div>
-    
+    <the-footer></the-footer>
 
 </template>
 
@@ -41,22 +50,23 @@ import ChangesSavedModal from '@/components/ChangesSavedModal.vue';
 import JobListings from '@/components/JobListings.vue';
 import JobFiltersSidebar from '../components/JobFiltersSidebar.vue';
 import { mapState, mapActions } from 'pinia';
-import { useUserStore, GET_CURRENT_USER, SET_PROFILE_INITIALS, CHANGE_USER } from '@/piniastores/user';
+import { useUserStore, GET_CURRENT_USER, SET_PROFILE_INITIALS, CHANGE_USER, ADD_SELECTED_DEGREE_TYPES, ADD_SELECTED_ORGANIZATIONS, ADD_SELECTED_JOB_TYPES } from '@/piniastores/user';
 import { useJobsStore, FILTERED_JOBS, FETCH_JOBS, UNIQUE_JOB_LOCATIONS, UNIQUE_DEGREE_TYPES } from '@/piniastores/jobs';
 import TheJobListing from "@/components/TheJobListing.vue";
 import JobsNavbar from '@/components/JobsNavbar.vue';
+import TheFooter from "@/components/TheFooter.vue";
 
 
 
 
 export default {
     name: "JobResultsView",
-    props: ["displayedJobs"],
     components: {
         JobFiltersSidebar,
         JobListings,
         ChangesSavedModal,
-        TheJobListing, JobsNavbar
+        TheJobListing, JobsNavbar,
+        TheFooter,
     },
     data(){
         return {
@@ -71,7 +81,9 @@ export default {
         console(){
             console.log(this.UNIQUE_DEGREE_TYPES);
         },
-        
+        console(){
+            console.log(this.displayedJobs.length);
+        }
        
     },
    
@@ -171,23 +183,17 @@ export default {
 
 
 
-.no-results{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: green;
-}
+
 .blackBackgroundAllResults {
     background: url("/src/assets/images/Untitled_Artwork 62.png");
     background-position: center center/cover;
-    height: 4900px;
+    max-height: 100%;
+    overflow: hidden;
 }
 .blackBackgroundHalfResults  {
     background: url("/src/assets/images/Untitled_Artwork 62.png");
     background-position: center center/cover;
-    height: 2450px;
+    max-height: 100%;
 }
 
 .filter-nav {
@@ -219,14 +225,32 @@ export default {
 }
 
 .no-results {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: green;
+   
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+    height: 100vh;
 }
 
+.no-results-img {
+    margin-top: -200px;
+    background: url("/src/assets/images/Untitled_Artwork\ 103.png") no-repeat;
+    background-size: contain;
+    width: 650px;
+    height: 650px;
+}
+
+.no-results-text {
+    margin-top:-150px;
+    text-align: center;
+}
+.no-results-text h1 {
+    font-size: 5rem;
+}
+.no-results-text p {
+    font-size: 1.3rem;
+}
 .previous-and-next {
     display: flex;
     justify-content: space-between;
