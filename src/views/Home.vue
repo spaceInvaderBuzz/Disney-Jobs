@@ -1,4 +1,5 @@
 <template>
+    
     <body>
         <div class="image-container">
             <creative-text-vue></creative-text-vue>
@@ -178,8 +179,14 @@
             </section>
             <contact-form-vue></contact-form-vue>
             
-            
+            <the-footer></the-footer>
     </body>
+
+    
+       
+   
+    
+    
  
   
 </template>
@@ -629,6 +636,7 @@ section p {
     position: relative;
 
 }
+
 
 
 

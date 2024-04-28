@@ -3,98 +3,169 @@
     
     <body>
 
+
+
         <div v-if="loading">
             <img src="/src/assets/images/200w.gif" alt="">
         </div>
-       
-        <form class="poop">
-          
-            <label :for="resumePageFirstName">FirstName: {{ this.resumePageFirstName}}</label> 
-            <input disabled type="text" id="resumePageFirstName" v-model="resumePageFirstName"/>
 
+        <jobs-navbar></jobs-navbar>
 
-            <label :for="profilePageLastName">LasttName:</label> 
-            <input disabled type="text" id="profilePageLastName" v-model="resumePageLastName"/>
-
-
-            <label :for="profilePageUserName">Username:</label> 
-            <input disabled type="text" id="profilePageUserName" v-model="resumePageUsername"/>
-
-
-            <label :for="profilePageEmail">Email</label> 
-            <input type="text" disabled id="profilePageEmail" v-model="resumePageEmail"/>
-
-
-            <h1>ADDRESS</h1>
-
-
-            <label :for="address"> Address </label> 
-            <input type="text" id="address" v-model="address"/>
-
-            <label :for="city"> City </label> 
-            <input type="text" id="city" v-model="city"/>
-
-            <label :for="state"> State </label> 
-            <input type="text" id="state" v-model="state"/>
-
-            <label :for="zipcode"> State </label> 
-            <input type="text" id="zipcode" v-model="zipcode"/>
-
-            <h1>WORK EXPERIENCE</h1>
-            <button @click="addWorkExperience" class="button">Add Experience</button>
-
-            <div class="job-experience" v-for="(item,index) in workExperience" :key="index">
-                <label for="job-title">Job Title </label>
-                <input type="text" required v-model="item.jobTitle">
-
-                <label for="Company">Company</label>
-                <input type="text" required v-model="item.company">
-
-
-                <label for="role-description">Role Description</label>
-                <input type="textarea" v-model="item.roleDescription">
-
-                <label for="from"></label>
-                <input type="date" id="from" v-model="from">
-
-                <label for="to"></label>
-                <input type="date" id="to" v-model="to">
-
-
-                <h2 @click="deleteItem(item.itemId)" class="delete-experience">CANCEL</h2>
-                <h2 @click="addItem(item.itemId)" class="add-experience">ADD</h2>
-
-
-
-
-
+        <div class="application-hero">
+            <div class="hero-text">
+              <p>DISNEY CAREERS</p>
+              <h1>FIND YOUR </h1>
+              <h1>DREAM JOB</h1>
             </div>
-
-            <div v-for="finishedItem in finishedWorkExperience" :key="finishedItem.itemId">
-                {{ finishedItem.jobTitle }}
-                <div @click="editItem(finishedItem.itemId)">EDIT ITEM</div>
-                <div @click="reallyDeleteItem(finishedItem.itemId)">DELETE</div>
-            </div>
-
-
+           <div class="hero-background"></div>
            
+        </div>
 
-            <div @dragenter.prevent="toggleActive" @dragleave.prevent="toggleActive" @dragover.prevent @drop.prevent="handleDropChange" class="dropzone" :class="{ 'active-dropzone' : active}">
-                <span>Drag or Drop File</span>
-                <span>OR</span>
-                <label for="dropzoneFile">Upload Resume</label>
-                <input @change="handleChange" type="file" id="dropzoneFile">
-                <div class="error">{{resumeErr}}</div>
+
+        <section class="the-application-form">
+            <div class="the-application-form-container">
+
+                <div class="applying-for">
+                    <div class="hero-logo-container">
+                        <img src="/src/assets/images/Untitled_Artwork 101.png" alt="">
+                    </div>
+                    <h3>Applying for:</h3>
+                    <h1>{{ applicationJob[0].title }}</h1>
+                </div>
+                
+               
+                <form class="poop">
+
+                    <div class="email-container">
+                        <label :for="profilePageEmail">Email</label> 
+                    <input type="text" disabled id="profilePageEmail" v-model="resumePageEmail"/>
+                    </div>
+                    
+                    <div class="username">
+                     <label :for="profilePageUserName">Username:</label> 
+                    <input disabled type="text" id="profilePageUserName" v-model="resumePageUsername"/>
+                    </div>
+
+                    <div class="first-and-last-name">
+                        <div class="first-name">
+                            <label :for="resumePageFirstName">FirstName: {{ this.resumePageFirstName}}</label> 
+                            <input disabled type="text" id="resumePageFirstName" v-model="resumePageFirstName"/>
+                          </div>
+                           
+                
+                            <div class="last-name">
+                                <label :for="profilePageLastName">LasttName:</label> 
+                            <input disabled type="text" id="profilePageLastName" v-model="resumePageLastName"/>
+                            </div>
+                    </div>
+                
+                    
+        
+        
+                    
+        
+        
+                   
+        
+        
+                    <h1>ADDRESS</h1>
+        
+        
+                    <label :for="address"> Address </label> 
+                    <input type="text" id="address" v-model="address"/>
+        
+                    <label :for="city"> City </label> 
+                    <input type="text" id="city" v-model="city"/>
+        
+                    <label :for="state"> State </label> 
+                    <input type="text" id="state" v-model="state"/>
+        
+                    <label :for="zipcode"> State </label> 
+                    <input type="text" id="zipcode" v-model="zipcode"/>
+        
+                    <h1>WORK EXPERIENCE</h1>
+                    <button @click="addWorkExperience" class="button">Add Experience</button>
+        
+                    <div class="job-experience" v-for="(item,index) in workExperience" :key="index">
+                        <label for="job-title">Job Title </label>
+                        <input type="text" required v-model="item.jobTitle">
+        
+                        <label for="Company">Company</label>
+                        <input type="text" required v-model="item.company">
+        
+        
+                        <label for="role-description">Role Description</label>
+                        <input type="textarea" v-model="item.roleDescription">
+        
+
+                          <div class="from-and-to">
+                            <div class="from">
+                                <label for="from">from</label>
+                            <input type="date" id="from" v-model="from">
+                            </div>
+                            
+                            <div class="to">
+                                <label for="to">to</label>
+                                <input type="date" id="to" v-model="to">
+                            </div>
+                           
+
+                          </div>
+
+                      
+        
+        
+                        <h2 @click="deleteItem(item.itemId)" class="delete-experience">CANCEL</h2>
+                        <h2 @click="addItem(item.itemId)" class="add-experience">ADD</h2>
+        
+        
+        
+        
+        
+                    </div>
+        
+                    <div v-for="finishedItem in finishedWorkExperience" :key="finishedItem.itemId" class="item-finished">
+                        {{ finishedItem.jobTitle }}
+                        <div class="toggle-button-stuff" @click="toggleEditOrDelete">
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+                        <div v-if="editOrDeleteJob" class="edit-or-delete-thang">
+                            <div @click="editItem(finishedItem.itemId)">EDIT ITEM</div>
+                            <div @click="reallyDeleteItem(finishedItem.itemId)">DELETE</div>
+                        </div>
+                        
+                    </div>
+        
+        
+                   
+        
+                    
+                    <div class="bottom-page">
+                        <div @dragenter.prevent="toggleActive" @dragleave.prevent="toggleActive" @dragover.prevent @drop.prevent="handleDropChange" class="dropzone" :class="{ 'active-dropzone' : active}">
+                            <span>Drag or Drop File</span>
+                            <span>OR</span>
+                            <label for="dropzoneFile">Upload Resume</label>
+                            <input @change="handleChange" type="file" id="dropzoneFile">
+                            <div class="error">{{resumeErr}}</div>
+                            
+                        </div>
+            
+            
+                      
+                        
+                        <button @click.prevent="apply">Apply</button>
+                        {{ pleaseSelectOneExperienceMsg }}
+                        {{ pleaseUploadResume }}
+                    </div>
+                    
+                </form>
+    
                 
             </div>
-
-
-          
             
-            <button @click.prevent="apply">Apply</button>
-            {{ pleaseSelectOneExperienceMsg }}
-            {{ pleaseUploadResume }}
-        </form>
+            
+        </section>
+        
       
     </body>
     
@@ -110,12 +181,16 @@ import "firebase/compat/storage";
 import db from "@/firebase/firebaseInit";
 import { mapActions, mapState } from 'pinia';
 import { useUserStore } from '@/piniastores/user';
+import { useJobsStore } from '@/piniastores/jobs';
+import JobsNavbar from '@/components/JobsNavbar.vue';
 
 
 export default {
+  components: { JobsNavbar },
 name: "JobApplication",
 data(){
     return {
+        editOrDeleteJob: false,
         loading: false,
         jobId: this.$route.params.id,
         active: null,
@@ -135,7 +210,9 @@ data(){
 },
 methods: {
 
-  
+  toggleEditOrDelete(){
+    this.editOrDeleteJob = !this.editOrDeleteJob;
+  },
 
     async apply(){
 
@@ -223,6 +300,7 @@ methods: {
 
     },
     editItem(parameter){
+        this.editOrDeleteJob = false;
         this.finishedWorkExperience.forEach((finishedExperience) => {
             if(finishedExperience.itemId === parameter){
                 this.workExperience.push(finishedExperience);
@@ -263,7 +341,13 @@ methods: {
 },
 
 computed: {
+    ...mapState(useJobsStore, ["jobs"]),
+
     ...mapState(useUserStore, ["dataFetchedComplete","profileFirstName", "profileLastName", "profileUserName", "profileEmail", "profileResume"]),
+
+    applicationJob(){
+        return this.jobs.filter((job) => job.id === this.$route.params.id);
+    }
 },
 created(){
     setTimeout(() => {
@@ -279,6 +363,131 @@ created(){
 
 <style scoped>
 
+.item-finished {
+    font-size: 1.3rem;
+    background: #ff004f;
+    margin: 15px 0;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px;
+}
+
+
+.toggle-button-stuff {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.poop {
+  
+    margin: 0px 30px;
+    padding-top:30px ;
+    border-top: 2px solid rgb(71, 71, 71);
+    
+}
+
+.email-container {
+    width: 100%;
+}
+input {
+    width: 100%;
+    height: 40px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+
+.first-and-last-name {
+    display: flex;
+    gap: 15px;
+    
+    width: 100%;
+    
+}
+
+.first-name {
+    width: 50%;
+}
+
+.last-name {
+    width: 50%;
+}
+
+
+
+.hero-logo-container {
+    width: 50px;
+    height: 50px;
+}
+.hero-logo-container img {
+    width: 100%;
+    height: 100%;
+}
+
+.application-hero {
+    position: relative;
+}
+
+.the-application-form-container {
+    max-width: 900px;
+    margin: 0 auto;
+   
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-text {
+    position: absolute;
+    top:180px;
+    left: 120px;
+    font-size: 2rem;
+}
+
+.hero-background {
+    background: url("/src/assets/images/careers-internships.jpg") no-repeat;
+    background-size: cover;
+    min-height: 500px;
+}
+
+.applying-for {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    margin-bottom: 30px;
+
+
+}
+
+.applying-for h1 {
+    font-size: 2.5rem;
+}
+
+.from-and-to {
+    display: flex;
+    gap:20px;
+    width: 100%;
+
+}
+
+.from {
+    width: 50%;
+}
+.to {
+    width: 50%;
+}
+
+.job-experience {
+    background: rgb(194, 194, 194);
+    padding: 0 20px;
+}
+
 .dropzone {
     background: orange;
     width: 400px;
@@ -288,9 +497,9 @@ created(){
     justify-content: center;
     align-items: center;
     gap: 16px;
-    border: 2px dashed #ff004f;
+    border: 2px dashed #505050;
     transition: .3s ease all;
-    background: pink;
+    background: rgb(255, 255, 255);
     
 }
 
@@ -313,17 +522,24 @@ created(){
 .container {
     background: yellow;
 }
-.poop {
-    padding: 200px 0;
-    height:100vh;
-    width: 100vw;
-    background: rebeccapurple;
+
+.bottom-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
 }
-.poopy { 
-    margin: 50px 0;
-    height: 800px;
-    width: 800px;
-    background: rebeccapurple;
+
+
+button {
+    background: black;
+    border: none;
+    color: white;
+    padding: 13px 20px;
+    margin: 15px 0;
+    cursor: pointer;
 }
+
 
 </style>

@@ -102,6 +102,7 @@ components: { TheFooter },
 
 .movie-page-background {
     background: black;
+    
 }
 
 .movie-page-hero-background {

@@ -69,6 +69,7 @@
    
     
   </div>
+  <the-footer></the-footer>
 </template>
 
 <script>
@@ -76,9 +77,10 @@
 
 import Carousel from "@/components/Carousel.vue";
 import Slide from "@/components/TheSlide.vue";
+import TheFooter from "@/components/TheFooter.vue";
 export default {
 name: 'Filmvue',
-components: {Carousel, Slide},
+components: {Carousel, Slide, TheFooter },
 
 mounted(){
     window.addEventListener('scroll', reveal);
@@ -153,6 +155,7 @@ setup(){
 
 .films-page {
     background: black;
+    padding-bottom:100px;
 }
 
 .films-container {

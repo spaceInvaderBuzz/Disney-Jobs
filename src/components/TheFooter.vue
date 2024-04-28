@@ -49,7 +49,7 @@ export default {
 .footer-main {
     background: rgb(32, 32, 32);
     color: white;
-
+  
 }
 
 .footer-content {
