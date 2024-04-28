@@ -129,10 +129,17 @@
                         <div class="toggle-button-stuff" @click="toggleEditOrDelete">
                             <i class="fa-solid fa-ellipsis"></i>
                         </div>
+                        <transition name="edit-or-del">
                         <div v-if="editOrDeleteJob" class="edit-or-delete-thang">
-                            <div @click="editItem(finishedItem.itemId)">EDIT ITEM</div>
+                           
+                                <div @click="editItem(finishedItem.itemId)">EDIT ITEM</div>
+                            
+                           
+                         
                             <div @click="reallyDeleteItem(finishedItem.itemId)">DELETE</div>
+                            
                         </div>
+                        </transition>
                         
                     </div>
         
@@ -257,6 +264,7 @@ methods: {
    this.pleaseUploadResume = "";
    this.pleaseSelectOneExperienceMsg = "";
    this.loading = false;
+   this.$router.push({name: 'ApplicationSuccessful'});
    return;  };
            this.pleaseUploadResume= "please upload a resume"
           
@@ -363,7 +371,38 @@ created(){
 
 <style scoped>
 
+.edit-or-del-enter-active,
+.edit-or-del-leave-active {
+    transition: all 0.2s ease;
+}
+
+.edit-or-del-enter-from,
+.edit-or-del-leave-to {
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+
+.edit-or-delete-thang {
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    bottom: -80px;
+    background: rgb(167, 167, 167);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.edit-or-delete-thang div {
+    padding: 7px 15px;
+}
+.edit-or-delete-thang div:hover {
+    background: #ff004f;
+}
+
+
+
 .item-finished {
+    position: relative;
     font-size: 1.3rem;
     background: #ff004f;
     margin: 15px 0;
