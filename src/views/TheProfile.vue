@@ -1,15 +1,14 @@
 <template>
     
-    
-        <div v-if="loading" class="loading">
-            <div class="loading-img-container">
-               <div class="loading-img">
-                <div class="spinner"></div>
-               </div>
-              
-            </div>
-            <h1>L o a d i n g ...</h1>
+    <the-modal @close="toggleModal" :modalActive="modalActive">
+        <h1>poooop</h1>
+   
+    </the-modal>
+        <div v-if="loading">
+            <the-loading-screen></the-loading-screen>
+          
         </div>
+
         
     <div v-if="changesWereSaved" class="changesSaved">
         <div @click="reloadPage" class="closeButton" >changes were saved</div>
@@ -121,15 +120,17 @@ import { mapActions, mapState } from 'pinia';
 import { useUserStore, UPDATE_USER_INFO, GET_CURRENT_USER} from '@/piniastores/user';
 import ChangesSavedModal from '@/components/ChangesSavedModal.vue';
 import JobsNavbar from '@/components/JobsNavbar.vue';
+import TheLoadingScreen from "@/components/TheLoadingScreen.vue";
+import TheModal from "@/components/TheModal.vue";
 
 
 
 export default {
 name: "ProfilePage",
-components: { ChangesSavedModal, JobsNavbar },
+components: { ChangesSavedModal, JobsNavbar, TheLoadingScreen, TheModal },
 data(){
     return {
-      
+        modalActive: true,
         changesWereSaved: false,
         loading: null,
         active: "",
@@ -152,6 +153,10 @@ data(){
     };
 },
 methods: {
+
+    toggleModal(){
+        this.modalActive = !this.modalActive;
+    },
 
     reloadPage(){
         window.location.reload();

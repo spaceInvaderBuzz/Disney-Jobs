@@ -1,5 +1,18 @@
 <template>
-  
+
+   
+  <privacy-policy-modal :privacyModalActive="privacyModalActive" @close="closePrivacyModal">
+    PRIVACY STUUUUUFFFFF
+  </privacy-policy-modal>
+  <do-not-sell-modal :doNotSellModalActive="doNotSellModalActive" @close="closeDoNotSellModalActice">
+    DO NOT SELL MY SHIIIIIT
+  </do-not-sell-modal>
+  <terms-of-use-modal :termsModalActive="termsModalActive" @close="closeTermsModalActive">
+    TERMS OF BULLSHITTTT
+  </terms-of-use-modal>
+
+
+
     <div class="footer-main">
         <div class="footer-content">
             <div class="logo">
@@ -26,9 +39,9 @@
                 </div>
             </div>
             <div class="legal-text">
-                <div>Privacy Policy</div>
-                <div>Terms of Use</div>
-                <div>Do Not Sell or Share My Personal Information</div>
+                <div @click="toggleModalforPrivacy">Privacy Policy</div>
+                <div @click="toggleModalforTerms">Terms of Use</div>
+                <div @click="toggleModalforDoNotSell">Do Not Sell or Share My Personal Information</div>
             </div>
             <div class="copyright">  &copy; Disney animatyio studios, a few rights reserved</div>
         </div>
@@ -39,10 +52,44 @@
 </template>
 
 <script>
+import DoNotSellModal from './DoNotSellModal.vue';
+import PrivacyPolicyModal from './PrivacyPolicyModal.vue';
+import TermsOfUseModal from './TermsOfUseModal.vue';
+
 export default {
     name: 'TheFooterVue',
+    components: { DoNotSellModal, PrivacyPolicyModal, TermsOfUseModal},
 
-};
+    data(){
+        return {
+            privacyModalActive: false,
+            doNotSellModalActive: false,
+            termsModalActive: false,
+        };
+    },
+    methods: {
+       toggleModalforPrivacy(){
+        this.privacyModalActive = !this.privacyModalActive;
+       },
+       closePrivacyModal(){
+        this.privacyModalActive = !this.privacyModalActive;
+       },
+       toggleModalforDoNotSell(){
+        this.doNotSellModalActive= !this.doNotSellModalActive;
+       },
+       closeDoNotSellModalActice(){
+        this.doNotSellModalActive= !this.doNotSellModalActive;
+       },
+       toggleModalforTerms(){
+        this.termsModalActive= !this.termsModalActive;
+       },
+       closeTermsModalActive(){
+        this.termsModalActive= !this.termsModalActive;
+       },
+    }
+
+
+        };
 </script>
 
 <style scoped>
