@@ -1,7 +1,7 @@
 <template>
   <section class="movie-page-background">
     <div class="movie-page-hero-background">
-        <div class="movie-page-container">
+    <div class="movie-page-container">
         <div class="hero-content">
             <div class="movie-info">
                 <div class="movie-logo-container">
@@ -31,11 +31,57 @@
                 <img src="/src/assets/images/Untitled_Artwork 94.png" alt="">
             </div>
         </div>
+        <div class="own-it-today">
+            <h1>Own It Today!</h1>
+
+
+            <div class="blu-ray-and-4k">
+                
+            <div class="container">
+                <div class="card">
+                    <div class="front"></div>
+                    <div class="back">
+                        <div class="blue-ray-logo">
+                            <img src="/src/assets/images/Untitled_Artwork 107.png" alt="">
+                        </div>
+                        <a href="https://www.amazon.com/LITTLE-MERMAID-Blu-ray-Rene-Auberjonois/dp/6317645930/ref=asc_df_6317645930/?tag=hyprod-20&linkCode=df0&hvadid=693721130339&hvpos=&hvnetw=g&hvrand=15424383282302633595&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9029499&hvtargid=pla-652838779190&psc=1&mcid=dc0bbe0515993b1d98fc4b2eb2c385fe&gad_source=1&gclid=CjwKCAjw57exBhAsEiwAaIxaZlzLzlr_VNWuP0Tr8EhHZBB_ibm0M9Gq_ZOpdxBckqS-Za1YQJLYzhoC1E0QAvD_BwE">Buy now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container2">
+                <div class="card2">
+                    <div class="front2"></div>
+                    <div class="back2">
+                        <div class="blue-ray-logo">
+                            <img src="/src/assets/images/Untitled_Artwork 109.png" alt="">
+                        </div>
+                        <a href="https://www.amazon.com/LITTLE-MERMAID-Blu-ray-Rene-Auberjonois/dp/6317645930/ref=asc_df_6317645930/?tag=hyprod-20&linkCode=df0&hvadid=693721130339&hvpos=&hvnetw=g&hvrand=15424383282302633595&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9029499&hvtargid=pla-652838779190&psc=1&mcid=dc0bbe0515993b1d98fc4b2eb2c385fe&gad_source=1&gclid=CjwKCAjw57exBhAsEiwAaIxaZlzLzlr_VNWuP0Tr8EhHZBB_ibm0M9Gq_ZOpdxBckqS-Za1YQJLYzhoC1E0QAvD_BwE">Buy now</a>
+                    </div>
+                </div>
+            </div>
+                
+
+            </div>
         </div>
+
+        
+    </div>
+    <section class="trailer">
+        <div class="movie-page-container">
+            
+            <div class="trailer-container">
+                <h1 class="watch-trailer">
+                    WATCH THE TRAILER
+                </h1>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/nPE0f-MB_bQ?si=XsMg9TvnvNaza-YA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+       
+    </section>
     </div>
     
   </section>
-  <the-footer></the-footer>
+  
   
 </template>
 
@@ -50,6 +96,158 @@ components: { TheFooter },
 </script>
 
 <style scoped>
+
+
+.container {
+    perspective: 500px;
+    width: 280px;
+    height: 320px;
+}
+
+.card {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+
+   
+
+.container:hover > .card {
+    cursor: pointer;
+    transform: rotateY(180deg);
+}
+
+.back {
+    background: #0898ff;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+
+
+.front,
+.back {
+    height: 100%;
+    width: 100%;
+    border-radius: 2rem;
+    box-shadow: 0 0 5px 2px rgba(50,50,50, 0.25);
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.front {
+    background: url('/src/assets/images/Untitled_Artwork\ 105.png') no-repeat;
+    background-size: cover;
+}
+
+
+
+.container2 {
+    perspective: 500px;
+    width: 280px;
+    height: 320px;
+}
+
+.card2 {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+
+   
+
+.container2:hover > .card2 {
+    cursor: pointer;
+    transform: rotateY(180deg);
+}
+
+.back2 {
+    background: #525252;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+
+
+.front2,
+.back2 {
+    height: 100%;
+    width: 100%;
+    border-radius: 2rem;
+    box-shadow: 0 0 5px 2px rgba(50,50,50, 0.25);
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.front2 {
+    background: url('/src/assets/images/Untitled_Artwork\ 106.png') no-repeat;
+    background-size: cover;
+}
+
+
+
+.blue-ray-logo {
+    width: 150x;
+    height: 150px;
+}
+.blue-ray-logo img {
+    width: 100%;
+    height: 100%;
+}
+.fourk-logo {
+    width: 100x;
+    height: 100px;
+    margin: 20px 0;
+}
+.fourk-logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.own-it-today {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.own-it-today h1 {
+    font-size: 3rem;
+    border-bottom: 4px solid #ff004f;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.blu-ray-and-4k {
+    display: flex;
+    gap: 50px;
+
+
+}
+.first-img-container,
+.second-img-container {
+    position: relative;
+    overflow: hidden;
+    width: 250px;
+    height: 300px;
+}
+
+.blu-ray-and-4k img {
+    width: 100%;
+    height: 100%;
+}
 
 .movie-about-info {
     color: white;
@@ -113,6 +311,36 @@ components: { TheFooter },
     
 }
 
+
+.trailer::before {
+    content: '';
+    position: absolute;
+    height: 100px;
+    background: #ff004f;
+    right: 0;
+    left:0;
+    top: 1800px;
+    width: 100%;
+    transform: skewY(-2deg);
+}
+
+.trailer {
+    background: #ff004f;
+    margin-top: 200px;
+}
+
+.trailer-container {
+    padding-top: 100px;
+    margin: 0 auto;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.trailer-container h1 {
+    font-size: 3.5rem;
+}
 div {
     color: black;
 }

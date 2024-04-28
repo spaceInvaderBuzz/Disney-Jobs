@@ -1,11 +1,11 @@
 <template>
     <transition name="modal-animation">
-      <div v-show="termsModalActive" class="modal">
+      <div v-show="profileModalActive" class="modal">
           <transition name="modal-animation-inner">
-              <div v-show="termsModalActive" class="modal-inner">
-                  <i class="far fa-times-circle"></i>
+              <div v-show="profileModalActive" class="modal-inner">
+                
                   <slot/>
-                  <button class="modal-close-btn" @click="close">Close</button>
+                  
               </div>
           </transition>
       </div>
@@ -15,8 +15,8 @@
   
   <script>
   export default {
-      name: "TermsOfUseModal",
-      props: ["termsModalActive"],
+      name: "ProfileModalActive",
+      props: ["profileModalActive"],
       data(){
           return {
   
@@ -54,7 +54,7 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.6), #ff004f);
+      background: rgba(0, 0, 0, 0.495);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -68,8 +68,9 @@
   
   .modal-inner {
       background: white;
-      padding: 100px;
+      padding: 30px;
       border-radius: 20px;
+      box-shadow: 10px 20px 30px black;
      
       
      

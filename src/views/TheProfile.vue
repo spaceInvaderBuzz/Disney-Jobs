@@ -1,17 +1,26 @@
 <template>
     
-    <the-modal @close="toggleModal" :modalActive="modalActive">
-        <h1>poooop</h1>
-   
-    </the-modal>
         <div v-if="loading">
             <the-loading-screen></the-loading-screen>
           
         </div>
 
         
-    <div v-if="changesWereSaved" class="changesSaved">
-        <div @click="reloadPage" class="closeButton" >changes were saved</div>
+    <div v-show="changesWereSaved">
+      <profile-modal :profileModalActive="profileModalActive">
+        <div class="changes-saved">
+            <div class="mushu-container">
+                <img src="/src/assets/images/Untitled_Artwork 104.png" alt="">
+            </div>
+            <div class="text-for-modal">
+                <h1>Changes</h1>
+                <h1>saved!</h1>
+                <button class="modal-close-btn" @click="reloadPage">Close</button>
+            </div>
+            
+
+        </div>
+      </profile-modal>
     </div>
         
     
@@ -121,16 +130,17 @@ import { useUserStore, UPDATE_USER_INFO, GET_CURRENT_USER} from '@/piniastores/u
 import ChangesSavedModal from '@/components/ChangesSavedModal.vue';
 import JobsNavbar from '@/components/JobsNavbar.vue';
 import TheLoadingScreen from "@/components/TheLoadingScreen.vue";
-import TheModal from "@/components/TheModal.vue";
+
+import ProfileModal from "@/components/ProfileModal.vue"
 
 
 
 export default {
 name: "ProfilePage",
-components: { ChangesSavedModal, JobsNavbar, TheLoadingScreen, TheModal },
+components: { ChangesSavedModal, JobsNavbar, TheLoadingScreen, ProfileModal },
 data(){
     return {
-        modalActive: true,
+        profileModalActive: false,
         changesWereSaved: false,
         loading: null,
         active: "",
@@ -154,12 +164,10 @@ data(){
 },
 methods: {
 
-    toggleModal(){
-        this.modalActive = !this.modalActive;
-    },
-
     reloadPage(){
+        this.profileModalActive = false;
         window.location.reload();
+        
     },
 
    
@@ -193,6 +201,7 @@ methods: {
         };
 
         this.changesWereSaved = true;
+        this.profileModalActive = true;
            
             
            await this.UPDATE_USER_INFO(this.profilePageFirstName, this.profilePageLastName, this.profilePageUsername, this.file, this.imageUrl);
@@ -252,6 +261,46 @@ created(){
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mouse+Memoirs&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Princess+Sofia&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+.changes-saved {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.changes-saved h1 {
+    font-size: 3rem;
+}
+
+.modal-close-btn {
+    cursor: pointer;
+    border-radius: 100px;
+    background: #000000;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.3rem;
+    margin-top: 50px;
+}
+
+.changes-saved .mushu-container {
+    height: 500px;
+    width: 400px;
+}
+
+.mushu-container img {
+    width: 100%;
+    height: 100%;
+}
+
+.text-for-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .profile-email {
     font-size: 15px;
