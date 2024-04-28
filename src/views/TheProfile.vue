@@ -1,7 +1,7 @@
 <template>
     
     
-        <div class="loading">
+        <div v-if="loading" class="loading">
             <div class="loading-img-container">
                <div class="loading-img">
                 <div class="spinner"></div>
