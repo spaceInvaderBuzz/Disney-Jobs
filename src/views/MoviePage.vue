@@ -96,8 +96,24 @@
         </div>
        
     </section>
+    <div class="background-banner">
+        <div class="background-banner-container">
+           <div class="pimg1">
+            <div class="text">GALLERY</div>
+           </div>
+        </div>
     </div>
-    
+    <div class="gallery">
+        <h1>GALLERY</h1>
+        <div class="gallery-container">
+            <div v-for="(image,index) in images" :key="index" @click="addActiveClass(index)" class="panel" :class="{ active: activeSlide[0].id === index }">
+                <h3>{{ image.text }}</h3>
+            </div>
+        </div>
+        
+    </div>
+    </div>
+   
   </section>
   
   
@@ -110,10 +126,90 @@ export default {
 name: "MoviePage",
 props: ["id"],
 components: { TheFooter },
+
+data(){
+    return {
+        images: [{id: 0, text: 'Explore The World'}, {id: 1, text: 'Wild Forest'}, { id: 2, text: 'Crazy Riandown'}, { id: 3, text: 'pooooop' },{id: 4, text: 'little mermaid'}],
+        activeSlide: [{id: 6}],
+    };
+},
+methods: {
+    addActiveClass(parameter){
+        this.images.forEach((image) => {
+            if(image.id === parameter){
+                this.activeSlide.pop();
+                this.activeSlide.push(image);
+                console.log(this.activeSlide);
+            };
+        });
+    },
+},
+computed: {
+    activeClass(){
+        
+    }
 }
+};
 </script>
 
 <style scoped>
+
+.gallery-container {
+    display: flex;
+    width: 90vw;
+}
+
+.panel {
+    background: url('/src/assets/images/Untitled_Artwork 111.png') no-repeat;
+    background-size: auto 100%;
+    background-position: center;
+    height: 500px;
+    border-radius: 50px;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+
+
+}
+
+.panel h3 {
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+}
+
+
+
+.pimg1 {
+    background: url('/src/assets/images/Untitled_Artwork 111.png') no-repeat;
+    opacity: 0.70;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 400px;
+    position: relative;
+}
+
+.panel.active {
+    color:green;
+}
+
+.pimg1 .text {
+    font-size: 3rem;
+    letter-spacing: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
 
 
 
