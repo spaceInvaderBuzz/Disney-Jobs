@@ -154,16 +154,23 @@ computed: {
 
 <style scoped>
 
+.gallery {
+    background: black;
+    padding: 60px 0;
+}
+
 .gallery-container {
     display: flex;
     width: 90vw;
+    margin: 0 auto;
+    max-width: 1500px;
 }
 
 .panel {
     background: url('/src/assets/images/Untitled_Artwork 111.png') no-repeat;
-    background-size: auto 100%;
+    background-size: cover;
     background-position: center;
-    height: 500px;
+    height: 80vh;
     border-radius: 50px;
     cursor: pointer;
     flex: 0.5;
@@ -180,6 +187,7 @@ computed: {
     bottom: 20px;
     left: 20px;
     margin: 0;
+    opacity: 0;
 }
 
 
@@ -194,7 +202,11 @@ computed: {
 }
 
 .panel.active {
-    color:green;
+    flex: 5;
+}
+.panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
 }
 
 .pimg1 .text {
