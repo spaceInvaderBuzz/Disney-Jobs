@@ -1,3 +1,5 @@
+:style="{ background:`url(${image.background})`}"
+
 <template>
     <body>
         <div class="parallax">

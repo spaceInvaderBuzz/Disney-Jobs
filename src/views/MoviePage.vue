@@ -106,15 +106,18 @@
     <div class="gallery">
         <h1>GALLERY</h1>
         <div class="gallery-container">
-            <div v-for="(image,index) in images" :key="index" @click="addActiveClass(index)" class="panel" :class="{ active: activeSlide[0].id === index }">
+            <div v-for="(image,index) in images" :key="index" @click="addActiveClass(index)" class="panel" :class="{ active: activeSlide[0].id === index }" :style="{ background:`url('/src/assets/images/${image.background}.png') no-repeat center`}">
                 <h3>{{ image.text }}</h3>
             </div>
         </div>
         
     </div>
+    <the-footer></the-footer>
     </div>
-   
+
   </section>
+
+ 
   
   
 </template>
@@ -129,8 +132,8 @@ components: { TheFooter },
 
 data(){
     return {
-        images: [{id: 0, text: 'Explore The World'}, {id: 1, text: 'Wild Forest'}, { id: 2, text: 'Crazy Riandown'}, { id: 3, text: 'pooooop' },{id: 4, text: 'little mermaid'}],
-        activeSlide: [{id: 6}],
+        images: [{id: 0, text: 'Explore The World', background: 'Untitled_Artwork 111'}, {id: 1, text: 'Wild Forest', background: 'Untitled_Artwork 111'}, { id: 2, text: 'Crazy Riandown', background: 'Untitled_Artwork 111'}, { id: 3, text: 'pooooop', background: 'Untitled_Artwork 111' },{id: 4, text: 'little mermaid', background: 'Untitled_Artwork 111'}],
+        activeSlide: [{id: 0}],
     };
 },
 methods: {
@@ -154,10 +157,7 @@ computed: {
 
 <style scoped>
 
-.gallery {
-    background: black;
-    padding: 60px 0;
-}
+
 
 .gallery-container {
     display: flex;
@@ -167,7 +167,7 @@ computed: {
 }
 
 .panel {
-    background: url('/src/assets/images/Untitled_Artwork 111.png') no-repeat;
+    background: no-repeat;
     background-size: cover;
     background-position: center;
     height: 80vh;
@@ -177,9 +177,16 @@ computed: {
     margin: 10px;
     position: relative;
     transition: flex 0.7s ease-in;
+    color: white;
 
 
 }
+.gallery {
+    background: black;
+    padding: 60px 0;
+    color:white;
+}
+
 
 .panel h3 {
     font-size: 24px;
