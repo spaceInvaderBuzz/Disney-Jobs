@@ -31,10 +31,23 @@
                 <img src="/src/assets/images/Untitled_Artwork 94.png" alt="">
             </div>
         </div>
+ 
+       
+
+        
+    </div>
+    <section class="own-today-section">
+
         <div class="own-it-today">
+    
             <h1>Own It Today!</h1>
-
-
+    
+            <div class="img1-container">
+                <img src="/src/assets/images/Untitled_Artwork 110.png" alt="">
+            </div>
+            <div class="img2-container">
+                <img src="/src/assets/images/IMG_7997.webp" alt="">
+            </div>
             <div class="blu-ray-and-4k">
                 
             <div class="container">
@@ -47,6 +60,7 @@
                         <a href="https://www.amazon.com/LITTLE-MERMAID-Blu-ray-Rene-Auberjonois/dp/6317645930/ref=asc_df_6317645930/?tag=hyprod-20&linkCode=df0&hvadid=693721130339&hvpos=&hvnetw=g&hvrand=15424383282302633595&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9029499&hvtargid=pla-652838779190&psc=1&mcid=dc0bbe0515993b1d98fc4b2eb2c385fe&gad_source=1&gclid=CjwKCAjw57exBhAsEiwAaIxaZlzLzlr_VNWuP0Tr8EhHZBB_ibm0M9Gq_ZOpdxBckqS-Za1YQJLYzhoC1E0QAvD_BwE">Buy now</a>
                     </div>
                 </div>
+                <h2>BLU RAY</h2>
             </div>
             <div class="container2">
                 <div class="card2">
@@ -58,22 +72,26 @@
                         <a href="https://www.amazon.com/LITTLE-MERMAID-Blu-ray-Rene-Auberjonois/dp/6317645930/ref=asc_df_6317645930/?tag=hyprod-20&linkCode=df0&hvadid=693721130339&hvpos=&hvnetw=g&hvrand=15424383282302633595&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9029499&hvtargid=pla-652838779190&psc=1&mcid=dc0bbe0515993b1d98fc4b2eb2c385fe&gad_source=1&gclid=CjwKCAjw57exBhAsEiwAaIxaZlzLzlr_VNWuP0Tr8EhHZBB_ibm0M9Gq_ZOpdxBckqS-Za1YQJLYzhoC1E0QAvD_BwE">Buy now</a>
                     </div>
                 </div>
+                <h2>4K ULTRA HD</h2>
+             
             </div>
                 
-
+    
             </div>
         </div>
-
-        
-    </div>
+    
+    </section>
     <section class="trailer">
         <div class="movie-page-container">
             
             <div class="trailer-container">
                 <h1 class="watch-trailer">
-                    WATCH THE TRAILER
+                    - WATCH THE TRAILER -
                 </h1>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/nPE0f-MB_bQ?si=XsMg9TvnvNaza-YA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae quia molestiae ratione repellat dolores reprehenderit eum unde laudantium quisquam quo deserunt nulla
+                </p>
+                <iframe class="movie" width="840" height="472" src="https://www.youtube.com/embed/nPE0f-MB_bQ?si=XsMg9TvnvNaza-YA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </div>
        
@@ -98,10 +116,18 @@ components: { TheFooter },
 <style scoped>
 
 
+
+
 .container {
     perspective: 500px;
     width: 280px;
     height: 320px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .card {
@@ -110,6 +136,7 @@ components: { TheFooter },
     position: relative;
     transition: transform 0.5s;
     transform-style: preserve-3d;
+    margin-bottom: 20px;
 }
 
 
@@ -151,6 +178,12 @@ components: { TheFooter },
     perspective: 500px;
     width: 280px;
     height: 320px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .card2 {
@@ -159,6 +192,7 @@ components: { TheFooter },
     position: relative;
     transition: transform 0.5s;
     transform-style: preserve-3d;
+    margin-bottom: 20px;
 }
 
 
@@ -170,7 +204,7 @@ components: { TheFooter },
 }
 
 .back2 {
-    background: #525252;
+    background: #111111;
     transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
@@ -184,7 +218,7 @@ components: { TheFooter },
     height: 100%;
     width: 100%;
     border-radius: 2rem;
-    box-shadow: 0 0 5px 2px rgba(50,50,50, 0.25);
+    box-shadow: 0 0 5px 2px rgba(19, 19, 19, 0.25);
     position: absolute;
     backface-visibility: hidden;
 }
@@ -215,6 +249,7 @@ components: { TheFooter },
 }
 
 .own-it-today {
+    position: relative;
     color: white;
     display: flex;
     flex-direction: column;
@@ -223,11 +258,43 @@ components: { TheFooter },
     margin: 50px 0;
 }
 
+.img1-container {
+    position: absolute;
+    left: 0;
+    width:460px;
+    height: 500px;
+    }
+    
+    .img1-container img {
+        width: 100%;
+        height: 100%;
+    }
+    .img2-container {
+    position: absolute;
+    right: 0;
+    width:520px;
+    height: 550px;
+    }
+    
+    .img2-container img {
+        width: 100%;
+        height: 100%;
+    }
+
+
+
 .own-it-today h1 {
     font-size: 3rem;
     border-bottom: 4px solid #ff004f;
     padding-bottom: 20px;
     margin-bottom: 20px;
+}
+.own-it-today h2 {
+    
+    max-width: 150px;
+    text-align: center;
+    font-size: 1.4rem;
+    border-bottom: 2px solid #ff004f;
 }
 
 .blu-ray-and-4k {
@@ -325,12 +392,13 @@ components: { TheFooter },
 }
 
 .trailer {
-    background: #ff004f;
+    background:linear-gradient(#ff004f, rgb(0, 0, 0) );
     margin-top: 200px;
+    padding-bottom: 200px;
 }
 
 .trailer-container {
-    padding-top: 100px;
+    padding-top: 70px;
     margin: 0 auto;
     max-width: 800px;
     display: flex;
@@ -339,7 +407,16 @@ components: { TheFooter },
     flex-direction: column;
 }
 .trailer-container h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+.trailer-container p {
+    color: white;
+    font-size: 1.2rem;
+}
+.movie {
+    border-radius: 20px;
+    margin: 50px 0;
 }
 div {
     color: black;

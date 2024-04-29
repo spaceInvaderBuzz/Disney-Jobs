@@ -6,7 +6,7 @@
 
 
         <div v-if="loading">
-            <img src="/src/assets/images/200w.gif" alt="">
+           <the-loading-screen></the-loading-screen>
         </div>
 
         <jobs-navbar></jobs-navbar>
@@ -190,10 +190,11 @@ import { mapActions, mapState } from 'pinia';
 import { useUserStore } from '@/piniastores/user';
 import { useJobsStore } from '@/piniastores/jobs';
 import JobsNavbar from '@/components/JobsNavbar.vue';
+import TheLoadingScreen from '@/components/TheLoadingScreen.vue';
 
 
 export default {
-  components: { JobsNavbar },
+  components: { JobsNavbar, TheLoadingScreen },
 name: "JobApplication",
 data(){
     return {
