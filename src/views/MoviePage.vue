@@ -2,7 +2,7 @@
     <div v-for="(movie, index) in activeMovie" :key="index">
 
         <section class="movie-page-background">
-            <div :class="{ moviePagHeroBackground1: movie.movieIdentifier === 1, moviePagHeroBackground2: movie.movieIdentifier === 2 }">
+            <div :class="{ moviePagHeroBackground1: movie.movieIdentifier === 1, moviePagHeroBackground2: movie.movieIdentifier === 2, moviePagHeroBackground3: movie.movieIdentifier === 3 }">
             <div class="movie-page-container">
                 <div class="hero-content">
                     <div class="movie-info">
@@ -54,7 +54,7 @@
                         
                     <div class="container">
                         <div class="card">
-                            <div :class="{front1: movie.movieIdentifier === 1, front3: movie.movieIdentifier === 2 }"></div>
+                            <div :class="{front1: movie.movieIdentifier === 1, front3: movie.movieIdentifier === 2, front5: movie.movieIdentifier === 3}"></div>
                             <div class="back">
                                 <div class="blue-ray-logo">
                                     <img src="/src/assets/images/Untitled_Artwork 107.png" alt="">
@@ -66,7 +66,7 @@
                     </div>
                     <div class="container2">
                         <div class="card2">
-                            <div :class="{front2: movie.movieIdentifier === 1, front4: movie.movieIdentifier === 2 }"></div>
+                            <div :class="{front2: movie.movieIdentifier === 1, front4: movie.movieIdentifier === 2, front6: movie.movieIdentifier === 3 }"></div>
                             <div class="back2">
                                 <div class="blue-ray-logo">
                                     <img src="/src/assets/images/Untitled_Artwork 109.png" alt="">
@@ -100,7 +100,7 @@
             </section>
             <div class="background-banner">
                 <div class="background-banner-container">
-                   <div :class="{pimg1: movie.movieIdentifier === 1, pimg2: movie.movieIdentifier === 2}">
+                   <div :class="{pimg1: movie.movieIdentifier === 1, pimg2: movie.movieIdentifier === 2, pimg3: movie.movieIdentifier === 3}">
                     <div class="text">GALLERY</div>
                    </div>
                 </div>
@@ -162,13 +162,26 @@ data(){
                 amazonLink: "MULAN-Blu-ray-Ming-Na-Wen/dp/B01N0O94V4/ref=asc_df_B01N0O94V4/?tag=hyprod-20&linkCode=df0&hvadid=312191060363&hvpos=&hvnetw=g&hvrand=17533453218546530152&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9029499&hvtargid=pla-420609057090&psc=1&mcid=8161ac5a7f66396ba56edc6e316d6ccb&gclid=EAIaIQobChMI5PXGyr3rhQMVW2FIAB3A0gLUEAQYASABEgJopPD_BwE",
                 amazonLink2: "Mulan-UHD-Blu-ray-Ming-Na-Wen/dp/B08ZDQVN2B/ref=sr_1_7?crid=3R02H4CHKJ2IN&dib=eyJ2IjoiMSJ9.xF_h0u5ElkwVmqEb5WPW9sJP17pJgk2351RikCGzIHwZwK1VULKGxpmrU7Chmc9-XpaHERMKf0onKeVGwFfpIwyebXnxhN5Z3HFQoySJ9vAGWFLRFGyRyrkeH-PLrKtpV2gl7CyWta2eAGWfJvLWBpd_TJWAJ7wxK0Tri-8wiiPZBWegR-_FJF_HzELhwreatjvZdqlh5QS28pMheShdufbAZw9OIefyopLV1plDk9o.NxnxyqQNjLrI5jSX1IXcgABu6eohwRG7wmIgHVvN378&dib_tag=se&keywords=mulan+4k&qid=1714533160&s=movies-tv&sprefix=mulan+4k%2Cmovies-tv%2C132&sr=1-7",
                 youTube: "HKH7_n425Ss?si=VuKinN5HJeLNtEoo",
+            },
+            {
+                
+                id: "3",
+                movieIdentifier: 3,
+                logo: "Untitled_Artwork 138",
+                poster: "Untitled_Artwork 136",
+                imageFromLeft: "Untitled_Artwork 140",
+                imageFromRight: "Untitled_Artwork 139",
+                amazonLink: "MULAN-Blu-ray-Ming-Na-Wen/dp/B01N0O94V4/ref=asc_df_B01N0O94V4/?tag=hyprod-20&linkCode=df0&hvadid=312191060363&hvpos=&hvnetw=g&hvrand=17533453218546530152&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9029499&hvtargid=pla-420609057090&psc=1&mcid=8161ac5a7f66396ba56edc6e316d6ccb&gclid=EAIaIQobChMI5PXGyr3rhQMVW2FIAB3A0gLUEAQYASABEgJopPD_BwE",
+                amazonLink2: "Mulan-UHD-Blu-ray-Ming-Na-Wen/dp/B08ZDQVN2B/ref=sr_1_7?crid=3R02H4CHKJ2IN&dib=eyJ2IjoiMSJ9.xF_h0u5ElkwVmqEb5WPW9sJP17pJgk2351RikCGzIHwZwK1VULKGxpmrU7Chmc9-XpaHERMKf0onKeVGwFfpIwyebXnxhN5Z3HFQoySJ9vAGWFLRFGyRyrkeH-PLrKtpV2gl7CyWta2eAGWfJvLWBpd_TJWAJ7wxK0Tri-8wiiPZBWegR-_FJF_HzELhwreatjvZdqlh5QS28pMheShdufbAZw9OIefyopLV1plDk9o.NxnxyqQNjLrI5jSX1IXcgABu6eohwRG7wmIgHVvN378&dib_tag=se&keywords=mulan+4k&qid=1714533160&s=movies-tv&sprefix=mulan+4k%2Cmovies-tv%2C132&sr=1-7",
+                youTube: "ie53R2HEZ6g?si=pykmULhhrTK56PLS",
             }
         ],
-       
+        activeSlide: [{id: 0}],
         images1: [{id: 0, text: 'Explore The World', background: 'Untitled_Artwork 111'}, {id: 1, text: 'Wild Forest', background: 'Untitled_Artwork 111'}, { id: 2, text: 'Crazy Riandown', background: 'Untitled_Artwork 111'}, { id: 3, text: 'pooooop', background: 'Untitled_Artwork 111' },{id: 4, text: 'little mermaid', background: 'Untitled_Artwork 111'}],
-        activeSlide: [{id: 0}],
+        
         images2: [{id: 0, text: 'Explore The World', background: 'Untitled_Artwork 135'}, {id: 1, text: 'Wild Forest', background: 'Untitled_Artwork 135'}, { id: 2, text: 'Crazy Riandown', background: 'Untitled_Artwork 111'}, { id: 3, text: 'pooooop', background: 'Untitled_Artwork 111' },{id: 4, text: 'little mermaid', background: 'Untitled_Artwork 111'}],
-        activeSlide: [{id: 0}],
+        images3: [{id: 0, text: 'Explore The World', background: 'Untitled_Artwork 144'}, {id: 1, text: 'Wild Forest', background: 'Untitled_Artwork 144'}, { id: 2, text: 'Crazy Riandown', background: 'Untitled_Artwork 111'}, { id: 3, text: 'pooooop', background: 'Untitled_Artwork 111' },{id: 4, text: 'little mermaid', background: 'Untitled_Artwork 111'}],
+       
     };
 },
 methods: {
@@ -190,6 +203,9 @@ computed: {
         };
         if (this.$route.params.id === "2"){
             return this.images2
+        };
+        if (this.$route.params.id === "3"){
+            return this.images3
         };
     },
     activeMovie(){
@@ -305,6 +321,28 @@ created(){
     justify-content: center;
 
 }
+.pimg3 {
+    background: url('/src/assets/images/Untitled_Artwork 143.png') no-repeat;
+    opacity: 0.70;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 400px;
+    position: relative;
+}
+
+.pimg3 .text {
+    font-size: 3rem;
+    letter-spacing: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
 
 
 
@@ -367,31 +405,15 @@ created(){
     background: url('/src/assets/images/Untitled_Artwork 129.png') no-repeat;
     background-size: cover;
 }
-
-.front3,
-.back {
-    height: 100%;
-    width: 100%;
-    border-radius: 2rem;
-    box-shadow: 0 0 5px 2px rgba(50,50,50, 0.25);
-    position: absolute;
-    backface-visibility: hidden;
-}
-.front4,
-.back2 {
-    height: 100%;
-    width: 100%;
-    border-radius: 2rem;
-    box-shadow: 0 0 5px 2px rgba(19, 19, 19, 0.25);
-    position: absolute;
-    backface-visibility: hidden;
+.front5 {
+    background: url('/src/assets/images/Untitled_Artwork 141.png') no-repeat;
+    background-size: cover;
 }
 
-
-
-
-
-
+.front6 {
+    background: url('/src/assets/images/Untitled_Artwork 142.png') no-repeat;
+    background-size: cover;
+}
 
 
 
@@ -415,6 +437,54 @@ created(){
     position: absolute;
     backface-visibility: hidden;
 }
+
+.front3,
+.back {
+    height: 100%;
+    width: 100%;
+    border-radius: 2rem;
+    box-shadow: 0 0 5px 2px rgba(50,50,50, 0.25);
+    position: absolute;
+    backface-visibility: hidden;
+}
+.front4,
+.back2 {
+    height: 100%;
+    width: 100%;
+    border-radius: 2rem;
+    box-shadow: 0 0 5px 2px rgba(19, 19, 19, 0.25);
+    position: absolute;
+    backface-visibility: hidden;
+}
+.front5,
+.back {
+    height: 100%;
+    width: 100%;
+    border-radius: 2rem;
+    box-shadow: 0 0 5px 2px rgba(50,50,50, 0.25);
+    position: absolute;
+    backface-visibility: hidden;
+}
+.front6,
+.back2 {
+    height: 100%;
+    width: 100%;
+    border-radius: 2rem;
+    box-shadow: 0 0 5px 2px rgba(19, 19, 19, 0.25);
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -658,6 +728,12 @@ created(){
 }
 .moviePagHeroBackground2 {
     background: url('/src/assets/images/Untitled_Artwork 113.png') no-repeat;
+    background-size: contain;
+    width:1660px;
+    height: 2000px;
+}
+.moviePagHeroBackground3 {
+    background: url('/src/assets/images/Untitled_Artwork 137.png') no-repeat;
     background-size: contain;
     width:1660px;
     height: 2000px;

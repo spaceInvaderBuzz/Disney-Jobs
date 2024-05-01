@@ -311,6 +311,8 @@ methods: {
         this.finishedWorkExperience = this.finishedWorkExperience.filter((experience) => experience.itemId !== parameter)
     },
     addItem(parameter){
+        if (this.idThang === parameter) {
+        this.idThang = null; }
         this.workExperience.forEach((experience) => {
             if (experience.itemId === parameter){
                 this.finishedWorkExperience.push(experience);
