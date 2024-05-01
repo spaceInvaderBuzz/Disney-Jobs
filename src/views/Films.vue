@@ -31,20 +31,6 @@
             </div>
             <div class="portfolio reveal">
                 <div class="item">
-                    <img src="/src/assets/images/Untitled_Artwork 25.png" alt="">
-                    <div class="layer"></div>
-                    <div class="action">
-                        <a href="#">Launch</a>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="/src/assets/images/Untitled_Artwork 26.png" alt="">
-                    <div class="layer"></div>
-                    <div class="action">
-                        <a href="#">Launch</a>
-                    </div>
-                </div>
-                <div class="item">
                     <img src="/src/assets/images/Untitled_Artwork 27.png" alt="">
                     <div class="layer"></div>
                     <div class="action">
@@ -52,10 +38,80 @@
                     </div>
                 </div>
                 <div class="item">
+                    <img src="/src/assets/images/Untitled_Artwork 26.png" alt="">
+                    <div class="layer"></div>
+                    <div class="action">
+                        <router-link :to="{ path: '/films/results/2' }">Launch</router-link>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="/src/assets/images/Untitled_Artwork 25.png" alt="">
+                    <div class="layer"></div>
+                    <div class="action">
+                        <router-link :to="{ path: '/films/results/3' }">Launch</router-link>
+                    </div>
+                </div>
+                <div class="item">
                     <img src="/src/assets/images/Untitled_Artwork 28.png" alt="">
                     <div class="layer"></div>
                     <div class="action">
-                        <a href="#">Launch</a>
+                        <router-link :to="{ path: '/films/results/4' }">Launch</router-link>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="/src/assets/images/Untitled_Artwork 115.png" alt="">
+                    <div class="layer"></div>
+                    <div class="action">
+                        <router-link :to="{ path: '/films/results/5' }">Launch</router-link>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="/src/assets/images/Untitled_Artwork 118.png" alt="">
+                    <div class="layer"></div>
+                    <div class="action">
+                        <router-link :to="{ path: '/films/results/6' }">Launch</router-link>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="/src/assets/images/Untitled_Artwork 119.png" alt="">
+                    <div class="layer"></div>
+                    <div class="action">
+                        <router-link :to="{ path: '/films/results/7' }">Launch</router-link>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="/src/assets/images/Untitled_Artwork 120.png" alt="">
+                    <div class="layer"></div>
+                    <div class="action">
+                        <router-link :to="{ path: '/films/results/8' }">Launch</router-link>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="/src/assets/images/Untitled_Artwork 121.png" alt="">
+                    <div class="layer"></div>
+                    <div class="action">
+                        <router-link :to="{ path: '/films/results/9' }">Launch</router-link>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="/src/assets/images/Untitled_Artwork 122.png" alt="">
+                    <div class="layer"></div>
+                    <div class="action">
+                        <router-link :to="{ path: '/films/results/10' }">Launch</router-link>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="/src/assets/images/Untitled_Artwork 123.png" alt="">
+                    <div class="layer"></div>
+                    <div class="action">
+                        <router-link :to="{ path: '/films/results/11' }">Launch</router-link>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="/src/assets/images/Untitled_Artwork 124.png" alt="">
+                    <div class="layer"></div>
+                    <div class="action">
+                        <router-link :to="{ path: '/films/results/12' }">Launch</router-link>
                     </div>
                 </div>
             </div>
@@ -203,6 +259,7 @@ setup(){
     width: 250px;
     height: 350px;
     margin: 5px;
+    margin-top:70px;
 
 
 }

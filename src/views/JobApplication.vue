@@ -126,11 +126,11 @@
         
                     <div v-for="finishedItem in finishedWorkExperience" :key="finishedItem.itemId" class="item-finished">
                         {{ finishedItem.jobTitle }}
-                        <div class="toggle-button-stuff" @click="toggleEditOrDelete">
+                        <div class="toggle-button-stuff" @click="toggleEditOrDelete(finishedItem.itemId)">
                             <i class="fa-solid fa-ellipsis"></i>
                         </div>
-                        <transition name="edit-or-del">
-                        <div v-if="editOrDeleteJob" class="edit-or-delete-thang">
+                       
+                        <div class="edit-or-delete-thang" :class="{ active: idThang === finishedItem.itemId }">
                            
                                 <div @click="editItem(finishedItem.itemId)">EDIT ITEM</div>
                             
@@ -139,7 +139,7 @@
                             <div @click="reallyDeleteItem(finishedItem.itemId)">DELETE</div>
                             
                         </div>
-                        </transition>
+                       
                         
                     </div>
         
@@ -198,6 +198,7 @@ export default {
 name: "JobApplication",
 data(){
     return {
+        idThang: "",
         editOrDeleteJob: false,
         loading: false,
         jobId: this.$route.params.id,
@@ -218,8 +219,18 @@ data(){
 },
 methods: {
 
-  toggleEditOrDelete(){
-    this.editOrDeleteJob = !this.editOrDeleteJob;
+  toggleEditOrDelete(parameter){
+    if (this.idThang === parameter) {
+        this.idThang = null; 
+    return; } 
+    this.idThang = parameter;
+
+  },
+
+  
+
+  toggleThang(parameter){
+
   },
 
     async apply(){
@@ -385,6 +396,7 @@ created(){
 
 
 .edit-or-delete-thang {
+    display: none;
     z-index: 1;
     position: absolute;
     right: 0;
@@ -393,6 +405,10 @@ created(){
     font-size: 1.2rem;
     cursor: pointer;
 }
+.edit-or-delete-thang.active {
+    display: block;
+}
+
 .edit-or-delete-thang div {
     padding: 7px 15px;
 }
