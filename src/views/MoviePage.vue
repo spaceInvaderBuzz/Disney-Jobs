@@ -2,7 +2,7 @@
     <div v-for="(movie, index) in activeMovie" :key="index">
 
         <section class="movie-page-background">
-            <div :class="{ moviePagHeroBackground1: movie.movieIdentifier === 1, moviePagHeroBackground2: movie.movieIdentifier === 2, moviePagHeroBackground3: movie.movieIdentifier === 3, moviePagHeroBackground4: movie.movieIdentifier === 4, moviePagHeroBackground5: movie.movieIdentifier === 5, moviePagHeroBackground6: movie.movieIdentifier === 6}">
+            <div :class="{ moviePagHeroBackground1: movie.movieIdentifier === 1, moviePagHeroBackground2: movie.movieIdentifier === 2, moviePagHeroBackground3: movie.movieIdentifier === 3, moviePagHeroBackground4: movie.movieIdentifier === 4, moviePagHeroBackground5: movie.movieIdentifier === 5, moviePagHeroBackground6: movie.movieIdentifier === 6, moviePagHeroBackground2: movie.movieIdentifier === 2, moviePagHeroBackground3: movie.movieIdentifier === 3, moviePagHeroBackground4: movie.movieIdentifier === 4, moviePagHeroBackground5: movie.movieIdentifier === 5, moviePagHeroBackground7: movie.movieIdentifier === 7}">
             <div class="movie-page-container">
                 <div class="hero-content">
                     <div class="movie-info">
@@ -54,7 +54,7 @@
                         
                     <div class="container">
                         <div class="card">
-                            <div :class="{front1: movie.movieIdentifier === 1, front3: movie.movieIdentifier === 2, front5: movie.movieIdentifier === 3, front7: movie.movieIdentifier === 4, front9: movie.movieIdentifier === 5, front11: movie.movieIdentifier === 6 }"></div>
+                            <div :class="{front1: movie.movieIdentifier === 1, front3: movie.movieIdentifier === 2, front5: movie.movieIdentifier === 3, front7: movie.movieIdentifier === 4, front9: movie.movieIdentifier === 5, front11: movie.movieIdentifier === 6, front13: movie.movieIdentifier === 7 }"></div>
                             <div class="back">
                                 <div class="blue-ray-logo">
                                     <img src="/src/assets/images/Untitled_Artwork 107.png" alt="">
@@ -66,7 +66,7 @@
                     </div>
                     <div class="container2">
                         <div class="card2">
-                            <div :class="{front2: movie.movieIdentifier === 1, front4: movie.movieIdentifier === 2, front6: movie.movieIdentifier === 3, front8: movie.movieIdentifier === 4, front10: movie.movieIdentifier === 5, front12: movie.movieIdentifier === 6 }"></div>
+                            <div :class="{front2: movie.movieIdentifier === 1, front4: movie.movieIdentifier === 2, front6: movie.movieIdentifier === 3, front8: movie.movieIdentifier === 4, front10: movie.movieIdentifier === 5, front12: movie.movieIdentifier === 6, front14: movie.movieIdentifier === 7 }"></div>
                             <div class="back2">
                                 <div class="blue-ray-logo">
                                     <img src="/src/assets/images/Untitled_Artwork 109.png" alt="">
@@ -100,7 +100,7 @@
             </section>
             <div class="background-banner">
                 <div class="background-banner-container">
-                   <div :class="{pimg1: movie.movieIdentifier === 1, pimg2: movie.movieIdentifier === 2, pimg3: movie.movieIdentifier === 3, pimg4: movie.movieIdentifier === 4, pimg5: movie.movieIdentifier === 5,  pimg6: movie.movieIdentifier === 6 }">
+                   <div :class="{pimg1: movie.movieIdentifier === 1, pimg2: movie.movieIdentifier === 2, pimg3: movie.movieIdentifier === 3, pimg4: movie.movieIdentifier === 4, pimg5: movie.movieIdentifier === 5,  pimg6: movie.movieIdentifier === 6, pimg7: movie.movieIdentifier === 7 }">
                     <div class="text">GALLERY</div>
                    </div>
                 </div>
@@ -210,6 +210,18 @@ data(){
                 amazonLink: "MULAN-Blu-ray-Ming-Na-Wen/dp/B01N0O94V4/ref=asc_df_B01N0O94V4/?tag=hyprod-20&linkCode=df0&hvadid=312191060363&hvpos=&hvnetw=g&hvrand=17533453218546530152&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9029499&hvtargid=pla-420609057090&psc=1&mcid=8161ac5a7f66396ba56edc6e316d6ccb&gclid=EAIaIQobChMI5PXGyr3rhQMVW2FIAB3A0gLUEAQYASABEgJopPD_BwE",
                 amazonLink2: "Mulan-UHD-Blu-ray-Ming-Na-Wen/dp/B08ZDQVN2B/ref=sr_1_7?crid=3R02H4CHKJ2IN&dib=eyJ2IjoiMSJ9.xF_h0u5ElkwVmqEb5WPW9sJP17pJgk2351RikCGzIHwZwK1VULKGxpmrU7Chmc9-XpaHERMKf0onKeVGwFfpIwyebXnxhN5Z3HFQoySJ9vAGWFLRFGyRyrkeH-PLrKtpV2gl7CyWta2eAGWfJvLWBpd_TJWAJ7wxK0Tri-8wiiPZBWegR-_FJF_HzELhwreatjvZdqlh5QS28pMheShdufbAZw9OIefyopLV1plDk9o.NxnxyqQNjLrI5jSX1IXcgABu6eohwRG7wmIgHVvN378&dib_tag=se&keywords=mulan+4k&qid=1714533160&s=movies-tv&sprefix=mulan+4k%2Cmovies-tv%2C132&sr=1-7",
                 youTube: "eTjHiQKJUDY?si=Nws-4F0Y-cjoRiDm",
+            },
+            {
+                
+                id: "7",
+                movieIdentifier: 7,
+                logo: "Untitled_Artwork 173",
+                poster: "Untitled_Artwork 174",
+                imageFromLeft: "Untitled_Artwork 177",
+                imageFromRight: "Untitled_Artwork 176",
+                amazonLink: "MULAN-Blu-ray-Ming-Na-Wen/dp/B01N0O94V4/ref=asc_df_B01N0O94V4/?tag=hyprod-20&linkCode=df0&hvadid=312191060363&hvpos=&hvnetw=g&hvrand=17533453218546530152&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9029499&hvtargid=pla-420609057090&psc=1&mcid=8161ac5a7f66396ba56edc6e316d6ccb&gclid=EAIaIQobChMI5PXGyr3rhQMVW2FIAB3A0gLUEAQYASABEgJopPD_BwE",
+                amazonLink2: "Mulan-UHD-Blu-ray-Ming-Na-Wen/dp/B08ZDQVN2B/ref=sr_1_7?crid=3R02H4CHKJ2IN&dib=eyJ2IjoiMSJ9.xF_h0u5ElkwVmqEb5WPW9sJP17pJgk2351RikCGzIHwZwK1VULKGxpmrU7Chmc9-XpaHERMKf0onKeVGwFfpIwyebXnxhN5Z3HFQoySJ9vAGWFLRFGyRyrkeH-PLrKtpV2gl7CyWta2eAGWfJvLWBpd_TJWAJ7wxK0Tri-8wiiPZBWegR-_FJF_HzELhwreatjvZdqlh5QS28pMheShdufbAZw9OIefyopLV1plDk9o.NxnxyqQNjLrI5jSX1IXcgABu6eohwRG7wmIgHVvN378&dib_tag=se&keywords=mulan+4k&qid=1714533160&s=movies-tv&sprefix=mulan+4k%2Cmovies-tv%2C132&sr=1-7",
+                youTube: "vlblxDGoGwo?si=bXWIm-DekMF_NAgl",
             }
         ],
         activeSlide: [{id: 0}],
@@ -220,6 +232,7 @@ data(){
         images4: [{id: 0, text: 'Explore The World', background: 'Untitled_Artwork 144'}, {id: 1, text: 'Wild Forest', background: 'Untitled_Artwork 144'}, { id: 2, text: 'Crazy Riandown', background: 'Untitled_Artwork 111'}, { id: 3, text: 'pooooop', background: 'Untitled_Artwork 111' },{id: 4, text: 'little mermaid', background: 'Untitled_Artwork 111'}],
         images5: [{id: 0, text: 'Explore The World', background: 'Untitled_Artwork 144'}, {id: 1, text: 'Wild Forest', background: 'Untitled_Artwork 144'}, { id: 2, text: 'Crazy Riandown', background: 'Untitled_Artwork 111'}, { id: 3, text: 'pooooop', background: 'Untitled_Artwork 111' },{id: 4, text: 'little mermaid', background: 'Untitled_Artwork 111'}],
         images6: [{id: 0, text: 'Explore The World', background: 'Untitled_Artwork 144'}, {id: 1, text: 'Wild Forest', background: 'Untitled_Artwork 144'}, { id: 2, text: 'Crazy Riandown', background: 'Untitled_Artwork 111'}, { id: 3, text: 'pooooop', background: 'Untitled_Artwork 111' },{id: 4, text: 'little mermaid', background: 'Untitled_Artwork 111'}],
+        images7: [{id: 0, text: 'Explore The World', background: 'Untitled_Artwork 144'}, {id: 1, text: 'Wild Forest', background: 'Untitled_Artwork 144'}, { id: 2, text: 'Crazy Riandown', background: 'Untitled_Artwork 111'}, { id: 3, text: 'pooooop', background: 'Untitled_Artwork 111' },{id: 4, text: 'little mermaid', background: 'Untitled_Artwork 111'}],
        
     };
 },
@@ -254,6 +267,9 @@ computed: {
         };
         if (this.$route.params.id === "6"){
             return this.images6
+        };
+        if (this.$route.params.id === "7"){
+            return this.images7
         };
     },
     activeMovie(){
@@ -457,6 +473,28 @@ created(){
     justify-content: center;
 
 }
+.pimg7 {
+    background: url('/src/assets/images/Untitled_Artwork 179.png') no-repeat;
+    opacity: 0.70;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 400px;
+    position: relative;
+}
+
+.pimg7 .text {
+    font-size: 3rem;
+    letter-spacing: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
 
 
 
@@ -553,6 +591,15 @@ created(){
 
 .front12 {
     background: url('/src/assets/images/Untitled_Artwork 165.png') no-repeat;
+    background-size: cover;
+}
+.front13 {
+    background: url('/src/assets/images/Untitled_Artwork 180.png') no-repeat;
+    background-size: cover;
+}
+
+.front14 {
+    background: url('/src/assets/images/Untitled_Artwork 181.png') no-repeat;
     background-size: cover;
 }
 
@@ -662,6 +709,24 @@ created(){
     backface-visibility: hidden;
 }
 .front12,
+.back2 {
+    height: 100%;
+    width: 100%;
+    border-radius: 2rem;
+    box-shadow: 0 0 5px 2px rgba(19, 19, 19, 0.25);
+    position: absolute;
+    backface-visibility: hidden;
+}
+.front13,
+.back {
+    height: 100%;
+    width: 100%;
+    border-radius: 2rem;
+    box-shadow: 0 0 5px 2px rgba(50,50,50, 0.25);
+    position: absolute;
+    backface-visibility: hidden;
+}
+.front14,
 .back2 {
     height: 100%;
     width: 100%;
@@ -948,6 +1013,12 @@ created(){
 }
 .moviePagHeroBackground6 {
     background: url('/src/assets/images/Untitled_Artwork 167.png') no-repeat;
+    background-size: contain;
+    width:1660px;
+    height: 2000px;
+}
+.moviePagHeroBackground7 {
+    background: url('/src/assets/images/Untitled_Artwork 178.png') no-repeat;
     background-size: contain;
     width:1660px;
     height: 2000px;

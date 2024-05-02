@@ -11,11 +11,7 @@
                   <img src="" alt="" />
                 </div>
                 <nav class="primary-nav">
-                  <ul role="list">
-                    <li><a href="#">Why join us</a></li>
-                    <li><a href="#">The founders</a></li>
-                    <li><a href="#">Beta info</a></li>
-                  </ul>
+                  
                 </nav>
                 <div class="flex-group" aria-label="social links">
                   <a href="#">X</a>
@@ -43,7 +39,7 @@
           />
           <img
             class="parallax__foreground-front"
-            src="/src/assets/images/Untitled_Artwork 37.png"
+            src="/src/assets/images/Untitled_Artwork 184.png"
             alt=""
           />
           <img
@@ -332,7 +328,7 @@ setup(){
     --parallax-speed: -25;
     position: absolute;
     z-index: 8;
-    top: 180px;
+    top: 40px;
     object-fit: cover;
     width:1670px;
     height: 1000px;
