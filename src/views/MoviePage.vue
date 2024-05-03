@@ -44,10 +44,10 @@
             
                     <h1>Own It Today!</h1>
             
-                    <div class="img1-container">
+                    <div class="img1-container" ref="image">
                         <img :src="`/src/assets/images/${ movie.imageFromLeft }.png`" alt="">
                     </div>
-                    <div class="img2-container">
+                    <div class="img2-container" ref="image">
                         <img :src="`/src/assets/images/${ movie.imageFromRight}.png`" alt="">
                     </div>
                     <div class="blu-ray-and-4k">
@@ -139,6 +139,8 @@ components: { TheFooter },
 
 data(){
     return {
+
+        triggerBottom: window.innerHeight / 5 * 4,
         movies: [
             {
                 id: "1",
@@ -246,6 +248,12 @@ methods: {
             };
         });
     },
+    scroll(){
+        window.addEventListener('scroll', this.checkBoxes());
+    },
+    checkBoxes(){
+      console.log(this.$refs.image)
+    },
 },
 computed: {
 
@@ -277,7 +285,8 @@ computed: {
     },
 },
 created(){
-    console.log(this.movies);
+    this.checkBoxes();
+this.scroll();
 },
 };
 </script>
@@ -870,20 +879,35 @@ created(){
 
 .img1-container {
     position: absolute;
+    transform: translateX(-200%);
     left: 0;
     width:460px;
     height: 500px;
+    transition: transform 0.4s ease;
     }
+
+.img1-container.active {
+    transform: translateX(0);
+}
     
     .img1-container img {
         width: 100%;
         height: 100%;
     }
+
+
+
     .img2-container {
     position: absolute;
+    transform: translatex(200%);
     right: 0;
     width:520px;
     height: 550px;
+    transition: transform 0.4s ease;
+    }
+
+    .img1-container.active {
+        transform: translateX(0);
     }
     
     .img2-container img {
@@ -977,6 +1001,7 @@ created(){
 
 .movie-page-background {
     background: black;
+    overflow: hidden;
     
 }
 
