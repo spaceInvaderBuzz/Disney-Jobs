@@ -1,7 +1,15 @@
 
 
 <template>
-    <body>
+    <div class="loading-text" :style="{ opacity: loadTextOpacity }">
+        <div class="dancing">
+            <img src="/src/assets/images/stitch_lilo_dance.gif" alt="">
+        </div>
+        <div class="the-loading-text">{{load}}%</div>
+    </div>
+
+    <body class="blur" :style="{ filter: `blur(${loadBlur}px)`}">
+       
         <div class="parallax">
           
           <header class="primary-header">
@@ -127,10 +135,48 @@ import CharactersCarousel from '@/components/CharactersCarousel.vue';
 import CharacterSlide from '@/components/CharacterSlide.vue';
 import TheFooter from '@/components/TheFooter.vue';
 import { ref } from 'vue';
+
 export default {
 name: 'FeaturedFilm',
 components: {Characters, CharactersCarousel, CharacterSlide, TheFooter},
+data(){
+    return {
+        load: 0,
+        LeInterval: null,
+        loadTextOpacity: null,
+        loadBlur: null,
+    };
+},
+methods: {
+    setTheInterval(){
+        this.LeInterval = setInterval(() => {
+            if(this.load > 100){
+                clearInterval(this.LeInterval);
+                return;
+            }
+            this.load = this.load + 1;
+            this.tranformTheTextOpacity(this.load,0,100,1,0);
+            this.tranformTheBlur(this.load,0,100,30,0);
+        }, 25);
+    },
+    tranformTheTextOpacity(param1, param2, param3, param4, param5){
+        this.loadTextOpacity = (param1 - param2 ) * ( param5 - param4 ) / (param3 - param2) + param4;
+
+    },
+    tranformTheBlur(param1, param2, param3, param4, param5){
+        this.loadBlur = (param1 - param2 ) * ( param5 - param4 ) / (param3 - param2) + param4;
+
+    },
+},
+created(){
+    this.setTheInterval();
+    console.log(this.load);
+},
+
 setup(){
+
+    
+    
     const carouselSlides = ['Untitled_Artwork 49', 'Untitled_Artwork 50', 'Untitled_Artwork 51', 'Untitled_Artwork 53', 'Untitled_Artwork 54'];
 
     const direction = ref(null);
@@ -142,13 +188,33 @@ setup(){
         direction.value = 'right';
     };
 
-    return { carouselSlides, nextSlideClicked, prevSlideClicked, direction };
+    return { carouselSlides, nextSlideClicked, prevSlideClicked, direction  };
 },
 };
 
 </script>
 
 <style scoped>
+
+.loading-text {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index:1000;
+
+}
+
+.the-loading-text {
+    font-size: 4rem;
+}
+
+
 
 
 .gallery-container {
