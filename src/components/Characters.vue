@@ -243,6 +243,7 @@ mounted(){
     height: 350px;
     border-radius: 20px;
     transition: 0.5s;
+    margin-left: 50px;
 
 }
 
@@ -264,14 +265,24 @@ mounted(){
     left: 0;
     width: 100%;
     height: 100%;
-    background: orange;
+    background: linear-gradient(
+        318.68deg,
+        #ff004f 0%,
+        #7f0229 49.72%,
+        #2d000f
+    );
     clip-path: circle(120px at center);
     transition: 0.5s;
 }
 
 
 .card2:hover .circle:before {
-    background: green;
+    background: linear-gradient(
+        318.68deg,
+        #ff004f 0%,
+        #7f0229 49.72%,
+        #2d000f
+    );
     clip-path: circle(400px at center);
 }
 .container-gallery {
@@ -331,7 +342,7 @@ mounted(){
     width: 100%;
 }
 .gallery1 {
-    
+    padding: 20px;
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-gap:30px;

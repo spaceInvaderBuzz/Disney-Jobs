@@ -157,18 +157,18 @@
                     </div>
                     <div class="faq-content">
                         <div class="faq-group">
-                            <div @click="openQuestion4" class="faq-group-header">
+                            <div @click="openQuestion5" class="faq-group-header">
                                 <h4>
                                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis explicabo, nostrum id sapiente porro pariatur.  
                                 </h4>
                                
-                                <i v-if="isOpen4" class="fas fa-minus"></i>
+                                <i v-if="isOpen5" class="fas fa-minus"></i>
                                 <i v-else class="fas fa-plus"></i>
                                
                                 
                             </div>
                             <transition name="faq">
-                            <div v-if="isOpen4" class="faq-group-body">
+                            <div v-if="isOpen5" class="faq-group-body">
                                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
                             </div>
                             </transition>
@@ -205,7 +205,7 @@ export default {
 window.addEventListener('scroll', function() {
     let value = 1 + window.scrollY/-600;
     video.style.opacity = value;
-    console.log(video);
+    
 });
     },
     data(){
@@ -214,7 +214,8 @@ window.addEventListener('scroll', function() {
             isOpen2: false,
             isOpen3: false,
             isOpen4: false,
-        }
+            isOpen5: false
+        };
     },
     methods: {
        openQuestion1(){
@@ -228,6 +229,9 @@ window.addEventListener('scroll', function() {
        },
        openQuestion4(){
         this.isOpen4 = !this.isOpen4;
+       },
+       openQuestion5(){
+        this.isOpen5 = !this.isOpen5;
        }
     },
 };

@@ -292,6 +292,7 @@ methods: {
         this.resumePageResume = this.profileResume;
     },
     addWorkExperience(){
+        this.idThang = null;
         const uid = Math.floor(Math.random() * 10000000 );
         this.workExperience.push({
             itemId: uid,
