@@ -1,4 +1,4 @@
-:style="{ background:`url(${image.background})`}"
+
 
 <template>
     <body>
@@ -101,17 +101,22 @@
         </div>
         
             <Characters></Characters>
-            <CharactersCarousel class="carousel" v-slot="{ currentSlide }" @nextSlideClicked="nextSlideClicked" @prevSlideClicked="prevSlideClicked">
-                <CharacterSlide :direction="direction" v-for="(slide, index) in carouselSlides" :key="index">
-                    <div v-show="currentSlide === index + 1" class="slide-info">    
-                        <img :src="`/src/assets/images/${ slide }.png`">
-                    </div>
-                    
-                </CharacterSlide>
-            </CharactersCarousel>
-        
-      
+            <div class="gallery-container">
+                <h1 class="gallery-text">G A L L E R Y</h1>
+                <CharactersCarousel class="carousel" v-slot="{ currentSlide }" @nextSlideClicked="nextSlideClicked" @prevSlideClicked="prevSlideClicked">
+                    <CharacterSlide :direction="direction" v-for="(slide, index) in carouselSlides" :key="index">
+                        <div v-show="currentSlide === index + 1" class="slide-info">    
+                            <img :src="`/src/assets/images/${ slide }.png`">
+                        </div>
+                        
+                    </CharacterSlide>
+                </CharactersCarousel>    
+
+            </div>
+           
+            <the-footer></the-footer>
         </main>
+       
         </body>
 </template>
 
@@ -120,10 +125,11 @@
 import Characters from '@/components/Characters.vue';
 import CharactersCarousel from '@/components/CharactersCarousel.vue';
 import CharacterSlide from '@/components/CharacterSlide.vue';
+import TheFooter from '@/components/TheFooter.vue';
 import { ref } from 'vue';
 export default {
 name: 'FeaturedFilm',
-components: {Characters, CharactersCarousel, CharacterSlide},
+components: {Characters, CharactersCarousel, CharacterSlide, TheFooter},
 setup(){
     const carouselSlides = ['Untitled_Artwork 49', 'Untitled_Artwork 50', 'Untitled_Artwork 51', 'Untitled_Artwork 53', 'Untitled_Artwork 54'];
 
@@ -144,6 +150,28 @@ setup(){
 
 <style scoped>
 
+
+.gallery-container {
+    background: #ff004f;
+    padding: 200px 150px;
+    margin-top: 100px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.gallery-text {
+    z-index: 2;
+    position: absolute;
+    top:70px;
+    left: 158px;
+    font-size: 4rem;
+
+
+}
+
 .slide-info {
     position: absolute;
     top: 0;
@@ -163,17 +191,21 @@ setup(){
 }
 
 .carousel {
+    overflow: hidden;
     margin: 0 auto;
     position: relative;
     max-height: 600px;
     height: 1000px;
     width: 1400px;
     background: rebeccapurple;
+    border-radius: 50px;
+    box-shadow: 10px 20px 50px rgba(0, 0, 0, 0.811);
 }
 
 .pimg1 {
     background: url('/src/assets/images/stitch_and_i_hula_dance_by_liloandstitchfanclub_d25p9az-fullview.jpg') ;
-    min-height: 400px;
+    min-height: 600px;
+    margin-bottom: -85px;
 }
 
 .pimg1 {

@@ -249,10 +249,29 @@ methods: {
         });
     },
     scroll(){
-        window.addEventListener('scroll', this.checkBoxes());
+        window.addEventListener('scroll', this.runTheBoxes);
+    },
+    runTheBoxes(){
+        this.checkBoxes();
+        this.checkBoxes2();
     },
     checkBoxes(){
-      console.log(this.$refs.image)
+      const img1 = document.querySelector(".img1-container");
+      const boxTop = img1.getBoundingClientRect().top;
+      if(boxTop < this.triggerBottom){
+        img1.classList.add("active");
+        return;
+      }
+      img1.classList.remove("active");
+    },
+    checkBoxes2(){
+      const img2 = document.querySelector(".img2-container");
+      const boxTop2 = img2.getBoundingClientRect().top;
+      if(boxTop2 < this.triggerBottom){
+        img2.classList.add("active");
+        return;
+      }
+      img2.classList.remove("active");
     },
 },
 computed: {
@@ -285,7 +304,7 @@ computed: {
     },
 },
 created(){
-    this.checkBoxes();
+   
 this.scroll();
 },
 };
@@ -906,7 +925,7 @@ this.scroll();
     transition: transform 0.4s ease;
     }
 
-    .img1-container.active {
+    .img2-container.active {
         transform: translateX(0);
     }
     
@@ -1001,7 +1020,7 @@ this.scroll();
 
 .movie-page-background {
     background: black;
-    overflow: hidden;
+    
     
 }
 
@@ -1050,7 +1069,7 @@ this.scroll();
 }
 
 
-.trailer::before {
+/* .trailer::before {
     content: '';
     position: absolute;
     height: 100px;
@@ -1060,7 +1079,7 @@ this.scroll();
     top: 1800px;
     width: 100%;
     transform: skewY(-2deg);
-}
+} */
 
 .trailer {
     background:linear-gradient(#ff004f, rgb(0, 0, 0) );
