@@ -1,9 +1,9 @@
 <template>
     <div class="blackBackgroundAllResults">
     <jobs-navbar></jobs-navbar>
-        <nav class="filter-nav">
+        <div class="filter-nav">
             <job-filters-sidebar></job-filters-sidebar>
-         </nav>
+        </div>
        
         <div class="flex-cool">
            

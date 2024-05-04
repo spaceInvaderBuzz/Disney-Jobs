@@ -1,7 +1,7 @@
 
 
 <template>
-    <div class="loading-text" :style="{ opacity: loadTextOpacity }">
+    <div v-if="stillLoading" class="loading-text" :style="{ opacity: loadTextOpacity }">
         <div class="dancing">
             <img src="/src/assets/images/stitch_lilo_dance.gif" alt="">
         </div>
@@ -141,6 +141,7 @@ name: 'FeaturedFilm',
 components: {Characters, CharactersCarousel, CharacterSlide, TheFooter},
 data(){
     return {
+        stillLoading: true,
         load: 0,
         LeInterval: null,
         loadTextOpacity: null,
@@ -152,12 +153,14 @@ methods: {
         this.LeInterval = setInterval(() => {
             if(this.load > 100){
                 clearInterval(this.LeInterval);
+                this.stillLoading = false;
                 return;
             }
             this.load = this.load + 1;
             this.tranformTheTextOpacity(this.load,0,100,1,0);
             this.tranformTheBlur(this.load,0,100,30,0);
-        }, 25);
+          
+        }, 15);
     },
     tranformTheTextOpacity(param1, param2, param3, param4, param5){
         this.loadTextOpacity = (param1 - param2 ) * ( param5 - param4 ) / (param3 - param2) + param4;
@@ -195,6 +198,7 @@ setup(){
 </script>
 
 <style scoped>
+
 
 .loading-text {
     flex-direction: column;

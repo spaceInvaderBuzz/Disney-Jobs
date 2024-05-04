@@ -43,7 +43,7 @@ export default {
 
         const prevSlide = () => {
             if (currentSlide.value === 1){
-                currentSlide.value = 1;
+                currentSlide.value = getSlideCount.value;
                 return;
             }
             currentSlide.value -= 1;

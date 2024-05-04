@@ -177,7 +177,7 @@
                     
                 </div>
             </section>
-            <contact-form-vue></contact-form-vue>
+            <the-form></the-form>
             
             <the-footer></the-footer>
     </body>
@@ -195,11 +195,12 @@
 import CreativeTextVue from '@/components/CreativeText.vue';
 import ContactFormVue from '@/components/ContactForm.vue';
 import TheFooter from '@/components/TheFooter.vue';
+import TheForm from '@/components/TheForm.vue';
 
 
 export default {
     name: 'Home',
-    components: {CreativeTextVue, ContactFormVue, TheFooter},
+    components: {CreativeTextVue, ContactFormVue, TheFooter, TheForm},
     mounted(){
         let video = document.querySelector('.video');
 window.addEventListener('scroll', function() {

@@ -44,17 +44,22 @@ export default {
 .job-title {
     padding-bottom: 20px;
     margin-bottom: 20px;
-    border-bottom: 2px solid rebeccapurple;
+    border-bottom: 2px solid #ff004f;
 }
 .listing {
     margin:70px;
-    border: 1px solid white;
+    border-radius: 20px;
+    border: 4px solid white;
     padding: 50px 70px;
     display: flex;
     gap: 100px;
     align-items: center;
     transition: 0.3s;
 
+}
+
+.button-thing {
+    display: flex;
 }
 
 
