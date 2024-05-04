@@ -1,55 +1,36 @@
 
 
 <template>
-    <div class="background">
-
-        <div class="container">
-            <div class="form-text">
-                <h1> Contact Us</h1>
-                <p>we would love to hear your bullshit And pretend that we care!</p>
-            </div>
+    <form>
+        <h1>Send Message</h1>
+        <div class="input-container">
+            <input type="text" class="input" placeholder=" ">
+            <label for=""><div class="label-word" v-for="(letter,index) in name" :key="index" :style="{ TransitionDelay: `${index * 50 }ms` }">{{ letter }}</div></label>
+            
         </div>
-        
-        <section class="contact-form">
-            <div class="container">
-                    <form>
-                        <div class="input-container">
-                            <input type="text" class="input" placeholder=" ">
-                            <label for=""><div class="label-word" v-for="(letter,index) in name" :key="index" :style="{ TransitionDelay: `${index * 50 }ms` }">{{ letter }}</div></label>
-                            
-                        </div>
-                        <div class="input-container">
-                            <input type="text" class="input" placeholder=" ">
-                            <label for=""><div class="label-word" v-for="(letter,index) in email" :key="index" :style="{ TransitionDelay: `${index * 50 }ms` }">{{ letter }}</div></label>
-                            
-                        </div>
-                        <div class="input-container">
-                            <input type="text" class="input" placeholder=" ">
-                            <label for=""><div class="label-word" v-for="(letter,index) in phone" :key="index" :style="{ TransitionDelay: `${index * 50 }ms` }">{{ letter }}</div></label>
-                            
-                        </div>
-                      
-                        <div class="input-container">
-                           <textarea name="message" class="input" placeholder=" "></textarea>
-                           <label for="">
-                            
-                                <div v-for="(letter,index) in message" :key="index" :style="{ TransitionDelay: `${index * 50 }ms` }">{{ letter }}</div>
-                           
-                           
-                        </label>
-                           
-                        </div>
-                        <input type="submit" value="SEND" class="btn">
-                    </form>
-                    <div class="image">
-                        <img src="/src/assets/images/Untitled_Artwork 20.png" alt="">
-                    </div>
-    
-                       
-                
-            </div>
-        </section>
-    </div>
+        <div class="input-container">
+            <input type="text" class="input" placeholder=" ">
+            <label for=""><div class="label-word" v-for="(letter,index) in email" :key="index" :style="{ TransitionDelay: `${index * 50 }ms` }">{{ letter }}</div></label>
+            
+        </div>
+        <div class="input-container">
+            <input type="text" class="input" placeholder=" ">
+            <label for=""><div class="label-word" v-for="(letter,index) in phone" :key="index" :style="{ TransitionDelay: `${index * 50 }ms` }">{{ letter }}</div></label>
+            
+        </div>
+      
+        <div class="input-container">
+           <textarea name="message" class="input" placeholder=" "></textarea>
+           <label for="">
+            
+                <div v-for="(letter,index) in message" :key="index" :style="{ TransitionDelay: `${index * 50 }ms` }">{{ letter }}</div>
+           
+           
+        </label>
+           
+        </div>
+        <input type="submit" value="SEND" class="btn">
+    </form>
    
   
 </template>
@@ -76,6 +57,10 @@ methods: {
 
 <style scoped>
 
+form h1 {
+    margin-top: 10px;
+}
+
 
 .background {
     background: url("/src/assets/images/Untitled_Artwork 98.png") no-repeat;
@@ -94,7 +79,7 @@ form {
     -webkit-backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 16px 35px;
-    z-index: 10;
+    z-index: 2;
     position: relative;
     overflow: hidden;
     box-shadow: 0 8px 32px 0 rgba(0,0,0,0.6);

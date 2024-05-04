@@ -71,14 +71,14 @@
                     <div class="text">
                         <h1>CAREERS</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti repudiandae mollitia voluptates facere obcaecati fugiat.</p>
-                        <router-link :to="{name: 'TheLoginPage'}" class="btn">Browse openings </router-link>
+                        <router-link :to="{name: 'TheLoginPage'}" class="btn-careers">Browse openings </router-link>
                     </div>
                 </div>
             </section>
             <section class="faq">
                 <div class="container">
                     <h3 class="header-for-faq">
-                        Frequently Asked QWuest
+                        Frequently Asked Questions
                     </h3>
                     <div class="faq-content">
                         <div class="faq-group">
@@ -95,8 +95,17 @@
                                 </div>
                         <transition name="faq">
                             <div v-if="isOpen1" class="faq-group-body">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
+                                <div class="z-index-text">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo.
+                                    Lorem ipsuamet consectecing elit. Quis explicabo, nostrum id sapiente porrom doloetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
+                                </div>
+                               
+                                
+                                <div class="background-img">
+
+                                </div>
                             </div>
+
                         </transition>
                             
                         </div>
@@ -111,11 +120,20 @@
                                 <i v-else class="fas fa-plus"></i>
                                 
                             </div>
-                            <transition name="faq">
+                           
                             <div v-if="isOpen2" class="faq-group-body">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
+                                <div class="z-index-text">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
+
+                                </div>
+                                <div class="background-img1">
+
+                                </div>
+                               
+                                
                             </div>
-                            </transition>
+                            
+                         
                         </div>
                     </div>
                     <div class="faq-content">
@@ -131,7 +149,15 @@
                             </div>
                             <transition name="faq">
                             <div v-if="isOpen3" class="faq-group-body">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
+                                <div class="z-index-text">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
+                                    amet consectetur adipisicing elit. Quis explicabo, nostrum id
+                                </div>
+                               
+                                <div class="background-img">
+
+                                </div>
                             </div>
                             </transition>
                         </div>
@@ -150,7 +176,13 @@
                             </div>
                             <transition name="faq">
                             <div v-if="isOpen4" class="faq-group-body">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
+                                <div class="z-index-text">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
+                                </div>
+                               
+                                amet consectetur adipisicing elit. Quis explicabo, nost
+                           <div class="background-img1"></div>
                             </div>
                             </transition>
                         </div>
@@ -169,18 +201,43 @@
                             </div>
                             <transition name="faq">
                             <div v-if="isOpen5" class="faq-group-body">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
+                                <div class="z-index-text">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
+                                    amet consectetur adipisicing elit. Quis explicabo, nostrum id sapiente porro
+                                </div>
+                               <div class="background-img"></div>
                             </div>
                             </transition>
                         </div>
                     </div>
                     
                 </div>
+                
             </section>
-            <the-form></the-form>
-            
+            <div class="tangled-background">
+                <div class="container">
+                    <div class="form-text">
+                        <h1><i class="fa-solid fa-message"></i> Contact Us</h1>
+                        <h2>Get In Touch With Us</h2>
+                        <p>we would love to hear your bullshit And pretend that we care!</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <div class="container">
+                        <the-form></the-form>
+                        <div class="image">
+                            <img src="/src/assets/images/Untitled_Artwork 20.png" alt="">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
             <the-footer></the-footer>
+           
+            
+            
     </body>
+
 
     
        
@@ -220,18 +277,55 @@ window.addEventListener('scroll', function() {
     },
     methods: {
        openQuestion1(){
+        if(this.isOpen2 === true || this.isOpen3 === true || this.isOpen4 === true || this.isOpen5 === true){
+
+            this.isOpen2 = false;
+            this.isOpen3 = false;
+            this.isOpen4 = false; 
+            this.isOpen5 = false;
+            
+        }
         this.isOpen1 = !this.isOpen1;
        },
        openQuestion2(){
+        if(this.isOpen1 === true || this.isOpen3 === true || this.isOpen4 === true || this.isOpen5 === true){
+
+this.isOpen1 = false;
+this.isOpen3 = false;
+this.isOpen4 = false; 
+this.isOpen5 = false;
+
+}
         this.isOpen2 = !this.isOpen2;
        },
        openQuestion3(){
+        if(this.isOpen1 === true || this.isOpen2 === true || this.isOpen4 === true || this.isOpen5 === true){
+
+this.isOpen1 = false;
+this.isOpen2 = false;
+this.isOpen4 = false; 
+this.isOpen5 = false;
+}
         this.isOpen3 = !this.isOpen3;
        },
        openQuestion4(){
+        if(this.isOpen1 === true || this.isOpen2 === true || this.isOpen3 === true || this.isOpen5 === true){
+
+this.isOpen1 = false;
+this.isOpen2 = false;
+this.isOpen3 = false; 
+this.isOpen5 = false;
+}
         this.isOpen4 = !this.isOpen4;
        },
        openQuestion5(){
+        if(this.isOpen1 === true || this.isOpen2 === true || this.isOpen3 === true || this.isOpen4 === true){
+
+this.isOpen1 = false;
+this.isOpen2 = false;
+this.isOpen3 = false; 
+this.isOpen4 = false;
+}
         this.isOpen5 = !this.isOpen5;
        }
     },
@@ -242,19 +336,78 @@ window.addEventListener('scroll', function() {
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mouse+Memoirs&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Princess+Sofia&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 
+.tangled-background {
+    
+    background: url("/src/assets/images/Untitled_Artwork 98.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-bottom:90px;
+
+
+
+}
+.contact-form .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: center;
+
+}
+
+.contact-form .image {
+
+    width: 400px;
+    height: 400px;
+
+}
+
+.contact-form img {
+    width: 100%;
+}
+
+.background-img {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/src/assets/images/Untitled_Artwork 191.png') no-repeat;
+    opacity:70%;
+    background-size: cover;
+}
+.background-img1 {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/src/assets/images/Untitled_Artwork 192.png') no-repeat;
+    opacity: 70%;
+    background-size: cover;
+}
+
+
+.z-index-text {
+    position:relative;
+    z-index: 3;
+}
 
 
 
 
 
 .faq-content .faq-group-body {
-    margin-top: 40px;
+    position: relative;
+    padding: 25px 20px;
+    border-bottom: 1px solid #ccc;
+
 }
+
 
 
 .header-for-faq {
     margin: 50px 0;
-    font-size: 2rem;
+    font-size: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -265,24 +418,23 @@ window.addEventListener('scroll', function() {
 }
 .faq {
     color: white;
-    margin: 100px 0;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    
 }
 
-.faq-group-body {
-    border-bottom: 1px solid #ccc;
-    padding: 0 20px 20px 20px;
-}
+
 
 .faq .faq-group-header {
     padding: 20px 0;
-    margin-bottom: 13px;
     position: relative;
     padding: 20px;
 }
 .faq .faq-group-header1 {
     padding: 20px 0;
-    margin-bottom: 13px;
+  
     position: relative;
+    padding: 20px;
 }
 
 
@@ -291,7 +443,7 @@ window.addEventListener('scroll', function() {
 .faq .faq-group .faq-group-header i {
     position: absolute;
     right: 0;
-    top: 10px;
+    top: 15px;
     font-size: 1.3rem;
     cursor: pointer;
 
@@ -299,7 +451,7 @@ window.addEventListener('scroll', function() {
 .faq .faq-group .faq-group-header1 i {
     position: absolute;
     right: 0;
-    top: 10px;
+    top: 15px;
     font-size: 1.3rem;
     cursor: pointer;
 
@@ -332,10 +484,10 @@ window.addEventListener('scroll', function() {
     position: absolute;
     height: 100px;
     background: #ff004f;
-    top: 1840px;
+    top: 1800px;
     right: 0;
     left: 0;
-    transform: skewY(-2.5deg);
+    transform: skewY(-2.3deg);
 
     
 }
@@ -352,6 +504,12 @@ window.addEventListener('scroll', function() {
     grid-template-columns: repeat(2,1fr);
     align-items: center;
     text-align: center;
+}
+
+.careers h1 {
+    font-size: 3rem;
+    letter-spacing: 8px;
+    margin: 15px 0;
 }
 
 .images-container {
@@ -378,7 +536,22 @@ window.addEventListener('scroll', function() {
     margin: 50px auto;
     width: fit-content;
     padding: 14px 50px;
-    border: 1px solid;
+    border: 2px solid;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.5s;
+
+}
+
+.btn-careers {
+    background: black;
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+    width: fit-content;
+    padding: 14px 50px;
+    border: 2px solid;
     border-radius: 6px;
     text-decoration: none;
     color: #fff;
@@ -388,6 +561,9 @@ window.addEventListener('scroll', function() {
 
 .btn:hover{
     background: #ff004f;
+}
+.btn-careers:hover{
+    background: transparent;
 }
 
 .layer {
@@ -645,6 +821,22 @@ section p {
 }
 
 
+.form-text {
+    margin-bottom: 50px;
+}
+
+.form-text h1 {
+    margin: 25px 0;
+    font-size: 2.7rem;
+}
+
+.form-text h2 {
+    margin: 15px 0;
+}
+
+
+
+
 
 
 @keyframes change {
@@ -666,6 +858,7 @@ section p {
     100% {
         background-image: url('/src/assets/images/Untitled_Artwork 18.png');
     }
+
     
 };
 
