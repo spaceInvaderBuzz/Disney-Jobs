@@ -3,7 +3,7 @@
     <body>
         <div class="image-container">
             <creative-text-vue></creative-text-vue>
-            <img class="image" src="/src/assets/disney_stitch.svg" alt="">
+            <img class="image anim" src="/src/assets/disney_stitch.svg" alt="">
             
             <router-link class="button" :to="{ name: 'FeaturedFilm'}">See More</router-link>
         </div>
@@ -362,6 +362,23 @@ window.addEventListener('scroll', function() {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mouse+Memoirs&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Princess+Sofia&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
+
+.anim  {
+opacity: 0;
+transform: translateY(30px);
+animation: moveup 0.5s linear forwards;
+
+}
+
+@keyframes moveup {
+    100% {
+        opacity: 1;
+        transform: translatey(0);
+    }
+}
+
+
+
 .tangled-background .containeer {
     max-width: 1350px;
     margin: 0 auto;
@@ -558,7 +575,7 @@ window.addEventListener('scroll', function() {
     position: absolute;
     height: 100px;
     background: #ff004f;
-    top: 1800px;
+    top: 1600px;
     right: 0;
     left: 0;
     transform: skewY(-2.3deg);
@@ -715,7 +732,7 @@ window.addEventListener('scroll', function() {
 }
 
 .social-bar h3 {
-    font-size: 30px;
+    font-size: 50px;
 
 }
 
@@ -739,6 +756,7 @@ window.addEventListener('scroll', function() {
 
 
 .social-menu {
+    text-decoration: none;
     list-style: none;
     display: flex;
     justify-content: center;
@@ -761,11 +779,13 @@ window.addEventListener('scroll', function() {
 
 .social-menu a i {
     font-size: 35px;
-    color: #111;
+    color: #000000;
     transition: 0.5s;
 }
 
 .social-menu a:hover {
+    
+    text-decoration: none;
     box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2), 
     inset -4px -4px 6px -1px rgba(255, 255, 255, 0),
     -0.5px -0.5px 0px rgba(0,0,0,0.15),
@@ -797,7 +817,7 @@ a:hover i {
 
 .button:hover {
     background: #ff004f;
-    color: #111;
+    color: #ffffff;
     box-shadow: 0 0 50px #ff004f;
     transition-delay: 0.5s;
 }
@@ -955,8 +975,138 @@ section p {
         background-image: url('/src/assets/images/Untitled_Artwork 18.png');
     }
 
+
+
     
 };
+
+
+@media (max-width: 670px){
+    .image-container {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        background-image: linear-gradient(rgba(108, 8, 8, 0.346), rgba(255, 0, 0, 0));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .image {
+        width: 550px;
+        margin-bottom: 40px;
+    
+    
+    }
+
+    .social-bar h3 {
+        font-size: 35px;
+    
+    }
+    .social-bar {
+        margin-right: 50px;;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        background: linear-gradient(
+            318.68deg,
+            #ff004f 0%,
+            #7f0229 49.72%,
+            #2d000f
+        );
+        
+    
+    }
+    .social-menu a {
+        display: flex;
+        background: #e3edf700;
+        height: 75px;
+        width: 40px;
+        margin: 0 15px;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        border-radius: 20px;
+        transition: 0.5s;
+        margin: 10px;
+       
+    }
+    
+    .container {
+        max-width: 655px;
+        margin: 0;
+        padding: 0 15px;
+        color: white;
+        
+      
+      
+      }
+      .careers .container {
+        display: flex;
+        flex-direction:column;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        align-items: center;
+        text-align: center;
+    }
+    .images-container {
+        margin-top:30px;
+        width: 400px;
+        height: 400px;
+        position: relative;
+        
+    
+    }
+    .faq .faq-group-header {
+        padding: 25px 20px 40px 20px;
+        position: relative;
+        
+    }
+
+    .faq-group-header h4 {
+        padding-right: 40px;
+    }
+
+    .faq-group-header i {
+        transform: scale(.9);
+
+    }
+    .faq-group-header1 i {
+        transform: scale(.9);
+
+    }
+
+.tangled-background {
+    
+    background: url("/src/assets/images/Untitled_Artwork 98.png") no-repeat;
+    background-position: cover;
+
+
+
+}
+
+.contact-form .containeer {
+    max-width: 670px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top:-40px;
+    
+    align-items: center;
+
+}
+
+.form-text {
+  
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+}
 
 
 

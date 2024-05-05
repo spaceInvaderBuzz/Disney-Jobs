@@ -136,6 +136,53 @@ i {
     height: 70px;
     background: rgba(255, 255, 255, 0.603);
 
+    
+
+}
+
+@media (max-width: 670px){
+    span {
+        cursor: pointer;
+        width: 70px;
+        height: 70px;
+        background: url('/src/assets/images/Untitled_Artwork 33.png') no-repeat;
+        background-size: 40px;
+        
+    }
+    
+    .active {
+        cursor: pointer;
+        width: 70px;
+        height: 70px;
+        background: url('/src/assets/images/Untitled_Artwork 34.png') no-repeat;
+        background-size: 40px;
+        
+        
+    }
+    i {
+        font-size: 20px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.603);
+    
+        
+    
+    }
+    .pagination {
+        position: absolute;
+        bottom: 110px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        left: 18px;
+        z-index: 3;
+    }
 }
 
 

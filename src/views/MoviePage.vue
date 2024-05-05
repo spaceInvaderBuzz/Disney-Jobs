@@ -1,126 +1,163 @@
 <template>
     <div v-for="(movie, index) in activeMovie" :key="index">
-
         <section class="movie-page-background">
-            <div :class="{ moviePagHeroBackground1: movie.movieIdentifier === 1, moviePagHeroBackground2: movie.movieIdentifier === 2, moviePagHeroBackground3: movie.movieIdentifier === 3, moviePagHeroBackground4: movie.movieIdentifier === 4, moviePagHeroBackground5: movie.movieIdentifier === 5, moviePagHeroBackground6: movie.movieIdentifier === 6, moviePagHeroBackground2: movie.movieIdentifier === 2, moviePagHeroBackground3: movie.movieIdentifier === 3, moviePagHeroBackground4: movie.movieIdentifier === 4, moviePagHeroBackground5: movie.movieIdentifier === 5, moviePagHeroBackground7: movie.movieIdentifier === 7}">
-            <div class="movie-page-container">
-                <div class="hero-content">
-                    <div class="movie-info">
-                        <div class="movie-logo-container">
-                            <img :src="`/src/assets/images/${ movie.logo }.png`">
-                        </div>
-                        <div class="movie-about-info">
-                            <h2>ABOUT</h2>
-                            <p class="movie-description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit qui aliquid eligendi, similique corporis impedit nulla maiores voluptates rem repellat architecto aperiam quo beatae perferendis voluptatibus expedita quod vero numquam natus? Necessitatibus ipsam assumenda adipisci quod quas tempora optio, architecto velit aperiam quisquam mollitia quos provident perferendis explicabo debitis reiciendis voluptatem totam ex recusandae accusamus sunt sequi sint obcaecati consequuntur. Delectus accusamus officiis totam exercitationem? Quos ducimus, voluptatum ipsam temporibus consectetur quo et excepturi, optio amet explicabo soluta sit molestias iure tenetur provident voluptatem aperiam reiciendis nemo? Maiores, exercitationem magni, officia sequi ipsa perspiciatis numquam aspernatur error id asperiores dolorum, qui at voluptatem recusandae quo sit nostrum! Dolor obcaecati ab enim ullam voluptates, doloribus velit aperiam voluptatem consequuntur! Quis neque veniam, quia repudiandae, eum accusantium nesciunt eos id explicabo, voluptatem doloribus saepe aspernatur blanditiis labore nemo similique. Unde veritatis libero laborum nam itaque. Hic inventore, placeat numquam molestias, blanditiis ducimus eaque temporibus tempora ratione ex, illo repellat tempore? Ex voluptatibus inventore quod molestiae impedit. Reprehenderit commodi quia aspernatur ex, possimus tenetur dignissimos explicabo nisi quam nam maxime veniam distinctio quis vitae laborum repellendus odio. Sit excepturi adipisci impedit itaque asperiores ipsam repellat, dolor dignissimos maxime doloremque obcaecati culpa velit ex.
+            <div class="mobile-container">
             
-                            </p>
-                            <div class="cast">
-                                <h1>CAST</h1>
-                                <p>
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo obcaecati officiis consequatur error maxime, culpa voluptatem consectetur reprehenderit possimus quis soluta fugit praesentium, animi voluptatibus.
-                                </p> 
-                            </div>
-                            <div class="directed-by">
-                                <h1>DIRECTED BY</h1>
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, numquam.</p>
-                            </div>
-            
-            
-                        </div>
-                    </div>
-                    <div class="movie-poster">
-                        <img :src="`/src/assets/images/${ movie.poster }.png`" alt="">
-                    </div>
-                </div>
-         
-               
-        
-                
-            </div>
-            <section class="own-today-section">
-        
-                <div class="own-it-today">
-            
-                    <h1>Own It Today!</h1>
-            
-                    <div class="img1-container" ref="image">
-                        <img :src="`/src/assets/images/${ movie.imageFromLeft }.png`" alt="">
-                    </div>
-                    <div class="img2-container" ref="image">
-                        <img :src="`/src/assets/images/${ movie.imageFromRight}.png`" alt="">
-                    </div>
-                    <div class="blu-ray-and-4k">
-                        
-                    <div class="container">
-                        <div class="card">
-                            <div :class="{front1: movie.movieIdentifier === 1, front3: movie.movieIdentifier === 2, front5: movie.movieIdentifier === 3, front7: movie.movieIdentifier === 4, front9: movie.movieIdentifier === 5, front11: movie.movieIdentifier === 6, front13: movie.movieIdentifier === 7 }"></div>
-                            <div class="back">
-                                <div class="blue-ray-logo">
-                                    <img src="/src/assets/images/Untitled_Artwork 107.png" alt="">
-                                </div>
-                                <a :href="`https://www.amazon.com/${ movie.amazonLink }`">Buy now</a>
-                            </div>
-                        </div>
-                        <h2>BLU RAY</h2>
-                    </div>
-                    <div class="container2">
-                        <div class="card2">
-                            <div :class="{front2: movie.movieIdentifier === 1, front4: movie.movieIdentifier === 2, front6: movie.movieIdentifier === 3, front8: movie.movieIdentifier === 4, front10: movie.movieIdentifier === 5, front12: movie.movieIdentifier === 6, front14: movie.movieIdentifier === 7 }"></div>
-                            <div class="back2">
-                                <div class="blue-ray-logo">
-                                    <img src="/src/assets/images/Untitled_Artwork 109.png" alt="">
-                                </div>
-                                <a :href="`https://www.amazon.com/${ movie.amazonLink2 }`">Buy now</a>
-                            </div>
-                        </div>
-                        <h2>4K ULTRA HD</h2>
-                     
-                    </div>
-                        
-            
-                    </div>
-                </div>
-            
-            </section>
-            <section class="trailer">
+                <div :class="{ moviePagHeroBackground1: movie.movieIdentifier === 1, moviePagHeroBackground2: movie.movieIdentifier === 2, moviePagHeroBackground3: movie.movieIdentifier === 3, moviePagHeroBackground4: movie.movieIdentifier === 4, moviePagHeroBackground5: movie.movieIdentifier === 5, moviePagHeroBackground6: movie.movieIdentifier === 6, moviePagHeroBackground2: movie.movieIdentifier === 2, moviePagHeroBackground3: movie.movieIdentifier === 3, moviePagHeroBackground4: movie.movieIdentifier === 4, moviePagHeroBackground5: movie.movieIdentifier === 5, moviePagHeroBackground7: movie.movieIdentifier === 7}">
                 <div class="movie-page-container">
                     
-                    <div class="trailer-container">
-                        <h1 class="watch-trailer">
-                            - WATCH THE TRAILER - 
-                        </h1>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae quia molestiae ratione repellat dolores reprehenderit eum unde laudantium quisquam quo deserunt nulla
-                        </p>
-                        <iframe class="movie" width="840" height="472" :src="`https://www.youtube.com/embed/${ movie.youTube}`" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <div v-if="mobile" class="movie-info">
+                            <div class="movie-logo-container">
+                                <img :src="`/src/assets/images/${ movie.logo }.png`">
+                            </div>
+                            <div class="movie-poster">
+                                <img :src="`/src/assets/images/${ movie.poster }.png`" alt="">
+                            </div>
+                            <div class="movie-about-info">
+                                <h2>ABOUT</h2>
+                                <p class="movie-description">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit qui aliquid eligendi, similique corporis impedit nulla maiores voluptates rem repellat architecto aperiam quo beatae perferendis voluptatibus expedita quod vero numquam natus? Necessitatibus ipsam assumenda adipisci quod quas tempora optio, architecto velit aperiam quisquam mollitia quos provident perferendis explicabo debitis reiciendis voluptatem totam ex recusandae accusamus sunt sequi sint obcaecati consequuntur. Delectus accusamus officiis totam exercitationem? Quos ducimus, voluptatum ipsam temporibus consectetur quo et excepturi, optio amet explicabo soluta sit molestias iure tenetur provident voluptatem aperiam reiciendis nemo? Maiores, exercitationem magni, officia sequi ipsa perspiciatis numquam aspernatur error id asperiores dolorum, qui at voluptatem recusandae quo sit nostrum! Dolor obcaecati ab enim ullam voluptates, doloribus velit aperiam voluptatem consequuntur! Quis neque veniam, quia repudiandae, eum accusantium nesciunt eos id explicabo, voluptatem doloribus saepe aspernatur blanditiis labore nemo similique. Unde veritatis libero laborum nam itaque. Hic inventore, placeat numquam molestias, blanditiis ducimus eaque temporibus tempora ratione ex, illo repellat tempore? Ex voluptatibus inventore quod molestiae impedit. Reprehenderit commodi quia aspernatur ex, possimus tenetur dignissimos explicabo nisi quam nam maxime veniam distinctio quis vitae laborum repellendus odio. Sit excepturi adipisci impedit itaque asperiores ipsam repellat, dolor dignissimos maxime doloremque obcaecati culpa velit ex.
+                
+                                </p>
+                                <div class="cast">
+                                    <h1>CAST</h1>
+                                    <p>
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo obcaecati officiis consequatur error maxime, culpa voluptatem consectetur reprehenderit possimus quis soluta fugit praesentium, animi voluptatibus.
+                                    </p> 
+                                </div>
+                                <div class="directed-by">
+                                    <h1>DIRECTED BY</h1>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, numquam.</p>
+                                </div>
+                
+                
+                            </div>
+                        </div>
+                       
+                 
+             
+                    <div v-else class="hero-content">
+                        <div class="movie-info">
+                            <div class="movie-logo-container">
+                                <img :src="`/src/assets/images/${ movie.logo }.png`">
+                            </div>
+                            <div class="movie-about-info">
+                                <h2>ABOUT</h2>
+                                <p class="movie-description">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit qui aliquid eligendi, similique corporis impedit nulla maiores voluptates rem repellat architecto aperiam quo beatae perferendis voluptatibus expedita quod vero numquam natus? Necessitatibus ipsam assumenda adipisci quod quas tempora optio, architecto velit aperiam quisquam mollitia quos provident perferendis explicabo debitis reiciendis voluptatem totam ex recusandae accusamus sunt sequi sint obcaecati consequuntur. Delectus accusamus officiis totam exercitationem? Quos ducimus, voluptatum ipsam temporibus consectetur quo et excepturi, optio amet explicabo soluta sit molestias iure tenetur provident voluptatem aperiam reiciendis nemo? Maiores, exercitationem magni, officia sequi ipsa perspiciatis numquam aspernatur error id asperiores dolorum, qui at voluptatem recusandae quo sit nostrum! Dolor obcaecati ab enim ullam voluptates, doloribus velit aperiam voluptatem consequuntur! Quis neque veniam, quia repudiandae, eum accusantium nesciunt eos id explicabo, voluptatem doloribus saepe aspernatur blanditiis labore nemo similique. Unde veritatis libero laborum nam itaque. Hic inventore, placeat numquam molestias, blanditiis ducimus eaque temporibus tempora ratione ex, illo repellat tempore? Ex voluptatibus inventore quod molestiae impedit. Reprehenderit commodi quia aspernatur ex, possimus tenetur dignissimos explicabo nisi quam nam maxime veniam distinctio quis vitae laborum repellendus odio. Sit excepturi adipisci impedit itaque asperiores ipsam repellat, dolor dignissimos maxime doloremque obcaecati culpa velit ex.
+                
+                                </p>
+                                <div class="cast">
+                                    <h1>CAST</h1>
+                                    <p>
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo obcaecati officiis consequatur error maxime, culpa voluptatem consectetur reprehenderit possimus quis soluta fugit praesentium, animi voluptatibus.
+                                    </p> 
+                                </div>
+                                <div class="directed-by">
+                                    <h1>DIRECTED BY</h1>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, numquam.</p>
+                                </div>
+                
+                
+                            </div>
+                        </div>
+                        <div class="movie-poster">
+                            <img :src="`/src/assets/images/${ movie.poster }.png`" alt="">
+                        </div>
+                    </div>
+             
+                   
+            
+                    
+                </div>
+                <section class="own-today-section">
+            
+                    <div class="own-it-today">
+                
+                        <h1>Own It Today!</h1>
+                
+                        <div class="img1-container" ref="image">
+                            <img :src="`/src/assets/images/${ movie.imageFromLeft }.png`" alt="">
+                        </div>
+                        <div class="img2-container" ref="image">
+                            <img :src="`/src/assets/images/${ movie.imageFromRight}.png`" alt="">
+                        </div>
+                        <div class="blu-ray-and-4k">
+                            
+                        <div class="container">
+                            <div class="card">
+                                <div :class="{front1: movie.movieIdentifier === 1, front3: movie.movieIdentifier === 2, front5: movie.movieIdentifier === 3, front7: movie.movieIdentifier === 4, front9: movie.movieIdentifier === 5, front11: movie.movieIdentifier === 6, front13: movie.movieIdentifier === 7 }"></div>
+                                <div class="back">
+                                    <div class="blue-ray-logo">
+                                        <img src="/src/assets/images/Untitled_Artwork 107.png" alt="">
+                                    </div>
+                                    <a :href="`https://www.amazon.com/${ movie.amazonLink }`">Buy now</a>
+                                </div>
+                            </div>
+                            <h2>BLU RAY</h2>
+                        </div>
+                        <div class="container2">
+                            <div class="card2">
+                                <div :class="{front2: movie.movieIdentifier === 1, front4: movie.movieIdentifier === 2, front6: movie.movieIdentifier === 3, front8: movie.movieIdentifier === 4, front10: movie.movieIdentifier === 5, front12: movie.movieIdentifier === 6, front14: movie.movieIdentifier === 7 }"></div>
+                                <div class="back2">
+                                    <div class="blue-ray-logo">
+                                        <img src="/src/assets/images/Untitled_Artwork 109.png" alt="">
+                                    </div>
+                                    <a :href="`https://www.amazon.com/${ movie.amazonLink2 }`">Buy now</a>
+                                </div>
+                            </div>
+                            <h2>4K ULTRA HD</h2>
+                         
+                        </div>
+                            
+                
+                        </div>
+                    </div>
+                
+                </section>
+                <section class="trailer">
+                    <div class="movie-page-container">
+                        
+                        <div class="trailer-container">
+                            <h1 class="watch-trailer">
+                                - WATCH THE TRAILER - 
+                            </h1>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae quia molestiae ratione repellat dolores reprehenderit eum unde laudantium quisquam quo deserunt nulla
+                            </p>
+                            <iframe class="movie" width="840" height="472" :src="`https://www.youtube.com/embed/${ movie.youTube}`" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                   
+                </section>
+                <div class="background-banner">
+                    <div class="background-banner-container">
+                       <div :class="{pimg1: movie.movieIdentifier === 1, pimg2: movie.movieIdentifier === 2, pimg3: movie.movieIdentifier === 3, pimg4: movie.movieIdentifier === 4, pimg5: movie.movieIdentifier === 5,  pimg6: movie.movieIdentifier === 6, pimg7: movie.movieIdentifier === 7 }">
+                        <div class="text">GALLERY</div>
+                       </div>
                     </div>
                 </div>
-               
-            </section>
-            <div class="background-banner">
-                <div class="background-banner-container">
-                   <div :class="{pimg1: movie.movieIdentifier === 1, pimg2: movie.movieIdentifier === 2, pimg3: movie.movieIdentifier === 3, pimg4: movie.movieIdentifier === 4, pimg5: movie.movieIdentifier === 5,  pimg6: movie.movieIdentifier === 6, pimg7: movie.movieIdentifier === 7 }">
-                    <div class="text">GALLERY</div>
-                   </div>
-                </div>
-            </div>
-            <div class="gallery">
-                <h1>GALLERY</h1>
-                <div class="gallery-container">
-                    
-                        <div v-for="(image,index) in activeImages" :key="index" @click="addActiveClass(index)" class="panel" :class="{ active: activeSlide[0].id === index }" :style="{ background:`url('/src/assets/images/${image.background}.png') no-repeat center`}">
-                            <h3>{{ image.text }}</h3>
-                        </div>
-                    
+                <div class="gallery">
+                    <h1>GALLERY</h1>
+                    <div class="gallery-container">
+                        
+                            <div v-for="(image,index) in activeImages" :key="index" @click="addActiveClass(index)" class="panel" :class="{ active: activeSlide[0].id === index }" :style="{ background:`url('/src/assets/images/${image.background}.png') no-repeat center`}">
+                                <h3>{{ image.text }}</h3>
+                            </div>
+                        
+                        
+                    </div>
                     
                 </div>
-                
-            </div>
-            <the-footer></the-footer>
-            </div>
+                <the-footer></the-footer>
+                </div>
+            
+             
+
+        </div>
+    </section>
+
         
-          </section>
     </div>
   
 
@@ -139,6 +176,8 @@ components: { TheFooter },
 
 data(){
     return {
+        mobile: false,
+        windowWidth: false,
 
         triggerBottom: window.innerHeight / 5 * 4,
         movies: [
@@ -229,7 +268,7 @@ data(){
         activeSlide: [{id: 0}],
         images1: [{id: 0, text: 'Explore The World', background: 'Untitled_Artwork 111'}, {id: 1, text: 'Wild Forest', background: 'Untitled_Artwork 111'}, { id: 2, text: 'Crazy Riandown', background: 'Untitled_Artwork 111'}, { id: 3, text: 'pooooop', background: 'Untitled_Artwork 111' },{id: 4, text: 'little mermaid', background: 'Untitled_Artwork 111'}],
         
-        images2: [{id: 0, text: 'Explore The World', background: 'Untitled_Artwork 135'}, {id: 1, text: 'Wild Forest', background: 'Untitled_Artwork 135'}, { id: 2, text: 'Crazy Riandown', background: 'Untitled_Artwork 111'}, { id: 3, text: 'pooooop', background: 'Untitled_Artwork 111' },{id: 4, text: 'little mermaid', background: 'Untitled_Artwork 111'}],
+        images2: [{id: 0, text: 'Explore The World', background: 'Untitled_Artwork 135'}, {id: 1, text: 'Wild Forest', background: 'Untitled_Artwork 135'}, { id: 2, text: 'Crazy Riandown', background: 'Untitled_Artwork 135'}, { id: 3, text: 'pooooop', background: 'Untitled_Artwork 111' },{id: 4, text: 'little mermaid', background: 'Untitled_Artwork 111'}],
         images3: [{id: 0, text: 'Explore The World', background: 'Untitled_Artwork 144'}, {id: 1, text: 'Wild Forest', background: 'Untitled_Artwork 144'}, { id: 2, text: 'Crazy Riandown', background: 'Untitled_Artwork 111'}, { id: 3, text: 'pooooop', background: 'Untitled_Artwork 111' },{id: 4, text: 'little mermaid', background: 'Untitled_Artwork 111'}],
         images4: [{id: 0, text: 'Explore The World', background: 'Untitled_Artwork 144'}, {id: 1, text: 'Wild Forest', background: 'Untitled_Artwork 144'}, { id: 2, text: 'Crazy Riandown', background: 'Untitled_Artwork 111'}, { id: 3, text: 'pooooop', background: 'Untitled_Artwork 111' },{id: 4, text: 'little mermaid', background: 'Untitled_Artwork 111'}],
         images5: [{id: 0, text: 'Explore The World', background: 'Untitled_Artwork 144'}, {id: 1, text: 'Wild Forest', background: 'Untitled_Artwork 144'}, { id: 2, text: 'Crazy Riandown', background: 'Untitled_Artwork 111'}, { id: 3, text: 'pooooop', background: 'Untitled_Artwork 111' },{id: 4, text: 'little mermaid', background: 'Untitled_Artwork 111'}],
@@ -239,6 +278,15 @@ data(){
     };
 },
 methods: {
+    checkScreen(){
+        this.windowWidth = window.innerWidth;
+        if(this.windowWidth <= 670){
+            this.mobile = true;
+            return;
+        } 
+            this.mobile = false;
+
+    },
     addActiveClass(parameter){
         this.images1.forEach((image) => {
             if(image.id === parameter){
@@ -304,7 +352,8 @@ computed: {
     },
 },
 created(){
-   
+    window.addEventListener('resize', this.checkScreen);
+   this.checkScreen();
 this.scroll();
 },
 };
@@ -322,9 +371,6 @@ this.scroll();
 }
 
 .panel {
-    background: no-repeat;
-    background-size: cover;
-    background-position: center;
     height: 80vh;
     border-radius: 50px;
     cursor: pointer;
@@ -796,7 +842,12 @@ this.scroll();
 
 
 .back {
-    background: #0898ff;
+    background: linear-gradient(
+        318.68deg,
+        #0068b3 0%,
+        #0095ff 49.72%,
+        #bee4ff
+    );
     transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
@@ -871,6 +922,13 @@ this.scroll();
 .blue-ray-logo {
     width: 150x;
     height: 150px;
+}
+
+.back a {
+    text-decoration: none;
+    color: white;
+    letter-spacing: 2px;
+   
 }
 .blue-ray-logo img {
     width: 100%;
@@ -969,8 +1027,19 @@ this.scroll();
     height: 100%;
 }
 
-.movie-about-info {
+.movie-about-info,.cast,.directed-by {
     color: white;
+}
+
+.movie-about-info h2 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    text-align: center;
+}
+.movie-about-info h1 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    text-align: center;
 }
 
 .movie-poster {
@@ -1014,6 +1083,7 @@ this.scroll();
    grid-template-columns: 1fr 2fr;
    align-items: center;
    justify-content: center;
+   margin-bottom:100px ;
    gap: 30px;
 }
 
@@ -1028,7 +1098,7 @@ this.scroll();
     background: url('/src/assets/images/Untitled_Artwork 92.png') no-repeat;
     background-size: contain;
     width:1660px;
-    height: 2000px;
+    height: 3000px;
     
 }
 .moviePagHeroBackground2 {
@@ -1112,4 +1182,48 @@ div {
     color: black;
 }
 
+
+@media(max-width: 670px){
+    .movie-page-background {
+        height: 100%;
+        background: black;
+    }
+   
+    .moviePagHeroBackground1 {
+        background: url('/src/assets/images/Untitled_Artwork 92.png') no-repeat;
+        
+        background-position: center cover;
+        width:1000px;
+        height: 3000px;
+        
+    }
+
+    .movie-about-info {
+        background: green;
+        padding: 20px 200px;
+    }
+   
+
+    .movie-poster {
+        width: 550px;
+        height: 700px;
+    }
+    .movie-info {
+       padding-top: 200px;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       text-align: center;
+       gap: 30px;
+    }
+    .mobile-container {
+        max-width: 670px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
 </style>

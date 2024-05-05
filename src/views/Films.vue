@@ -1,25 +1,29 @@
 <template>
   <div class="films-page">
-    <carousel :navigation="true" :pagination="true" class="carousel" v-slot="{ currentSlide }">      //ref(1)
+    <carousel :navigation="true" :pagination="true" class="carousel" v-slot="{ currentSlide }">
+        <h3 class="cool-text anim" v-if="currentSlide === 1">
+            <div class="banner-text">Lilo and Stitch </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, quo?frvedfvdfv</p>
+            <a href="#" class="btn">Go to page</a>
+        </h3>
+        <h3 class="cool-text anim" v-if="currentSlide === 2">
+            <div class="banner-text">The Little Mermaid</div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, quo?frvedfvdfv</p>
+            <a href="#" class="btn">Go to page</a>
+        </h3>
+        <h3 class="cool-text anim" v-if="currentSlide === 3">
+            <div class="banner-text">The Iron Giant</div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, quo?frvedfvdfv</p>
+            <a href="#" class="btn">Go to page</a>
+        </h3>
+        
         <slide v-for="(slide,index) in carouselSlides" :key="index">
             <div v-if="currentSlide === index + 1" class="slide-info">
                 <img :src="(`/src/assets/images/${slide}.png`)" alt="">
                 
-                <h3 class="cool-text anim" v-if="currentSlide === 1">
-                    <div class="banner-text">Lilo and Stitch </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, quo?frvedfvdfv</p>
-                    <a href="#" class="btn">Go to page</a>
-                </h3>
-                <h3 class="cool-text anim" v-if="currentSlide === 2">
-                    <div class="banner-text">The Little Mermaid</div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, quo?frvedfvdfv</p>
-                    <a href="#" class="btn">Go to page</a>
-                </h3>
-                <h3 class="cool-text anim" v-if="currentSlide === 3">
-                    <div class="banner-text">The Iron Giant</div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, quo?frvedfvdfv</p>
-                    <a href="#" class="btn">Go to page</a>
-                </h3>
+               
+                
+               
             </div>
         </slide>
     </carousel>
@@ -399,5 +403,100 @@ height: 100%;
         transform: translateY(0px);
     }
 }
+
+@media (max-width: 670px){
+
+    .title h1 {
+        font-size: 3rem;
+    }
+    .title p {
+        font-size: 1.2rem;
+    }
+
+
+.films-page {
+    background: black;
+    padding-bottom:100px;
+
+}
+
+.films-container {
+   z-index: 2;
+   position: relative;
+    margin-top: -120px;
+}
+    .carousel .slide-info img {
+        width: 95vw;
+        height: 100vh;
+        object-fit: contain;
+    }
+
+    .cool-text {
+       
+        position: absolute;
+        font-size: 30px;
+        bottom: 210px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 4;
+        margin-bottom: 20px;
+        
+        
+    }
+    
+    
+    .cool-text p {
+        margin-top: 20px;
+        font-size: .4em;
+        font-weight: 50;
+        text-align: center;
+        color: white;
+    }
+    
+    .banner-text {
+        text-transform: uppercase;
+        color: white;
+        letter-spacing: 3px;
+        font-weight: 4;
+        border-bottom: 1.5px solid rgb(255, 255, 255);
+       
+    }
+    .title {
+        border-radius: 20px;
+        border: 2px solid #ff004f;
+        padding: 50px;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 50px;
+        text-align: center;
+    }
+    .portfolio {
+   
+        
+        display: flex;
+   flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap:30px;
+
+    
+    }
+    .portfolio .item {
+        position: relative;
+        width: 250px;
+        height: 350px;
+        margin: 5px;
+    
+    
+    }
+    
+}
+
 
 </style>
