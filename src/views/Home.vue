@@ -155,7 +155,7 @@
                                     amet consectetur adipisicing elit. Quis explicabo, nostrum id
                                 </div>
                                
-                                <div class="background-img">
+                                <div class="background-img2">
 
                                 </div>
                             </div>
@@ -182,7 +182,7 @@
                                 </div>
                                
                                 amet consectetur adipisicing elit. Quis explicabo, nost
-                           <div class="background-img1"></div>
+                           <div class="background-img3"></div>
                             </div>
                             </transition>
                         </div>
@@ -215,18 +215,20 @@
                 
             </section>
             <div class="tangled-background">
-                <div class="container">
+                <div class="containeer">
                     <div class="form-text">
-                        <h1><i class="fa-solid fa-message"></i> Contact Us</h1>
+                        <h1><i class="fa-solid fa-message">
+                            <i class="fa-solid fa-message"></i>
+                        </i>Contact Us</h1>
                         <h2>Get In Touch With Us</h2>
                         <p>we would love to hear your bullshit And pretend that we care!</p>
                     </div>
                 </div>
                 <div class="contact-form">
-                    <div class="container">
+                    <div class="containeer">
                         <the-form></the-form>
                         <div class="image">
-                            <img src="/src/assets/images/Untitled_Artwork 20.png" alt="">
+                            <img src="/src/assets/images/Untitled_Artwork 193.png" alt="">
                         </div>
 
                     </div>
@@ -277,55 +279,55 @@ window.addEventListener('scroll', function() {
     },
     methods: {
        openQuestion1(){
-        if(this.isOpen2 === true || this.isOpen3 === true || this.isOpen4 === true || this.isOpen5 === true){
+        //if(this.isOpen2 === true || this.isOpen3 === true || this.isOpen4 === true || this.isOpen5 === true){
 
-            this.isOpen2 = false;
-            this.isOpen3 = false;
-            this.isOpen4 = false; 
-            this.isOpen5 = false;
+       //     this.isOpen2 = false;
+         //   this.isOpen3 = false;
+        //    this.isOpen4 = false; 
+        //    this.isOpen5 = false;
             
-        }
+       // }
         this.isOpen1 = !this.isOpen1;
        },
        openQuestion2(){
-        if(this.isOpen1 === true || this.isOpen3 === true || this.isOpen4 === true || this.isOpen5 === true){
+        //if(this.isOpen1 === true || this.isOpen3 === true || this.isOpen4 === true || this.isOpen5 === true){
 
-this.isOpen1 = false;
-this.isOpen3 = false;
-this.isOpen4 = false; 
-this.isOpen5 = false;
+//this.isOpen1 = false;
+//this.isOpen3 = false;
+//this.isOpen4 = false; 
+//this.isOpen5 = false;
 
-}
+//}
         this.isOpen2 = !this.isOpen2;
        },
        openQuestion3(){
-        if(this.isOpen1 === true || this.isOpen2 === true || this.isOpen4 === true || this.isOpen5 === true){
+        //if(this.isOpen1 === true || this.isOpen2 === true || this.isOpen4 === true || this.isOpen5 === true){
 
-this.isOpen1 = false;
-this.isOpen2 = false;
-this.isOpen4 = false; 
-this.isOpen5 = false;
-}
+//this.isOpen1 = false;
+//this.isOpen2 = false;
+//this.isOpen4 = false; 
+//this.isOpen5 = false;
+//}
         this.isOpen3 = !this.isOpen3;
        },
        openQuestion4(){
-        if(this.isOpen1 === true || this.isOpen2 === true || this.isOpen3 === true || this.isOpen5 === true){
+        //if(this.isOpen1 === true || this.isOpen2 === true || this.isOpen3 === true || this.isOpen5 === true){
 
-this.isOpen1 = false;
-this.isOpen2 = false;
-this.isOpen3 = false; 
-this.isOpen5 = false;
-}
+//this.isOpen1 = false;
+//this.isOpen2 = false;
+//this.isOpen3 = false; 
+//this.isOpen5 = false;
+//}
         this.isOpen4 = !this.isOpen4;
        },
        openQuestion5(){
-        if(this.isOpen1 === true || this.isOpen2 === true || this.isOpen3 === true || this.isOpen4 === true){
+        //if(this.isOpen1 === true || this.isOpen2 === true || this.isOpen3 === true || this.isOpen4 === true){
 
-this.isOpen1 = false;
-this.isOpen2 = false;
-this.isOpen3 = false; 
-this.isOpen4 = false;
-}
+//this.isOpen1 = false;
+//this.isOpen2 = false;
+//this.isOpen3 = false; 
+//this.isOpen4 = false;
+//}
         this.isOpen5 = !this.isOpen5;
        }
     },
@@ -335,34 +337,61 @@ this.isOpen4 = false;
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mouse+Memoirs&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Princess+Sofia&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
+.tangled-background .containeer {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 0 15px;
+    color: white;
+    
+  
+}
+
+
+.fa-solid.fa-message {
+    margin-right: 10px;
+    
+    position: relative;
+}
+.fa-solid.fa-message .fa-solid.fa-message {
+    margin-right: 10px;
+    position: absolute;
+    right:-15px;
+    top:-5px;
+    color:#ff004f;
+    font-size: 30px;
+}
+
+
 
 .tangled-background {
     
     background: url("/src/assets/images/Untitled_Artwork 98.png") no-repeat;
-    background-position: center;
+    background-position: bottom;
     background-size: cover;
     padding-bottom:90px;
 
 
 
 }
-.contact-form .container {
-    display: grid;
+.contact-form .containeer {
+    display:grid;
     grid-template-columns: 2fr 1fr;
     gap: 30px;
+    margin-top:-40px;
     align-items: center;
 
 }
 
-.contact-form .image {
-
-    width: 400px;
-    height: 400px;
+.contact-form .containeer .image {
+    width: 600px;
+    height: 650px;
+   
 
 }
 
 .contact-form img {
     width: 100%;
+    height: 100%;
 }
 
 .background-img {
@@ -371,7 +400,7 @@ this.isOpen4 = false;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('/src/assets/images/Untitled_Artwork 191.png') no-repeat;
+    background: url('/src/assets/images/Untitled_Artwork 198.png') no-repeat;
     opacity:70%;
     background-size: cover;
 }
@@ -381,7 +410,27 @@ this.isOpen4 = false;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('/src/assets/images/Untitled_Artwork 192.png') no-repeat;
+    background: url('/src/assets/images/Untitled_Artwork 197.png') no-repeat;
+    opacity: 70%;
+    background-size: cover;
+}
+.background-img2 {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/src/assets/images/Untitled_Artwork 196.png') no-repeat;
+    opacity: 70%;
+    background-size: cover;
+}
+.background-img3 {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/src/assets/images/Untitled_Artwork 195.png') no-repeat;
     opacity: 70%;
     background-size: cover;
 }
@@ -398,7 +447,7 @@ this.isOpen4 = false;
 
 .faq-content .faq-group-body {
     position: relative;
-    padding: 25px 20px;
+    padding: 30px 20px;
     border-bottom: 1px solid #ccc;
 
 }
@@ -419,22 +468,22 @@ this.isOpen4 = false;
 .faq {
     color: white;
     margin-top: 100px;
-    margin-bottom: 100px;
+    margin-bottom: 130px;
     
 }
 
 
 
 .faq .faq-group-header {
-    padding: 20px 0;
+    padding: 25px 20px 50px 20px;
     position: relative;
-    padding: 20px;
+    
 }
 .faq .faq-group-header1 {
-    padding: 20px 0;
+    padding: 25px 20px 50px 20px;
   
     position: relative;
-    padding: 20px;
+   
 }
 
 
@@ -826,12 +875,24 @@ section p {
 }
 
 .form-text h1 {
-    margin: 25px 0;
+    margin: 30px 0;
     font-size: 2.7rem;
 }
 
+
+
 .form-text h2 {
-    margin: 15px 0;
+    margin: 15px 0 25px 0;
+}
+
+.contact-form .image {
+    width: 530px;
+    height: 600px;
+
+}
+.contact-form img {
+    width: 100%;
+    height: 100%;
 }
 
 

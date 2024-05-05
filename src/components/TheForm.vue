@@ -58,7 +58,7 @@ methods: {
 <style scoped>
 
 form h1 {
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 
@@ -78,7 +78,7 @@ form {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 20px;
-    padding: 16px 35px;
+    padding: 20px 45px;
     z-index: 2;
     position: relative;
     overflow: hidden;
