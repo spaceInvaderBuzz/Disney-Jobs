@@ -227,7 +227,7 @@
                 <div class="contact-form">
                     <div class="containeer">
                         <the-form></the-form>
-                        <div class="image">
+                        <div class="image-for-form" ref="formImage" :class="{ active: active }">
                             <img src="/src/assets/images/Untitled_Artwork 193.png" alt="">
                         </div>
 
@@ -261,10 +261,12 @@ export default {
     name: 'Home',
     components: {CreativeTextVue, ContactFormVue, TheFooter, TheForm},
     mounted(){
+        
         let video = document.querySelector('.video');
 window.addEventListener('scroll', function() {
     let value = 1 + window.scrollY/-600;
     video.style.opacity = value;
+    
     
 });
     },
@@ -274,10 +276,30 @@ window.addEventListener('scroll', function() {
             isOpen2: false,
             isOpen3: false,
             isOpen4: false,
-            isOpen5: false
+            isOpen5: false,
+            active: false,
+            
         };
     },
     methods: {
+
+        reveal(){
+           
+            const revealed = document.querySelector('.image-for-form');
+            
+            const revealTop = revealed.getBoundingClientRect().top;
+            const windowheight = window.innerHeight;
+            const revealpoint = 150;
+            if(revealTop <  windowheight - revealpoint){
+                this.active = true;
+            } else {
+                this.active = false;
+            };
+
+        },
+        scroll(){
+            window.addEventListener('scroll', this.reveal);
+        },
        openQuestion1(){
         //if(this.isOpen2 === true || this.isOpen3 === true || this.isOpen4 === true || this.isOpen5 === true){
 
@@ -330,6 +352,9 @@ window.addEventListener('scroll', function() {
 //}
         this.isOpen5 = !this.isOpen5;
        }
+    },
+    created(){
+        this.scroll();
     },
 };
 </script>
@@ -885,11 +910,21 @@ section p {
     margin: 15px 0 25px 0;
 }
 
-.contact-form .image {
-    width: 530px;
-    height: 600px;
+.contact-form  .containeer .image-for-form {
+    opacity: 0;
+    transition: all 2s ease;
+    transform: translateY(150px);
+    width: 650px;
+    height: 680px;
 
 }
+.contact-form  .containeer .image-for-form.active {
+    transform: translateY(0px);
+    opacity: 1;
+
+}
+
+
 .contact-form img {
     width: 100%;
     height: 100%;
