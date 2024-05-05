@@ -139,7 +139,15 @@
                 </div>
                 <div class="gallery">
                     <h1>GALLERY</h1>
-                    <div class="gallery-container">
+                    <div v-if="mobile" class="gallery-container">
+                        
+                            <div v-for="(image,index) in mobileActiveImages" :key="index" @click="addActiveClass(index)" class="panel" :class="{ active: activeSlide[0].id === index }" :style="{ background:`url('/src/assets/images/${image.background}.png') no-repeat center`}">
+                                <h3>{{ image.text }}</h3>
+                            </div>
+                        
+                        
+                    </div>
+                    <div v-else class="gallery-container">
                         
                             <div v-for="(image,index) in activeImages" :key="index" @click="addActiveClass(index)" class="panel" :class="{ active: activeSlide[0].id === index }" :style="{ background:`url('/src/assets/images/${image.background}.png') no-repeat center`}">
                                 <h3>{{ image.text }}</h3>
@@ -275,6 +283,7 @@ data(){
         images6: [{id: 0, text: 'Explore The World', background: 'Untitled_Artwork 144'}, {id: 1, text: 'Wild Forest', background: 'Untitled_Artwork 144'}, { id: 2, text: 'Crazy Riandown', background: 'Untitled_Artwork 111'}, { id: 3, text: 'pooooop', background: 'Untitled_Artwork 111' },{id: 4, text: 'little mermaid', background: 'Untitled_Artwork 111'}],
         images7: [{id: 0, text: 'Explore The World', background: 'Untitled_Artwork 144'}, {id: 1, text: 'Wild Forest', background: 'Untitled_Artwork 144'}, { id: 2, text: 'Crazy Riandown', background: 'Untitled_Artwork 111'}, { id: 3, text: 'pooooop', background: 'Untitled_Artwork 111' },{id: 4, text: 'little mermaid', background: 'Untitled_Artwork 111'}],
        
+        mobileImages1: [{id: 0, text: 'Explore The World', background: 'Untitled_Artwork 111'}, {id: 1, text: 'Wild Forest', background: 'Untitled_Artwork 111'}, { id: 2, text: 'Crazy Riandown', background: 'Untitled_Artwork 111'}, { id: 3, text: 'pooooop', background: 'Untitled_Artwork 111' }],
     };
 },
 methods: {
@@ -345,6 +354,11 @@ computed: {
         };
         if (this.$route.params.id === "7"){
             return this.images7
+        };
+    },
+    mobileActiveImages(){
+        if (this.$route.params.id === "1"){
+            return this.mobileImages1
         };
     },
     activeMovie(){
@@ -1037,7 +1051,8 @@ this.scroll();
     text-align: center;
 }
 .movie-about-info h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    font-weight: 550;
     margin: 20px 0;
     text-align: center;
 }
@@ -1194,12 +1209,15 @@ div {
         
         background-position: center cover;
         width:1000px;
-        height: 3000px;
+        height: 100%;
         
     }
+   .trailer {
+    padding-bottom: 65px;
+   }
 
     .movie-about-info {
-        background: green;
+ 
         padding: 20px 200px;
     }
    
@@ -1224,6 +1242,56 @@ div {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+
+    .blu-ray-and-4k {
+        display: flex;
+        flex-direction: column;
+    }
+    .blu-ray-and-4k .container {
+        margin-left:300px;
+        width: 250px;
+        height: 250px;
+        margin-bottom: 100px;
+    }
+    .blu-ray-and-4k .container2 {
+        width: 250px;
+        height: 250px;
+    }
+    .img1-container {
+        top: 100px;
+        transform: translateX(-100%);
+        width: 320px;
+        height: 320px;
+    }
+    .img1-container.active {
+
+       transform: translateX(200px)
+    }
+    .img2-container {
+        top: 400px;
+        transform: translateX(100%);
+        width: 450px;
+        height: 450px;
+    }
+    .img2-container.active {
+
+        transform: translateX(-180px)
+     }
+     .trailer-container {
+        padding: 35px 150px;
+        text-align: center;
+        
+     }
+     .trailer-container h1 {
+        font-size: 2.5rem;
+     }
+     .movie{
+        max-width: 500px;
+        max-height: 500px;
+     }
+     .panel.active {
+        flex: 8;
     }
 }
 </style>
