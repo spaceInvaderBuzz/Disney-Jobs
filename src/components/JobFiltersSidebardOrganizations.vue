@@ -70,6 +70,7 @@ export default {
     color: white;
     background: rgb(18, 18, 18);
     position: absolute;
+    z-index: 3;
     top: 10px;
     padding: 20px;
 }

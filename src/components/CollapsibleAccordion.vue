@@ -48,16 +48,6 @@ computed: {
 <style scoped>
 
 
-.options-enter-active,
-.options-leave-active {
-    transition: all 0.5s ease;
-}
-
-.options-enter-from,
-.options-leave-to {
-    opacity: 0;
-    transform: translateY(-50px);
-}
 
 
 
@@ -86,15 +76,19 @@ computed: {
 }
 
 
-
+.accordion-parent {
+    position: relative;
+    
+}
 .accordion {
+
     cursor: pointer;
     color: white;
     display: flex;
     align-items: center;
-    gap: 150px;
+    gap: 100px;
     background: rgb(18, 18, 18);
-    padding: 15px;
+    padding: 15px 20px;
     transition: .3s;
 }
 
@@ -109,12 +103,25 @@ computed: {
 
 
 @media (max-width: 670px){
-    .accordion{
-        width: 200px;
-        
+
+   .accordion{
+    position: relative;
+    gap:20px;
+    font-size: .9rem;
    }
-   .fa-solid.fa-caret-down.unrotate {
-    background: rebeccapurple;
+   .accordion .fa-solid.fa-caret-down.unrotate {
+    position: absolute;
+    right:10px;
+
+
+
+   }
+   .accordion .fa-solid.fa-caret-down.rotate {
+    position: absolute;
+    right:10px;
+
+
+
    }
 }
 

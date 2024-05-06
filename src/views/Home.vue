@@ -29,7 +29,7 @@
                 <section class="categories">
 
 
-                    <div class="mobile-container">
+                    
 
                         <div class="container">
                             <h4>Included in all plans</h4>
@@ -70,7 +70,7 @@
                         </div>
 
 
-                    </div>
+              
                     
                    
                    
@@ -839,7 +839,7 @@ font-size: 1.5rem;
 .work-list {
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-gap: 40px;
+    grid-gap: 30px;
     margin-top: 50px;
 }
 
@@ -861,7 +861,7 @@ font-size: 1.5rem;
     justify-content: center;
     align-items: center;
     gap: 30px;
-    height: 130px;
+    height: 120px;
     background: linear-gradient(
         318.68deg,
         #ff004f 0%,
@@ -897,7 +897,7 @@ font-size: 1.5rem;
 }
 
 .social-menu a i {
-    font-size: 35px;
+    font-size: 40px;
     color: #000000;
     transition: 0.5s;
 }
@@ -1218,14 +1218,40 @@ section p {
     text-align: center;
     margin-bottom: 100px;
 }
-.mobile-container {
+.categories .container {
     padding: 0 15px;
-    max-width: 670px;
+    max-width: 600px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-top:50px;
+
+    margin-bottom: 150px;
+}
+.categories .container h4{
+    font-size: 2.5rem;
+}
+.categories .container .tv-u-love, .sub-text {
+    font-size:1.2rem;
+}
+
+.btn-all-movies {
+    font-size:1rem;
+    padding: 12px 20px;
+}
+
+.faq-content {
+    width: 550px;
+}
+
+.careers::before {
+    top: 1800px;
+}
+
+.work-list {
+    grid-gap: 15px;
 }
 
 }

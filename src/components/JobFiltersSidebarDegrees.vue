@@ -63,6 +63,7 @@ export default {
     background: rgb(18, 18, 18);
     position: absolute;
     top: 10px;
+    z-index: 2;
     padding: 20px;
 }
 

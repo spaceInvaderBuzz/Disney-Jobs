@@ -85,7 +85,7 @@ export default {
     margin:70px;
     border-radius: 20px;
     border: 4px solid white;
-    padding: 45px 40px;
+    padding: 45px 70px;
     display: grid;
     grid-template-columns: 4fr 1fr ;
     gap: 15px;

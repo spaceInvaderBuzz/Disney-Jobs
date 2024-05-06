@@ -1,8 +1,13 @@
 <template>
+   
     <section class="navigations">
-    <job-filters-sidebard-organizations></job-filters-sidebard-organizations>
-   <job-filters-sidebar-job-types></job-filters-sidebar-job-types>
-   <job-filters-sidebar-degrees></job-filters-sidebar-degrees>
+        
+            <job-filters-sidebard-organizations></job-filters-sidebard-organizations>
+            <job-filters-sidebar-job-types></job-filters-sidebar-job-types>
+            <job-filters-sidebar-degrees></job-filters-sidebar-degrees>
+            <job-filters-sidebar-degrees></job-filters-sidebar-degrees>
+
+        
    
     </section>
   
@@ -31,9 +36,13 @@ export default {
 </script>
 
 <style scoped>
+
+
 .navigations {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     gap: 60px;
     background: rgb(0, 0, 0);
     box-shadow: 0 4px 40px -9px #ff005167;
@@ -43,11 +52,13 @@ export default {
 
 }
 
+
 @media (max-width: 670px){
-    .navigations {
-        display: flex;
-        flex-wrap: wrap;
-   }
+  .navigations {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:20px;
+  }
 }
 
 </style>

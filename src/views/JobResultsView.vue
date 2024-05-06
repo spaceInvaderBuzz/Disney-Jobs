@@ -1,9 +1,9 @@
 <template>
     <div class="blackBackgroundAllResults">
     <jobs-navbar></jobs-navbar>
-        <div class="filter-nav">
+        <nav class="filter-nav">
             <job-filters-sidebar></job-filters-sidebar>
-        </div>
+         </nav>
        
         <div class="flex-cool">
            
@@ -263,8 +263,18 @@ export default {
     display: flex;
     justify-content: center;
 }
-
-
-
+.container {
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+        
+      
+      
+      }
 
 </style>
