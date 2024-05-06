@@ -94,5 +94,18 @@ export default {
 
 }
 
+@media(max-width: 670px){
+    .listing {
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+    }
+    .buttonthing {
+        padding: 15px 30px;
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
 
 </style>

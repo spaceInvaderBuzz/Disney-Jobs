@@ -16,10 +16,10 @@
                     <div class="currentpage">Page {{ currentPage }}</div>
                     <div class="previous-and-next">
                         <div>
-                            <router-link v-if="previousPage" :to="{ name: 'JobResults', query: { page:previousPage } }">Previous</router-link>
+                            <router-link v-if="previousPage" class="prev-btn" :to="{ name: 'JobResults', query: { page:previousPage } }"><i class="fas fa-chevron-left"></i>Previous</router-link>
                         </div>
                         <div>
-                            <router-link v-if="nextPage" :to="{ name: 'JobResults', query: { page:nextPage } }">Next</router-link>
+                            <router-link class="next-btn" v-if="nextPage" :to="{ name: 'JobResults', query: { page:nextPage } }">Next<i class="fas fa-chevron-right"></i></router-link>
                         </div>
                     </div>
                 </div>
@@ -128,6 +128,42 @@ export default {
 </script>
 
 <style scoped>
+
+.next-btn {
+    text-decoration: none;
+    color:white;
+    font-size:1.2rem;
+    border: white 1px solid;
+    background: transparent;
+    padding: 15px 25px;
+    border-radius: 10px;
+    transition: background .5s ease;
+}
+.next-btn:hover {
+   background: #ff004f;
+}
+
+.next-btn i {
+    margin-left:10px;
+}
+
+.prev-btn {
+    text-decoration: none;
+    color:white;
+    font-size:1.2rem;
+    border: white 1px solid;
+    background: transparent;
+    padding: 15px 25px;
+    border-radius: 10px;
+    transition: background .5s ease;
+}
+.prev-btn:hover {
+   background: #ff004f;
+}
+
+.prev-btn i {
+    margin-right:10px;
+}
 .profile-email {
     font-size: 15px;
     margin-bottom:10px;
@@ -276,5 +312,11 @@ export default {
       
       
       }
+
+ @media(max-width: 670px){
+    .container {
+        padding: 10px;
+    }
+ }     
 
 </style>

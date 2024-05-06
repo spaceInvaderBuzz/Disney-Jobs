@@ -148,7 +148,12 @@ methods: {
 }
 
 form {
-    background: yellow;
+    background: linear-gradient(
+        318.68deg,
+        #ff004f 0%,
+        #7f0229 49.72%,
+        #2d000f
+    );
     height: 100%;
     padding: 0 10px;
     position: relative;
@@ -217,7 +222,7 @@ input:focus{
 .angle {
     
     position: absolute;
-    background: rgb(0, 0, 0);
+    background: #ff004f;
     width: 60px;
     height: 100%;
     right: -30px;
