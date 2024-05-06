@@ -423,7 +423,7 @@ height: 100%;
 .films-container {
    z-index: 2;
    position: relative;
-    margin-top: -120px;
+    margin-top: -10px;
 }
     .carousel .slide-info img {
         width: 95vw;

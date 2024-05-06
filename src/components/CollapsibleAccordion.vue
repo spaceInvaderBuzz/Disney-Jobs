@@ -86,10 +86,7 @@ computed: {
 }
 
 
-.accordion-parent {
-    position: relative;
-    
-}
+
 .accordion {
     cursor: pointer;
     color: white;
@@ -110,5 +107,15 @@ computed: {
     transition: .2s;
 }
 
+
+@media (max-width: 670px){
+    .accordion{
+        width: 200px;
+        
+   }
+   .fa-solid.fa-caret-down.unrotate {
+    background: rebeccapurple;
+   }
+}
 
 </style>

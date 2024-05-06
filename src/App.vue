@@ -110,15 +110,7 @@ created(){
   padding: 0;
   box-sizing: border-box;
 }
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 15px;
-  color: white;
-  
 
-
-}
 
 
 </style>

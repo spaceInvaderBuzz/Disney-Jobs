@@ -3,43 +3,49 @@
   
     <section class="black-bg">
         <section class="hero-main">
-            <div class="diamond-grid">
-                <ul>
-                    <li class="diamond1">
-                        <div class="image"></div>
-                    </li>
-                    <li class="diamond2">
-                        <div class="image"></div>
-                    </li>
-                    <li class="diamond3">
-                        <div class="image"></div>
-                    </li>
-                    <li class="diamond4">
-                        <div class="image"></div>
-                    </li>
-                    <li class="diamond5">
-                        <div class="image"></div>
-                    </li>
-                </ul>
+
+            <div class="diamond-grid-stuff">
+
+                <div class="diamond-grid">
+                    <ul>
+                        <li class="diamond1">
+                            <div class="image"></div>
+                        </li>
+                        <li class="diamond2">
+                            <div class="image"></div>
+                        </li>
+                        <li class="diamond3">
+                            <div class="image"></div>
+                        </li>
+                        <li class="diamond4">
+                            <div class="image"></div>
+                        </li>
+                        <li class="diamond5">
+                            <div class="image"></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="main-text">
+                    <div class="wrapper">
+                        <div class="content">
+                            <ol>
+                                <li class="span1"><span>CREATING</span></li>
+                                <li class="span2"><span>INSPIRING</span></li>
+                                <li class="span3"><span>EXPERIENCING</span></li>
+                                <li class="span4"><span>IMAGINING</span></li>
+                                <li class="span5"><span>SHARING</span></li>
+                                <li class="span6"><span>EMBRACING</span></li>
+                            </ol>
+                        </div>
+                        
+                      </div>
+                      <div class="rest of text">
+                        <div>UNFORGETTABLE</div>
+                      </div>
+                </div>
+
             </div>
-            <div class="main-text">
-                <div class="wrapper">
-                    <div class="content">
-                        <ol>
-                            <li class="span1"><span>CREATING</span></li>
-                            <li class="span2"><span>INSPIRING</span></li>
-                            <li class="span3"><span>EXPERIENCING</span></li>
-                            <li class="span4"><span>IMAGINING</span></li>
-                            <li class="span5"><span>SHARING</span></li>
-                            <li class="span6"><span>EMBRACING</span></li>
-                        </ol>
-                    </div>
-                    
-                  </div>
-                  <div class="rest of text">
-                    <div>UNFORGETTABLE</div>
-                  </div>
-            </div>
+           
             
         </section>
         <div class="main-section">
@@ -328,5 +334,55 @@ name: 'CareersHeroPage',
     -webkit-text-fill-color: transparent;
     background: linear-gradient(20deg,#ff004f,#690342 );
     -webkit-background-clip: text;
+}
+
+
+@media(max-width: 670px){
+    
+    .diamond-grid-stuff {
+       transform: scale(.7);
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       height: 100vh;
+       width:100%;
+        
+    }
+
+    .main-section {
+        margin-top: -1000px;
+    }
+
+    .apply-now {
+
+        text-align: center;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        align-items: center;
+    
+    }
+
+
+.apply-now img {
+    margin-left:0;
+    width: 100%;
+    border-radius: 50px;
+}
+
+.apply-now h1 {
+    top: 0;
+    left:0;
+    font-size: 4rem;
+    display:flex;
+    width:100%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.explore-button {
+    margin-top: -30px;
+}
+    
 }
 </style>

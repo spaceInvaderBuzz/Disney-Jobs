@@ -1,245 +1,283 @@
 <template>
-    
-    <body>
-        <div class="image-container">
-            <creative-text-vue></creative-text-vue>
-            <img class="image anim" src="/src/assets/disney_stitch.svg" alt="">
-            
-            <router-link class="button" :to="{ name: 'FeaturedFilm'}">See More</router-link>
-        </div>
-        <section class="video-section">
-            <video class="video" src="/src/assets/LILOSTITCH.mp4" muted="" loop="" autoplay=""></video>
+    <div class="container">
+
+        <body>
+
+
+           
+            <div class="image-container">
+                <creative-text-vue></creative-text-vue>
+                <img class="image anim" src="/src/assets/disney_stitch.svg" alt="">
+                
+                <router-link class="button" :to="{ name: 'FeaturedFilm'}">See More</router-link>
+            </div>
+            <section class="video-section">
+                <video class="video" src="/src/assets/LILOSTITCH.mp4" muted="" loop="" autoplay=""></video>
             </section>
-            <section class="main-bar">
-                <div class="social-bar">
-                    <h3>Follow The Magic</h3>
-                    <ul class="social-menu">
-                        <li><a href=""><i class="fab fa-facebook"></i></a></li>
-                        <li><a href=""><i class="fab fa-instagram"></i></a></li>
-                        <li><a href=""><i class="fab fa-twitter"></i></a></li>
-                        <li><a href=""><i class="fab fa-facebook"></i></a></li>
-                        
-                    </ul>
-                </div>
-            </section>
-            <section class="categories">
-                <div class="container">
-                    <h4>Included in all plans</h4>
-                    <div>All The TV you love</div>
-                    <div class="sub-text">
-                        stream full seasons of exclusive series, etc brfgvedvdfv
+                <section class="main-bar">
+                    <div class="social-bar">
+                        <h3>Follow The Magic</h3>
+                        <ul class="social-menu">
+                            <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                            <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                            <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                            
+                        </ul>
                     </div>
-                    <div class="work-list">
-                      <div class="work">
-                        <img src="/src/assets/images/frog.png" alt="">
-                        <div class="layer">
-                            <h3>Princess And The Frog</h3>
-                            <p>A fateful kiss with a frog sends Tiana on a mystical bayou advenutre</p>
-                            <a href="#">Go to page</a>
+                </section>
+                <section class="categories">
+
+
+                    <div class="mobile-container">
+
+                        <div class="container">
+                            <h4>Included in all plans</h4>
+                            <div class="tv-u-love"> All The TV you love</div>
+                            <div class="sub-text">
+                                stream full seasons of exclusive series, etc brfgvedvdfv
+                            </div>
+                            <div class="work-list">
+                              <div class="work">
+                                <img src="/src/assets/images/frog.png" alt="">
+                                <div class="layer">
+                                    <h3>Princess And The Frog</h3>
+                                    <p>A fateful kiss with a frog sends Tiana on a mystical bayou advenutre</p>
+                                    <a href="#">Go to page</a>
+                                </div>
+                              </div>
+                              <div class="work">
+                                <img src="/src/assets/images/mulan.jpeg" alt="">
+                                <div class="layer">
+                                    <h3>Princess And The Frog</h3>
+                                    <p>A fateful kiss with a frog sends Tiana on a mystical bayou advenutre</p>
+                                    <a href="#">Go to page</a>
+                                </div>
+                               
+                              </div>
+                              <div class="work">
+                                <img src="/src/assets/images/groove.jpeg" alt="">
+                                <div class="layer">
+                                    <h3>Princess And The Frog</h3>
+                                    <p>A fateful kiss with a frog sends Tiana on a mystical bayou advenutre</p>
+                                    <a href="#">Go to page</a>
+                                </div>
+                               
+                              </div>
+                              
+                            </div>
+                            <a href="#" class="btn-all-movies">View All Movies</a>
                         </div>
-                      </div>
-                      <div class="work">
-                        <img src="/src/assets/images/mulan.jpeg" alt="">
-                        <div class="layer">
-                            <h3>Princess And The Frog</h3>
-                            <p>A fateful kiss with a frog sends Tiana on a mystical bayou advenutre</p>
-                            <a href="#">Go to page</a>
-                        </div>
-                       
-                      </div>
-                      <div class="work">
-                        <img src="/src/assets/images/groove.jpeg" alt="">
-                        <div class="layer">
-                            <h3>Princess And The Frog</h3>
-                            <p>A fateful kiss with a frog sends Tiana on a mystical bayou advenutre</p>
-                            <a href="#">Go to page</a>
-                        </div>
-                       
-                      </div>
-                      
-                    </div>
-                    <a href="#" class="btn">View All Movies</a>
-                </div>
-               
-            </section>
-            <section class="careers">
-                <div class="container">
-                    <div class="images-container">
-                        <div class="images"></div>
+
+
                     </div>
                     
-                    <div class="text">
-                        <h1>CAREERS</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti repudiandae mollitia voluptates facere obcaecati fugiat.</p>
-                        <router-link :to="{name: 'TheLoginPage'}" class="btn-careers">Browse openings </router-link>
+                   
+                   
+                </section>
+                <section class="careers">
+                    <div class="container">
+                        <div class="images-container">
+                            <div class="images"></div>
+                        </div>
+                        
+                        <div class="text">
+                            <h1>CAREERS</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti repudiandae mollitia voluptates facere obcaecati fugiat.</p>
+                            <router-link :to="{name: 'TheLoginPage'}" class="btn-careers">Browse openings </router-link>
+                        </div>
                     </div>
-                </div>
-            </section>
-            <section class="faq">
-                <div class="container">
-                    <h3 class="header-for-faq">
-                        Frequently Asked Questions
-                    </h3>
-                    <div class="faq-content">
-                        <div class="faq-group">
+                </section>
 
-                     
-                                <div @click="openQuestion1" class="faq-group-header">
-
+                <div class="mobile-container">
+                      
+                    
+             <section class="faq">
+                   
+                    <div class="container-for-faq">
+                        <h3 class="header-for-faq">
+                            Frequently Asked Questions
+                        </h3>
+                        <div class="faq-content">
+                            <div class="faq-group">
+    
+                         
+                                    <div @click="openQuestion1" class="faq-group-header">
+    
+                                        <h4>
+                                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis explicabo, nostrum id sapiente porro pariatur.  
+                                        </h4>
+                                        <i v-if="isOpen1" class="fas fa-minus"></i>
+                                        <i v-else class="fas fa-plus"></i>
+                                        
+                                    </div>
+                            <transition name="faq">
+                                <div v-if="isOpen1" class="faq-group-body">
+                                    <div class="z-index-text">
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo.
+                                        Lorem ipsuamet consectecing elit. Quis explicabo, nostrum id sapiente porrom doloetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
+                                    </div>
+                                   
+                                    
+                                    <div class="background-img">
+    
+                                    </div>
+                                </div>
+    
+                            </transition>
+                                
+                            </div>
+                        </div>
+                        <div class="faq-content">
+                            <div class="faq-group">
+                                <div @click="openQuestion2" class="faq-group-header1">
                                     <h4>
                                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis explicabo, nostrum id sapiente porro pariatur.  
                                     </h4>
-                                    <i v-if="isOpen1" class="fas fa-minus"></i>
+                                    <i v-if="isOpen2" class="fas fa-minus"></i>
                                     <i v-else class="fas fa-plus"></i>
                                     
                                 </div>
-                        <transition name="faq">
-                            <div v-if="isOpen1" class="faq-group-body">
-                                <div class="z-index-text">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo.
-                                    Lorem ipsuamet consectecing elit. Quis explicabo, nostrum id sapiente porrom doloetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
-                                </div>
                                
-                                
-                                <div class="background-img">
-
+                                <div v-if="isOpen2" class="faq-group-body">
+                                    <div class="z-index-text">
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
+    
+                                    </div>
+                                    <div class="background-img1">
+    
+                                    </div>
+                                   
+                                    
                                 </div>
+                                
+                             
                             </div>
-
-                        </transition>
-                            
                         </div>
-                    </div>
-                    <div class="faq-content">
-                        <div class="faq-group">
-                            <div @click="openQuestion2" class="faq-group-header1">
-                                <h4>
-                                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis explicabo, nostrum id sapiente porro pariatur.  
-                                </h4>
-                                <i v-if="isOpen2" class="fas fa-minus"></i>
-                                <i v-else class="fas fa-plus"></i>
-                                
-                            </div>
-                           
-                            <div v-if="isOpen2" class="faq-group-body">
-                                <div class="z-index-text">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
-
+                        <div class="faq-content">
+                            <div class="faq-group">
+                                <div @click="openQuestion3" class="faq-group-header">
+                                    <h4>
+                                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis explicabo, nostrum id sapiente porro pariatur.  
+                                    </h4>
+                                    
+                                    <i v-if="isOpen3" class="fas fa-minus"></i>
+                                    <i v-else class="fas fa-plus"></i>
+                                    
                                 </div>
-                                <div class="background-img1">
-
+                                <transition name="faq">
+                                <div v-if="isOpen3" class="faq-group-body">
+                                    <div class="z-index-text">
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
+                                        amet consectetur adipisicing elit. Quis explicabo, nostrum id
+                                    </div>
+                                   
+                                    <div class="background-img2">
+    
+                                    </div>
                                 </div>
-                               
-                                
+                                </transition>
                             </div>
-                            
-                         
                         </div>
-                    </div>
-                    <div class="faq-content">
-                        <div class="faq-group">
-                            <div @click="openQuestion3" class="faq-group-header">
-                                <h4>
-                                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis explicabo, nostrum id sapiente porro pariatur.  
-                                </h4>
-                                
-                                <i v-if="isOpen3" class="fas fa-minus"></i>
-                                <i v-else class="fas fa-plus"></i>
-                                
-                            </div>
-                            <transition name="faq">
-                            <div v-if="isOpen3" class="faq-group-body">
-                                <div class="z-index-text">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
-                                    amet consectetur adipisicing elit. Quis explicabo, nostrum id
+                        <div class="faq-content">
+                            <div class="faq-group">
+                                <div @click="openQuestion4" class="faq-group-header1">
+                                    <h4>
+                                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis explicabo, nostrum id sapiente porro pariatur.  
+                                    </h4>
+                                   
+                                    <i v-if="isOpen4" class="fas fa-minus"></i>
+                                    <i v-else class="fas fa-plus"></i>
+                                   
+                                    
                                 </div>
-                               
-                                <div class="background-img2">
-
+                                <transition name="faq">
+                                <div v-if="isOpen4" class="faq-group-body">
+                                    <div class="z-index-text">
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
+                                    </div>
+                                   
+                                    amet consectetur adipisicing elit. Quis explicabo, nost
+                               <div class="background-img3"></div>
                                 </div>
+                                </transition>
                             </div>
-                            </transition>
                         </div>
-                    </div>
-                    <div class="faq-content">
-                        <div class="faq-group">
-                            <div @click="openQuestion4" class="faq-group-header1">
-                                <h4>
-                                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis explicabo, nostrum id sapiente porro pariatur.  
-                                </h4>
-                               
-                                <i v-if="isOpen4" class="fas fa-minus"></i>
-                                <i v-else class="fas fa-plus"></i>
-                               
-                                
-                            </div>
-                            <transition name="faq">
-                            <div v-if="isOpen4" class="faq-group-body">
-                                <div class="z-index-text">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
+                        <div class="faq-content">
+                            <div class="faq-group">
+                                <div @click="openQuestion5" class="faq-group-header">
+                                    <h4>
+                                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis explicabo, nostrum id sapiente porro pariatur.  
+                                    </h4>
+                                   
+                                    <i v-if="isOpen5" class="fas fa-minus"></i>
+                                    <i v-else class="fas fa-plus"></i>
+                                   
+                                    
                                 </div>
-                               
-                                amet consectetur adipisicing elit. Quis explicabo, nost
-                           <div class="background-img3"></div>
-                            </div>
-                            </transition>
-                        </div>
-                    </div>
-                    <div class="faq-content">
-                        <div class="faq-group">
-                            <div @click="openQuestion5" class="faq-group-header">
-                                <h4>
-                                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis explicabo, nostrum id sapiente porro pariatur.  
-                                </h4>
-                               
-                                <i v-if="isOpen5" class="fas fa-minus"></i>
-                                <i v-else class="fas fa-plus"></i>
-                               
-                                
-                            </div>
-                            <transition name="faq">
-                            <div v-if="isOpen5" class="faq-group-body">
-                                <div class="z-index-text">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
-                                    amet consectetur adipisicing elit. Quis explicabo, nostrum id sapiente porro
+                                <transition name="faq">
+                                <div v-if="isOpen5" class="faq-group-body">
+                                    <div class="z-index-text">
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid, dolore perspiciatis vero voluptatum adipisci! Ab voluptatibus dolorem nemo. Eveniet!
+                                        amet consectetur adipisicing elit. Quis explicabo, nostrum id sapiente porro
+                                    </div>
+                                   <div class="background-img"></div>
                                 </div>
-                               <div class="background-img"></div>
+                                </transition>
                             </div>
-                            </transition>
                         </div>
+                        
                     </div>
                     
-                </div>
-                
-            </section>
-            <div class="tangled-background">
-                <div class="containeer">
-                    <div class="form-text">
-                        <h1><i class="fa-solid fa-message">
-                            <i class="fa-solid fa-message"></i>
-                        </i>Contact Us</h1>
-                        <h2>Get In Touch With Us</h2>
-                        <p>we would love to hear your bullshit And pretend that we care!</p>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <div class="containeer">
-                        <the-form></the-form>
-                        <div class="image-for-form" ref="formImage" :class="{ active: active }">
-                            <img src="/src/assets/images/Untitled_Artwork 193.png" alt="">
-                        </div>
+                </section>
 
+
+                </div>
+   
+                <div class="tangled-background">
+                    <div class="containeer">
+                        <div class="form-text">
+                            <h1><i class="fa-solid fa-message">
+                                <i class="fa-solid fa-message"></i>
+                            </i>Contact Us</h1>
+                            <h2>Get In Touch With Us</h2>
+                            <p>we would love to hear your bullshit And pretend that we care!</p>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <div class="containeer">
+                            <the-form></the-form>
+                            <div class="image-for-form" ref="formImage" :class="{ active: active }">
+                                <img src="/src/assets/images/Untitled_Artwork 193.png" alt="">
+                            </div>
+    
+                        </div>
                     </div>
                 </div>
-            </div>
-            <the-footer></the-footer>
-           
+                <the-footer></the-footer>
+               
+
+
+
+    
+
+            
+
+
+    
+        
             
             
     </body>
 
+
+                
+    </div>
+
+
+   
 
     
        
@@ -363,6 +401,20 @@ window.addEventListener('scroll', function() {
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mouse+Memoirs&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Princess+Sofia&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 
+.container {
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+align-items: center;
+max-width: 1400px;
+margin: 0 auto;
+padding: 0 30px;
+    
+  
+  
+  }
+
+
 .anim  {
 opacity: 0;
 transform: translateY(30px);
@@ -476,12 +528,37 @@ animation: moveup 0.5s linear forwards;
     opacity: 70%;
     background-size: cover;
 }
+.container-for-faq {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-for-faq .faq-group-body {
+    margin: 0 auto;
+}
+
+.faq-content {
+    width: 1000px;
+}
 
 
 .z-index-text {
     position:relative;
     z-index: 3;
 }
+
+.faq .container {
+    background: pink;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+
 
 
 
@@ -521,12 +598,23 @@ animation: moveup 0.5s linear forwards;
     position: relative;
     
 }
+.faq .faq-group-header h4 {
+   padding-right: 40px;
+    
+}
+
 .faq .faq-group-header1 {
     padding: 25px 20px 50px 20px;
   
     position: relative;
    
 }
+
+.faq .faq-group-header1 h4 {
+    padding-right: 40px;
+     
+ }
+ 
 
 
 
@@ -575,7 +663,7 @@ animation: moveup 0.5s linear forwards;
     position: absolute;
     height: 100px;
     background: #ff004f;
-    top: 1600px;
+    top: 2320px;
     right: 0;
     left: 0;
     transform: skewY(-2.3deg);
@@ -591,7 +679,8 @@ animation: moveup 0.5s linear forwards;
     
     color: white;
     display: grid;
-    gap: 20px;
+    padding: 0 200px;
+    
     grid-template-columns: repeat(2,1fr);
     align-items: center;
     text-align: center;
@@ -622,6 +711,20 @@ animation: moveup 0.5s linear forwards;
 
 
 .btn {
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+    width: fit-content;
+    padding: 14px 50px;
+    border: 2px solid;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.5s;
+
+}
+.btn-all-movies {
+    font-size: 1.8rem;
     display: flex;
     justify-content: center;
     margin: 50px auto;
@@ -688,6 +791,20 @@ animation: moveup 0.5s linear forwards;
 }
 
 
+.categories h4 {
+    font-size: 2.5rem;
+    margin: 15px 0 25px 0;
+}
+
+.categories .tv-u-love,.sub-text {
+    margin-top:8px;
+font-size: 1.5rem;
+}
+
+.sub-text {
+    margin-bottom: 20px;
+}
+
 .categories .container {
     display: flex;
     flex-direction: column;
@@ -695,6 +812,7 @@ animation: moveup 0.5s linear forwards;
     text-align: center;
     padding: 90px 40px;
     color: white;
+    margin-bottom: 200px;
 }
 .work {
     border-radius: 10px;
@@ -743,6 +861,7 @@ animation: moveup 0.5s linear forwards;
     justify-content: center;
     align-items: center;
     gap: 30px;
+    height: 130px;
     background: linear-gradient(
         318.68deg,
         #ff004f 0%,
@@ -765,8 +884,8 @@ animation: moveup 0.5s linear forwards;
 .social-menu a {
     display: flex;
     background: #e3edf700;
-    height: 75px;
-    width: 75px;
+    height: 100px;
+    width: 100px;
     margin: 0 15px;
     align-items: center;
     justify-content: center;
@@ -982,10 +1101,11 @@ section p {
 
 
 @media (max-width: 670px){
+
     .image-container {
         display: flex;
         flex-direction: column;
-        width: 100vw;
+        width: 100%;
         height: 100vh;
         background-image: linear-gradient(rgba(108, 8, 8, 0.346), rgba(255, 0, 0, 0));
         display: flex;
@@ -1005,6 +1125,7 @@ section p {
     
     }
     .social-bar {
+        width: 100%;
         margin-right: 50px;;
         display: flex;
         justify-content: center;
@@ -1034,15 +1155,7 @@ section p {
        
     }
     
-    .container {
-        max-width: 655px;
-        margin: 0;
-        padding: 0 15px;
-        color: white;
-        
-      
-      
-      }
+    
       .careers .container {
         display: flex;
         flex-direction:column;
@@ -1104,6 +1217,15 @@ section p {
   
     text-align: center;
     margin-bottom: 100px;
+}
+.mobile-container {
+    padding: 0 15px;
+    max-width: 670px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 }

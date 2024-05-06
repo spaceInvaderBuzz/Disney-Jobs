@@ -39,6 +39,15 @@ export default {
     box-shadow: 0 4px 40px -9px #ff005167;
     padding: 20px 100px;
     
+
+
+}
+
+@media (max-width: 670px){
+    .navigations {
+        display: flex;
+        flex-wrap: wrap;
+   }
 }
 
 </style>
