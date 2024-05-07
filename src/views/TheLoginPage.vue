@@ -1,23 +1,44 @@
 <template>
 <div class="form-wrap">
     <form class="login">
-        <p class="login-register">
-            Don't have an account? 
-            <router-link class="router-link" :to="{name: 'TheRegister'}">Register</router-link>
-        </p>
-        <h2>Login to Disney Careers</h2>
+        
+        <div class="disney-careers-container">
+            <div class="disney-logo">
+                <img src="/src/assets/images/IMG_8108.png" alt="">
+            </div>
+            <div class="mouse">
+                <img src="/src/assets/images/Untitled_Artwork 200.png" alt="">
+            </div>
+            <h1 class="disney-careers">CAREERS</h1>
+        </div>
+        <div class="main-form">
+
+            
+        </div>
+        <h1 class="welcome">Welcome</h1>
         <div class="inputs">
             <div class="input">
+                <div class="user-icon">
+                    <img src="/src/assets/images/Untitled_Artwork 201.png" alt="">
+                </div>
+                <label for="email">Email</label>
                 <input type="text" placeholder="Email" v-model="email">
-                <i class="fas fa-email"></i>
+                
             </div>
             <div class="input">
+                <div class="user-icon">
+                    <img src="/src/assets/images/Untitled_Artwork 202.png" alt="">
+                </div>
                 <input type="password" placeholder="Password" v-model="password">
             </div>
             
         </div>
         <router-link class="forgot-password" :to="{name: 'Home'}">Forgor your password?</router-link>
             <button @click.prevent="signIn">Sign In</button>
+            <p class="login-register">
+                Don't have an account? 
+                <router-link class="router-link" :to="{name: 'TheRegister'}">Register</router-link>
+            </p>
             <div v-if="error" class="error">{{ errorMsg }}</div>
             <div class="angle"></div>
     </form>
@@ -78,6 +99,50 @@ methods: {
 </script>
 
 <style scoped>
+
+.disney-careers-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+}
+
+.disney-careers-container img {
+    width: 100%;
+    height: 100%;
+}
+
+.disney-logo {
+    width: 130px;
+    height: 60px;
+ 
+}
+
+.mouse {
+    width: 110px;
+    height: 150px;
+    
+}
+.disney-careers {
+    font-size: 1.4rem;
+}
+
+.welcome {
+    font-size: 3rem;
+    margin: 20px 0;
+}
+
+.user-icon {
+    width: 32px;
+    height: 32px;
+}
+.user-icon img {
+    width: 100%;
+    height: 100%;
+}
+
+
 .form-wrap {
     color: black;
     display: flex;
@@ -112,7 +177,7 @@ methods: {
 }
 
 form {
-    background: yellow;
+    background: rgb(255, 255, 255);
     height: 100%;
     padding: 0 10px;
     position: relative;
@@ -149,39 +214,55 @@ h2 {
 
 
 .inputs {
-    background: rebeccapurple;
    width: 100%;
     max-width: 350px;
+ 
 
 }
 
 .input {
-    background: pink;
+    
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom:8px;
+   
 
 }
+.input label {
+    
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: 300ms ease;
+    left:10%;
+    
+}
+
 
 .input input {
     width: 100%;
     border: none;
-    background-color: #f2f7f6;
-    padding: 4px 4px 4px 30px;
+    padding: 4px 4px 4px 10px;
     height: 50px;
+    border-bottom: rgb(122, 122, 122) 2px solid;
 
 } 
 
 input:focus{
     outline: none;
+    border-bottom-color: #ff400f;
+}
+
+input:focus + label {
+display: none;
 }
 
 .angle {
     
     position: absolute;
-    background: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
     width: 60px;
     height: 100%;
     right: -30px;
