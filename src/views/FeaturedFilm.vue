@@ -32,9 +32,9 @@
           <div class="hero">
             <div class="wrapper">
               <h1 class="hero__title">
-                <span>Gear up!</span> We're going monster hunting!
+               
               </h1>
-              <button class="button">Sign up for beta</button>
+              
             </div>
           </div>
     
@@ -198,7 +198,12 @@ setup(){
 </script>
 
 <style scoped>
-
+.container {
+    margin: 0 auto;
+    max-width: 1150px;
+    padding: 0 20px;
+    
+}
 
 .loading-text {
     flex-direction: column;
@@ -222,14 +227,13 @@ setup(){
 
 
 .gallery-container {
+    display: flex;
+    flex-wrap: wrap;
     background: #ff004f;
     padding: 200px 150px;
     margin-top: 100px;
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    
 }
 
 .gallery-text {
@@ -468,6 +472,99 @@ setup(){
     to {
         transform: translateY(calc(var(--parallax-speed) * 15px));
     }
+    
+}
+
+@media(max-width: 670px){
+    .parallax__jax {
+        --parallax-speed: 40;
+       position: absolute;
+       z-index: 7;
+       right: -100px;
+       width: 600px;
+       height: 640px;
+       top:150px;
+    }
+    .parallax__foreground-front {
+        --parallax-speed: -25;
+        position: absolute;
+        z-index: 9;
+        top: 40px;
+        object-fit: cover;
+        width:660px;
+        height: 1000px;
+    }
+    .parallax__dust {
+        --parallax-speed: 90;
+        position: absolute;
+        z-index: 5;
+        width: 480px;
+        height: 480px;
+        left: 20px;
+        top: -60px;
+    }
+    .parallax__foreground-front2 {
+        --parallax-speed: -50;
+        position: absolute;
+        z-index: 8;
+        width: 800px;
+        height: 800px;
+        top: 220px;
+    }
+.primary-hero {
+    flex-wrap: wrap;
+}
+.image-wrapper {
+    height: 630px;
+    width:500px;
+    margin: 0 auto;
+}
+.carousel {
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+    max-height: 600px;
+    height: 1000px;
+    width: 1400px;
+    
+    border-radius: 50px;
+    box-shadow: 10px 20px 50px rgba(0, 0, 0, 0.811);
+}
+
+
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    background: #ff004f;
+    padding: 200px 35px;
+    margin-top: 100px;
+    position: relative;
+    
+}
+.gallery-text {
+    left: 140px;
+}
+.carousel {
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+    max-height: 400px;
+    height: 1000px;
+    width: 1400px;
+    background: rebeccapurple;
+    border-radius: 40px;
+    box-shadow: 10px 20px 50px rgba(0, 0, 0, 0.811);
+}
+
+
+.pimg1 {
+
+}
+
+    
+
+
 }
 
 </style>

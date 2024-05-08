@@ -268,12 +268,7 @@ async mounted(){  //as soon as i moun this and any compontet tnat use the profil
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mouse+Memoirs&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Princess+Sofia&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
-.hopefully-this-class-fixes-everything {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
 
-}
 
 .job-header {
   font-family: 'Bebas Neue';
@@ -591,7 +586,9 @@ li {
 
 
   .container-for-job-page {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; 
+    margin: 100px auto;
+    max-width: 1500px;
   }
 
 

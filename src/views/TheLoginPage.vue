@@ -22,7 +22,7 @@
                     <img src="/src/assets/images/Untitled_Artwork 201.png" alt="">
                 </div>
                 <label for="email">Email</label>
-                <input type="text" placeholder="Email" v-model="email">
+                <input type="text" placeholder="Email" id="email" v-model="email">
                 
             </div>
             <div class="input">
@@ -34,7 +34,7 @@
             
         </div>
         <router-link class="forgot-password" :to="{name: 'Home'}">Forgor your password?</router-link>
-            <button @click.prevent="signIn">Sign In</button>
+            <button class="sign-in" @click.prevent="signIn">Sign In</button>
             <p class="login-register">
                 Don't have an account? 
                 <router-link class="router-link" :to="{name: 'TheRegister'}">Register</router-link>
@@ -150,7 +150,7 @@ methods: {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    width: 90%;
+    width: 100%;
    
 
 }
@@ -216,6 +216,8 @@ h2 {
 .inputs {
    width: 100%;
     max-width: 350px;
+    
+    margin: 40px 0;
  
 
 }
@@ -226,12 +228,13 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom:8px;
+    margin-bottom:15px;
+    transition: 300ms ease;
    
 
 }
 .input label {
-    
+    position: absolute;
     height: 100%;
     display: flex;
     align-items: center;
@@ -242,6 +245,7 @@ h2 {
 
 
 .input input {
+    font-size:1rem;
     width: 100%;
     border: none;
     padding: 4px 4px 4px 10px;
@@ -249,14 +253,26 @@ h2 {
     border-bottom: rgb(122, 122, 122) 2px solid;
 
 } 
-
-input:focus{
+input:focus {
     outline: none;
-    border-bottom-color: #ff400f;
+    border-bottom-color: #ff004f;
 }
 
 input:focus + label {
-display: none;
+    display: none;
+}
+
+.sign-in {
+    color: white;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    padding: 20px 30px;
+    width: 300px;
+    border-radius: 20px;
+    border: none;
+    background: linear-gradient(20deg,#ff004f,#690342 );
+    margin-bottom: 30px;
+    
 }
 
 .angle {
@@ -314,5 +330,30 @@ display: none;
         rgba(0,0,0,8e-5) 100%
     );
 
+}
+
+
+@media (max-width: 670px){
+.angle {
+    display: none;
+}
+form {
+    
+    
+    border-radius: 40px;
+    background: white;
+    height: 820px;
+    padding: 0 50px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 2500;
+}
+
+.background .text {
+    display: none;
+}
 }
 </style>

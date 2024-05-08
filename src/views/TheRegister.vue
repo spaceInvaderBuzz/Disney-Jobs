@@ -1,33 +1,58 @@
 <template>
     <div class="form-wrap">
         <form class="register">
-            <p class="login-register">
-                Already signed up? 
-                <router-link class="router-link" :to="{name: 'TheLoginPage' }">Login</router-link>
-            </p>
-            <h2>Login to Disney Careers</h2>
+            <div class="disney-careers-container">
+                <div class="disney-logo">
+                    <img src="/src/assets/images/IMG_8108.png" alt="">
+                </div>
+                <div class="mouse">
+                    <img src="/src/assets/images/Untitled_Artwork 200.png" alt="">
+                </div>
+                <h1 class="disney-careers">CAREERS</h1>
+            </div>
+           
+            <h2 class="sign-up-text">Sign Up</h2>
             <div class="inputs">
                 <div class="input">
+                    <div class="user-icon">
+                        <img src="/src/assets/images/Untitled_Artwork 201.png" alt="">
+                    </div>
                     <input type="text" placeholder="First Name" v-model="firstName">
                     <i class="fas fa-email"></i>
                 </div>
                 <div class="input">
+                    <div class="user-icon">
+                        <img src="/src/assets/images/Untitled_Artwork 201.png" alt="">
+                    </div>
                     <input type="text" placeholder="Last Name" v-model="lastName">
                 </div>
                 <div class="input">
+                    <div class="user-icon">
+                        <img src="/src/assets/images/Untitled_Artwork 201.png" alt="">
+                    </div>
                     <input type="text" placeholder="User Name" v-model="userName">
                 </div>
                 <div class="input">
+                    <div class="user-icon">
+                        <img src="/src/assets/images/Untitled_Artwork 201.png" alt="">
+                    </div>
                     <input type="text" placeholder="Email" v-model="email">
                 </div>
                 
                 <div class="input">
+                    <div class="user-icon">
+                        <img src="/src/assets/images/Untitled_Artwork 201.png" alt="">
+                    </div>
                     <input type="password" placeholder="Password" v-model="password">
                 </div>
                 
             </div>
             <router-link class="forgot-password" :to="{name: 'Home'}">Forgor your password?</router-link>
-                <button @click.prevent="register">Sign Up</button>
+                <button class="sign-in" @click.prevent="register">Sign Up</button>
+                <p class="login-register">
+                    Already signed up? 
+                    <router-link class="router-link" :to="{name: 'TheLoginPage' }">Login</router-link>
+                </p>
                 <div v-if="error" class="error">{{ errorMsg }}</div>
                 <div class="angle"></div>
         </form>
@@ -114,6 +139,56 @@ methods: {
 </script>
 
 <style scoped>
+
+.sign-in {
+    color: white;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    padding: 20px 30px;
+    width: 300px;
+    border-radius: 20px;
+    border: none;
+    background: linear-gradient(20deg,#ff004f,#690342 );
+    margin-bottom: 30px;
+    
+}
+
+.sign-up-text {
+    margin-top: 25px;
+    font-size: 3rem;
+    text-align: center;
+    color: black;
+}
+
+.disney-careers-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+}
+
+.disney-careers-container img {
+    width: 100%;
+    height: 100%;
+}
+
+.disney-logo {
+    width: 130px;
+    height: 60px;
+ 
+}
+
+.mouse {
+    width: 110px;
+    height: 150px;
+    
+}
+.disney-careers {
+    font-size: 1.4rem;
+}
+
+
 .form-wrap {
     color: black;
     display: flex;
@@ -121,7 +196,7 @@ methods: {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    width: 90%;
+    width: 100%;
    
 
 }
@@ -148,12 +223,7 @@ methods: {
 }
 
 form {
-    background: linear-gradient(
-        318.68deg,
-        #ff004f 0%,
-        #7f0229 49.72%,
-        #2d000f
-    );
+    background: white;
     height: 100%;
     padding: 0 10px;
     position: relative;
@@ -190,39 +260,70 @@ h2 {
 
 
 .inputs {
-    background: rebeccapurple;
-   width: 100%;
-    max-width: 350px;
-
-}
-
-.input {
-    background: pink;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom:8px;
-
-}
-
-.input input {
     width: 100%;
-    border: none;
-    background-color: #f2f7f6;
-    padding: 4px 4px 4px 30px;
-    height: 50px;
-
-} 
-
-input:focus{
-    outline: none;
+     max-width: 350px;
+     
+     margin-bottom: 15px;
+  
+ 
+ }
+ 
+ .input {
+     
+     position: relative;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin-bottom:15px;
+     transition: 300ms ease;
+    
+ 
+ }
+ .input label {
+     position: absolute;
+     height: 100%;
+     display: flex;
+     align-items: center;
+     transition: 300ms ease;
+     left:10%;
+     
+ }
+ 
+ 
+ .input input {
+     font-size:1rem;
+     width: 100%;
+     border: none;
+     padding: 4px 4px 4px 10px;
+     height: 50px;
+     border-bottom: rgb(122, 122, 122) 2px solid;
+ 
+ } 
+ input:focus {
+     outline: none;
+     border-bottom-color: #ff004f;
+ }
+ 
+ input:focus + label {
+     display: none;
+ }
+ .user-icon {
+    width: 32px;
+    height: 32px;
 }
+.user-icon img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
 
 .angle {
     
     position: absolute;
-    background: #ff004f;
+    background: #ffffff;
     width: 60px;
     height: 100%;
     right: -30px;
@@ -275,4 +376,47 @@ input:focus{
     );
 
 }
+@media (max-width: 670px){
+    
+
+    .disney-careers-container,.inputs {
+        transform: scale(.95);
+    }
+    .disney-careers-container {
+        transform: scale(.9);
+        padding-bottom: 15px;
+    }
+    .disney-careers-container {
+        margin-top: 50px;
+    }
+    .angle {
+        display: none;
+    }
+    form {
+        
+        
+        border-radius: 40px;
+        background: white;
+        height: 820px;
+        padding: 0 50px;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 2500;
+    }
+    
+    .background .text {
+        display: none;
+    }
+
+    .sign-up-text {
+        margin-top: -10px;
+    }
+    .forgot-password {
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    }
 </style>

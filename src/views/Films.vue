@@ -428,7 +428,8 @@ height: 100%;
     .carousel .slide-info img {
         width: 95vw;
         height: 100vh;
-        object-fit: contain;
+        transform: scale(1);
+        object-fit:contain;
     }
 
     .cool-text {

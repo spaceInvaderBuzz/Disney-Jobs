@@ -27,20 +27,17 @@
                 </div>
                 <div v-if="mobile" class="menu">
                     <ul>
-                        <div class="logo" @click="toggleVsible">
-                            <img src="/src/assets/images/Untitled_Artwork 100.png" alt="">
-                        </div>
-                        <div class="da-menu">
+                       
+                  
                             <div @click="toggleMobileNav">
                                 <div class="burger-menu">
                                     <div>
-                                        <span class="line-1"></span>
-                                        <span class="line-2"></span>
-                                        <span class="line-3"></span>
+                                        <i v-if="!mobileNav" class="fas fa-bars"></i>
+                                        <i v-if="mobileNav" class="fa-solid fa-x"></i>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        
                        
                         
                        
@@ -124,33 +121,25 @@ created(){
 <style scoped>
 
 .burger-menu {
-    background: rebeccapurple;
-    position: relative;
-    width: 120px;
-    height: 120px;
+    
+    color: white;
+    width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     
 }
 
-.burger-menu span {
-    background: orange;
-    width: 100%;
-    height: 10px;
-    border-radius: 5px;
-    display: block;
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -50%);
-
-
+.burger-menu i {
+  font-size: 2rem;
+}
+.fa-solid.fa-x {
+    font-size: 1.7rem;
 }
 
-.line-1 {
-    transform: translate(-50%, -50px);
-}
+
+
 
 
 
@@ -274,5 +263,14 @@ nav.black ul {
 
 .hidden {
     display: none;
+}
+
+
+
+@media(max-width: 670px){
+    
+    .burger-menu {
+        margin-left: 530px;
+    }
 }
 </style>
