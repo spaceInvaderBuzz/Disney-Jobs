@@ -398,4 +398,52 @@ mounted(){
     opacity: 1;
     visibility:visible;
 }
+
+@media(max-width: 670px){
+    .divider {
+       
+          background: url("/src/assets/images/Untitled_Artwork 189.png") no-repeat;
+          position: absolute;
+          
+          left: 0px;
+          top:-90px;
+          width:650px;
+          height: 300px;
+         background-size: contain;
+      
+          
+      }
+      .container-gallery {
+       grid-template-columns: 1fr;
+       max-width: 850px;
+       justify-content: center;
+       
+       
+
+      }
+      .card {
+        top: 45px;
+        left:50px;
+        position: relative;
+        width: 560px;
+        height: 350px;
+        border-radius: 20px;
+        transition: 0.5s;
+       
+    
+    }
+      .card2 {
+        
+        position: relative;
+        width: 560px;
+        height: 350px;
+        border-radius: 20px;
+        transition: 0.5s;
+       
+    
+    }
+      .gallery {
+        padding: 0 50px;
+      }
+}
 </style>
