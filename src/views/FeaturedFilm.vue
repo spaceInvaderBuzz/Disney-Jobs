@@ -63,19 +63,38 @@
             <div class="hero">
                 <div class="container">
                     <div class="primary-hero">
+                        <h1 class="coming-soon">Coming Soon</h1>
                         <div class="image-wrapper">
                             <img src="/src/assets/images/disneys-lilo-stitch-movie-poster.jpg" alt="">
                         </div>
                         <div class="text-content">
                             <h1>About</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam iusto distinctio atque. Illum incidunt, ab deserunt dicta aspernatur minus libero officia quibusdam debitis culpa veritatis blanditiis atque quod id qui harum sunt accusamus dolor hic, magni maxime. Repellendus molestias praesentium vitae laboriosam repellat tenetur at quasi maiores possimus mollitia necessitatibus ducimus corrupti voluptatum officiis exercitationem quos, modi, beatae, reiciendis adipisci. Animi cum et optio temporibus cumque nobis perferendis corporis repellat velit asperiores a dolorum inventore fugit possimus aut reiciendis, nesciunt quos nulla quidem error enim. Ut, optio libero? Eligendi quis reiciendis voluptates veniam provident quod nostrum. Ex eligendi error deserunt officia ab eveniet reprehenderit illum architecto omnis quod excepturi blanditiis ea maiores, placeat eius, iusto magni velit rerum? Rem possimus distinctio mollitia quis ad iure voluptatibus dolore voluptate officiis ea, veniam quod expedita ipsum ipsa, facilis reiciendis ipsam molestiae sint officia culpa corporis. Dolore iusto incidunt excepturi repudiandae magnam delectus commodi, dicta sit quos maiores neque laborum nisi maxime exercitationem quo sapiente aliquam eveniet fugit voluptate ullam dolorem quaerat. Velit sint dolores blanditiis. Tempora, esse in illo itaque dolorem facere qui hic nulla alias quam mollitia, tempore non, eveniet provident. Nemo necessitatibus totam cumque rerum a animi incidunt optio! Voluptate.</p>
-                            
-                            <a href="#" class="btn">Get Tickets</a>
+                            <p>Lorem enim. Ut, optitineque laborum nisi maxime exercitationem quo sapiente aliquam eveniet f blanditiis. isi maxime exercitationem quo sapiente aliquam eveniet f blanditiis. Tempora, esse in illo itaque dolorem facere qui hic nulla alias quam mollitia, tempore non, eveniet provident. Nemo necessitatibus totam cumque rerum a animi incidunt optio! Voluptate.</p>
+                            <p>Lorem enim. Ut, optitineque laborum nisi maxime exercitationem quisi maxime exercitationem quo sapiente aliquam eveniet f blanditiis. o sapiente aliquam eveniet f blanditiis. Tempora, esse in illo itaque dolorem facere qui hic nulla alias quam mollitia, tempore non, eveniet provident. Nemo necessitatibus totam cumque rerum a animi incidunt optio! Voluptate.</p>
+                            <p>Lorem enim. Ut, optitineque laborum nisi maxime exercitationem quisi maxime exercitationem quo sapiente aliquam eveniet f blanditiis. o sapiente aliquam eveniet f blanditiis. Tempora, esse in illo itaque dolorem facere qui hic nulla alias quam mollitia, tempore non, eveniet provident. Nemo necessitatibus totam cumque rerum a animi incidunt optio! Voluptate.</p>
+                            <p>Lorem enim. Ut, optitineque laborum nisi maxime exercitationem quo sapiente aliquisi maxime exercitationem quo sapiente aliquam eveniet f blanditiis. am eveniet f blanditiis. Tempora, esse in illo itaque dolorem facere qui hic nulla alias quam mollitia, tempore non, eveniet provident. Nemo necessitatibus totam cumque rerum a animi incidunt optio! Voluptate.</p>
+                            <div class="cast-and-crew">
+                                <div class="cast">
+                                    <h1>CAST</h1>
+                                    <p><span>Jack Black</span> as Lilo</p>
+                                    <p><span>Dwayne The Johnson</span> as Stitch</p>
+                                    <p><span>Jack Black</span> as Godzilla </p>
+                                </div>
+                                <div class="crew">
+                                    <h1>CREW</h1>
+                                    <p><span>Diercted By</span>y o mamma</p>
+                                    <p><span>Produced By</span> Neil Breen Productions</p>
+                                    <p><span>Art Director By</span> John Cena </p>
+                                </div>
+                                
+                            </div>
+                           
                         </div>
                      
                     </div>
                     <div class="social-images">
                         <h2>Tell you friends about Lilio and Stitch!</h2>
+                        <h3>#LiloAndStitch</h3>
                         <ul class="social-images-list">
                             <li>
                                 <img src="/src/assets/images/Untitled_Artwork 38.png" alt="">
@@ -198,6 +217,10 @@ setup(){
 </script>
 
 <style scoped>
+
+.coming-soon {
+    display: none;
+}
 .container {
     margin: 0 auto;
     max-width: 1150px;
@@ -310,10 +333,16 @@ setup(){
     margin-bottom: 50px;
 }
 
-.text-content {
-    
-    text-align: center;
+.text-content h1 {
+    margin: 30px 0;
+    font-size: 2.5rem;
 }
+.text-content p {
+margin-bottom: 20px;
+}
+
+
+
 .background-image {
     position: absolute;
     top: -250px;
@@ -337,20 +366,20 @@ setup(){
 
 
 .hero {
-    padding: 200px 0;
+    padding: 170px 0;
 }
 
 .primary-hero {
     display: flex;
-    gap: 100px;
+    gap: 50px;
     align-items: center;
-    margin-bottom: 100px;
+    margin-bottom: 150px;
     position: relative;
 }
 
 .image-wrapper {
-    height: 600px;
-    width: 8000px;
+    height: 700px;
+    width: 2100px;
 
 }
 
@@ -360,14 +389,29 @@ setup(){
     width: 100%;
 }
 
+.cast-and-crew {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    gap: 25px;
+}
+
+.cast-and-crew span {
+    font-weight: 750;
+}
+
 .social-images-list {
+    margin-top: 80px;
     display: grid;
     grid-template-columns: repeat(4,1fr);
 }
 
 .social-images-list li {
+    list-style: none;
     position: relative;
-    width: 150px;
+    width: 180px;
     height: 250px;
 }
 
@@ -395,6 +439,20 @@ setup(){
     font-size: 40px;
 }
 
+.social-images h2 {
+    
+    display: flex;
+    justify-content: center;
+    font-size: 1.9rem;
+    margin:40px 0;
+
+}
+.social-images h3 {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin: 35px 0;
+}
 
 
 .parallax {
@@ -480,10 +538,10 @@ setup(){
         --parallax-speed: 40;
        position: absolute;
        z-index: 7;
-       right: -100px;
+       right: -120px;
        width: 600px;
        height: 640px;
-       top:150px;
+       top:170px;
     }
     .parallax__foreground-front {
         --parallax-speed: -25;
@@ -495,28 +553,29 @@ setup(){
         height: 1000px;
     }
     .parallax__dust {
-        --parallax-speed: 90;
+        --parallax-speed: 120;
         position: absolute;
         z-index: 5;
         width: 480px;
         height: 480px;
         left: 20px;
-        top: -60px;
+        top: -50px;
     }
     .parallax__foreground-front2 {
         --parallax-speed: -50;
         position: absolute;
         z-index: 8;
-        width: 800px;
-        height: 800px;
-        top: 220px;
+        width: 700px;
+        height: 700px;
+        left:-20px;
+        top: 250px;
     }
 .primary-hero {
     flex-wrap: wrap;
 }
 .image-wrapper {
     height: 630px;
-    width:500px;
+    width:450px;
     margin: 0 auto;
 }
 .carousel {
@@ -557,9 +616,67 @@ setup(){
     box-shadow: 10px 20px 50px rgba(0, 0, 0, 0.811);
 }
 
+.parallax__luna {
+    --parallax-speed: -20;
+    position: absolute;
+    width: 270px;
+    height: 280px;
+    top: 300px;
+
+}
+
+.text-content {
+    margin: 0 50px;
+}
+
+.text-content h1 {
+    font-size: 3rem;
+}
 
 .pimg1 {
+    min-height: 400px;
+}
+.background-image {
 
+    position: absolute;
+    top: 170px;
+    left: -700px;
+    width: 0px;
+    height: 1600px;
+    width: 1480px;
+
+    z-index: -1;
+    
+    
+}
+
+.hero {
+    padding: 50px 0;
+}
+.coming-soon {
+    display: block;
+    font-size: 3.7rem;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.social-images-list  li {
+    width: 130px;
+    height: 220px;
+
+}
+.social-images-list {
+    gap: 20px;
+    margin: 80px 0 20px 0; 
 }
 
     
