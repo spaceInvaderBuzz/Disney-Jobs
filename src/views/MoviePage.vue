@@ -15,19 +15,61 @@
                             </div>
                             <div class="movie-about-info">
                                 <h2>ABOUT</h2>
-                                <p class="movie-description">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit qui aliquid eligendi, similique corporis impedit nulla maiores voluptates rem repellat architecto aperiam quo beatae perferendis voluptatibus expedita quod vero numquam natus? Necessitatibus ipsam assumenda adipisci quod quas tempora optio, architecto velit aperiam quisquam mollitia quos provident perferendis explicabo debitis reiciendis voluptatem totam ex recusandae accusamus sunt sequi sint obcaecati consequuntur. Delectus accusamus officiis totam exercitationem? Quos ducimus, voluptatum ipsam temporibus consectetur quo et excepturi, optio amet explicabo soluta sit molestias iure tenetur provident voluptatem aperiam reiciendis nemo? Maiores, exercitationem magni, officia sequi ipsa perspiciatis numquam aspernatur error id asperiores dolorum, qui at voluptatem recusandae quo sit nostrum! Dolor obcaecati ab enim ullam voluptates, doloribus velit aperiam voluptatem consequuntur! Quis neque veniam, quia repudiandae, eum accusantium nesciunt eos id explicabo, voluptatem doloribus saepe aspernatur blanditiis labore nemo similique. Unde veritatis libero laborum nam itaque. Hic inventore, placeat numquam molestias, blanditiis ducimus eaque temporibus tempora ratione ex, illo repellat tempore? Ex voluptatibus inventore quod molestiae impedit. Reprehenderit commodi quia aspernatur ex, possimus tenetur dignissimos explicabo nisi quam nam maxime veniam distinctio quis vitae laborum repellendus odio. Sit excepturi adipisci impedit itaque asperiores ipsam repellat, dolor dignissimos maxime doloremque obcaecati culpa velit ex.
+                                <div class="movie-description">
+                                    <div>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quis laborum non laudantium autem inventore nihil asperiores unde nam? Non dignissimos, perspiciatis quos quo obcaecati distinctio consectetur iste ex voluptas!
+                                    </div> 
+                                    <div>
+                                        Lorem ipsum dodfcsx lor sit amet consectetur adipisicing elit. Assumenda quis laborum non laudantium autem inventore nihil asperiores unde nam? Non dignissimos, perspiciatis quos quo obcaecati distinctio consectetur iste ex voluptas!
+                                    </div> 
+                                    <div>
+                                        Lorem ipsum dolosdcwdscwfvfrwesr sit amet consectetur adipisicing elit. Assumenda quis laborum non laudantium autem inventore nihil asperiores unde nam? Non dignissimos, perspiciatis quos quo obcaecati distinctio consectetur iste ex voluptas!
+                                    </div> 
+                                    <div>
+                                        Lorem ipsum dolor sdcit amet consectetur adipisicing elit. Assumenda quis laborum non laudantium autem inventore nihil asperiores unde nam? Non dignissimos, perspiciatis quos quo obcaecati distinctio consectetur iste ex voluptas!
+                                    </div> 
+                                    <div>
+                                        Lorem ipsum dolordfvcedfscx sit amet consectetur adipisicing elit. Assumenda quis laborum non laudantium autem inventore nihil asperiores unde nam? Non dignissimos, perspiciatis quos quo obcaecati distinctio consectetur iste ex voluptas!
+                                    </div> 
                 
-                                </p>
+                                </div>
                                 <div class="cast">
                                     <h1>CAST</h1>
-                                    <p>
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo obcaecati officiis consequatur error maxime, culpa voluptatem consectetur reprehenderit possimus quis soluta fugit praesentium, animi voluptatibus.
-                                    </p> 
+                                    <div class="cast-names">
+                                        <div class="name-container">
+                                            <span>Jack Black</span>
+                                            is The Little Mermaid
+                                        </div>
+                                        <div class="name-container">
+                                            <span>Jack Black</span>
+                                            is The Little Mermaid
+                                        </div>
+                                        <div class="name-container">
+                                            <span>Jack Black</span>
+                                            is The Little Mermaid
+                                        </div>
+                                        <div class="name-container">
+                                            <span>Jack Black</span>
+                                            is The Little Mermaid
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="directed-by">
-                                    <h1>DIRECTED BY</h1>
-                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, numquam.</p>
+                                    <h1>CREW</h1>
+                                    <div class="crew">
+                                        <div>Written By</div>
+                                        <p>Neil Breen</p>
+                                    </div>
+                                    <div class="crew">
+                                        <div>Produced By</div>
+                                        <p>Neil Breen</p>
+                                    </div>
+                                    <div class="crew">
+                                        <div>Directed By</div>
+                                        <p>Neil Breen</p>
+                                    </div>
+                                   
+                                  
                                 </div>
                 
                 
@@ -43,19 +85,61 @@
                             </div>
                             <div class="movie-about-info">
                                 <h2>ABOUT</h2>
-                                <p class="movie-description">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit qui aliquid eligendi, similique corporis impedit nulla maiores voluptates rem repellat architecto aperiam quo beatae perferendis voluptatibus expedita quod vero numquam natus? Necessitatibus ipsam assumenda adipisci quod quas tempora optio, architecto velit aperiam quisquam mollitia quos provident perferendis explicabo debitis reiciendis voluptatem totam ex recusandae accusamus sunt sequi sint obcaecati consequuntur. Delectus accusamus officiis totam exercitationem? Quos ducimus, voluptatum ipsam temporibus consectetur quo et excepturi, optio amet explicabo soluta sit molestias iure tenetur provident voluptatem aperiam reiciendis nemo? Maiores, exercitationem magni, officia sequi ipsa perspiciatis numquam aspernatur error id asperiores dolorum, qui at voluptatem recusandae quo sit nostrum! Dolor obcaecati ab enim ullam voluptates, doloribus velit aperiam voluptatem consequuntur! Quis neque veniam, quia repudiandae, eum accusantium nesciunt eos id explicabo, voluptatem doloribus saepe aspernatur blanditiis labore nemo similique. Unde veritatis libero laborum nam itaque. Hic inventore, placeat numquam molestias, blanditiis ducimus eaque temporibus tempora ratione ex, illo repellat tempore? Ex voluptatibus inventore quod molestiae impedit. Reprehenderit commodi quia aspernatur ex, possimus tenetur dignissimos explicabo nisi quam nam maxime veniam distinctio quis vitae laborum repellendus odio. Sit excepturi adipisci impedit itaque asperiores ipsam repellat, dolor dignissimos maxime doloremque obcaecati culpa velit ex.
+                                <div class="movie-description">
+                                    <div>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quis laborum non laudantium autem inventore nihil asperiores unde nam? Non dignissimos, perspiciatis quos quo obcaecati distinctio consectetur iste ex voluptas!
+                                    </div> 
+                                    <div>
+                                        Lorem ipsum dodfcsx lor sit amet consectetur adipisicing elit. Assumenda quis laborum non laudantium autem inventore nihil asperiores unde nam? Non dignissimos, perspiciatis quos quo obcaecati distinctio consectetur iste ex voluptas!
+                                    </div> 
+                                    <div>
+                                        Lorem ipsum dolosdcwdscwfvfrwesr sit amet consectetur adipisicing elit. Assumenda quis laborum non laudantium autem inventore nihil asperiores unde nam? Non dignissimos, perspiciatis quos quo obcaecati distinctio consectetur iste ex voluptas!
+                                    </div> 
+                                    <div>
+                                        Lorem ipsum dolor sdcit amet consectetur adipisicing elit. Assumenda quis laborum non laudantium autem inventore nihil asperiores unde nam? Non dignissimos, perspiciatis quos quo obcaecati distinctio consectetur iste ex voluptas!
+                                    </div> 
+                                    <div>
+                                        Lorem ipsum dolordfvcedfscx sit amet consectetur adipisicing elit. Assumenda quis laborum non laudantium autem inventore nihil asperiores unde nam? Non dignissimos, perspiciatis quos quo obcaecati distinctio consectetur iste ex voluptas!
+                                    </div> 
                 
-                                </p>
+                                </div>
                                 <div class="cast">
                                     <h1>CAST</h1>
-                                    <p>
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo obcaecati officiis consequatur error maxime, culpa voluptatem consectetur reprehenderit possimus quis soluta fugit praesentium, animi voluptatibus.
-                                    </p> 
+                                    <div class="cast-names">
+                                        <div class="name-container">
+                                            <span>Jack Black</span>
+                                            is The Little Mermaid
+                                        </div>
+                                        <div class="name-container">
+                                            <span>Jack Black</span>
+                                            is The Little Mermaid
+                                        </div>
+                                        <div class="name-container">
+                                            <span>Jack Black</span>
+                                            is The Little Mermaid
+                                        </div>
+                                        <div class="name-container">
+                                            <span>Jack Black</span>
+                                            is The Little Mermaid
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="directed-by">
-                                    <h1>DIRECTED BY</h1>
-                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, numquam.</p>
+                                    <h1>CREW</h1>
+                                    <div class="crew">
+                                        <div>Written By</div>
+                                        <p>Neil Breen</p>
+                                    </div>
+                                    <div class="crew">
+                                        <div>Produced By</div>
+                                        <p>Neil Breen</p>
+                                    </div>
+                                    <div class="crew">
+                                        <div>Directed By</div>
+                                        <p>Neil Breen</p>
+                                    </div>
+                                   
+                                  
                                 </div>
                 
                 
@@ -1057,6 +1141,25 @@ this.scroll();
     text-align: center;
 }
 
+.directed-by {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    align-items: center;
+    justify-content: center;
+}
+.crew {
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    gap: 5px;
+    margin: 10px 0;
+}
+.crew div {
+    color: #ff004f;
+    font-weight: 730;
+}
+
 .movie-poster {
     width: 800px;
     height: 1000px;
@@ -1069,6 +1172,14 @@ this.scroll();
     height: 100%;
     border-radius: 800px;
     box-shadow: 10x 20px 3px black;
+}
+.movie-description {
+  padding-bottom: 50px;
+}
+
+.movie-description div {
+    color: white;
+    margin: 20px 0;
 }
 
 
@@ -1197,6 +1308,20 @@ div {
     color: black;
 }
 
+.cast-names {
+    display:flex;
+}
+.cast-names span {
+    font-weight: 700;
+}
+.cast-names .name-container {
+color: white;
+gap: 10px;
+display: flex;
+flex-direction: column;
+
+}
+
 
 @media(max-width: 670px){
     .movie-page-background {
@@ -1235,6 +1360,11 @@ div {
        text-align: center;
        gap: 30px;
     }
+    .cast h1 {
+        border-top: 2px solid #ff004f;
+        margin-top: 0;
+        padding-top: 30px;
+    }
     .mobile-container {
         max-width: 670px;
         margin: 0 auto;
@@ -1250,12 +1380,12 @@ div {
     }
     .blu-ray-and-4k .container {
         margin-left:300px;
-        width: 250px;
+        width: 200px;
         height: 250px;
         margin-bottom: 100px;
     }
     .blu-ray-and-4k .container2 {
-        width: 250px;
+        width: 200px;
         height: 250px;
     }
     .img1-container {
@@ -1292,6 +1422,12 @@ div {
      }
      .panel.active {
         flex: 8;
+    }
+    .pimg1 {
+        background-size: 230%;
+         
+        background-position: center;
+       
     }
 }
 </style>
