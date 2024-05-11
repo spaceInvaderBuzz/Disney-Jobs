@@ -155,9 +155,11 @@
                     
                 </div>
                 <section class="own-today-section">
-            
+                    <div v-if="mobile" class="mobile-own-it-today-bg-container">
+                        <div class="mobile-own-it-today-bg"></div>
+                    </div>
                     <div class="own-it-today">
-                
+                       
                         <h1>Own It Today!</h1>
                 
                         <div class="img1-container" ref="image">
@@ -196,6 +198,7 @@
                             
                 
                         </div>
+                        
                     </div>
                 
                 </section>
@@ -1324,6 +1327,14 @@ flex-direction: column;
 
 
 @media(max-width: 670px){
+    .mobile-container {
+        max-width: 670px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
     .movie-page-background {
         height: 100%;
         background: black;
@@ -1361,18 +1372,13 @@ flex-direction: column;
        gap: 30px;
     }
     .cast h1 {
-        border-top: 2px solid #ff004f;
+        border-top: 4px solid #ff004f;
         margin-top: 0;
         padding-top: 30px;
     }
-    .mobile-container {
-        max-width: 670px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
+
+ 
+  
 
     .blu-ray-and-4k {
         display: flex;
@@ -1383,6 +1389,7 @@ flex-direction: column;
         width: 200px;
         height: 250px;
         margin-bottom: 100px;
+        margin-top: 25px;
     }
     .blu-ray-and-4k .container2 {
         width: 200px;
@@ -1393,13 +1400,14 @@ flex-direction: column;
         transform: translateX(-100%);
         width: 320px;
         height: 320px;
+        
     }
     .img1-container.active {
 
        transform: translateX(200px)
     }
     .img2-container {
-        top: 400px;
+        top: 450px;
         transform: translateX(100%);
         width: 450px;
         height: 450px;
@@ -1408,6 +1416,11 @@ flex-direction: column;
 
         transform: translateX(-180px)
      }
+     .trailer {
+        background:linear-gradient(#ff004f, rgb(0, 0, 0) );
+        margin-top: 0;
+        padding-bottom: 200px;
+    }
      .trailer-container {
         padding: 35px 150px;
         text-align: center;
@@ -1428,6 +1441,27 @@ flex-direction: column;
          
         background-position: center;
        
+    }
+    .own-today-section {
+        
+        position: relative;
+        
+        padding:30px 0 210px 0;
+    }
+    .mobile-own-it-today-bg-container {
+        position: absolute;
+        top: 0;
+        left:0;
+    
+        width:100%;
+        height: 100%;
+    }
+    .mobile-own-it-today-bg {
+        background: url("/src/assets/images/Untitled_Artwork 206.png") no-repeat;
+        height: 100%;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
     }
 }
 </style>
