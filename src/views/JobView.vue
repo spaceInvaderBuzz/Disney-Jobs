@@ -406,6 +406,7 @@ async mounted(){  //as soon as i moun this and any compontet tnat use the profil
 }
 
 .bottom-box {
+  flex-wrap: wrap;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -611,9 +612,11 @@ li {
   height: 450px;
   border-radius: 10px;
   display: flex;
+  
   align-items: center;
   text-align: center;
   flex-direction: column;
+  
 
 }
 
@@ -677,8 +680,10 @@ li {
 
 
 
+
 .container-for-job-page {
-  
+
+
   padding: 10px 30px;
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -689,6 +694,7 @@ li {
   max-width: 1500px;
 
 }
+
 
 .info-box {
   border: 2px solid #ff004f;
@@ -725,6 +731,7 @@ li {
 
 
 @media(max-width: 670px){
+
   .pimg1 {
     font-family: 'Bebas Neue';
     display: flex;
@@ -804,7 +811,7 @@ li {
   }
 
   .benefit {
-    width: 240px;
+    width: 220px;
   }
 
   .text-and-icon {
@@ -821,6 +828,11 @@ li {
     background-size: cover;
     background-position: center ;
   }
- 
+
+  .bottom-box {
+    top: 160px;
+  }
+
+
 }
 </style>
