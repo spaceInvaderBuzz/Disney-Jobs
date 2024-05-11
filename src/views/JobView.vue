@@ -36,14 +36,61 @@
         <h1 class="job-description">JOB DESCRIPTION</h1>
         <ul>
           <li v-for="singleJob in singleJobPage" :key="singleJob.id">
-            {{ singleJob.organization }}
-            <li v-for="qualification in singleJob.minimumQualifications" :key="qualification">
-              {{ qualification }}
-            </li>
-            <li v-for="description in singleJob.description" :key="description">
-              {{ description  }}
-            </li>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi dignissimos vero quidem ab in esse culpa veritatis laboriosam, tenetur non veniam nobis fugit enim qui ipsum a voluptates! Nisi assumenda dicta facere quibusdam ad numquam quasi earum quaerat laborum odit illo placeat, quia exercitationem sunt quam soluta accusantium, sapiente perferendis aperiam, repellat minus. Ab quos ipsum iure, velit fugiat voluptatem voluptatibus pariatur magnam, inventore voluptas dolorum culpa error facere praesentium quasi et autem amet sit? Veniam quaerat quo dolor numquam autem. Quae, optio debitis dolores ratione ducimus iste! Officiis ab unde architecto aperiam rem ad? Deserunt nobis facere maiores dolorem pariatur eveniet commodi doloremque sunt, obcaecati facilis illum temporibus in, debitis placeat sequi voluptates? Ipsa ab tenetur nobis dolores quaerat excepturi impedit, labore consequuntur recusandae, amet nemo perspiciatis laudantium, quis quo! Totam corporis iste, impedit aliquam consectetur maxime quibusdam neque officia fugiat est sapiente dolore doloremque veritatis possimus sed vel fugit deserunt aliquid esse quidem voluptatem repellendus? Consequuntur amet quibusdam saepe quaerat sit harum commodi veritatis soluta minima impedit, qui ipsam adipisci mollitia exercitationem fuga velit deserunt ab. Quae molestias inventore distinctio ad eaque illo corrupti error voluptatem aperiam esse rerum, consequatur architecto laborum reprehenderit, non alias, voluptas itaque! Laborum veniam odio necessitatibus ducimus distinctio ut dolorem, sit nihil soluta corporis nobis. Laboriosam repellendus aliquam fugiat in, iste harum tempora tempore temporibus laborum, quia ducimus, deleniti pariatur. Vero, quibusdam accusantium quidem, dignissimos quos quaerat officia qui unde eaque perferendis atque nulla nihil explicabo natus placeat. Ea quo autem eligendi quos velit doloremque aliquam laboriosam dolor commodi nesciunt consequuntur blanditiis ad eos possimus, exercitationem quibusdam dolore omnis nam corrupti? Nemo, similique, autem officiis earum cupiditate vitae culpa quasi odio magni nisi atque voluptates asperiores expedita optio quidem alias beatae magnam cumque minima perferendis voluptatibus. Excepturi voluptatum culpa fuga inventore vero aspernatur voluptate odit, cumque aperiam minus veritatis ex laudantium? Rem neque, velit nostrum, aperiam adipisci dignissimos pariatur hic illo laborum corporis, perspiciatis porro ab blanditiis sapiente dolores quia officia dicta unde? Assumenda iusto aperiam unde soluta recusandae. Ratione quae error neque est deserunt nulla. Laborum consequatur, earum illum deserunt maxime iure itaque corrupti, dolor, inventore vitae beatae necessitatibus totam quaerat qui numquam! Nostrum repellat tempora vitae aliquam ad doloribus, tempore alias iure eum earum, quas iste omnis reiciendis repudiandae numquam! Excepturi assumenda esse deserunt, odit ratione explicabo minima ad distinctio. Explicabo deleniti totam, soluta voluptatem ea blanditiis consequatur alias facilis magni, aliquam iusto beatae similique perspiciatis, rerum ipsa vitae id voluptas vel fugiat eius? Quasi eius temporibus molestiae molestias, non dolore dolor ipsam at nam amet, harum totam qui libero exercitationem id? Officiis ratione dolores tenetur? Architecto soluta eaque voluptatibus excepturi, commodi numquam autem sed velit voluptate rerum. Ipsa sapiente id pariatur praesentium suscipit blanditiis aperiam libero alias? Ab ut sint minus dolorum quod adipisci praesentium esse, est alias autem illo inventore rerum pariatur, dolor, odit dolores quae consequatur beatae provident nobis? Vel culpa nam quibusdam, optio distinctio nobis eaque inventore. Nisi maxime ipsam consectetur similique cum quasi quas, repellat laboriosam?
+         
+
+            <div class="about-company">
+              <div class="about-company-header">
+                <h1>About Us</h1>
+                <div>
+                  At  Disney, we're all about creating unforgettble films that will imapct people's lives for the better. 
+                  Out mission with every film we produce is to uplfit the viewer.
+                </div>
+                <div class="about-company-filmography">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae nemo, rem dicta voluptatem repellat voluptate debitis autem neque velit quidem odio veritatis, praesentium eum ad quos! Tempore accusantium minus consequatur.
+                  To name some of them: <span>The Little Mermaid, </span> <span>Beauty And The Beast,  </span><span>Mulan</span>
+                </div>
+
+              </div>
+             
+              <h1>Your Tasks:</h1>
+              <ul class="job-tasks">
+                <li v-for="description in singleJob.description" :key="description">
+                  {{ description  }}
+                </li>
+              </ul>
+
+              <h1 class="apply-if-you">Apply if you:</h1>
+              <ul class="qualifications">
+                <li v-for="qualification in singleJob.minimumQualifications" :key="qualification">
+                  {{ qualification }}
+                </li>
+
+              </ul>
+              <h1>We Would love If You</h1>
+              <ul class="traits">
+
+                <div>
+                  <span>Honesty:      </span>     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis dolore n
+                </div>
+                <div>
+                  <span>Communication:</span>     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, neque.
+
+                </div>
+                <div>
+                  <span>Passion:</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias praesentium tempora quasi nesciunt soluta?
+                </div>
+                <div>
+                  <span>Teamwork:   </span>    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ab deserunt harum. Expli
+                </div>
+                
+              </ul>
+              
+        
+            </div>
+
+           
+            
+            
           </li>
               
          </ul>
@@ -155,13 +202,43 @@
     </div>
     <div class="not-what-you-lookin-for">
       <div class="bottom-box">
-        <div>Dont find a good fit?</div>
+        <div class="top-content">
+
+          <h1>Dont find a good fit?</h1>
         <div>We are always looking for talent to join our team.
           if you dont find a position you are looking for join our newsletter 
           and be ntiifed of new openings! 
         </div>
-        <label for="email">EMAIL</label>
-        <input type="email">
+
+        </div>
+
+
+        <div class="email-send-container">
+          <div v-if="pageloaded" class="thank-you">
+            <h3>Thank you!</h3>
+            <p>Be on the lookout for new openings</p>
+          </div>
+          <div v-else class="input-container">
+
+            <label for="email">EMAIL</label>
+            <input type="email">
+  
+          </div>
+          <div class="sign-up">
+            <p>Sign Up</p>
+          </div>
+        </div>
+        
+
+        <div class="small-text-container">
+          <p>By subscribing to our newseltter you agree to our 
+            <div class="agreement-policy" @click="openTermsModal">
+              agreement policy
+            </div>
+        
+          </p>
+        </div>
+        
       </div>
       
       <div class="image"></div>
@@ -175,7 +252,7 @@
 
 </div>
    
-   <the-footer></the-footer>
+   <the-footer :openTermsModal="openTermsModal"></the-footer>
  
 
 
@@ -207,6 +284,7 @@ props: ["id"],
 
 data(){
   return {
+    openTermsModal: false,
     VueAndMe: "Vue and Me",
     VueTube: "VueTube",
     VueCanDoIt: "Vue Can Do It",
@@ -229,6 +307,9 @@ computed: {
     },
 
 methods: {
+  openTermsModal(){
+    this.openTermsModal = !this.openTermsModal;
+  },
   checkScreen(){
     this.windowWidth = window.innerWidth;
     if(this.windowWidth <= 670 ){
@@ -325,13 +406,18 @@ async mounted(){  //as soon as i moun this and any compontet tnat use the profil
 }
 
 .bottom-box {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   color: white;
   position: absolute;
   top: 80px;
   left: 100px;
   width: 500px;
-  height: 400px;
-  background: rebeccapurple;
+  
+  background: rgb(0, 0, 0);
+  padding: 50px;
+
 }
 
 .not-what-you-lookin-for {
@@ -340,7 +426,55 @@ async mounted(){  //as soon as i moun this and any compontet tnat use the profil
   height: 800px;
   position: relative;
 
+
 }
+
+.top-content {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  align-items: center;
+}
+
+.sign-up {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+
+ 
+
+}
+.sign-up p {
+
+  background: #ff004f;
+  padding: 10px 20px;
+  margin-top: 25px;
+}
+
+.small-text-container {
+  font-size: .9rem;
+  text-align: center;
+}
+
+.input-container label {
+  display:block;
+
+}
+.input-container input {
+  margin-top:10px;
+  width: 100%;
+  border: none;
+  background: rgb(67, 67, 67);
+  height: 40px;
+  color: white;
+  padding:20px;
+  border-bottom: white 1px solid;
+}
+.input-container input:focus {
+  outline: none;
+}
+
+
 
 .image {
   background: url('/src/assets/images/IMG_7933.JPG') no-repeat;
@@ -439,6 +573,35 @@ li {
   margin: 15px 0;
   font-weight: 700;
 }
+.job-tasks li {
+  list-style-type: disc;
+}
+.qualifications li {
+  list-style-type: disc;
+}
+
+.about-company div, li {
+  margin: 20px 0 20px 0;
+}
+
+.about-company span {
+  font-weight: 700;
+  border-bottom: 1px solid white;
+}
+
+.about-company-header {
+  padding: 50px 0 50px 0;
+}
+.apply-if-you {
+  margin-top: 50px;
+}
+.traits span {
+  border-bottom: none;
+}
+.traits {
+  display: inline;
+}
+
 .apply-box {
   position: sticky;
   top: 0;
@@ -453,6 +616,7 @@ li {
   flex-direction: column;
 
 }
+
 .skidmark {
   background: black;
 }

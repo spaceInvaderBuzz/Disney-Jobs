@@ -81,6 +81,7 @@ form {
     padding: 20px 45px;
     z-index: 2;
     position: relative;
+    max-width:95%;
     overflow: hidden;
     box-shadow: 0 8px 32px 0 rgba(0,0,0,0.6);
 }
@@ -226,5 +227,13 @@ img {
 
 .form-text {
     margin: 40px 0;
+}
+
+
+@media(max-width: 670px){
+    form {
+ 
+        
+    }
 }
 </style>

@@ -470,6 +470,7 @@ animation: moveup 0.5s linear forwards;
 .contact-form .containeer {
     display:grid;
     grid-template-columns: 2fr 1fr;
+    margin: 0 auto;
     gap: 30px;
     margin-top:-40px;
     align-items: center;
@@ -1196,7 +1197,10 @@ section p {
 .tangled-background {
     
     background: url("/src/assets/images/Untitled_Artwork 98.png") no-repeat;
-    background-position: cover;
+    background-position: center;
+
+
+
 
 
 
@@ -1206,6 +1210,8 @@ section p {
     max-width: 670px;
     display: grid;
     grid-template-columns: 1fr;
+    align-items: center;
+margin: 0 auto;
     gap: 30px;
     margin-top:-40px;
     

@@ -90,6 +90,9 @@
             
         </div>
 
+        <div class="outside-of-container-gallery">
+
+            <div class="divider"></div>
             <div class="container-gallery">
                 <div class="card">
                     <div class="circle"></div>
@@ -126,6 +129,9 @@
                     </a>
                 </div>
             </div>
+
+        </div>
+       
     </section>
 </template>
 
@@ -417,6 +423,7 @@ mounted(){
        grid-template-columns: 1fr;
        max-width: 850px;
        justify-content: center;
+       margin-top: -50px;
        
        
 
@@ -438,6 +445,7 @@ mounted(){
         width: 560px;
         height: 350px;
         border-radius: 20px;
+        margin-top: 50px;
         transition: 0.5s;
        
     

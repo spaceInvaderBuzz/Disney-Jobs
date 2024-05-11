@@ -59,7 +59,7 @@
        
     
     </div>
-</template>
+</template> 
 
 <script>
 import DoNotSellModal from './DoNotSellModal.vue';
@@ -69,7 +69,7 @@ import TermsOfUseModal from './TermsOfUseModal.vue';
 export default {
     name: 'TheFooterVue',
     components: { DoNotSellModal, PrivacyPolicyModal, TermsOfUseModal},
-
+props: ["openTermsModal"],   //take it in as true  //false  true 
     data(){
         return {
             privacyModalActive: false,
@@ -78,6 +78,11 @@ export default {
         };
     },
     methods: {
+        openTermsModalFromJobsPage(){
+            if(this.openTermsModal){
+                this.termsModalActive= !this.termsModalActive;
+            }
+        },
        toggleModalforPrivacy(){
         this.privacyModalActive = !this.privacyModalActive;
        },
@@ -92,12 +97,20 @@ export default {
        },
        toggleModalforTerms(){
         this.termsModalActive= !this.termsModalActive;
+        this.openTermsModal = false;
        },
        closeTermsModalActive(){
         this.termsModalActive= !this.termsModalActive;
        },
-    }
+    },
+  watch: {
+    openTermsModal(){
+if (this.openTermsModal){
+    this.termsModalActive = !this.termsModalActive;
 
+}
+    }
+  }
 
         };
 </script>

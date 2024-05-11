@@ -597,7 +597,7 @@ margin-bottom: 20px;
     flex-wrap: wrap;
     background: #ff004f;
     padding: 200px 35px;
-    margin-top: 100px;
+   margin-top: 20px;
     position: relative;
     
 }
@@ -678,6 +678,26 @@ margin-bottom: 20px;
     gap: 20px;
     margin: 80px 0 20px 0; 
 }
+
+.social-images h2 {
+    
+    display: flex;
+    justify-content: center;
+    font-size: 1.9rem;
+    margin:0;
+
+}
+.social-images h3 {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin: 35px 0;
+}
+.social-images-list {
+    margin-top: 20px;
+    
+}
+
 
     
 
