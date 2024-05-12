@@ -156,7 +156,7 @@
                 </div>
                 <section class="own-today-section">
                     <div v-if="mobile" class="mobile-own-it-today-bg-container">
-                        <div class="mobile-own-it-today-bg"></div>
+                        <div :class="{mobileOwnItTodayBg: movie.movieIdentifier === 1, mobileOwnItTodayBg2: movie.movieIdentifier === 2, mobileOwnItTodayBg3: movie.movieIdentifier === 3, mobileOwnItTodayBg4: movie.movieIdentifier === 4,  mobileOwnItTodayBg5: movie.movieIdentifier === 5 }"></div>
                     </div>
                     <div class="own-it-today">
                        
@@ -370,7 +370,10 @@ data(){
         images6: [{id: 0, text: 'Explore The World', background: 'Untitled_Artwork 144'}, {id: 1, text: 'Wild Forest', background: 'Untitled_Artwork 144'}, { id: 2, text: 'Crazy Riandown', background: 'Untitled_Artwork 111'}, { id: 3, text: 'pooooop', background: 'Untitled_Artwork 111' },{id: 4, text: 'little mermaid', background: 'Untitled_Artwork 111'}],
         images7: [{id: 0, text: 'Explore The World', background: 'Untitled_Artwork 144'}, {id: 1, text: 'Wild Forest', background: 'Untitled_Artwork 144'}, { id: 2, text: 'Crazy Riandown', background: 'Untitled_Artwork 111'}, { id: 3, text: 'pooooop', background: 'Untitled_Artwork 111' },{id: 4, text: 'little mermaid', background: 'Untitled_Artwork 111'}],
        
+        
         mobileImages1: [{id: 0, text: 'Explore The World', background: 'Untitled_Artwork 111'}, {id: 1, text: 'Wild Forest', background: 'Untitled_Artwork 111'}, { id: 2, text: 'Crazy Riandown', background: 'Untitled_Artwork 111'}, { id: 3, text: 'pooooop', background: 'Untitled_Artwork 111' }],
+        mobileImages2: [{id: 0, text: 'Explore The World', background: 'Untitled_Artwork 135'}, {id: 1, text: 'Wild Forest', background: 'Untitled_Artwork 135'}, { id: 2, text: 'Crazy Riandown', background: 'Untitled_Artwork 135'}, { id: 3, text: 'pooooop', background: 'Untitled_Artwork 111' }],
+        mobileImages3: [{id: 0, text: 'Explore The World', background: 'Untitled_Artwork 144'}, {id: 1, text: 'Wild Forest', background: 'Untitled_Artwork 144'}, { id: 2, text: 'Crazy Riandown', background: 'Untitled_Artwork 111'}, { id: 3, text: 'pooooop', background: 'Untitled_Artwork 111' }],
     };
 },
 methods: {
@@ -447,6 +450,13 @@ computed: {
         if (this.$route.params.id === "1"){
             return this.mobileImages1
         };
+        if (this.$route.params.id === "2"){
+            return this.mobileImages2
+        };
+        if (this.$route.params.id === "3"){
+            return this.mobileImages3
+        };
+
     },
     activeMovie(){
         return this.movies.filter((movie) => movie.id === this.$route.params.id);
@@ -946,7 +956,7 @@ this.scroll();
     background: linear-gradient(
         318.68deg,
         #0068b3 0%,
-        #0095ff 49.72%,
+        #0095ff4c 49.72%,
         #bee4ff
     );
     transform: rotateY(180deg);
@@ -960,7 +970,12 @@ this.scroll();
 
 
 .back2 {
-    background: #111111;
+    background: linear-gradient(
+        318.68deg,
+        #000000 0%,
+        rgba(83, 57, 1, 0.286) 9.72%,
+        #df9700
+    );
     transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
@@ -1026,6 +1041,12 @@ this.scroll();
 }
 
 .back a {
+    text-decoration: none;
+    color: white;
+    letter-spacing: 2px;
+   
+}
+.back2 a {
     text-decoration: none;
     color: white;
     letter-spacing: 2px;
@@ -1340,6 +1361,10 @@ flex-direction: column;
         background: black;
     }
    
+
+    /* Background hero pics for mobile */ 
+
+
     .moviePagHeroBackground1 {
         background: url('/src/assets/images/Untitled_Artwork 92.png') no-repeat;
         
@@ -1348,6 +1373,27 @@ flex-direction: column;
         height: 100%;
         
     }
+    .moviePagHeroBackground2 {
+        background: url('/src/assets/images/Untitled_Artwork 113.png') no-repeat;
+        
+        background-position: center cover;
+        width:1000px;
+        height: 100%;
+        
+    }
+    .moviePagHeroBackground3 {
+        background: url('/src/assets/images/Untitled_Artwork 137.png') no-repeat;
+        
+        background-position: center cover;
+        width:1000px;
+        height: 100%;
+        
+    }
+
+
+
+
+
    .trailer {
     padding-bottom: 65px;
    }
@@ -1390,6 +1436,10 @@ flex-direction: column;
         height: 250px;
         margin-bottom: 100px;
         margin-top: 25px;
+    }
+    .blue-ray-logo {
+        width: 120px;
+        height: 100px;
     }
     .blu-ray-and-4k .container2 {
         width: 200px;
@@ -1436,12 +1486,39 @@ flex-direction: column;
      .panel.active {
         flex: 8;
     }
+
+
+
+    /* Banner images for mobile */
     .pimg1 {
         background-size: 230%;
          
         background-position: center;
        
     }
+    .pimg2 {
+        background-size: 230%;
+         
+        background-position: center;
+       
+    }
+    .pimg3 {
+        background-size: 230%;
+         
+        background-position: center;
+       
+    }
+
+
+
+
+
+
+
+
+
+
+
     .own-today-section {
         
         position: relative;
@@ -1456,12 +1533,28 @@ flex-direction: column;
         width:100%;
         height: 100%;
     }
-    .mobile-own-it-today-bg {
+   /* Buy it today bg imaged for mobile */ 
+    .mobileOwnItTodayBg2 {
+        background: url("/src/assets/images/Untitled_Artwork 208.png") no-repeat;
+        height: 100%;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+    }
+    .mobileOwnItTodayBg {
         background: url("/src/assets/images/Untitled_Artwork 206.png") no-repeat;
         height: 100%;
         width: 100%;
         background-position: center;
         background-size: cover;
     }
+    .mobileOwnItTodayBg3 {
+        background: url("/src/assets/images/Untitled_Artwork 210.png") no-repeat;
+        height: 100%;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+    }
+    
 }
 </style>

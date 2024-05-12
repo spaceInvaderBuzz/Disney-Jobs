@@ -79,19 +79,20 @@ data(){
     };
 },
 methods: {
-    signIn(){
-        firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(() => {
+    async signIn(){
+        await firebase.auth().signInWithEmailAndPassword(this.email, this.password);
          
             this.error = false;
             this.errorMsg = "";
-            
+           
             this.$router.push({name: "JobResults"});
+           
+               
+         
             
-        })
-        .catch((err) => {
-            this.error = true;
-            this.errorMsg = err.message;
-        })
+            
+        
+       
     }
 },
 };
