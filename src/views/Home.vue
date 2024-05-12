@@ -4,8 +4,8 @@
         <body>
 
 
-           
-            <div class="image-container">
+           <div class="image-container"></div>
+            <div class="image-container1">
                 <creative-text-vue></creative-text-vue>
                 <img class="image anim" src="/src/assets/disney_stitch.svg" alt="">
                 
@@ -421,6 +421,18 @@ window.addEventListener('scroll', function() {
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mouse+Memoirs&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Princess+Sofia&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 
+.container {
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+align-items: center;
+max-width: 1400px;
+margin: 0 auto;
+padding: 0 30px;
+    
+  
+  
+  }
 .container {
 display: flex;
 flex-wrap: wrap;
@@ -983,6 +995,9 @@ a:hover i {
     color: #ffffff;
 }
 
+
+/* MAIN HEADER TEXT */
+
 .button {
     font-size: 20px;
     display: block;
@@ -1048,9 +1063,12 @@ a:hover i {
 }
 
 .image-container {
+    width: 100vw;
+}
+.image-container1 {
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-image: linear-gradient(rgba(108, 8, 8, 0.346), rgba(255, 0, 0, 0));
     display: flex;
@@ -1064,6 +1082,10 @@ a:hover i {
 
 
 }
+
+/* main heaer text end */ 
+
+
 body {
     position: absolute;
     z-index: -2;
@@ -1180,17 +1202,7 @@ section p {
 
 @media (max-width: 670px){
 
-    .image-container {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 100vh;
-        background-image: linear-gradient(rgba(108, 8, 8, 0.346), rgba(255, 0, 0, 0));
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
+
     .image {
         width: 550px;
         margin-bottom: 40px;
@@ -1325,6 +1337,21 @@ section p {
 
 @media(max-width: 1068px){
 
+    .categories .container {
+        width: 1000px;
+    }
+
+    .careers::before{
+        top: 2200px;
+    }
+    .careers .container {
+        gap: 100px;
+    }
+    .images-container {
+        width: 450px;
+        height: 450px;
+    }
+
     /* .tangled-background {
        
         padding-bottom:90px;
@@ -1347,7 +1374,7 @@ section p {
     }
     .tangled-background .la-form {
         justify-self: center;
-        width: 500px;
+        width: 650px;
     }
 
     .image-for-form {

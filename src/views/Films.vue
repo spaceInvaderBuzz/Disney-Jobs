@@ -219,6 +219,7 @@ setup(){
 }
 
 .films-container {
+    background: red;
     max-width: 1250px;
     margin: 0 auto;
     padding: 0 15px;
@@ -252,9 +253,12 @@ setup(){
 }
 
 .portfolio {
-   
+   background: purple;
     display: grid;
     grid-template-columns: repeat(4,1fr);
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
 
 }
 
@@ -401,6 +405,28 @@ height: 100%;
     100% {
         opacity: 1;
         transform: translateY(0px);
+    }
+}
+
+
+
+@media(max-width: 1068px){
+    .carousel .slide-info img {
+        width: 95vw;
+        height: 100vh;
+        transform: scale(1);
+        object-fit:contain;
+    }
+   
+    .portfolio {
+        grid-template-columns: repeat(3,1fr);
+        padding-left: 35px;
+    }
+
+    .cool-text {
+        font-size: 2.7rem;
+        padding-bottom: 20px;
+       
     }
 }
 

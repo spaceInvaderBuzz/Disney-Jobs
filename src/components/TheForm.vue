@@ -230,9 +230,5 @@ img {
 }
 
 
-@media(max-width: 670px){
- form {
-    
- }
-}
+
 </style>

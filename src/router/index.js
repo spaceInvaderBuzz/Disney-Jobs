@@ -16,6 +16,7 @@ import firebase from 'firebase/compat/app';
 import "firebase/compat/auth";
 import 'firebase/compat/storage';
 import db from "@/firebase/firebaseInit";
+import TestingCSS from '@/views/TestingCSS.vue';
 
 const requireAuth = (to, from, next) => {
   let user = firebase.auth().currentUser;
@@ -113,6 +114,12 @@ const router = createRouter({
       path: "/success",
       name: "ApplicationSuccessful",
       component: ApplicationSuccessful,
+    },
+    {
+      path: "/testing",
+      name: "TestCSS",
+      component: TestingCSS
+
     },
   ],
   scrollBehavior(){

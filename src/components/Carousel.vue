@@ -140,6 +140,42 @@ i {
 
 }
 
+
+@media(max-width: 1068px){
+    .pagination {
+        position: absolute;
+        gap: 40px;
+        bottom: 24px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 3;
+        border-top: rgb(0, 0, 0) 15px solid;
+    padding-top: 20px;
+    background: black;
+ 
+    }
+    span {
+        cursor: pointer;
+        width: 35px;
+        height: 40px;
+        background: url('/src/assets/images/Untitled_Artwork 33.png') no-repeat;
+        background-size: 40px;
+        
+    }
+    
+    .active {
+        cursor: pointer;
+        width: 35px;
+        height: 40px;
+        background: url('/src/assets/images/Untitled_Artwork 34.png') no-repeat;
+        background-size: 40px;
+        
+        
+    }
+}
+
 @media (max-width: 670px){
     span {
         cursor: pointer;
