@@ -235,10 +235,15 @@
 
 
                 </div>
-   
 
 
                 
+
+
+            <div class="this-class-is-to-position-the-bg-as-abs">
+                <div class="the-background-tangled-container">
+                    <img src="/src/assets/images/Untitled_Artwork 213.png" alt="">
+                </div>
                 <div class="bull-container">
                     
                     <div class="containeer">
@@ -265,6 +270,11 @@
                     </div>
 
                 </div>
+
+                
+            </div>
+
+               
                 
                 <the-footer></the-footer>
                
@@ -483,7 +493,7 @@ padding: 0 30px;
 
 
 .tangled-background {
-    position: relative;
+    
     padding-bottom:90px;
     display: grid;
     grid-template-columns: repeat(2,1fr);
@@ -496,13 +506,17 @@ padding: 0 30px;
 
 
 }
+
+.this-class-is-to-position-the-bg-as-abs {
+    position: relative;
+}
 .the-background-tangled-container {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: red;
+ 
    
 }
 .the-background-tangled-container img {
@@ -1257,30 +1271,8 @@ section p {
 
     }
 
-.tangled-background {
-    
-    background: url("/src/assets/images/Untitled_Artwork 98.png") no-repeat;
-    background-position: center;
 
 
-
-
-
-
-}
-
-.contact-form .containeer {
-    max-width: 670px;
-    display: grid;
-    grid-template-columns: 1fr;
-    align-items: center;
-margin: 0 auto;
-    gap: 30px;
-    margin-top:-40px;
-    
-    align-items: center;
-
-}
 
 .form-text {
   
@@ -1323,10 +1315,30 @@ margin: 0 auto;
     grid-gap: 15px;
 }
 
+
+
+
 }
 
 
+
+
 @media(max-width: 1068px){
+
+    /* .tangled-background {
+       
+        padding-bottom:90px;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+       justify-content: center;
+    
+       margin: 0 auto;
+      
+     
+    
+    
+    } */
+    
 
     .tangled-background {
         grid-template-columns: 1fr;
@@ -1335,7 +1347,7 @@ margin: 0 auto;
     }
     .tangled-background .la-form {
         justify-self: center;
-        width: 900px;
+        width: 500px;
     }
 
     .image-for-form {
@@ -1350,6 +1362,15 @@ margin: 0 auto;
         justify-content: center;
         text-align: center;
     
+    }
+    .the-background-tangled-container {
+        position: absolute;
+        top: 150px;
+        left: 0;
+        width: 100%;
+        height: 50%;
+     
+       
     }
    
 }
