@@ -236,7 +236,11 @@
 
                 </div>
    
-                <div class="tangled-background">
+
+
+                
+                <div class="bull-container">
+                    
                     <div class="containeer">
                         <div class="form-text">
                             <h1><i class="fa-solid fa-message">
@@ -246,16 +250,22 @@
                             <p>we would love to hear your bullshit And pretend that we care!</p>
                         </div>
                     </div>
-                    <div class="contact-form">
-                        <div class="containeer">
-                            <the-form></the-form>
-                            <div class="image-for-form" ref="formImage" :class="{ active: active }">
-                                <img src="/src/assets/images/Untitled_Artwork 193.png" alt="">
-                            </div>
-    
-                        </div>
+                    <div class="tangled-background">
+                      
+                        <the-form class="la-form"></the-form>
+                       
+                            
+                             
+                                <div class="image-for-form" ref="formImage" :class="{ active: active }">
+                                    <img src="/src/assets/images/Untitled_Artwork 193.png" alt="">
+                                </div>
+        
+                        
+                        
                     </div>
+
                 </div>
+                
                 <the-footer></the-footer>
                
 
@@ -431,14 +441,14 @@ animation: moveup 0.5s linear forwards;
 
 
 
-.tangled-background .containeer {
+/* .tangled-background .containeer {
     max-width: 1350px;
     margin: 0 auto;
     padding: 0 15px;
     color: white;
     
   
-}
+} */
 
 
 .fa-solid.fa-message {
@@ -456,26 +466,64 @@ animation: moveup 0.5s linear forwards;
 }
 
 
+/* 
+.container {
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+align-items: center;
+max-width: 1400px;
+margin: 0 auto;
+padding: 0 30px;
+    
+  
+  
+  } */
+
+
 
 .tangled-background {
-    
-    background: url("/src/assets/images/Untitled_Artwork 98.png") no-repeat;
-    background-position: bottom;
-    background-size: cover;
+    position: relative;
     padding-bottom:90px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+   justify-content: center;
+
+   margin: 0 auto;
+  
+ 
 
 
 
 }
-.contact-form .containeer {
+.the-background-tangled-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: red;
+   
+}
+.the-background-tangled-container img {
+   width: 100%;
+   height: 100%;
+}
+
+
+
+
+
+/* .contact-form .containeer {
     display:grid;
     grid-template-columns: 2fr 1fr;
+    
     margin: 0 auto;
     gap: 30px;
     margin-top:-40px;
     align-items: center;
 
-}
+} */
 
 .contact-form .containeer .image {
     width: 600px;
@@ -1050,7 +1098,7 @@ section p {
     margin: 15px 0 25px 0;
 }
 
-.contact-form  .containeer .image-for-form {
+.image-for-form {
     opacity: 0;
     transition: all 2s ease;
     transform: translateY(150px);
@@ -1058,17 +1106,32 @@ section p {
     height: 680px;
 
 }
-.contact-form  .containeer .image-for-form.active {
+.image-for-form img {
+    width: 100%;
+    height: 100%;
+}
+
+.image-for-form.active {
     transform: translateY(0px);
     opacity: 1;
 
 }
 
+.containeer {
+    
+    color: white;
+   
+    
 
-.contact-form img {
-    width: 100%;
-    height: 100%;
 }
+
+.bull-container {
+    margin: 0 auto;
+    max-width: 1400px;
+    position: relative;
+}
+
+
 
 
 
@@ -1260,6 +1323,35 @@ margin: 0 auto;
     grid-gap: 15px;
 }
 
+}
+
+
+@media(max-width: 1068px){
+
+    .tangled-background {
+        grid-template-columns: 1fr;
+       
+        
+    }
+    .tangled-background .la-form {
+        justify-self: center;
+        width: 900px;
+    }
+
+    .image-for-form {
+      
+        margin: 0 auto;
+    }
+    .containeer {
+        margin-left: 0;
+        display: flex;
+        color: white;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    
+    }
+   
 }
 
 
