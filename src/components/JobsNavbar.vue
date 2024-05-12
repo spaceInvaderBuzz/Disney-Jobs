@@ -90,6 +90,7 @@
                     <div class="profile-button-signout" @click="signOut"><i class="fas fa-sign-out"></i> Sign Out</div>
   
                    </div>
+                   
                  </div>
                  
                
@@ -157,8 +158,9 @@ computed: {
     ...mapState(useUserStore, ["user", "profileImg", "profileEmail","profileFirstName","profileLastName","profileUserName"]),
 },
 created(){
-  window.addEventListener('resize',this.checkScreen());
   this.checkScreen();
+  window.addEventListener('resize',this.checkScreen);
+ 
 },
 }
 </script>
@@ -175,8 +177,11 @@ created(){
   }
   
 
+  
+
   .profile-image-container {
     
+    right:400px;
     width: 80px;
     height: 80px;
     border-radius: 90px;
@@ -236,10 +241,12 @@ created(){
   
 }
 .main-items {
-  display: flex;
-    align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 500px;
+   
  
-    justify-content: space-between;
+   
 
 }
 
@@ -267,10 +274,13 @@ created(){
 .right-side {
   display: flex;
   align-items: center;
+  justify-content: center;
+
 }
 
 
 .user-info {
+ 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -285,7 +295,7 @@ created(){
  
   justify-content: space-between;
 
-  padding: 0 110px 0 150px;
+  padding: 0 50px 0 90px;
 
 
 }
@@ -381,6 +391,7 @@ align-items: center;
 
   .main-items {
 flex-wrap: wrap;
+gap:0;
   }
   .left-side {
     
@@ -448,8 +459,9 @@ flex-wrap: wrap;
 
     .right-side {
       
-  
+      margin-right: -50px;
       transform: scale(.85);
+      
     }
     
   
@@ -457,5 +469,6 @@ flex-wrap: wrap;
 
 
 
-
-</style>
+/* main-nav,   main items 
+*/
+</style>  
