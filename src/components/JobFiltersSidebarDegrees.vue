@@ -95,6 +95,10 @@ export default {
     
 }
 
-
+@media(max-width: 1068px){
+    .the-filters {
+        width: 400px;
+    }
+}
 
 </style>

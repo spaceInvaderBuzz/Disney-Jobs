@@ -94,6 +94,21 @@ export default {
 
 }
 
+@media(max-width: 1068px){
+    .listing {
+        margin:70px;
+        border-radius: 20px;
+        border: 4px solid white;
+        padding: 45px 70px;
+        display: grid;
+        grid-template-columns: 3fr 1fr ;
+        gap: 15px;
+        align-items: center;
+        transition: 0.3s;
+    
+    }
+}
+
 @media(max-width: 670px){
     .listing {
         padding: 40px;

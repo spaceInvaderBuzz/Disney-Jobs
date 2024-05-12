@@ -135,19 +135,64 @@
         <h1 class="job-description">JOB DESCRIPTION</h1>
         <ul>
           <li v-for="singleJob in singleJobPage" :key="singleJob.id">
-            {{ singleJob.organization }}
-            <li v-for="qualification in singleJob.minimumQualifications" :key="qualification">
-              {{ qualification }}
-            </li>
-            <li v-for="description in singleJob.description" :key="description">
-              {{ description  }}
-            </li>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi dignissimos vero quidem ab in esse culpa veritatis laboriosam, tenetur non veniam nobis fugit enim qui ipsum a voluptates! Nisi assumenda dicta facere quibusdam ad numquam quasi earum quaerat laborum odit illo placeat, quia exercitationem sunt quam soluta accusantium, sapiente perferendis aperiam, repellat minus. Ab quos ipsum iure, velit fugiat voluptatem voluptatibus pariatur magnam, inventore voluptas dolorum culpa error facere praesentium quasi et autem amet sit? Veniam quaerat quo dolor numquam autem. Quae, optio debitis dolores ratione ducimus iste! Officiis ab unde architecto aperiam rem ad? Deserunt nobis facere maiores dolorem pariatur eveniet commodi doloremque sunt, obcaecati facilis illum temporibus in, debitis placeat sequi voluptates? Ipsa ab tenetur nobis dolores quaerat excepturi impedit, labore consequuntur recusandae, amet nemo perspiciatis laudantium, quis quo! Totam corporis iste, impedit aliquam consectetur maxime quibusdam neque officia fugiat est sapiente dolore doloremque veritatis possimus sed vel fugit deserunt aliquid esse quidem voluptatem repellendus? Consequuntur amet quibusdam saepe quaerat sit harum commodi veritatis soluta minima impedit, qui ipsam adipisci mollitia exercitationem fuga velit deserunt ab. Quae molestias inventore distinctio ad eaque illo corrupti error voluptatem aperiam esse rerum, consequatur architecto laborum reprehenderit, non alias, voluptas itaque! Laborum veniam odio necessitatibus ducimus distinctio ut dolorem, sit nihil soluta corporis nobis. Laboriosam repellendus aliquam fugiat in, iste harum tempora tempore temporibus laborum, quia ducimus, deleniti pariatur. Vero, quibusdam accusantium quidem, dignissimos quos quaerat officia qui unde eaque perferendis atque nulla nihil explicabo natus placeat. Ea quo autem eligendi quos velit doloremque aliquam laboriosam dolor commodi nesciunt consequuntur blanditiis ad eos possimus, exercitationem quibusdam dolore omnis nam corrupti? Nemo, similique, autem officiis earum cupiditate vitae culpa quasi odio magni nisi atque voluptates asperiores expedita optio quidem alias beatae magnam cumque minima perferendis voluptatibus. Excepturi voluptatum culpa fuga inventore vero aspernatur voluptate odit, cumque aperiam minus veritatis ex laudantium? Rem neque, velit nostrum, aperiam adipisci dignissimos pariatur hic illo laborum corporis, perspiciatis porro ab blanditiis sapiente dolores quia officia dicta unde? Assumenda iusto aperiam unde soluta recusandae. Ratione quae error neque est deserunt nulla. Laborum consequatur, earum illum deserunt maxime iure itaque corrupti, dolor, inventore vitae beatae necessitatibus totam quaerat qui numquam! Nostrum repellat tempora vitae aliquam ad doloribus, tempore alias iure eum earum, quas iste omnis reiciendis repudiandae numquam! Excepturi assumenda esse deserunt, odit ratione explicabo minima ad distinctio. Explicabo deleniti totam, soluta voluptatem ea blanditiis consequatur alias facilis magni, aliquam iusto beatae similique perspiciatis, rerum ipsa vitae id voluptas vel fugiat eius? Quasi eius temporibus molestiae molestias, non dolore dolor ipsam at nam amet, harum totam qui libero exercitationem id? Officiis ratione dolores tenetur? Architecto soluta eaque voluptatibus excepturi, commodi numquam autem sed velit voluptate rerum. Ipsa sapiente id pariatur praesentium suscipit blanditiis aperiam libero alias? Ab ut sint minus dolorum quod adipisci praesentium esse, est alias autem illo inventore rerum pariatur, dolor, odit dolores quae consequatur beatae provident nobis? Vel culpa nam quibusdam, optio distinctio nobis eaque inventore. Nisi maxime ipsam consectetur similique cum quasi quas, repellat laboriosam?
+            <div class="about-company">
+              <div class="about-company-header">
+                <h1>About Us</h1>
+                <div>
+                  At  Disney, we're all about creating unforgettble films that will imapct people's lives for the better. 
+                  Out mission with every film we produce is to uplfit the viewer.
+                </div>
+                <div class="about-company-filmography">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae nemo, rem dicta voluptatem repellat voluptate debitis autem neque velit quidem odio veritatis, praesentium eum ad quos! Tempore accusantium minus consequatur.
+                  To name some of them: <span>The Little Mermaid, </span> <span>Beauty And The Beast,  </span><span>Mulan</span>
+                </div>
+
+              </div>
+             
+              <h1>Your Tasks:</h1>
+              <ul class="job-tasks">
+                <li v-for="description in singleJob.description" :key="description">
+                  {{ description  }}
+                </li>
+              </ul>
+
+              <h1 class="apply-if-you">Apply if you:</h1>
+              <ul class="qualifications">
+                <li v-for="qualification in singleJob.minimumQualifications" :key="qualification">
+                  {{ qualification }}
+                </li>
+
+              </ul>
+              <h1>We Would love If You</h1>
+              <ul class="traits">
+
+                <div>
+                  <span>Honesty:      </span>     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis dolore n
+                </div>
+                <div>
+                  <span>Communication:</span>     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, neque.
+
+                </div>
+                <div>
+                  <span>Passion:</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias praesentium tempora quasi nesciunt soluta?
+                </div>
+                <div>
+                  <span>Teamwork:   </span>    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ab deserunt harum. Expli
+                </div>
+                
+              </ul>
+              
+        
+            </div>
           </li>
               
          </ul>
       </div>
       <div class="apply-box">
+        <div class="disney-careers-logo-container">
+          <img src="/src/assets/images/IMG_8108.png" alt="">
+          <h1>CAREERS</h1>
+        </div>
         <li v-for="singleJob in singleJobPage" :key="singleJob.id" class="single-job-title">
           {{ singleJob.title }}
        
@@ -729,8 +774,100 @@ li {
 
 }
 
+/* undisplay Disney careers logo unles at media of 1068px */
+
+.disney-careers-logo-container {
+  display: none;
+  margin-top: 40px;
+  width: 230px;
+  height: 130px;
+
+}
+
+.disney-careers-logo-container img {
+  width: 100%;
+  height: 100%;
+}
+
+
+@media(max-width: 1068px){
+
+  .disney-careers-logo-container {
+    display: block;
+  }
+
+  .apply-box {
+    position: sticky;
+    top: 0;
+    padding: 20px;
+    background: white;
+    color: black;
+    height: 1000px;
+    border-radius: 10px;
+    display: flex;
+    
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    
+  
+  }
+  .share-this-job {
+    margin-top: 50px;
+  
+  }
+  .share-this-job h4 {
+font-size: 1.5rem;
+  }
+  .share-this-job i {
+font-size: 1.7rem;
+margin-left: 8px;
+
+  }
+  .apply-button {
+    width: 100%;
+    margin-top: 110px;
+  }
+
+  .single-job-title {
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+
+  .benefits {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-left:90px;
+ 
+  
+  }
+
+  .benefit {
+    width: 230px;
+  }
+  
+  .container-for-job-page {
+
+
+    padding: 10px 30px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+    color: white;
+    background: black;
+    margin: 100px auto;
+    max-width: 1500px;
+  
+  }
+}
 
 @media(max-width: 670px){
+
+  .disney-careers-logo-container {
+    display: none;
+  }
 
   .pimg1 {
     font-family: 'Bebas Neue';

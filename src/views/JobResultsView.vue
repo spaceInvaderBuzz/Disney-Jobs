@@ -313,6 +313,10 @@ export default {
       
       }
 
+
+   @media(max-width: 1068px){
+ 
+   }  
  @media(max-width: 670px){
     .container {
         padding: 10px;

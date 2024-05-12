@@ -102,6 +102,29 @@ computed: {
 }
 
 
+@media (max-width: 1068px){
+    .accordion{
+        position: relative;
+        gap:20px;
+        font-size: .9rem;
+       }
+       .accordion .fa-solid.fa-caret-down.unrotate {
+        position: absolute;
+        right:10px;
+    
+    
+    
+       }
+       .accordion .fa-solid.fa-caret-down.rotate {
+        position: absolute;
+        right:10px;
+    
+    
+    
+       }
+}
+
+
 @media (max-width: 670px){
 
    .accordion{

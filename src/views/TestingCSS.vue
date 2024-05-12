@@ -6,7 +6,8 @@
     <div class="test-bg">
         <div class="test-class">
             <div class="testing">
-                <h1>POOP</h1>
+                <h1 class="abs">I AM ABSOLUTE</h1>
+                <h1>POOP000000000000000</h1>
                 <h1>BIKINI</h1>
             </div>
             <h1>POOPSSS</h1>
@@ -42,10 +43,21 @@ export default {
 } */ 
 
 .test-class {
+    position: relative;
     background: red;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
+    display: flex;
+   
+    justify-content: space-between;
+  
+    
 
+}
+.abs {
+    height: 800px;
+    background: orange;
+    top:0;
+    left:0;
+    position: absolute;
 }
 
 .testing {

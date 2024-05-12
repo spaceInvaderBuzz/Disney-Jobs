@@ -51,7 +51,13 @@ export default {
 
 
 }
-
+@media (max-width: 1068px){
+    .navigations {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 20px;
+    }
+}
 
 @media (max-width: 670px){
   .navigations {
