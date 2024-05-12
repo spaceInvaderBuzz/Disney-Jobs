@@ -246,6 +246,7 @@
         </div>
     </div>
     <div class="not-what-you-lookin-for">
+      <div class="image"></div>
       <div class="bottom-box">
         <div class="top-content">
 
@@ -286,7 +287,7 @@
         
       </div>
       
-      <div class="image"></div>
+   
     </div>
     
      
@@ -474,6 +475,12 @@ async mounted(){  //as soon as i moun this and any compontet tnat use the profil
 
 
 }
+.image {
+  background: url('/src/assets/images/IMG_7933.JPG') no-repeat;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+}
 
 .top-content {
   display: grid;
@@ -522,12 +529,7 @@ async mounted(){  //as soon as i moun this and any compontet tnat use the profil
 
 
 
-.image {
-  background: url('/src/assets/images/IMG_7933.JPG') no-repeat;
-  width: 100%;
-  height: 100%;
-  background-size: contain;
-}
+
 .benefit-img1{
   background: url('/src/assets/images/Untitled_Artwork 68.png') no-repeat;
   background-position: center;
@@ -791,6 +793,20 @@ li {
 
 
 @media(max-width: 1068px){
+
+.image {
+  background-size:  cover;
+}
+.not-what-you-lookin-for {
+
+ 
+  height: 800px;
+  padding-bottom: 100px;
+  
+
+
+}
+
 
   .disney-careers-logo-container {
     display: block;

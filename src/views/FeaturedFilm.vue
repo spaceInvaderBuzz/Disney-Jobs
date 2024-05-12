@@ -533,6 +533,10 @@ margin-bottom: 20px;
     
 }
 
+
+
+
+
 @media(max-width: 670px){
     .parallax__jax {
         --parallax-speed: 40;

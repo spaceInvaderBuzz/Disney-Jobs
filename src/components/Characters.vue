@@ -223,6 +223,7 @@ mounted(){
   overflow: hidden;
     background: url("/src/assets/images/Untitled_Artwork 189.png") no-repeat;
     position: absolute;
+   
     left: 10px;
     top:-300px;
     width: 1650px;
