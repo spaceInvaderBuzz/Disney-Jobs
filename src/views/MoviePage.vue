@@ -374,6 +374,7 @@ data(){
         mobileImages1: [{id: 0, text: 'Explore The World', background: 'Untitled_Artwork 111'}, {id: 1, text: 'Wild Forest', background: 'Untitled_Artwork 111'}, { id: 2, text: 'Crazy Riandown', background: 'Untitled_Artwork 111'}, { id: 3, text: 'pooooop', background: 'Untitled_Artwork 111' }],
         mobileImages2: [{id: 0, text: 'Explore The World', background: 'Untitled_Artwork 135'}, {id: 1, text: 'Wild Forest', background: 'Untitled_Artwork 135'}, { id: 2, text: 'Crazy Riandown', background: 'Untitled_Artwork 135'}, { id: 3, text: 'pooooop', background: 'Untitled_Artwork 111' }],
         mobileImages3: [{id: 0, text: 'Explore The World', background: 'Untitled_Artwork 144'}, {id: 1, text: 'Wild Forest', background: 'Untitled_Artwork 144'}, { id: 2, text: 'Crazy Riandown', background: 'Untitled_Artwork 111'}, { id: 3, text: 'pooooop', background: 'Untitled_Artwork 111' }],
+        mobileImages4: [{id: 0, text: 'Explore The World', background: 'Untitled_Artwork 144'}, {id: 1, text: 'Wild Forest', background: 'Untitled_Artwork 144'}, { id: 2, text: 'Crazy Riandown', background: 'Untitled_Artwork 111'}, { id: 3, text: 'pooooop', background: 'Untitled_Artwork 111' }],
     };
 },
 methods: {
@@ -455,6 +456,9 @@ computed: {
         };
         if (this.$route.params.id === "3"){
             return this.mobileImages3
+        };
+        if (this.$route.params.id === "4"){
+            return this.mobileImages4
         };
 
     },
@@ -1389,6 +1393,14 @@ flex-direction: column;
         height: 100%;
         
     }
+    .moviePagHeroBackground4 {
+        background: url('/src/assets/images/Untitled_Artwork 148.png') no-repeat;
+        
+        background-position: center cover;
+        width:1000px;
+        height: 100%;
+        
+    }
 
 
 
@@ -1508,6 +1520,12 @@ flex-direction: column;
         background-position: center;
        
     }
+    .pimg4 {
+        background-size: 230%;
+         
+        background-position: center;
+       
+    }
 
 
 
@@ -1550,6 +1568,13 @@ flex-direction: column;
     }
     .mobileOwnItTodayBg3 {
         background: url("/src/assets/images/Untitled_Artwork 210.png") no-repeat;
+        height: 100%;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+    }
+    .mobileOwnItTodayBg4 {
+        background: url("/src/assets/images/Untitled_Artwork 212.png") no-repeat;
         height: 100%;
         width: 100%;
         background-position: center;
