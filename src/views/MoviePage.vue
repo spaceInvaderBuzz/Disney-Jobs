@@ -1225,13 +1225,13 @@ this.scroll();
     padding-top: 200px;
    display: flex;
    align-items: center;
-   justify-content: center;
-   margin-bottom:100px ;
-   gap: 30px;
+   justify-content: space-between;
+   margin-bottom:100px;
+   
 }
 
 .movie-info {
-   
+   background: orange;
     align-items: center;
     justify-content: center;
     display: flex;

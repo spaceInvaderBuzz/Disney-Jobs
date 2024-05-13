@@ -61,8 +61,7 @@ export default {
 
     background: rgb(42, 255, 170);
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
    
    
