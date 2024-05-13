@@ -98,9 +98,7 @@
                                     <div>
                                         Lorem ipsum dolor sdcit amet consectetur adipisicing elit. Assumenda quis laborum non laudantium autem inventore nihil asperiores unde nam? Non dignissimos, perspiciatis quos quo obcaecati distinctio consectetur iste ex voluptas!
                                     </div> 
-                                    <div>
-                                        Lorem ipsum dolordfvcedfscx sit amet consectetur adipisicing elit. Assumenda quis laborum non laudantium autem inventore nihil asperiores unde nam? Non dignissimos, perspiciatis quos quo obcaecati distinctio consectetur iste ex voluptas!
-                                    </div> 
+                                    
                 
                                 </div>
                                 <div class="cast">
@@ -1188,19 +1186,7 @@ this.scroll();
     font-weight: 730;
 }
 
-.movie-poster {
-    width: 800px;
-    height: 1000px;
-    border-radius: 800px;
-  
-}
 
-.movie-poster img {
-    width: 100%;
-    height: 100%;
-    border-radius: 800px;
-    box-shadow: 10x 20px 3px black;
-}
 .movie-description {
   padding-bottom: 50px;
 }
@@ -1222,9 +1208,13 @@ this.scroll();
     height: 100%;
 }
 
+/* main containers */
+
 .movie-page-container {
-    max-width: 1300px;
+    max-width: 1400px;
     margin: 0 auto;
+    padding: 0 30px;
+    background: red;
     
     
  
@@ -1233,12 +1223,32 @@ this.scroll();
 
 .hero-content {
     padding-top: 200px;
-   display: grid;
-   grid-template-columns: 1fr 2fr;
+   display: flex;
    align-items: center;
    justify-content: center;
    margin-bottom:100px ;
    gap: 30px;
+}
+
+.movie-info {
+   
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.movie-poster {
+    width: 2000px;
+    height: 1000px;
+    border-radius: 800px;
+  
+}
+
+.movie-poster img {
+    width: 100%;
+    height: 100%;
+    border-radius: 800px;
+    box-shadow: 10x 20px 3px black;
 }
 
 
@@ -1250,46 +1260,33 @@ this.scroll();
 
 .moviePagHeroBackground1 {
     background: url('/src/assets/images/Untitled_Artwork 92.png') no-repeat;
-    background-size: contain;
-    width:1660px;
-    height: 3000px;
+
+   
     
 }
 .moviePagHeroBackground2 {
     background: url('/src/assets/images/Untitled_Artwork 113.png') no-repeat;
-    background-size: contain;
-    width:1660px;
-    height: 2000px;
+  
 }
 .moviePagHeroBackground3 {
     background: url('/src/assets/images/Untitled_Artwork 137.png') no-repeat;
-    background-size: contain;
-    width:1660px;
-    height: 2000px;
+
 }
 .moviePagHeroBackground4 {
     background: url('/src/assets/images/Untitled_Artwork 148.png') no-repeat;
-    background-size: contain;
-    width:1660px;
-    height: 2000px;
+    
 }
 .moviePagHeroBackground5 {
     background: url('/src/assets/images/Untitled_Artwork 155.png') no-repeat;
-    background-size: contain;
-    width:1660px;
-    height: 2000px;
+    
 }
 .moviePagHeroBackground6 {
     background: url('/src/assets/images/Untitled_Artwork 167.png') no-repeat;
-    background-size: contain;
-    width:1660px;
-    height: 2000px;
+   
 }
 .moviePagHeroBackground7 {
     background: url('/src/assets/images/Untitled_Artwork 178.png') no-repeat;
-    background-size: contain;
-    width:1660px;
-    height: 2000px;
+ 
 }
 
 
@@ -1350,6 +1347,26 @@ flex-direction: column;
 
 }
 
+
+
+/* @media(max-width: 1068px){
+   .movie-logo-container{
+    width: 500px;
+    height: 300px;
+   }
+    .movie-info {
+        background: yellow;
+   width:500px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+    .movie-poster {
+        height: 1000px;
+    }
+}  */
 
 @media(max-width: 670px){
     .mobile-container {
