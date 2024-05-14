@@ -132,122 +132,119 @@
     </div>
     <div v-else class="container-for-job-page">
 
-      <div class="main-content-stuff">
-
-        <div class="info-box">
-          <h1 class="job-description">JOB DESCRIPTION</h1>
-          <ul>
-            <li v-for="singleJob in singleJobPage" :key="singleJob.id">
-              <div class="about-company">
-                <div class="about-company-header">
-                  <h1>About Us</h1>
-                  <div>
-                    At  Disney, we're all about creating unforgettble films that will imapct people's lives for the better. 
-                    Out mission with every film we produce is to uplfit the viewer.
-                  </div>
-                  <div class="about-company-filmography">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae nemo, rem dicta voluptatem repellat voluptate debitis autem neque velit quidem odio veritatis, praesentium eum ad quos! Tempore accusantium minus consequatur.
-                    To name some of them: <span>The Little Mermaid, </span> <span>Beauty And The Beast,  </span><span>Mulan</span>
-                  </div>
-  
+      <div class="info-box">
+        <h1 class="job-description">JOB DESCRIPTION</h1>
+        <ul>
+          <li v-for="singleJob in singleJobPage" :key="singleJob.id">
+            <div class="about-company">
+              <div class="about-company-header">
+                <h1>About Us</h1>
+                <div>
+                  At  Disney, we're all about creating unforgettble films that will imapct people's lives for the better. 
+                  Out mission with every film we produce is to uplfit the viewer.
                 </div>
-               
-                <h1>Your Tasks:</h1>
-                <ul class="job-tasks">
-                  <li v-for="description in singleJob.description" :key="description">
-                    {{ description  }}
-                  </li>
-                </ul>
-  
-                <h1 class="apply-if-you">Apply if you:</h1>
-                <ul class="qualifications">
-                  <li v-for="qualification in singleJob.minimumQualifications" :key="qualification">
-                    {{ qualification }}
-                  </li>
-  
-                </ul>
-                <h1>We Would love If You</h1>
-                <ul class="traits">
-  
-                  <div>
-                    <span>Honesty:      </span>     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis dolore n
-                  </div>
-                  <div>
-                    <span>Communication:</span>     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, neque.
-  
-                  </div>
-                  <div>
-                    <span>Passion:</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias praesentium tempora quasi nesciunt soluta?
-                  </div>
-                  <div>
-                    <span>Teamwork:   </span>    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ab deserunt harum. Expli
-                  </div>
-                  
-                </ul>
-                
-          
+                <div class="about-company-filmography">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae nemo, rem dicta voluptatem repellat voluptate debitis autem neque velit quidem odio veritatis, praesentium eum ad quos! Tempore accusantium minus consequatur.
+                  To name some of them: <span>The Little Mermaid, </span> <span>Beauty And The Beast,  </span><span>Mulan</span>
+                </div>
+
               </div>
-            </li>
+             
+              <h1>Your Tasks:</h1>
+              <ul class="job-tasks">
+                <li v-for="description in singleJob.description" :key="description">
+                  {{ description  }}
+                </li>
+              </ul>
+
+              <h1 class="apply-if-you">Apply if you:</h1>
+              <ul class="qualifications">
+                <li v-for="qualification in singleJob.minimumQualifications" :key="qualification">
+                  {{ qualification }}
+                </li>
+
+              </ul>
+              <h1>We Would love If You</h1>
+              <ul class="traits">
+
+                <div>
+                  <span>Honesty:      </span>     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis dolore n
+                </div>
+                <div>
+                  <span>Communication:</span>     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, neque.
+
+                </div>
+                <div>
+                  <span>Passion:</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias praesentium tempora quasi nesciunt soluta?
+                </div>
+                <div>
+                  <span>Teamwork:   </span>    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ab deserunt harum. Expli
+                </div>
                 
-           </ul>
-        </div>
-        <div class="apply-box">
-          <div class="disney-careers-logo-container">
-            <img src="/src/assets/images/IMG_8108.png" alt="">
-            <h1>CAREERS</h1>
-          </div>
-          <li v-for="singleJob in singleJobPage" :key="singleJob.id" class="single-job-title">
-            {{ singleJob.title }}
-         
-            </li>
-            <h3>Location: New Jersey</h3>
-            <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo consectetur deleniti ea incidunt provident ratione?</div>
-            <div class="share-this-job">
-              <h4>Share this job!</h4>
-              <div class="socials">
-                <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-linkedin"></i>
-                <i class="fa-brands fa-twitter"></i>
-                <i class="fa-brands fa-instagram"></i>
-              </div>
+              </ul>
+              
+        
             </div>
-           
-            <router-link class="apply-button" :to="{ name: 'JobApplication', params: {id: this.$route.params.id } }">Apply Now</router-link>
-        </div>
-        <div class="benefits">
-          <div class=benefit>
-            <div class="text-and-icon">
-              <h1>Retirement Plan</h1>
-            <div class="benefit-img1"></div>
-            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nemo consequatur consectetur neque maxime non?</div>
-            </div>
-            <img src="/src/assets/images/Untitled_Artwork 64.png" alt="">
-          </div>
-          <div class=benefit>
-            <div class="text-and-icon">
-              <h1>Health Insurance</h1>
-            <div class="benefit-img2"></div>
-            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis illum consectetur praesentium placeat quae officiis exercitationem quas, harum voluptas eveniet.</div>
-            </div>
-            <img src="/src/assets/images/Untitled_Artwork 64.png" alt="">
-          </div>
-          <div class=benefit>
-            <div class="text-and-icon">
-              <h1>Paid Time Off</h1>
-            <div class="benefit-img3"></div>
-            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem nihil, nemo nisi sunt quidem quo.</div>
-            </div>
-            <img src="/src/assets/images/Untitled_Artwork 64.png" alt="">
-          </div>
-          <div class=benefit>
-            <div class="text-and-icon">
-              <h1>Health Insurance</h1>
-            <div class="benefit-img4"></div>
-            </div>
-            <img src="/src/assets/images/Untitled_Artwork 64.png" alt="">
-          </div>
-          </div>
+          </li>
+              
+         </ul>
       </div>
+      <div class="apply-box">
+        <div class="disney-careers-logo-container">
+          <img src="/src/assets/images/IMG_8108.png" alt="">
+          <h1>CAREERS</h1>
+        </div>
+        <li v-for="singleJob in singleJobPage" :key="singleJob.id" class="single-job-title">
+          {{ singleJob.title }}
+       
+          </li>
+          <h3>Location: New Jersey</h3>
+          <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo consectetur deleniti ea incidunt provident ratione?</div>
+          <div class="share-this-job">
+            <h4>Share this job!</h4>
+            <div class="socials">
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-linkedin"></i>
+              <i class="fa-brands fa-twitter"></i>
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+          </div>
+         
+          <router-link class="apply-button" :to="{ name: 'JobApplication', params: {id: this.$route.params.id } }">Apply Now</router-link>
+      </div>
+      <div class="benefits">
+        <div class=benefit>
+          <div class="text-and-icon">
+            <h1>Retirement Plan</h1>
+          <div class="benefit-img1"></div>
+          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nemo consequatur consectetur neque maxime non?</div>
+          </div>
+          <img src="/src/assets/images/Untitled_Artwork 64.png" alt="">
+        </div>
+        <div class=benefit>
+          <div class="text-and-icon">
+            <h1>Health Insurance</h1>
+          <div class="benefit-img2"></div>
+          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis illum consectetur praesentium placeat quae officiis exercitationem quas, harum voluptas eveniet.</div>
+          </div>
+          <img src="/src/assets/images/Untitled_Artwork 64.png" alt="">
+        </div>
+        <div class=benefit>
+          <div class="text-and-icon">
+            <h1>Paid Time Off</h1>
+          <div class="benefit-img3"></div>
+          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem nihil, nemo nisi sunt quidem quo.</div>
+          </div>
+          <img src="/src/assets/images/Untitled_Artwork 64.png" alt="">
+        </div>
+        <div class=benefit>
+          <div class="text-and-icon">
+            <h1>Health Insurance</h1>
+          <div class="benefit-img4"></div>
+          </div>
+          <img src="/src/assets/images/Untitled_Artwork 64.png" alt="">
+        </div>
+        </div>
 
       </div>
       
@@ -482,7 +479,7 @@ async mounted(){  //as soon as i moun this and any compontet tnat use the profil
 
 }
 .image {
-  background: url('/src/assets/images/IMG_7933.jpg') no-repeat;
+  background: url("/src/assets/images/IMG_7933.jpg") no-repeat;
   width: 100%;
   height: 100%;
   background-size: contain;
@@ -745,12 +742,15 @@ li {
   background: black;
   margin: 100px auto;
   max-width: 1500px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 50px;
 
 }
 .main-content-stuff {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 50px'
+  gap: 50px;
 }
 
 
@@ -897,14 +897,14 @@ margin-left: 8px;
   }
 
   .pimg1 {
-    font-family: 'Bebas Neue';
+    font-family: "Bebas Neue";
     display: flex;
     align-items: center;
     font-size: 100px;
     letter-spacing: 10px;
     color: white;
     justify-content: center;
-    background-image: url('/src/assets/images/Untitled_Artwork 199.png');
+    background-image: url("/src/assets/images/Untitled_Artwork 199.png");
     height: 500px;
     position: relative;
     background-position: center;
@@ -986,7 +986,7 @@ margin-left: 8px;
 
 
   .image {
-    background: url('/src/assets/images/IMG_7933.jpg') no-repeat;
+    background: url("/src/assets/images/IMG_7933.jpg") no-repeat; 
     width: 100%;
     height: 100%;
     background-size: cover;

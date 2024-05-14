@@ -18,6 +18,7 @@ import 'firebase/compat/storage';
 import db from "@/firebase/firebaseInit";
 import TestingCSS from '@/views/TestingCSS.vue';
 
+
 const requireAuth = (to, from, next) => {
   let user = firebase.auth().currentUser;
   if(!user){
@@ -121,6 +122,7 @@ const router = createRouter({
       component: TestingCSS
 
     },
+    
   ],
   scrollBehavior(){
     return {
