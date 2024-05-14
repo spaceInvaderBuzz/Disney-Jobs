@@ -1673,6 +1673,8 @@ flex-direction: column;
 
 
 
+
+
 @media(max-width: 1400px) {
     * {
         color: red;
