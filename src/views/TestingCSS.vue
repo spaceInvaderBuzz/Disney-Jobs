@@ -8,7 +8,7 @@
         <div class="test-class">
             <div class="testing">
               
-                <h1>POOP00ffffff00000000000000</h1>
+                <h1>POOP00ff00000000</h1>
                 <h1>BIKINI</h1>
             </div>
             <h1 class="testing1">POOPSSS000000000000</h1>
@@ -43,6 +43,7 @@ export default {
     color: white;}
 
 .test-bg {
+    overflow: hidden;
     padding: 0 20px;
     background: grey;
     max-width: 1300px;
@@ -60,9 +61,8 @@ export default {
     
 
     background: rgb(42, 255, 170);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
    
    
   
@@ -72,14 +72,20 @@ export default {
 
 
 .testing {
+
+    padding-right: 5px;
     background: yellow;
     display: flex;
     border-left: 5px solid green;
 }
 .testing1 {
     background: blue;
+  
 }
+
+
 h1 {
+   
 border-right: 3px solid green;
 }
 .real-bg {
