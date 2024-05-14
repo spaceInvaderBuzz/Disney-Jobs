@@ -1023,12 +1023,31 @@ margin-left: 8px;
   
 }
 
+
   .info-box {
     width: 500px;
   }
   .apply-box {
 
-    width: 210px;
+    width: 250px;
+  }
+
+
+}
+
+@media(max-width: 800px){
+  * {
+    color: orange;
+  }
+
+  .info-box {
+    width: 440px;
+  }
+  .apply-box {
+    width: 230px;
+  }
+  .info-box .job-description {
+    font-size: 1rem;
   }
 }
 </style>
