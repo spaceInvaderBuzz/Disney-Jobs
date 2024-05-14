@@ -1373,8 +1373,12 @@ flex-direction: column;
 }  */
 
 @media(max-width: 670px){
-
-
+.mobile-container .movie-poster {
+    width: 600px;
+}
+.mobile-container .movie-about-info {
+    width: 600px;
+}
     .mobile-container {
         max-width: 670px;
         margin: 0 auto;
@@ -1602,21 +1606,7 @@ flex-direction: column;
     }
     
 }
-.movie-logo-container {
-    width: 600px;
-    height: 410px;
 
-}
-
-.movie-about-info {
-    width: 1000px;
-    
-  
-}
-.movie-info {
-    background: green;
-   
-}
 
 
 
