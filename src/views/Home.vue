@@ -740,13 +740,14 @@ padding: 0 30px;
     margin: 50pxrgb(255, 255, 255)}
 
 .careers .container {
-    
+    margin: 0 auto;
     color: white;
     display: grid;
     padding: 0 200px;
     
     grid-template-columns: repeat(2,1fr);
     align-items: center;
+   justify-content: center;
     text-align: center;
 }
 
@@ -1190,9 +1191,22 @@ section p {
 };
 
 
-@media (max-width: 670px){
+@media (max-width: 620px){
+ 
 
+    .bull-container .tangled-background .la-form {
+        width: 450px;
+     }
 
+     .bull-container .tangled-background .image-for-form {
+        width: 500px;
+        margin: 0 auto;
+     }
+
+   * {
+    opacity: .9;
+   }
+   
     .image {
         width: 550px;
         margin-bottom: 40px;
@@ -1246,10 +1260,18 @@ section p {
         align-items: center;
         text-align: center;
     }
-    .images-container {
+    body .careers .container .images-container {
         margin-top:30px;
-        width: 400px;
-        height: 400px;
+        width: 500px;
+        height: 500px;
+        position: relative;
+        
+    
+    }
+    body .careers .container .text {
+        
+        width: 500px;
+        height: 500px;
         position: relative;
         
     
@@ -1321,16 +1343,8 @@ section p {
 
 
 }
-.tangled-background .image-for-form {
-    width: 700px;
-    height: 690px;
-    margin: 0 auto;
-}
-.la-form {
-    width: 480px;
-    margin: 0 auto;
-    
-}
+
+
 
 
 
@@ -1414,6 +1428,49 @@ section p {
     }
 }
 
+
+/* media queries for careers page */
+
+@media(max-width: 877px){
+    * {
+       opacity: .85;
+    }
+
+    .careers .container .images-container {
+        background: yellow;
+        
+         width: 350px;
+    }
+    .careers .container .text {
+        background: green;
+        width: 315px;
+    }
+
+}
+
+@media(max-width: 771px){
+    * {
+        opacity: .7;
+    }
+    .careers .container {
+        background: pink;
+    }
+    .careers .container .images-container {
+        background: yellow;
+        
+         width: 290px;
+    }
+    .careers .container .text {
+        
+        background: green;
+        width: 260px;
+    }
+}
+
+
+
+
+
 /* media queries for contact form section */
 
 @media(max-width: 1295px){
@@ -1443,14 +1500,28 @@ section p {
     }
 
     .image-for-form {
-        width: 420px;
-        height: 550px;
-        margin: 0;
+        width: 550px;
+        height: 600px;
+        margin: 0 auto;
     }
     .la-form {
         width: 480px;
         margin: 0 auto;
         
+    }
+}
+
+
+
+@media(max-width: 738px){
+    * {
+    background:green;
+    }
+    .tangled-background .la-form {
+       width: 550px;
+    }
+    .tangled-background .image-for-form {
+       width: 500px;
     }
 }
 
