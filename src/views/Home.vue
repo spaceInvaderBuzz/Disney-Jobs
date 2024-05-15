@@ -421,18 +421,7 @@ window.addEventListener('scroll', function() {
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mouse+Memoirs&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Princess+Sofia&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 
-.container {
-display: flex;
-flex-wrap: wrap;
-flex-direction: column;
-align-items: center;
-max-width: 1400px;
-margin: 0 auto;
-padding: 0 30px;
-    
-  
-  
-  }
+
 .container {
 display: flex;
 flex-wrap: wrap;
@@ -511,7 +500,7 @@ padding: 0 30px;
     grid-template-columns: repeat(2,1fr);
    justify-content: center;
 
-   margin: 0 auto;
+
   
  
 
@@ -1165,6 +1154,7 @@ section p {
     margin: 0 auto;
     max-width: 1400px;
     position: relative;
+    padding: 0 35px;
 }
 
 
@@ -1315,9 +1305,6 @@ section p {
     padding: 12px 20px;
 }
 
-.faq-content {
-    width: 550px;
-}
 
 .careers::before {
     top: 1800px;
@@ -1326,10 +1313,23 @@ section p {
 .work-list {
     grid-gap: 15px;
 }
+.container-for-faq .faq-content {
+  
+    width: 570px;
+ }
 
 
 
-
+}
+.tangled-background .image-for-form {
+    width: 700px;
+    height: 690px;
+    margin: 0 auto;
+}
+.la-form {
+    width: 480px;
+    margin: 0 auto;
+    
 }
 
 
@@ -1400,6 +1400,107 @@ section p {
        
     }
    
+}
+
+@media(max-width: 1027px){
+    * {
+        color: orange;
+    }
+    .faq  .container-for-faq{
+        background:red;
+    }
+    .faq-content {
+        width: 930px;
+    }
+}
+
+/* media queries for contact form section */
+
+@media(max-width: 1295px){
+    * {
+        color: gold;
+    }
+    .image-for-form {
+        width: 500px;
+        height: 600px;
+   
+       margin: 0 auto;
+    }
+}
+@media(max-width: 1178px){
+    .containeer {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        text-align: center;
+        
+    }
+    .tangled-background {
+        gap: 10px;
+    }
+    * {
+        color: purple;
+    }
+
+    .image-for-form {
+        width: 420px;
+        height: 550px;
+        margin: 0;
+    }
+    .la-form {
+        width: 480px;
+        margin: 0 auto;
+        
+    }
+}
+
+/* end of quey for contaxt form */
+
+@media(max-width: 972px){
+    * {
+        color: rgb(255, 110, 221);
+    }
+    .faq  .container-for-faq{
+        background:red;
+    }
+    .faq-content {
+        width: 870px;
+    }
+}
+@media(max-width: 890px){
+    * {
+        color: rgb(158, 88, 22);
+    }
+    .faq  .container-for-faq{
+        background:red;
+    }
+    .faq-content {
+        width: 780px;
+    }
+}
+@media(max-width: 808px){
+    * {
+        color: rgb(255, 255, 255);
+    }
+    .faq  .container-for-faq{
+        background:red;
+    }
+    .faq-content {
+        width: 680px;
+    }
+
+
+}
+
+@media(max-width: 578px){
+    * {
+        color: purple;
+    }
+    .container-for-faq .faq-content {
+  
+        width: 480px;
+     }
+    
 }
 
 

@@ -8,10 +8,10 @@
         <div class="test-class">
             <div class="testing">
               
-                <h1>POOP00ff00000000</h1>
+                <h1>POOP00ff0000fffff0000</h1>
                 <h1>BIKINI</h1>
             </div>
-            <h1 class="testing1">POOPSSS000000000000</h1>
+            <h1 class="testing1">POOPSSS000000fffffff00000</h1>
 
         </div>
         <div class="container2">
@@ -44,7 +44,7 @@ export default {
 
 .test-bg {
     overflow: hidden;
-    padding: 0 20px;
+
     background: grey;
     max-width: 1300px;
     margin: 0 auto;
@@ -59,10 +59,11 @@ export default {
 
 .test-class {
     
-
+padding: 0 20px;
     background: rgb(42, 255, 170);
     display: grid;
     grid-template-columns: repeat(2,1fr);
+
    
    
   
@@ -73,12 +74,13 @@ export default {
 
 .testing {
 
-    padding-right: 5px;
+  width:200px;
     background: yellow;
     display: flex;
     border-left: 5px solid green;
 }
 .testing1 {
+    width:200px;
     background: blue;
   
 }
