@@ -1485,6 +1485,10 @@ section p {
     }
 }
 @media(max-width: 1178px){
+
+    .categories .container {
+        width: 1120px;
+    }
     .containeer {
         align-items: center;
         justify-content: center;
@@ -1512,6 +1516,19 @@ section p {
 }
 
 
+/* media queries for categories container */
+
+@media(max-width: 1079px){
+    * {
+        color: brown;
+    }
+    .categories .container {
+        width: 1000px;
+    }
+}
+
+
+
 
 @media(max-width: 738px){
     * {
@@ -1528,8 +1545,12 @@ section p {
 /* end of quey for contaxt form */
 
 @media(max-width: 972px){
+
     * {
         color: rgb(255, 110, 221);
+    }
+    .categories .container {
+        width: 900px;
     }
     .faq  .container-for-faq{
         background:red;
@@ -1541,6 +1562,9 @@ section p {
 @media(max-width: 890px){
     * {
         color: rgb(158, 88, 22);
+    }
+    .categories .container {
+     width: 800px;
     }
     .faq  .container-for-faq{
         background:red;
