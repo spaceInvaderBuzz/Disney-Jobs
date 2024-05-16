@@ -562,9 +562,12 @@ async mounted(){  //as soon as i moun this and any compontet tnat use the profil
 }
 
 .benefits {
+  margin: 0 auto;
   padding: 30px;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   gap: 50px;
   margin-left:70px;
 
@@ -804,6 +807,9 @@ li {
 
 
 @media(max-width: 1068px){
+ * {
+  opacity: .9;
+ }
 
 .image {
   background-size:  cover;
@@ -860,20 +866,12 @@ margin-left: 8px;
     margin-top: 100px;
     margin-bottom: 50px;
   }
-
   .benefits {
-    padding: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-left:90px;
- 
-  
+    margin-left: 40px;
+
   }
 
-  .benefit {
-    width: 230px;
-  }
+
   
   .container-for-job-page {
 
@@ -890,7 +888,71 @@ margin-left: 8px;
   }
 }
 
+/* media queries for benetifts */
+
+@media(max-width: 1443px){
+  * {
+  color:gold;
+  }
+  .benefits {
+
+    padding-left: 50px;
+  }
+  .benefit {
+    width: 300px;
+  }
+}
+@media(max-width: 1324px){
+  * { 
+    color: pink;
+  }
+  .benefits {
+    background: white;
+  }
+  .benefit {
+    width:250px;
+   
+  }
+}
+@media( max-width: 1170px){
+  * {
+    color: aqua;
+  }
+  .benefit {
+    width: 210px;
+  }
+}
+
+@media(max-width: 983px){
+  * {
+    
+  }
+  .benefits {
+    background: rgb(224, 41, 249);
+    
+  }
+  .benefit {
+    width: 180px;
+  
+  }
+}
+
+
+/* end of benefits contaienr qiueries */
+
 @media(max-width: 670px){
+  *{
+    opacity: .78;
+  }
+
+  .container-for-job-page .apply-box {
+    width: 100%;
+    align-self: center;
+    justify-self: center;
+  }
+  .container-for-job-page .info-box {
+    width: 100%;
+  }
 
   .disney-careers-logo-container {
     display: none;
@@ -922,7 +984,10 @@ margin-left: 8px;
 
   .container-for-job-page {
     grid-template-columns: 1fr; 
-    margin: 100px auto;
+    align-items: center;
+    justify-content:center;
+    margin-left: 20px;
+    gap: 0;
     max-width: 1500px;
   }
 
@@ -975,7 +1040,8 @@ margin-left: 8px;
   }
 
   .benefit {
-    width: 220px;
+    width: 400px;
+   padding-left: 40px;
   }
 
   .text-and-icon {
@@ -1032,7 +1098,10 @@ margin-left: 8px;
     width: 250px;
   }
 
-
+.benefits {
+  margin-left: 0;
+  padding-left: 0;
+}
 }
 
 @media(max-width: 800px){
