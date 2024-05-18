@@ -1192,8 +1192,8 @@ section p {
 
 
 @media (max-width: 620px){
- 
 
+   
     .bull-container .tangled-background .la-form {
         width: 450px;
      }
@@ -1207,12 +1207,7 @@ section p {
     opacity: .9;
    }
    
-    .image {
-        width: 550px;
-        margin-bottom: 40px;
-    
-    
-    }
+ 
 
     .social-bar h3 {
         font-size: 35px;
@@ -1220,7 +1215,7 @@ section p {
     }
     .social-bar {
         width: 100%;
-        margin-right: 50px;;
+       
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1259,6 +1254,7 @@ section p {
         color: white;
         align-items: center;
         text-align: center;
+       
     }
     body .careers .container .images-container {
         margin-top:30px;
@@ -1271,7 +1267,7 @@ section p {
     body .careers .container .text {
         
         width: 500px;
-        height: 500px;
+        height: 300px;
         position: relative;
         
     
@@ -1339,10 +1335,30 @@ section p {
   
     width: 570px;
  }
+ .container .image-container1 img {
+    width: 500px;
+   } 
 
 
+   .container .main-bar .social-bar {
+    gap: 40px;
+}
+.container .main-bar .social-bar h3 {
+    background: orange;
+    font-size: 2.5rem;
 
 }
+.container .main-bar .social-bar .social-menu li a {
+    background: orange;
+    width:60px;
+    margin: 5px;
+    height: 50px;
+
+} 
+}
+
+
+
 
 
 
@@ -1452,6 +1468,9 @@ section p {
     * {
         opacity: .7;
     }
+    .image-container1 img {
+     width: 600px;
+    } 
     .careers .container {
         background: pink;
     }
@@ -1500,7 +1519,7 @@ section p {
         gap: 10px;
     }
     * {
-        color: purple;
+        color: rgb(143, 0, 143);
     }
 
     .image-for-form {
@@ -1558,6 +1577,21 @@ section p {
     .faq-content {
         width: 870px;
     }
+    .main-bar .social-bar {
+        gap: 60px;
+    }
+    .main-bar .social-bar h3 {
+        background: orange;
+        font-size: 2.8rem;
+
+    }
+    .main-bar .social-bar .social-menu li a {
+        background: orange;
+        width:60px;
+        margin: 5px;
+        height: 50px;
+
+    }
 }
 @media(max-width: 890px){
     * {
@@ -1595,7 +1629,50 @@ section p {
   
         width: 480px;
      }
+     .categories .container .work-list {
+        width: 500px;
+        margin-top:0;
+    }
     
+}
+
+/* max small lenght we can do */
+
+
+@media(max-width: 507px){
+    
+    .container .main-bar .social-bar {
+        gap: 35px;
+    }
+    .container .main-bar .social-bar h3 {
+        background: orange;
+        font-size: 2.3rem;
+    
+    }
+    .container .main-bar .social-bar .social-menu li a {
+        background: orange;
+        width:40px;
+        margin: 5px;
+        height: 40px;
+    
+    }
+    .categories .container h4 {
+        font-size: 2.3rem;
+    }
+    .categories .container .sub-text {
+        width: 80vw;
+    }
+    .categories .container .work-list {
+        width: 450px;
+        margin-top:0;
+    }
+
+.container .image-container1 img {
+ width: 420px;
+} 
+    
+  
+
 }
 
 
