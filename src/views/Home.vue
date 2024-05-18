@@ -723,6 +723,7 @@ padding: 0 30px;
 
 
 .careers::before {
+    display: none;
     content: '';
     position: absolute;
     height: 100px;
@@ -743,7 +744,8 @@ padding: 0 30px;
     margin: 0 auto;
     color: white;
     display: grid;
-    padding: 0 200px;
+    gap: 50px;
+    padding: 40px 150px 0 150px;
     
     grid-template-columns: repeat(2,1fr);
     align-items: center;
@@ -1193,6 +1195,13 @@ section p {
 
 @media (max-width: 620px){
 
+    .container .main-bar {
+        margin-top: -80px;
+    }
+    .container .image-container1 {
+        margin-top: -20px;
+    }
+
    
     .bull-container .tangled-background .la-form {
         width: 450px;
@@ -1203,9 +1212,9 @@ section p {
         margin: 0 auto;
      }
 
-   * {
+  /* * {
     opacity: .9;
-   }
+   } */
    
  
 
@@ -1344,12 +1353,12 @@ section p {
     gap: 40px;
 }
 .container .main-bar .social-bar h3 {
-    background: orange;
+ 
     font-size: 2.5rem;
 
 }
 .container .main-bar .social-bar .social-menu li a {
-    background: orange;
+   
     width:60px;
     margin: 5px;
     height: 50px;
@@ -1433,11 +1442,13 @@ section p {
 }
 
 @media(max-width: 1027px){
-    * {
+   
+   
+   /* * {
         color: orange;
-    }
+    }  */
     .faq  .container-for-faq{
-        background:red;
+ 
     }
     .faq-content {
         width: 930px;
@@ -1448,40 +1459,50 @@ section p {
 /* media queries for careers page */
 
 @media(max-width: 877px){
+    
+    /*
     * {
        opacity: .85;
-    }
+    }  */
+
+ .careers .container {
+    gap: 20px;
+ }
 
     .careers .container .images-container {
-        background: yellow;
+        background: orangered;
         
          width: 350px;
+         justify-self: center;
+         padding-top: 35px;
     }
     .careers .container .text {
-        background: green;
+       
         width: 315px;
     }
 
 }
 
 @media(max-width: 771px){
+
+    /*
     * {
         opacity: .7;
-    }
+    }  */
     .image-container1 img {
      width: 600px;
     } 
     .careers .container {
-        background: pink;
+       background: orange;
     }
     .careers .container .images-container {
-        background: yellow;
+       padding-top: 75px;
         
          width: 290px;
     }
     .careers .container .text {
         
-        background: green;
+     
         width: 260px;
     }
 }
@@ -1493,9 +1514,11 @@ section p {
 /* media queries for contact form section */
 
 @media(max-width: 1295px){
+
+    /*
     * {
         color: gold;
-    }
+    }   */
     .image-for-form {
         width: 500px;
         height: 600px;
@@ -1504,6 +1527,7 @@ section p {
     }
 }
 @media(max-width: 1178px){
+
 
     .categories .container {
         width: 1120px;
@@ -1518,9 +1542,11 @@ section p {
     .tangled-background {
         gap: 10px;
     }
+
+    /*
     * {
         color: rgb(143, 0, 143);
-    }
+    }  */
 
     .image-for-form {
         width: 550px;
@@ -1538,9 +1564,11 @@ section p {
 /* media queries for categories container */
 
 @media(max-width: 1079px){
+
+    /*
     * {
         color: brown;
-    }
+    }  */
     .categories .container {
         width: 1000px;
     }
@@ -1550,9 +1578,7 @@ section p {
 
 
 @media(max-width: 738px){
-    * {
-    background:green;
-    }
+ 
     .tangled-background .la-form {
        width: 550px;
     }
@@ -1564,15 +1590,15 @@ section p {
 /* end of quey for contaxt form */
 
 @media(max-width: 972px){
-
+/*
     * {
         color: rgb(255, 110, 221);
-    }
+    }   */
     .categories .container {
         width: 900px;
     }
     .faq  .container-for-faq{
-        background:red;
+       
     }
     .faq-content {
         width: 870px;
@@ -1581,12 +1607,12 @@ section p {
         gap: 60px;
     }
     .main-bar .social-bar h3 {
-        background: orange;
+  
         font-size: 2.8rem;
 
     }
     .main-bar .social-bar .social-menu li a {
-        background: orange;
+       
         width:60px;
         margin: 5px;
         height: 50px;
@@ -1595,13 +1621,13 @@ section p {
 }
 @media(max-width: 890px){
     * {
-        color: rgb(158, 88, 22);
+       
     }
     .categories .container {
      width: 800px;
     }
     .faq  .container-for-faq{
-        background:red;
+      
     }
     .faq-content {
         width: 780px;
@@ -1612,7 +1638,7 @@ section p {
         color: rgb(255, 255, 255);
     }
     .faq  .container-for-faq{
-        background:red;
+     
     }
     .faq-content {
         width: 680px;
@@ -1623,7 +1649,7 @@ section p {
 
 @media(max-width: 578px){
     * {
-        color: purple;
+       
     }
     .container-for-faq .faq-content {
   
@@ -1645,12 +1671,12 @@ section p {
         gap: 35px;
     }
     .container .main-bar .social-bar h3 {
-        background: orange;
+       
         font-size: 2.3rem;
     
     }
     .container .main-bar .social-bar .social-menu li a {
-        background: orange;
+      
         width:40px;
         margin: 5px;
         height: 40px;
@@ -1671,6 +1697,7 @@ section p {
  width: 420px;
 } 
     
+
   
 
 }
