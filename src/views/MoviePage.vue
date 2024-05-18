@@ -104,6 +104,7 @@
                                 <div class="cast">
                                     <h1>CAST</h1>
                                     <div class="cast-names">
+                                        
                                         <div class="name-container">
                                             <span>Jack Black</span>
                                             is The Little Mermaid
@@ -122,19 +123,25 @@
                                         </div>
                                     </div>
                                 </div>
+                                
                                 <div class="directed-by">
                                     <h1>CREW</h1>
-                                    <div class="crew">
-                                        <div>Written By</div>
-                                        <p>Neil Breen</p>
-                                    </div>
-                                    <div class="crew">
-                                        <div>Produced By</div>
-                                        <p>Neil Breen</p>
-                                    </div>
-                                    <div class="crew">
-                                        <div>Directed By</div>
-                                        <p>Neil Breen</p>
+                                    <div class="crew-names-container">
+                                        <div class="crew">
+                                            <div>Written By</div>
+                                            <p>Neil Breen</p>
+                                        </div>
+                                        <div class="crew">
+                                            <div>Produced By</div>
+                                            <p>Neil Breen</p>
+                                        </div>
+                                        <div class="crew">
+                                            <div>Directed By</div>
+                                            <p>Neil Breen</p>
+                                        </div>
+                                       
+
+
                                     </div>
                                    
                                   
@@ -146,6 +153,60 @@
                         <div class="movie-poster">
                             <img :src="`/src/assets/images/${ movie.poster }.png`" alt="">
                         </div>
+                        
+                    </div>
+                    <div class="cast-and-crew-for-query">
+                        <div class="cast">
+                            <h1>CAST</h1>
+                            <div class="cast-names">
+                                <div class="name-container">
+                                    <span>Jack Black</span>
+                                    is The Little Mermaid
+                                </div>
+                                <div class="name-container">
+                                    <span>Jack Black</span>
+                                    is The Little Mermaid
+                                </div>
+                                <div class="name-container">
+                                    <span>Jack Black</span>
+                                    is The Little Mermaid
+                                </div>
+                                <div class="name-container">
+                                    <span>Jack Black</span>
+                                    is The Little Mermaid
+                                </div>
+                            </div>
+                        </div>
+                        
+                     <div class="crews">
+
+                        <h1>CREW</h1>
+                        <div class="crew">
+                            <div>Written By</div>
+                            <p>Neil Breen</p>
+                        </div>
+                        <div class="crew">
+                            <div>Produced By</div>
+                            <p>Neil Breen</p>
+                        </div>
+                        <div class="crew">
+                            <div>Directed By</div>
+                            <p>Neil Breen</p>
+                        </div>
+
+                     </div>
+                         
+                           
+                          
+                        
+                        
+
+
+
+
+
+
+
                     </div>
              
                    
@@ -474,6 +535,10 @@ this.scroll();
 
 <style scoped>
 
+
+.cast-and-crew-for-query {
+    display: none;
+}
 
 
 .gallery-container {
@@ -1174,10 +1239,19 @@ this.scroll();
     align-items: center;
     justify-content: center;
 }
+.crew-names-container {
+    display: flex;
+    gap: 70px;
+    
+    
+}
 .crew {
     color: white;
-    font-size: 1.5rem;
+    font-size: 1rem;
+
     display: flex;
+    flex-direction: column;
+    text-align: center;
     gap: 5px;
     margin: 10px 0;
 }
@@ -1214,7 +1288,7 @@ this.scroll();
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 30px;
-    background: red;
+
     
     
  
@@ -1222,12 +1296,13 @@ this.scroll();
 }
 
 .movie-about-info {
-    background: blue;
+   
    
 }
 
 .hero-content {
     padding-top: 200px;
+    gap: 30px;
    display: grid;
    grid-template-columns: repeat(2,1fr);
    margin-bottom:100px;
@@ -1235,7 +1310,7 @@ this.scroll();
 }
 
 .movie-info {
-   background: orange;
+  
     align-items: center;
     justify-content: center;
     display: flex;
@@ -1339,6 +1414,8 @@ div {
 
 .cast-names {
     display:flex;
+    text-align: center;
+    gap:10px;
 }
 .cast-names span {
     font-weight: 700;
@@ -1626,11 +1703,11 @@ flex-direction: column;
    }
    .movie-description {
     font-size: .9rem;
-    background: green;
+    background: rgb(180, 233, 180);
     padding: 0 40px;
    }
    .cast {
-    background: green;
+    background: rgb(168, 168, 168);
     font-size:.95rem;
     margin: 0 30px;
    }
@@ -1677,12 +1754,29 @@ flex-direction: column;
 
 @media(max-width: 1400px) {
     * {
-        color: red;
+    
+        color: rgb(64, 103, 218);
     }
+
+
+
+    .img1-container { 
+        width: 300px;
+        height: 400px;
+       
+
+    }
+    .img2-container { 
+        width: 350px;
+        height: 450px;
+       
+    }
+
+
     
  
 .movie-logo-container {
-    width: 400px;
+    width: 500px;
     height: 330px;
   
 }
@@ -1704,6 +1798,26 @@ flex-direction: column;
   * {
     color: green;
   }
+
+  .movie-poster {
+    height: 850px;
+  }
+  .cast-and-crew-for-query {
+    margin-top: -70px;
+ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+    
+  }
+
+
+  .movie-info .cast,  .directed-by {
+    display: none;
+}
+  
     .movie-poster {
         width: 480px;
     }
@@ -1718,16 +1832,34 @@ flex-direction: column;
     * {
         color: pink;
     }
+    .movie-poster {
+        height: 720px;
+        margin-top: 170px;
+      }
+
+  
     .movie-logo-container {
-        width: 300px;
+        width: 400px;
         height: 330px;
       
+    }
+
+    .cast-and-crew-for-query {
+        margin-top: -100px;
     }
     .movie-about-info {
         width: 300px;
     }
     .movie-poster {
         width: 390px;
+    }
+    .img1-container { 
+       opacity: .3;
+
+    }
+    .img2-container { 
+        opacity: .3;
+       
     }
 } 
 </style>
