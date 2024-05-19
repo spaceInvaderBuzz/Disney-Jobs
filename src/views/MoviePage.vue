@@ -181,18 +181,23 @@
                      <div class="crews">
 
                         <h1>CREW</h1>
-                        <div class="crew">
-                            <div>Written By</div>
-                            <p>Neil Breen</p>
+                        <div class="crews-box">
+
+                            <div class="crew">
+                                <div>Written By</div>
+                                <p>Neil Breen</p>
+                            </div>
+                            <div class="crew">
+                                <div>Produced By</div>
+                                <p>Neil Breen</p>
+                            </div>
+                            <div class="crew">
+                                <div>Directed By</div>
+                                <p>Neil Breen</p>
+                            </div>
+
                         </div>
-                        <div class="crew">
-                            <div>Produced By</div>
-                            <p>Neil Breen</p>
-                        </div>
-                        <div class="crew">
-                            <div>Directed By</div>
-                            <p>Neil Breen</p>
-                        </div>
+                        
 
                      </div>
                          
@@ -1326,7 +1331,7 @@ this.scroll();
 .movie-poster img {
     width: 100%;
     height: 100%;
-    border-radius: 800px;
+    border-radius: 50px;
     box-shadow: 10x 20px 3px black;
 }
 
@@ -1450,8 +1455,13 @@ flex-direction: column;
 }  */
 
 @media(max-width: 670px){
-.mobile-container .movie-poster {
-    width: 600px;
+.movie-page-container {
+    margin-top: -90px;
+} 
+.movie-page-background .mobile-container .movie-poster {
+    width:500px;
+    height: 850px;
+    margin-top: 0;
 }
 .mobile-container .movie-about-info {
     width: 600px;
@@ -1510,8 +1520,11 @@ flex-direction: column;
 
 
 
-   .trailer {
-    padding-bottom: 65px;
+   .movie-page-background .trailer {
+    padding-bottom: 60px;
+   }
+   .watch-trailer {
+    padding-top: 60px;
    }
 
 
@@ -1532,7 +1545,7 @@ flex-direction: column;
     }
     .cast h1 {
         border-top: 4px solid #ff004f;
-        margin-top: 0;
+        margin-top: 150px;
         padding-top: 30px;
     }
 
@@ -1796,10 +1809,13 @@ flex-direction: column;
 
 @media(max-width: 1126px){
   * {
-    color: green;
+  
   }
 
-  .movie-poster {
+
+
+  .movie-page-container .movie-poster {
+    width: 500px;
     height: 850px;
   }
   .cast-and-crew-for-query {
@@ -1812,6 +1828,21 @@ flex-direction: column;
     text-align: center;
     
   }
+  .cast-and-crew-for-query .cast {
+    margin-top: -30px;
+  }
+  .cast-and-crew-for-query .cast h1 {
+    margin-bottom: 20px;
+  }
+  .cast-and-crew-for-query .crews {
+    text-align: center;
+    margin-top: 50px;
+  }
+
+.crews-box {
+    display: flex;
+    gap: 60px;
+}
 
 
   .movie-info .cast,  .directed-by {
@@ -1862,4 +1893,73 @@ flex-direction: column;
        
     }
 } 
+
+/* media just for movie info section */
+
+@media(max-width: 1184px){
+    * {
+        color: aqua;
+    }
+    .movie-poster {
+        width: 550px;
+        height: 950px;
+
+    }
+
+}
+@media(max-width: 1079px){
+    * {
+ 
+    }
+    .movie-page-container .movie-poster {
+        width: 450px;
+        height: 800px;
+      }
+}
+@media(max-width: 1032px){
+    * {
+    
+    }
+    .movie-page-container .movie-poster {
+        width: 390px;
+        height: 700px;
+        margin-top: 170px;
+      }
+
+      .trailer .movie {
+width: 700px;
+height: 400px;
+      }
+      .trailer-container h1 {
+        margin-top: 30px;
+        font-size: 3rem;
+      }
+}
+@media(max-width: 870px){
+    * {
+       
+    }
+    .movie-page-container .movie-poster {
+        width: 320px;
+        height: 600px;
+        margin-top: 250px;
+      }
+      .trailer .movie {
+        width: 580px;
+        height: 400px;
+              }
+              .trailer-container h1 {
+                margin-top: 30px;
+                font-size: 2.7rem;
+              }
+     .trailer-container p {
+        font-size:1rem;
+     }
+
+
+
+}
+
+
+
 </style>
