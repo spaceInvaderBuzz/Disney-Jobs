@@ -1543,6 +1543,9 @@ flex-direction: column;
        text-align: center;
        gap: 30px;
     }
+    .cast {
+    width: 90vw;
+    }
     .cast h1 {
         border-top: 4px solid #ff004f;
         margin-top: 150px;
@@ -1695,6 +1698,10 @@ flex-direction: column;
         background-size: cover;
     }
     
+    .movie-info .movie-about-info {
+        width: 90vw;
+      }
+    
 }
 
 
@@ -1705,8 +1712,8 @@ flex-direction: column;
 
 
 @media (max-width: 515px){
-   .movie-poster {
-  width: 450px;
+  .movie-page-container .movie-info .movie-poster {
+  width: 90vw;
   height: 600px;
    }
    .movie-logo-container {
@@ -1716,14 +1723,14 @@ flex-direction: column;
    }
    .movie-description {
     font-size: .9rem;
-    background: rgb(180, 233, 180);
     padding: 0 40px;
    }
    .cast {
-    background: rgb(168, 168, 168);
+   
     font-size:.95rem;
-    margin: 0 30px;
+  
    }
+  
 
    .crew {
     font-size: 1.4rem;
@@ -1743,6 +1750,9 @@ flex-direction: column;
   .blu-ray-and-4k .container2 {
     width:170px;
   }
+  .trailer-container {
+    padding-top: 0;
+  }
    .trailer-container {
     margin: 0 100px;
    }
@@ -1753,12 +1763,23 @@ flex-direction: column;
    .trailer-container p {
     font-size: 1rem;
    }
-   .trailer-container .movie {
-    width: 400px;
-    height: 400px;
+   .trailer .trailer-container .movie {
+    
+    width: 90vw;
+    height: 350px;
    }
-
-  
+   .crews {
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+   }
+  .crew {
+    font-size: 1.1rem;
+  }
+ 
 }
 
 

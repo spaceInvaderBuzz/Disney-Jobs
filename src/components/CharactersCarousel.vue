@@ -89,4 +89,24 @@ setup(props,context){
     opacity: .8;
     
 }
+
+/* media querys for navigate arrows */ 
+
+@media(max-width: 848px){
+    .navigate {
+        
+        width: 20px;
+        height: 20px;
+        gap: 15px;
+        bottom: 35px;
+        left: 60px;
+    }
+    .navigate .toggle-page i {
+        font-size: 30px;
+        cursor: pointer;
+        opacity: .8;
+        
+    }
+}
+
 </style>

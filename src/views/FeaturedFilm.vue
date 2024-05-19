@@ -295,7 +295,7 @@ setup(){
     height: 1000px;
     width: 1400px;
     background: rebeccapurple;
-    border-radius: 50px;
+    border-radius: 20px;
     box-shadow: 10px 20px 50px rgba(0, 0, 0, 0.811);
 }
 
@@ -582,15 +582,15 @@ margin-bottom: 20px;
     width:450px;
     margin: 0 auto;
 }
-.carousel {
+.main-content .gallery-container .carousel {
     overflow: hidden;
     margin: 0 auto;
     position: relative;
-    max-height: 600px;
-    height: 1000px;
-    width: 1400px;
     
-    border-radius: 50px;
+    height: 220px;
+    width: 55vw;
+    
+  
     box-shadow: 10px 20px 50px rgba(0, 0, 0, 0.811);
 }
 
@@ -605,20 +605,13 @@ margin-bottom: 20px;
     position: relative;
     
 }
+.main-content .gallery-container .carousel {
+    margin-top: 40px;
+}
 .gallery-text {
     left: 140px;
 }
-.carousel {
-    overflow: hidden;
-    margin: 0 auto;
-    position: relative;
-    max-height: 400px;
-    height: 1000px;
-    width: 1400px;
-    background: rebeccapurple;
-    border-radius: 40px;
-    box-shadow: 10px 20px 50px rgba(0, 0, 0, 0.811);
-}
+
 
 .parallax__luna {
     --parallax-speed: -20;
@@ -708,4 +701,79 @@ margin-bottom: 20px;
 
 }
 
+
+/* media queries for GALLERY */
+
+
+@media(max-width: 1365px){
+    * {
+        color: purple;
+    }
+    .gallery-container .carousel {
+        width: 1000px;
+        height: 500px;
+    }
+}
+@media(max-width: 1221px){
+    * {
+       color: orange;
+    }
+    .gallery-container .carousel {
+        transform: scale(1.1);
+        width: 800px;
+        height: 460px;
+    }
+
+}
+@media(max-width: 1104px){
+    * {
+       
+    }
+    .gallery-container .carousel {
+       
+        width: 720px;
+        height: 400px;
+    }
+}
+@media(max-width: 975px){
+    * {
+       
+    }
+    .gallery-container .carousel {
+       transform: scale(1.2);
+        width: 620px;
+        height: 340px;
+    }
+    
+}
+@media(max-width: 848px){
+    * {
+     
+    }
+    .gallery-container .gallery-text {
+        left: 90px;
+    }
+    .gallery-container .carousel {
+        margin-top: 26px;
+        transform: scale(1.4);
+         width: 460px;
+         height: 260px;
+     }
+
+}
+@media(max-width: 714px){
+    * {
+       color: red;
+    }
+    .gallery-container .gallery-text {
+        left: 70px;
+    }
+    .gallery-container .carousel {
+        margin-top: 30px;
+        transform: scale(1.6);
+         width: 360px;
+         height: 220px;
+         
+     }
+}
 </style>
