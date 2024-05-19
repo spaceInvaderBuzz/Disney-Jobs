@@ -45,50 +45,56 @@
 
         </div>
 
-        <div class="outside-of-container-gallery">
-            <div class="divider"></div>
-            <h1 class="character-name">L I L O</h1>
-            <div class="container-gallery">
-              
-                <div class="gallery1">
-                    <a href="/src/assets/images/stitch.webp">
-                        <img src="/src/assets/images/stitch.webp" alt="">
-                    </a>
-                    <a href="/src/assets/images/stitch.webp">
-                        <img src="/src/assets/images/stitch.webp" alt="">
-                    </a>
-                    <a href="/src/assets/images/stitch.webp">
-                        <img src="/src/assets/images/stitch.webp" alt="">
-                    </a>
-                    <a href="/src/assets/images/stitch.webp">
-                        <img src="/src/assets/images/stitch.webp" alt="">
-                    </a>
-                    <a href="/src/assets/images/stitch.webp">
-                        <img src="/src/assets/images/stitch.webp" alt="">
-                    </a>
-                    <a href="/src/assets/images/stitch.webp">
-                        <img src="/src/assets/images/stitch.webp" alt="">
-                    </a>
-                    <a href="/src/assets/images/stitch.webp">
-                        <img src="/src/assets/images/stitch.webp" alt="">
-                    </a>
-                    <a href="/src/assets/images/stitch.webp">
-                        <img src="/src/assets/images/stitch.webp" alt="">
-                    </a>
-                </div>
-                <div class="card2">
-                    <div class="circle"></div>
-                    <div class="content">
-                        <h2>Stitch</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ea veniam similique esse eveniet ipsa sequi vitae eaque deserunt reiciendis!</p>
+        <div class="just-for-aligning-second-gallery">
+
+            <div class="outside-of-container-gallery">
+                <div class="divider"></div>
+                <h1 class="character-name">L I L O</h1>
+                <div class="container-gallery">
+                  
+                    <div class="gallery1">
+                        <a href="/src/assets/images/stitch.webp">
+                            <img src="/src/assets/images/stitch.webp" alt="">
+                        </a>
+                        <a href="/src/assets/images/stitch.webp">
+                            <img src="/src/assets/images/stitch.webp" alt="">
+                        </a>
+                        <a href="/src/assets/images/stitch.webp">
+                            <img src="/src/assets/images/stitch.webp" alt="">
+                        </a>
+                        <a href="/src/assets/images/stitch.webp">
+                            <img src="/src/assets/images/stitch.webp" alt="">
+                        </a>
+                        <a href="/src/assets/images/stitch.webp">
+                            <img src="/src/assets/images/stitch.webp" alt="">
+                        </a>
+                        <a href="/src/assets/images/stitch.webp">
+                            <img src="/src/assets/images/stitch.webp" alt="">
+                        </a>
+                        <a href="/src/assets/images/stitch.webp">
+                            <img src="/src/assets/images/stitch.webp" alt="">
+                        </a>
+                        <a href="/src/assets/images/stitch.webp">
+                            <img src="/src/assets/images/stitch.webp" alt="">
+                        </a>
                     </div>
-                    <img src="/src/assets/images/Untitled_Artwork 48.png" alt="">
+                    <div class="card2">
+                        <div class="circle"></div>
+                        <div class="content">
+                            <h2>Stitch</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ea veniam similique esse eveniet ipsa sequi vitae eaque deserunt reiciendis!</p>
+                        </div>
+                        <img src="/src/assets/images/Untitled_Artwork 48.png" alt="">
+                    </div>
                 </div>
+    
+    
+                
             </div>
 
 
-            
         </div>
+        
 
         <div class="outside-of-container-gallery">
 
@@ -100,7 +106,7 @@
                         <h2>Stitch</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ea veniam similique esse eveniet ipsa sequi vitae eaque deserunt reiciendis!</p>
                     </div>
-                    <img src="/src/assets/images/Untitled_Artwork 47.png" alt="">
+                    <img src="/src/assets/images/Untitled_Artwork 220.png" alt="">
                 </div>
                 <div class="gallery2">
                     <a href="/src/assets/images/stitch.webp">
@@ -287,7 +293,7 @@ bottom: 0;
     );
     clip-path: circle(400px at center);
 }
-.container-gallery {
+.outside-of-container-gallery .container-gallery {
     
     position: relative;
     align-items: center;
@@ -299,7 +305,7 @@ bottom: 0;
     padding: 150px 0;
     
 }
-.container-gallery {
+.outside-of-container-gallery .container-gallery {
     
     align-items: center;
     display: grid;
@@ -435,7 +441,19 @@ bottom: 0;
         padding: 0 500px;
       }  */
 
-      .container-gallery {
+     .characters .outside-of-container-gallery .container-gallery {
+        display: grid;
+        grid-template-columns: 1fr;
+        max-width: 850px;
+        justify-content: center;
+        align-items: center;
+        margin-top: -50px;
+        
+        
+ 
+       }
+     .characters .just-for-aligning-second-gallery .outside-of-container-gallery .container-gallery {
+        display: grid;
         grid-template-columns: 1fr;
         max-width: 850px;
         justify-content: center;
@@ -527,6 +545,20 @@ bottom: 0;
         height: 350px;
         border-radius: 20px;
         transition: 0.5s;
+        
+    
+       
+    
+    }
+    .outside-of-container-gallery .container-gallery .card2 {
+        top: 45px;
+        left:0px;
+        position: relative;
+        width: 600px;
+        height: 350px;
+        border-radius: 20px;
+        transition: 0.5s;
+        margin: 0 auto;
         
     
        
@@ -645,6 +677,27 @@ bottom: 0;
         justify-content: center;
     }
 
+    .just-for-aligning-second-gallery  .outside-of-container-gallery .container-gallery{
+     
+       display: flex;
+       gap: 10px;
+       margin: 0 5vw;
+       align-items: center;
+       justify-content: center;
+
+
+
+    }
+    .outside-of-container-gallery .container-gallery{
+    
+       
+       display: flex;
+       margin: 0 5vw;
+
+
+
+    }
+
 }
 
 @media(max-width: 866px ){
@@ -709,12 +762,12 @@ bottom: 0;
 }
 @media(max-width: 610px){
     * {
-        color: aqua;
+       
     }
     .container-gallery .card {
         width: 80vw;
     }
-    .container-gallery .card2 {
+    .outside-of-container-gallery .container-gallery .card2 {
         width: 80vw;
     }
     .container-gallery .gallery {
