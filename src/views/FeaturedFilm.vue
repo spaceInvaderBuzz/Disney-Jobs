@@ -71,7 +71,15 @@
                             <h1>About</h1>
                             <p>Lorem enim. Ut, optitineque laborum nisi maxime exercitationem quo sapiente aliquam eveniet f blanditiis. isi maxime exercitationem quo sapiente aliquam eveniet f blanditiis. Tempora, esse in illo itaque dolorem facere qui hic nulla alias quam mollitia, tempore non, eveniet provident. Nemo necessitatibus totam cumque rerum a animi incidunt optio! Voluptate.</p>
                             <p>Lorem enim. Ut, optitineque laborum nisi maxime exercitationem quisi maxime exercitationem quo sapiente aliquam eveniet f blanditiis. o sapiente aliquam eveniet f blanditiis. Tempora, esse in illo itaque dolorem facere qui hic nulla alias quam mollitia, tempore non, eveniet provident. Nemo necessitatibus totam cumque rerum a animi incidunt optio! Voluptate.</p>
-                            <p>Lorem enim. Ut, optitineque laborum nisi maxime exercitationem quisi maxime exercitationem quo sapiente aliquam eveniet f blanditiis. o sapiente aliquam eveniet f blanditiis. Tempora, esse in illo itaque dolorem facere qui hic nulla alias quam mollitia, tempore non, eveniet provident. Nemo necessitatibus totam cumque rerum a animi incidunt optio! Voluptate.</p>
+                            <div class="hide">
+
+
+                                <p class="hidetext">Lorem enim. Ut, optitineque laborum nisi maxime exercitationem quisi maxime exercitationem quo sapiente aliquam eveniet f blanditiis. o sapiente aliquam eveniet f blanditiis. Tempora, esse in illo itaque dolorem facere qui hic nulla alias quam mollitia, tempore non, eveniet provident. Nemo necessitatibus totam cumque rerum a animi incidunt optio! Voluptate.</p>
+
+                            </div>
+                            
+                            
+                           
                            <div class="hide-for-smaller-querys">
 
                             <p>Lorem enim. Ut, optitineque laborum nisi maxime exercitationem quo sapiente aliquisi maxime exercitationem quo sapiente aliquam eveniet f blanditiis. am eveniet f blanditiis. Tempora, esse in illo itaque dolorem facere qui hic nulla alias quam mollitia, tempore non, eveniet provident. Nemo necessitatibus totam cumque rerum a animi incidunt optio! Voluptate.</p>
@@ -262,6 +270,9 @@ setup(){
 
 .only-show-for-query {
     display: none;
+    text-align: center;
+        justify-content: center;
+        
 }
 
 .coming-soon {
@@ -448,11 +459,16 @@ margin-bottom: 20px;
 .cast-and-crew span {
     font-weight: 750;
 }
+.social-images {
+    margin: 0 auto;
+
+}
 
 .social-images-list {
     margin-top: 80px;
     display: grid;
     grid-template-columns: repeat(4,1fr);
+    gap:25px;
 }
 
 .social-images-list li {
@@ -585,6 +601,22 @@ margin-bottom: 20px;
 
 
 @media(max-width: 670px){
+
+    .main-content .hero .container .primary-hero .image-wrapper {
+        width:  450px!important;
+        height: 650px !important;
+    }
+    .main-content .hero .container .primary-hero .text-content {
+        width: 80vw !important;
+
+    }
+    .main-content .hide-for-smaller-querys {
+        display: block;
+    }
+    .main-content .container .primary-hero .text-content .hide .hidetext {
+        display: block !important;
+    }
+
     .parallax__jax {
         --parallax-speed: 40;
        position: absolute;
@@ -855,10 +887,13 @@ margin-bottom: 20px;
         display: none;
     }
     .only-show-for-query {
-        display: block;
+   
+        display: flex;
+        align-items: center;
         background: pink;
-        margin-top: -100px;
-        text-align: center;
+        margin-top: -130px;
+        margin-bottom: 30px;
+        
 
     }
     .hero .container .primary-hero {
@@ -889,6 +924,78 @@ margin-bottom: 20px;
     }
     .hide-for-smaller-querys {
         display: none;
+    }
+    .social-images .social-images-list li {
+        list-style: none;
+        position: relative;
+        width: 140px;
+        height: 250px;
+    }
+    
+    .social-images .social-images-list li img {
+        
+        width: 100%;
+        height: 100%;
+    }
+}
+@media(max-width: 809px){
+    * {
+     
+    }
+    .main-content .hero .container .primary-hero .text-content {
+        width: 280px;
+
+    }
+  
+    .main-content .hero .container .primary-hero .image-wrapper {
+        width: 300px;
+        height: 550px;
+    }
+    .hide-for-smaller-querys {
+        display: none;
+    }
+    .main-content .hero .container .primary-hero .text-content .hide .hidetext {
+        display: none;
+     }
+     .social-images .social-images-list li {
+        list-style: none;
+        position: relative;
+        width: 110px;
+        height: 210px;
+    }
+    
+    .social-images .social-images-list li img {
+        
+        width: 100%;
+        height: 100%;
+    }
+   
+}
+@media(max-width: 717px){
+   
+   
+    .main-content .hero .container .primary-hero .image-wrapper {
+        width: 260px;
+        height: 505px;
+    }
+    .main-content .hero .container .primary-hero .text-content {
+        width: 230px;
+
+    }
+  
+    
+    .hide-for-smaller-querys {
+        display: none;
+    }
+
+}
+@media(max-width: 551px) {
+    * {
+      
+    }
+    .main-content .hero .container .primary-hero .image-wrapper {
+       width: 380px !important;
+       height: 600px !important;
     }
 }
 </style>
