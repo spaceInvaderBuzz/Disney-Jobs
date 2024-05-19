@@ -95,7 +95,7 @@
 
         </div>
         
-
+        
         <div class="outside-of-container-gallery">
 
             <div class="divider"></div>
@@ -372,12 +372,13 @@ bottom: 0;
 .gallery1 img {
     width: 100%;
 }
-.gallery2 {
+.container-gallery .gallery2 {
     
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-gap:30px;
     margin-top: 100px;
+   padding: 20px;
 }
 
 .gallery2 img {
@@ -613,7 +614,7 @@ bottom: 0;
         grid-template-columns: repeat(3,1fr);
         width: 550px;
     }
-    .gallery2 {
+    .outside-of-container-gallery .gallery2 {
         grid-template-columns: repeat(3,1fr);
         width: 550px;
     }
@@ -659,7 +660,8 @@ bottom: 0;
  
     .card2 {
         width: 400px;
-        margin: 0 auto;
+        
+        margin: 50px auto 0 auto;
         background: orange;
     }
     .card2 img {
@@ -716,7 +718,7 @@ bottom: 0;
         grid-template-columns: repeat(2,1fr);
     }
     
-    .gallery2 {
+    .outside-of-container-gallery .gallery2 {
         background: none;
         width: 360px;
         grid-template-columns: repeat(2,1fr);
