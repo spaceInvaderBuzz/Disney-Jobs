@@ -462,8 +462,10 @@ async mounted(){  //as soon as i moun this and any compontet tnat use the profil
   color: white;
   position: absolute;
   top: 80px;
-  left: 100px;
+  margin-left: 4vw;
+  margin-right: 5vw;
   width: 500px;
+  max-width: 90vw;
   
   background: rgb(0, 0, 0);
   padding: 50px;
@@ -827,6 +829,12 @@ li {
 
   .disney-careers-logo-container {
     display: block;
+    margin-top: 10px;
+    transform: scale(.7);
+  }
+
+  .apply-box .single-job-title {
+    margin-top: 80px;
   }
 
   .apply-box {
@@ -859,7 +867,7 @@ margin-left: 8px;
   }
   .apply-button {
     width: 100%;
-    margin-top: 110px;
+    margin-top: 90px;
   }
 
   .single-job-title {
@@ -916,7 +924,7 @@ margin-left: 8px;
 }
 @media( max-width: 1170px){
   * {
-    color: aqua;
+    color: green;
   }
   .benefit {
     width: 210px;
@@ -944,12 +952,35 @@ margin-left: 8px;
   *{
     opacity: .78;
   }
+  .skidmark .apply-box {
+    padding: 0 30px;
+  }
 
   .container-for-job-page .apply-box {
+    position: static;
+    padding-bottom: 0;
     width: 100%;
     align-self: center;
     justify-self: center;
+    height: 590px;
+    margin-bottom: 100px;
   }
+  .container-for-job-page .apply-box .single-job-title {
+    font-size: 2.7rem;
+  }
+  .container-for-job-page .apply-box .share-this-job h4 {
+    font-size: 1.6rem;
+  }
+
+  .socials {
+    gap: 30px;
+    margin-top: 10px;
+  }
+  .container-for-job-page .socials i {
+    font-size: 1.7rem;
+    
+  }
+
   .container-for-job-page .info-box {
     width: 100%;
   }
@@ -992,40 +1023,28 @@ margin-left: 8px;
   }
 
 
-  .apply-box {
-  position: static;
-  padding-bottom: 440px;
-  
-  }
 
   .container-for-job-page h3 {
     font-size:1.8rem;
+    
   }
 
   .job-apply-desc {
     font-size: 1.2rem;
   }
 
-  .single-job-title {
+  .apply-box .single-job-title {
     font-size: 3rem;
+    margin-top: 50px;
   }
 
-  .share-this-job {
+  .apply-box .share-this-job {
     width: 350px;
+    margin-bottom: -40px;
   }
 
-  .share-this-job h4 {
-    font-size:1.5rem;
-  }
-  .socials {
-    gap: 30px;
-    margin-top: 10px;
-  }
-  .socials i {
-    font-size: 1.7rem;
-    
-  }
-
+  
+ 
   .apply-button {
     width: 100%;
     border-radius: 200px;
@@ -1071,6 +1090,10 @@ margin-left: 8px;
   * {
     color: pink;
   }
+  .skidmark .container-for-job-page {
+     width: 90vw;
+   
+  }
   /*.container-for-job-page {
 
 
@@ -1098,6 +1121,23 @@ margin-left: 8px;
     width: 250px;
   }
 
+  .apply-box .single-job-title {
+    font-size: 2.3rem;
+    margin-top: 60px;
+  }
+  .apply-box .disney-careers-logo-container {
+    transform: scale(.6)
+  }
+  .apply-box h3 {
+    margin-top: 30px;
+  }
+  .apply-box .apply-button {
+    margin-top: 80px;
+  }
+  .apply-box .share-this-job {
+    margin-top: 80px;
+  }
+
 .benefits {
   margin-left: 0;
   padding-left: 0;
@@ -1117,6 +1157,28 @@ margin-left: 8px;
   }
   .info-box .job-description {
     font-size: 1rem;
+  }
+
+
+
+  .apply-box .single-job-title {
+    font-size: 2.3rem;
+    margin-top: 60px;
+  }
+  .apply-box .disney-careers-logo-container {
+    transform: scale(.6)
+  }
+  .apply-box h3 {
+    margin-top: 15px;
+  }
+  .apply-box .apply-button {
+    margin-top: 55px;
+  }
+  .apply-box .share-this-job {
+    margin-top: 55px;
+  }
+  .apply-box .share-this-job h4, .socials i {
+    font-size: 1.3rem;
   }
 }
 </style>
