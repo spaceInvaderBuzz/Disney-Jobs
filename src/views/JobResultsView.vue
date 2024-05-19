@@ -8,7 +8,7 @@
         <div class="flex-cool">
            
             <div class="container">
-                <p>job listings componet</p>
+                
                 <div v-if="displayedJobs.length > 0">
                     <ol>
                         <the-job-listing v-for="job in displayedJobs" :key="job.id" :job="job"></the-job-listing>

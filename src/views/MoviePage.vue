@@ -95,9 +95,15 @@
                                     <div>
                                         Lorem ipsum dolosdcwdscwfvfrwesr sit amet consectetur adipisicing elit. Assumenda quis laborum non laudantium autem inventore nihil asperiores unde nam? Non dignissimos, perspiciatis quos quo obcaecati distinctio consectetur iste ex voluptas!
                                     </div> 
-                                    <div>
-                                        Lorem ipsum dolor sdcit amet consectetur adipisicing elit. Assumenda quis laborum non laudantium autem inventore nihil asperiores unde nam? Non dignissimos, perspiciatis quos quo obcaecati distinctio consectetur iste ex voluptas!
-                                    </div> 
+
+                                    <div class="hide-for-query">
+                                        <div>
+                                            Lorem ipsum dolor sdcit amet consectetur adipisicing elit. Assumenda quis laborum non laudantium autem inventore nihil asperiores unde nam? Non dignissimos, perspiciatis quos quo obcaecati distinctio consectetur iste ex voluptas!
+                                        </div> 
+
+
+                                    </div>
+                                  
                                     
                 
                                 </div>
@@ -1311,6 +1317,7 @@ this.scroll();
    display: grid;
    grid-template-columns: repeat(2,1fr);
    margin-bottom:100px;
+   align-items: center;
    
 }
 
@@ -1788,8 +1795,7 @@ flex-direction: column;
 
 @media(max-width: 1400px) {
     * {
-    
-        color: rgb(64, 103, 218);
+   
     }
 
 
@@ -1830,7 +1836,7 @@ flex-direction: column;
 
 @media(max-width: 1126px){
   * {
-  
+
   }
 
 
@@ -1882,11 +1888,11 @@ flex-direction: column;
 
 @media(max-width:  940px){
     * {
-        color: pink;
+
     }
     .movie-poster {
         height: 720px;
-        margin-top: 170px;
+    
       }
 
   
@@ -1919,7 +1925,7 @@ flex-direction: column;
 
 @media(max-width: 1184px){
     * {
-        color: aqua;
+ 
     }
     .movie-poster {
         width: 550px;
@@ -1930,7 +1936,7 @@ flex-direction: column;
 }
 @media(max-width: 1079px){
     * {
- 
+
     }
     .movie-page-container .movie-poster {
         width: 450px;
@@ -1939,12 +1945,16 @@ flex-direction: column;
 }
 @media(max-width: 1032px){
     * {
-    
+
+    }
+   
+    .hero-content .movie-logo-container {
+        width: 410px;
     }
     .movie-page-container .movie-poster {
         width: 390px;
         height: 700px;
-        margin-top: 170px;
+        
       }
 
       .trailer .movie {
@@ -1958,12 +1968,20 @@ height: 400px;
 }
 @media(max-width: 870px){
     * {
-       
+    
+    }
+   
+    .hero-content .movie-logo-container {
+        width: 350px;
+        height: 300px;
+    }
+    .hide-for-query {
+        display: none;
     }
     .movie-page-container .movie-poster {
         width: 320px;
         height: 600px;
-        margin-top: 250px;
+      
       }
       .trailer .movie {
         width: 580px;
@@ -1977,8 +1995,29 @@ height: 400px;
         font-size:1rem;
      }
 
+     
 
 
+}
+
+@media(max-width: 801px){
+    * {
+       
+    }
+   .hero-content .movie-poster {
+        width: 320px;
+        height: 500px;
+    }
+    .movie-info .movie-about-info {
+        width: 310px;
+        
+    }
+    .hero-content .movie-logo-container {
+        width: 290px;
+        height: 250px;
+    }
+
+  
 }
 
 

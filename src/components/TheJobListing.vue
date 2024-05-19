@@ -38,6 +38,8 @@ export default {
 
 <style scoped>
 
+
+
 .buttonthing {
     background: black;
     padding: 20px 25px;
@@ -91,6 +93,7 @@ export default {
     gap: 15px;
     align-items: center;
     transition: 0.3s;
+  
 
 }
 
@@ -109,16 +112,36 @@ export default {
     }
 }
 
-@media(max-width: 670px){
+@media(max-width: 800px){
     .listing {
         padding: 40px;
         display: flex;
         flex-direction: column;
     }
-    .buttonthing {
+    .listing .buttonthing {
         padding: 15px 30px;
         width: 100%;
         margin-top: 10px;
+    }
+}
+@media(max-width: 940px){
+    * {
+       
+    }
+    .seperator {
+  
+    }
+    .listing {
+        gap: 30px;
+    }
+    .buttonthing {
+        height: 60px;
+        width: 160px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       
+        margin: 0 auto;
     }
 }
 

@@ -102,7 +102,7 @@ methods:{
 
     checkScreen(){
         this.windowWidth = window.innerWidth;
-        if (this.windowWidth <= 670 ){
+        if (this.windowWidth <= 737 ){
             this.mobile = true;
             return;
         }
@@ -120,23 +120,7 @@ created(){
 
 <style scoped>
 
-.burger-menu {
-    
-    color: white;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-}
 
-.burger-menu i {
-  font-size: 2rem;
-}
-.fa-solid.fa-x {
-    font-size: 1.7rem;
-}
 
 
 
@@ -267,10 +251,35 @@ nav.black ul {
 
 
 
-@media(max-width: 670px){
+@media(max-width: 737px){
+.menu {
+    width: 100%;
+    background: green;
+    display: flex;
+    justify-content: flex-end;
+
+
+}
+    .burger-menu {
+        color: white;
+        background: red;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    
+    .burger-menu i {
+      font-size: 2rem;
+    }
+    .fa-solid.fa-x {
+        font-size: 1.7rem;
+    }
     
     .burger-menu {
-        margin-left: 530px;
+   margin-right: -30px;
     }
 }
 </style>
