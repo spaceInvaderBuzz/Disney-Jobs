@@ -72,26 +72,67 @@
                             <p>Lorem enim. Ut, optitineque laborum nisi maxime exercitationem quo sapiente aliquam eveniet f blanditiis. isi maxime exercitationem quo sapiente aliquam eveniet f blanditiis. Tempora, esse in illo itaque dolorem facere qui hic nulla alias quam mollitia, tempore non, eveniet provident. Nemo necessitatibus totam cumque rerum a animi incidunt optio! Voluptate.</p>
                             <p>Lorem enim. Ut, optitineque laborum nisi maxime exercitationem quisi maxime exercitationem quo sapiente aliquam eveniet f blanditiis. o sapiente aliquam eveniet f blanditiis. Tempora, esse in illo itaque dolorem facere qui hic nulla alias quam mollitia, tempore non, eveniet provident. Nemo necessitatibus totam cumque rerum a animi incidunt optio! Voluptate.</p>
                             <p>Lorem enim. Ut, optitineque laborum nisi maxime exercitationem quisi maxime exercitationem quo sapiente aliquam eveniet f blanditiis. o sapiente aliquam eveniet f blanditiis. Tempora, esse in illo itaque dolorem facere qui hic nulla alias quam mollitia, tempore non, eveniet provident. Nemo necessitatibus totam cumque rerum a animi incidunt optio! Voluptate.</p>
+                           <div class="hide-for-smaller-querys">
+
                             <p>Lorem enim. Ut, optitineque laborum nisi maxime exercitationem quo sapiente aliquisi maxime exercitationem quo sapiente aliquam eveniet f blanditiis. am eveniet f blanditiis. Tempora, esse in illo itaque dolorem facere qui hic nulla alias quam mollitia, tempore non, eveniet provident. Nemo necessitatibus totam cumque rerum a animi incidunt optio! Voluptate.</p>
-                            <div class="cast-and-crew">
-                                <div class="cast">
-                                    <h1>CAST</h1>
-                                    <p><span>Jack Black</span> as Lilo</p>
-                                    <p><span>Dwayne The Johnson</span> as Stitch</p>
-                                    <p><span>Jack Black</span> as Godzilla </p>
+
+
+                           </div>
+                          
+                            
+                            <div class="only-use-for-main-cast-and-crew-view">
+                                <div class="cast-and-crew">
+                                    <div class="cast">
+                                        <h1>CAST</h1>
+                                        <p><span>Jack Black</span> as Lilo</p>
+                                        <p><span>Dwayne The Johnson</span> as Stitch</p>
+                                        <p><span>Jack Black</span> as Godzilla </p>
+                                    </div>
+                                    <div class="crew">
+                                        <h1>CREW</h1>
+                                        <p><span>Diercted By</span>y o mamma</p>
+                                        <p><span>Produced By</span> Neil Breen Productions</p>
+                                        <p><span>Art Director By</span> John Cena </p>
+                                    </div>
+                                    
                                 </div>
-                                <div class="crew">
-                                    <h1>CREW</h1>
-                                    <p><span>Diercted By</span>y o mamma</p>
-                                    <p><span>Produced By</span> Neil Breen Productions</p>
-                                    <p><span>Art Director By</span> John Cena </p>
-                                </div>
-                                
+
+
+
                             </div>
+                            
+                            
+                        
                            
                         </div>
                      
                     </div>
+
+
+                    <div class="only-show-for-query">
+
+
+
+                        <div class="cast-and-crew">
+                            <div class="cast">
+                                <h1>CAST</h1>
+                                <p><span>Jack Black</span> as Lilo</p>
+                                <p><span>Dwayne The Johnson</span> as Stitch</p>
+                                <p><span>Jack Black</span> as Godzilla </p>
+                            </div>
+                            <div class="crew">
+                                <h1>CREW</h1>
+                                <p><span>Diercted By</span>y o mamma</p>
+                                <p><span>Produced By</span> Neil Breen Productions</p>
+                                <p><span>Art Director By</span> John Cena </p>
+                            </div>
+                            
+                        </div>
+    
+                    </div>
+                  
+
+
                     <div class="social-images">
                         <h2>Tell you friends about Lilio and Stitch!</h2>
                         <h3>#LiloAndStitch</h3>
@@ -218,13 +259,18 @@ setup(){
 
 <style scoped>
 
+
+.only-show-for-query {
+    display: none;
+}
+
 .coming-soon {
     display: none;
 }
 .container {
     margin: 0 auto;
     max-width: 1150px;
-    padding: 0 20px;
+    padding: 0 25px;
     
 }
 
@@ -373,6 +419,7 @@ margin-bottom: 20px;
     display: flex;
     gap: 50px;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 150px;
     position: relative;
 }
@@ -775,5 +822,73 @@ margin-bottom: 20px;
          height: 220px;
          
      }
+}
+
+/* media query speicfallty to align hero poster and text */
+
+@media(max-width: 1128px){
+    * {
+        color:brown;
+    }
+
+    .hero .container {
+        padding: 0 50px;
+    }
+    .hero .container .primary-hero {
+       justify-content: center;
+        gap: 30px;
+
+    }
+
+    .main-content .hero .container .primary-hero .text-content {
+        width: 420px;
+    }
+    .main-content .hero .container .primary-hero .image-wrapper {
+        width: 470px;
+    }
+}
+@media(max-width: 1017px){
+    * {
+        
+    }
+    .only-use-for-main-cast-and-crew-view {
+        display: none;
+    }
+    .only-show-for-query {
+        display: block;
+        background: pink;
+        margin-top: -100px;
+        text-align: center;
+
+    }
+    .hero .container .primary-hero {
+       justify-content: center;
+        gap: 35px;
+
+    }
+    .main-content .hero .container .primary-hero .text-content {
+        width: 380px;
+    }
+    .main-content .hero .container .primary-hero .image-wrapper {
+        width: 400px;
+        height: 640px;
+    }
+}
+@media(max-width: 923px){
+    * {
+     
+    }
+    .main-content .hero .container .primary-hero .text-content {
+        width: 320px;
+
+    }
+  
+    .main-content .hero .container .primary-hero .image-wrapper {
+        width: 350px;
+        height: 600px;
+    }
+    .hide-for-smaller-querys {
+        display: none;
+    }
 }
 </style>

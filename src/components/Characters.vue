@@ -499,7 +499,7 @@ bottom: 0;
     .container-gallery .gallery1 img {
         width: 100%;
     }
-    .container-gallery .gallery2 {
+    .outside-of-container-gallery .container-gallery .gallery2 {
 
         padding: 20px;
         display: grid;
