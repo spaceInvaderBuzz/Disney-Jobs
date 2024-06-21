@@ -101,7 +101,7 @@
           <div class="text-and-icon">
             <h1>Retirement Plan</h1>
           <div class="benefit-img1"></div>
-          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nemo consequatur consectetur neque maxime non?</div>
+          <div class="benefit-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nemo consequatur consectetur neque maxime non?</div>
           </div>
           <img src="/src/assets/images/Untitled_Artwork 64.png" alt="">
         </div>
@@ -217,7 +217,7 @@
           <div class="text-and-icon">
             <h1>Retirement Plan</h1>
           <div class="benefit-img1"></div>
-          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nemo consequatur consectetur neque maxime non?</div>
+          <div class="benefit-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nemo consequatur consectetur neque maxime non?</div>
           </div>
           <img src="/src/assets/images/Untitled_Artwork 64.png" alt="">
         </div>
@@ -225,7 +225,7 @@
           <div class="text-and-icon">
             <h1>Health Insurance</h1>
           <div class="benefit-img2"></div>
-          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis illum consectetur praesentium placeat quae officiis exercitationem quas, harum voluptas eveniet.</div>
+          <div class="benefit-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis illum consectetur praesentium placeat quae officiis exercitationem quas, harum voluptas eveniet.</div>
           </div>
           <img src="/src/assets/images/Untitled_Artwork 64.png" alt="">
         </div>
@@ -233,7 +233,7 @@
           <div class="text-and-icon">
             <h1>Paid Time Off</h1>
           <div class="benefit-img3"></div>
-          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem nihil, nemo nisi sunt quidem quo.</div>
+          <div class="benefit-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem nihil, nemo nisi sunt quidem quo.</div>
           </div>
           <img src="/src/assets/images/Untitled_Artwork 64.png" alt="">
         </div>
@@ -241,6 +241,9 @@
           <div class="text-and-icon">
             <h1>Health Insurance</h1>
           <div class="benefit-img4"></div>
+          <div class="benefit-text">loremretgferghtrhtrhyrh
+            rthtrhgrhgthgtgthttghghgrh
+            rghgr</div>
           </div>
           <img src="/src/assets/images/Untitled_Artwork 64.png" alt="">
         </div>
@@ -398,7 +401,9 @@ async mounted(){  //as soon as i moun this and any compontet tnat use the profil
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mouse+Memoirs&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Princess+Sofia&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
-
+.benefit .benefit-text {
+  text-align: center;
+}
 
 .job-header {
   font-family: 'Bebas Neue';
@@ -557,6 +562,15 @@ async mounted(){  //as soon as i moun this and any compontet tnat use the profil
   width: 90px;
   height: 90px;
 }
+.benefit-img4{
+  background: url('/src/assets/images/Untitled_Artwork 70.png') no-repeat;
+  background-position: center;
+  background-size: contain ;
+  width: 90px;
+  height: 90px;
+}
+
+
 
 .benefit {
   position: relative;
@@ -588,6 +602,7 @@ img {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  text-align: center;
 }
 .share-this-job {
   margin: 20px 0;
@@ -609,6 +624,8 @@ img {
 
 
 .apply-button {
+  color: white;
+  text-decoration: none;
   background: #ff004f;
   padding: 25px;
   margin-top: 20px;
@@ -810,7 +827,7 @@ li {
 
 @media(max-width: 1068px){
  * {
-  opacity: .9;
+ 
  }
 
 .image {
@@ -900,7 +917,7 @@ margin-left: 8px;
 
 @media(max-width: 1443px){
   * {
-  color:gold;
+  
   }
   .benefits {
 
@@ -912,10 +929,10 @@ margin-left: 8px;
 }
 @media(max-width: 1324px){
   * { 
-    color: pink;
+    
   }
   .benefits {
-    background: white;
+  
   }
   .benefit {
     width:250px;
@@ -924,7 +941,7 @@ margin-left: 8px;
 }
 @media( max-width: 1170px){
   * {
-    color: green;
+ 
   }
   .benefit {
     width: 210px;
@@ -936,7 +953,7 @@ margin-left: 8px;
     
   }
   .benefits {
-    background: rgb(224, 41, 249);
+   
     
   }
   .benefit {
@@ -950,7 +967,7 @@ margin-left: 8px;
 
 @media(max-width: 670px){
   *{
-    opacity: .78;
+   
   }
   .skidmark .apply-box {
     padding: 0 30px;
@@ -1088,7 +1105,7 @@ margin-left: 8px;
 
 @media(max-width: 915px){ 
   * {
-    color: pink;
+   
   }
   .skidmark .container-for-job-page {
      width: 90vw;
@@ -1146,7 +1163,7 @@ margin-left: 8px;
 
 @media(max-width: 800px){
   * {
-    color: orange;
+   
   }
 
   .info-box {

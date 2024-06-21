@@ -1,9 +1,9 @@
 <template>
-    <transition name="modal-animation">
+    <transition name="modal-animation">  
       <div v-show="termsModalActive" class="modal">
           <transition name="modal-animation-inner">
               <div v-show="termsModalActive" class="modal-inner">
-                  <i class="far fa-times-circle"></i>
+             
                   <slot/>
                   <button class="modal-close-btn" @click="close">Close</button>
               </div>

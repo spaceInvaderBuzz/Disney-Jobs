@@ -66,7 +66,7 @@
                               </div>
                               
                             </div>
-                            <a href="#" class="btn-all-movies">View All Movies</a>
+                            <router-link :to="{ name: 'Films'}" class="btn-all-movies">View All Movies</router-link>
                         </div>
 
 

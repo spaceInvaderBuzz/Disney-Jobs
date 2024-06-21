@@ -9,7 +9,7 @@
            <the-loading-screen></the-loading-screen>
         </div>
 
-        <jobs-navbar></jobs-navbar>
+        <jobs-navbar class="job-app-view-nav"></jobs-navbar>
 
         <div class="application-hero">
             <div class="hero-text">
@@ -80,7 +80,7 @@
                     <label :for="state"> State </label> 
                     <input type="text" id="state" v-model="state"/>
         
-                    <label :for="zipcode"> State </label> 
+                    <label :for="zipcode"> Zip code </label> 
                     <input type="text" id="zipcode" v-model="zipcode"/>
         
                     <h1>WORK EXPERIENCE</h1>
@@ -204,8 +204,8 @@ data(){
         jobId: this.$route.params.id,
         active: null,
         resume: "",
-        workExperience: [],
-        finishedWorkExperience: [],
+        workExperience: [],  //{}
+        finishedWorkExperience: [], // this will be an array of obejcts containg finsiehd work expeirences 
         resumePageFirstName: "", 
         resumePageLastName: "",
         resumePageUsername: "",
@@ -236,7 +236,7 @@ methods: {
     async apply(){
 
     
-           if (this.resume && this.finishedWorkExperience.length !== 0) {
+           if (this.resume && this.finishedWorkExperience.length !== 0 && this.address.length !== 0, this.city.length !== 0, this.state.length !== 0, this.zipcode.length !== 0) {
             this.filePath = `resume/${firebase.auth().currentUser.uid}/${this.resume.name}`;
           
            
@@ -256,6 +256,7 @@ methods: {
   if (this.finishedWorkExperience.length === 0){
     this.pleaseSelectOneExperienceMsg = "Please select one expeirence";
     return;
+    
   }
   if (this.finishedWorkExperience.length !== 0){
       await application.set({
@@ -293,8 +294,8 @@ methods: {
     },
     addWorkExperience(){
         this.idThang = null;
-        const uid = Math.floor(Math.random() * 10000000 );
-        this.workExperience.push({
+        const uid = Math.floor(Math.random() * 10000000 );  //this 
+        this.workExperience.push({ //this will push one objecgt into the workExpeirencearray
             itemId: uid,
             jobTitle: "",
             company: "",
@@ -311,7 +312,7 @@ methods: {
     reallyDeleteItem(parameter){
         this.finishedWorkExperience = this.finishedWorkExperience.filter((experience) => experience.itemId !== parameter)
     },
-    addItem(parameter){
+    addItem(parameter){  //5
         if (this.idThang === parameter) {
         this.idThang = null; }
         this.workExperience.forEach((experience) => {
@@ -385,6 +386,11 @@ created(){
 </script>
 
 <style scoped>
+
+.job-app-view-nav {
+    padding-bottom: 25px;
+    padding-top: 20px;
+}
 
 .edit-or-del-enter-active,
 .edit-or-del-leave-active {

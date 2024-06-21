@@ -52,7 +52,7 @@
             <div class="svg-thang">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ff004f" fill-opacity="1" d="M0,192L48,165.3C96,139,192,85,288,58.7C384,32,480,32,576,53.3C672,75,768,117,864,160C960,203,1056,245,1152,224C1248,203,1344,117,1392,74.7L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
             </div>
-            <section  class="hero-bullshit">
+            <section  class="hero-thing">
                 <div class="apply-now">
                     <div class="img-container">
                         <img src="/src/assets/images/Untitled_Artwork 85.png" alt="">
@@ -78,15 +78,18 @@
                 
             </section>
         </div>
-      
+        <the-footer></the-footer>
     </section>
-  
+
   
 </template>
 
 <script>
+
+import TheFooter from '@/components/TheFooter.vue';
 export default {
 name: 'CareersHeroPage',
+components: {TheFooter}
 }
 </script>
 
@@ -105,9 +108,10 @@ name: 'CareersHeroPage',
 }
 
 .explore-button a {
+    color: white;
     margin: 15px 0;
     text-decoration: none;
-    background: yellow;
+    background: rgb(0, 0, 0);
     border-radius: 15px;
     padding: 30px;
     font-size: 1.4rem;
@@ -119,7 +123,7 @@ name: 'CareersHeroPage',
 }
 
 
-.hero-bullshit {
+.hero-thing {
     margin-top:  -10px;
     background: #ff004f;
     padding: 100px 10vw;
@@ -141,7 +145,7 @@ name: 'CareersHeroPage',
     border-radius: 50px;
 }
 
-.hero-bullshit .text {
+.hero-thing .text {
     position: relative;
     font-size: 1.1rem;
     height: 400px;

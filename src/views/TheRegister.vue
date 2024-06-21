@@ -117,7 +117,7 @@ methods: {
             const firebaseAuth = await firebase.auth();
             const createUser = await firebaseAuth.createUserWithEmailAndPassword(this.email, this.password); //this is the action
             const result = await createUser;  //this is the receiopt- has all the info 
-            const dataBase = db.collection("users").doc(result.user.uid);
+            const dataBase = db.collection("users").doc(result.user.uid);  //9000
             await dataBase.set({
                 firstName: this.firstName,
                 lastName: this.lastName,
@@ -141,6 +141,7 @@ methods: {
 <style scoped>
 
 .sign-in {
+    cursor: pointer;
     color: white;
     font-size: 1.2rem;
     letter-spacing: 2px;

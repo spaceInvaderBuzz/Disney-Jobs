@@ -219,7 +219,7 @@ setup(){
 }
 
 .films-container {
-    background: red;
+   
     max-width: 1250px;
     margin: 0 auto;
     padding: 0 15px;
@@ -253,7 +253,7 @@ setup(){
 }
 
 .portfolio {
-   background: purple;
+  
     display: grid;
     grid-template-columns: repeat(4,1fr);
     align-items: center;

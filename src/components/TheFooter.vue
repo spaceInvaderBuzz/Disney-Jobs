@@ -3,10 +3,13 @@
    
   <privacy-policy-modal :privacyModalActive="privacyModalActive" @close="closePrivacyModal">
     PRIVACY STUUUUUFFFFF
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam dolor animi expedita omnis fugiat soluta, excepturi molestiae dignissimos corporis quis accusantium sit rerum quod sequi voluptate. Voluptatum eum delectus aperiam quo doloremque debitis, assumenda, non similique eius possimus beatae excepturi ipsam earum quisquam dignissimos. Perferendis dolorem in eveniet quo fuga eaque quidem obcaecati nobis cum error, optio ipsa alias, voluptates reiciendis dolores provident consequuntur mollitia? Vel velit minus quis officia rem earum commodi ab, nemo alias nesciunt ad consequuntur similique eligendi consectetur. Aspernatur laboriosam maiores saepe esse reprehenderit tempore provident! Exercitationem veniam assumenda aspernatur culpa iste, sint aut velit ab laboriosam voluptas illum est accusantium modi maiores iusto quos dolor, tenetur commodi autem suscipit! Pariatur sed consequatur quas aliquam. Saepe, provident. Ipsum, dicta asperiores consequatur ratione voluptatibus aut dolor corrupti. Quis magni corrupti, tempore officia repudiandae, perferendis magnam labore, repellat vero eos consectetur doloremque veritatis? Nemo, inventore culpa? Eos necessitatibus quod sed inventore, repudiandae reprehenderit ex. Officiis illo voluptatibus dolorum reiciendis molestias unde expedita debitis, rerum quisquam nihil id omnis facilis praesentium. Nihil mollitia autem, temporibus iste dignissimos, nemo repellat corrupti tenetur maiores quod ea est officiis nostrum velit harum rerum minus necessitatibus at beatae! Nihil obcaecati et qui quisquam.</p>
   </privacy-policy-modal>
   <do-not-sell-modal :doNotSellModalActive="doNotSellModalActive" @close="closeDoNotSellModalActice">
-    DO NOT SELL MY SHIIIIIT
-  </do-not-sell-modal>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore reprehenderit provident maxime quaerat optio maiores eum culpa facilis ad nostrum, officiis impedit, distinctio eveniet illo esse repellendus eaque illum rerum. Dolores adipisci similique unde quisquam, officiis fuga sapiente ipsum at distinctio modi quia ducimus cupiditate, ullam, totam quis eos tempora.</p>
+  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum vel minima neque ratione? Qui, ut. Distinctio sequi at molestias dolore?</p>
+
+</do-not-sell-modal>
   <terms-of-use-modal :termsModalActive="termsModalActive" @close="closeTermsModalActive">
    <div class="terms-of-service">
     <h1>TERMS OF SERVICE</h1>
@@ -116,6 +119,12 @@ if (this.openTermsModal){
 </script>
 
 <style scoped>
+
+
+.legal-text {
+    gap: 20px;
+    cursor: pointer;
+}
 
 .terms-of-service {
     margin: 0 auto;

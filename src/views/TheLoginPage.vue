@@ -21,7 +21,7 @@
                 <div class="user-icon">
                     <img src="/src/assets/images/Untitled_Artwork 201.png" alt="">
                 </div>
-                <label for="email">Email</label>
+                <label for="email"></label>
                 <input type="text" placeholder="Email" id="email" v-model="email">
                 
             </div>

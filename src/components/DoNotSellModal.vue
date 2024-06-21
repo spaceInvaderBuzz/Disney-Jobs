@@ -3,9 +3,9 @@
       <div v-show="doNotSellModalActive" class="modal">
           <transition name="modal-animation-inner">
               <div v-show="doNotSellModalActive" class="modal-inner">
-                  <i class="far fa-times-circle"></i>
+                 
                   <slot/>
-                  <button @click="close">Close</button>
+                  <button class="modal-close-btn" @click="close">Close</button>
               </div>
           </transition>
       </div>
@@ -33,25 +33,48 @@
   <style scoped>
   
   
+  .modal-close-btn {
+    cursor: pointer;
+    background: #ff004f;
+    border: none;
+    color: white;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+
+  }
+  
+  
   .modal {
       position: fixed;
-      z-index: 2;
+      z-index: 6;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: orange;
+      background: linear-gradient(rgba(0,0,0,0.6), #ff004f);
       display: flex;
       align-items: center;
       justify-content: center;
+      overscroll-behavior: contain;
+      overflow: auto;
+
+      
   
   
   }
   
   .modal-inner {
       background: white;
-      padding: 200px;
+      padding: 100px;
       border-radius: 20px;
+     
+      
+     
+      
   
   
   }
@@ -84,6 +107,7 @@
   .modal-animation-inner-leave-to {
       transform: scale(0.8);
   }
+  
   
   
   
