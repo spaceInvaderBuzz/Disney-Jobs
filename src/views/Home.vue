@@ -252,7 +252,7 @@
                                 <i class="fa-solid fa-message"></i>
                             </i>Contact Us</h1>
                             <h2>Get In Touch With Us</h2>
-                            <p>we would love to hear your bullshit And pretend that we care!</p>
+                            <p>we would love to hear your thoughts on our brand!</p>
                         </div>
                     </div>
                     <div class="tangled-background">
